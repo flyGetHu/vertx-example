@@ -4,35 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/EventBusHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/client/WebClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/EventBusHandlerTestVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/MyEventBusServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/config/LoadConfigTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/MainApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/bus/EventBusDemoImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/verticle/EventBusVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/verticle/MainVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vertx-example.iml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/MainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo/src/main/kotlin/com/vertx/MainApp.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EventBusVerticleTest.testEventBus">
+  <component name="RunManager" selected="Kotlin.MainApp">
     <configuration name="MainLaunch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.common.MainLaunch" />
       <module name="rpc-demo" />
@@ -217,11 +191,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687849036203</updated>
-      <workItem from="1687849041206" duration="5682000" />
+      <workItem from="1687849041206" duration="6348000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1687854941003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687854941003</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

@@ -21,7 +21,7 @@ public class MainLaunch extends Launcher {
     /**
      * 定义集群成员IP地址
      */
-    private static final String[] CLUSTER_IPS = {"172.16.0.2", "172.16.0.16", "172.16.0.10", "172.16.0.11", "172.16.0.5", "172.16.0.8", "172.16.0.4", "172.16.0.6", "172.16.0.12", "172.16.0.13", "172.16.0.17"};
+    private static final String[] CLUSTER_IPS = {""};
 
     @Override
     public void beforeStartingVertx(VertxOptions options) {
@@ -31,8 +31,6 @@ public class MainLaunch extends Launcher {
 
         // 获取Join配置
         JoinConfig joinConfig = networkConfig.getJoin();
-        // 禁用组播
-        joinConfig.getMulticastConfig().setEnabled(false);
         // 启用TCP/IP发现机制
         joinConfig.getTcpIpConfig().setEnabled(true);
         // 添加成员节点的IP地址和端口
