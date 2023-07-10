@@ -2,6 +2,8 @@ package com.vertx.common.bus
 
 import cn.hutool.http.HttpStatus
 import cn.hutool.log.StaticLog
+import com.vertx.common.config.eventBus
+import com.vertx.common.config.vertx
 import io.vertx.core.*
 import io.vertx.core.eventbus.Message
 import io.vertx.kotlin.coroutines.dispatcher
@@ -11,11 +13,16 @@ import kotlinx.coroutines.launch
 
 /**
  * EventBusHandler is a service that can be used to handle requests on the event bus.
+ * 使用方式:
+ * 1: 先在本目录下创建一个服务实现类,实现EventBusHandler接口,只需要实现address,确定服务地址,文件命名以BusHandler结尾
+ * 2: 然后在具体的业务模块实现rpc接口的逻辑handleRequest,文件BusHandlerImpl结尾
+ * 3: 其他模块调用该服务,只需要调用本目录下对应实现的call方法即可
  * @param Request 请求类型
  * @param Response 响应类型
- * @see MyEventBusServiceImplTest.kt 有具体示例
+ * @property address 服务地址
+ * @constructor
  */
-interface EventBusHandler<Request, Response> {
+interface BusHandler<Request, Response> {
 
 
     /**
@@ -35,7 +42,7 @@ interface EventBusHandler<Request, Response> {
      */
     fun call(request: Request): Future<Response> {
         val promise = Promise.promise<Response>()
-        Vertx.currentContext().owner().eventBus().request(this.address, request) { ar: AsyncResult<Message<Response>> ->
+        eventBus.request(this.address, request) { ar: AsyncResult<Message<Response>> ->
             if (ar.succeeded()) {
                 val body = ar.result().body()
                 promise.complete(body)
@@ -55,10 +62,10 @@ interface EventBusHandler<Request, Response> {
          * @param Request 请求类型
          * @param Response 响应类型
          */
-        fun <Request, Response> register(service: EventBusHandler<Request, Response>) {
+        fun <Request, Response> register(service: BusHandler<Request, Response>) {
             StaticLog.info("注册服务: ${service.address}")
-            Vertx.currentContext().owner().eventBus().consumer(service.address) { message: Message<Request> ->
-                CoroutineScope(Vertx.currentContext().dispatcher()).launch {
+            eventBus.consumer(service.address) { message: Message<Request> ->
+                CoroutineScope(vertx.dispatcher()).launch {
                     val request = message.body()
                     service.handleRequest(request) { ar: AsyncResult<Response> ->
                         if (ar.succeeded()) {
@@ -73,3 +80,5 @@ interface EventBusHandler<Request, Response> {
         }
     }
 }
+
+

@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="合并示例项目">
+      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/DemoBusHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/EventBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/EventBusHandlerTestVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/BusHandlerTestVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/MyEventBusServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/MyBusServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/MainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/ExampleMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/EventBusDemoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -116,17 +128,11 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.MainApp (1)">
-    <configuration name="MainApp (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.MainApp" />
+  <component name="RunManager">
+    <configuration name="ExampleMainApp" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleMainApp" />
       <module name="example" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.MainApp" />
-      <module name="example" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,8 +152,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainApp (1)" />
-        <item itemvalue="Kotlin.MainApp" />
+        <item itemvalue="Kotlin.ExampleMainApp" />
         <item itemvalue="Kotlin.MainApp" />
       </list>
     </recent_temporary>
@@ -163,7 +168,7 @@
       <workItem from="1687849041206" duration="8373000" />
       <workItem from="1688960538047" duration="5339000" />
       <workItem from="1688970860469" duration="315000" />
-      <workItem from="1688971548118" duration="5828000" />
+      <workItem from="1688971548118" duration="11527000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -214,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688977056393</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="合并示例项目">
+      <created>1688977504173</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688977504173</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,16 +238,5 @@
     <MESSAGE value="定时任务组件" />
     <MESSAGE value="合并示例项目" />
     <option name="LAST_COMMIT_MESSAGE" value="合并示例项目" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1-sources.jar!/org/apache/logging/log4j/core/util/CronExpression.java</url>
-          <line>270</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

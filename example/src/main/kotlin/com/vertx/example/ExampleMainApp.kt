@@ -1,5 +1,6 @@
 package com.vertx.example
 
+import cn.hutool.log.StaticLog
 import com.hazelcast.config.Config
 import com.vertx.example.verticle.MainVerticle
 import io.vertx.core.Vertx
@@ -7,7 +8,7 @@ import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 
-object MainApp {
+object ExampleMainApp {
     @JvmStatic
     fun main(args: Array<String>) {
         val config = Config()
@@ -19,7 +20,14 @@ object MainApp {
         val mgr: ClusterManager = HazelcastClusterManager(config)
         val vertxOptions = VertxOptions()
         vertxOptions.setClusterManager(mgr)
-        Vertx.clusteredVertx(vertxOptions)
-        Vertx.vertx().deployVerticle(MainVerticle::class.java.name)
+        Vertx.clusteredVertx(vertxOptions).onComplete { res ->
+            if (res.succeeded()) {
+                val vertx = res.result()
+                val mainVerticle = MainVerticle::class.java.name
+                vertx.deployVerticle(mainVerticle)
+            } else {
+                StaticLog.error(res.cause(), "启动失败")
+            }
+        }
     }
 }

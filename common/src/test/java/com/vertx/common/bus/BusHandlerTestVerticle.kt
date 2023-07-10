@@ -5,10 +5,10 @@ import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 import org.junit.jupiter.api.Test
 
-object EventBusHandlerTestVerticle : CoroutineVerticle() {
+object BusHandlerTestVerticle : CoroutineVerticle() {
     override suspend fun start() {
-        EventBusHandler.register(MyEventBusServiceImpl)
-        MyEventBusServiceImpl.call("test").onSuccess {
+        BusHandler.register(MyBusServiceImpl)
+        MyBusServiceImpl.call("test").onSuccess {
             println(it)
         }
     }
@@ -16,7 +16,7 @@ object EventBusHandlerTestVerticle : CoroutineVerticle() {
     @Test
     fun test() {
         val vertx = Vertx.vertx()
-        vertx.deployVerticle(EventBusHandlerTestVerticle)
+        vertx.deployVerticle(BusHandlerTestVerticle)
         ThreadUtil.sleep(1000)
     }
 }

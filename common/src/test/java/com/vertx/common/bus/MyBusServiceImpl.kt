@@ -4,7 +4,7 @@ import io.vertx.core.AsyncResult
 import io.vertx.core.Future
 import io.vertx.core.Handler
 
-object MyEventBusServiceImpl : EventBusHandler<String, String> {
+object MyBusServiceImpl : BusHandler<String, String> {
     override val address: String = "test://test"
 
 

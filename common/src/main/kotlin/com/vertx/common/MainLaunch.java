@@ -1,5 +1,7 @@
 package com.vertx.common;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.log.StaticLog;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
@@ -9,11 +11,11 @@ import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.spi.cluster.ClusterManager;
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
+import org.apache.maven.project.MavenProject;
 
 import java.util.Arrays;
 
 public class MainLaunch extends Launcher {
-
 
     /**
      * 定义集群成员IP地址
@@ -34,13 +36,19 @@ public class MainLaunch extends Launcher {
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         ClusterManager mgr = new HazelcastClusterManager(config);
         options.setClusterManager(mgr);
-        Vertx.clusteredVertx(options).onComplete(res -> {
-            if (res.succeeded()) {
-                StaticLog.info("集群启动成功");
-            } else {
-                StaticLog.error(res.cause(), "集群启动失败");
-            }
-        });
+        Vertx.clusteredVertx(options)
+                .compose(vertx -> {
+                    MavenProject project = new MavenProject();
+                    String mainVerticle = project.getProperties().getProperty("main.verticle");
+                    return vertx.deployVerticle(mainVerticle);
+                })
+                .onComplete(res -> {
+                    if (res.succeeded()) {
+                        StaticLog.info("集群启动成功");
+                    } else {
+                        StaticLog.error(res.cause(), "集群启动失败");
+                    }
+                });
     }
 
     public static void main(String[] args) {

@@ -2,6 +2,7 @@ package com.vertx.common.task
 
 import cn.hutool.core.date.DateUtil
 import cn.hutool.log.StaticLog
+import com.vertx.common.config.vertx
 import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -34,7 +35,7 @@ interface CronSchedulerHandler {
     fun start(initStart: Boolean = false) {
         //如果是初始化启动,则直接执行任务
         if (initStart) {
-            CoroutineScope(Vertx.currentContext().owner().dispatcher()).launch {
+            CoroutineScope(vertx.dispatcher()).launch {
                 try {
                     task()
                 } catch (e: Throwable) {
@@ -54,7 +55,6 @@ interface CronSchedulerHandler {
                     )
                 }"
             )
-            val vertx = Vertx.currentContext().owner()
             vertx.setTimer(timeUntilNextExecution) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
