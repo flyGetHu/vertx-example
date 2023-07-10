@@ -23,8 +23,7 @@ object ExampleMainApp {
         Vertx.clusteredVertx(vertxOptions).onComplete { res ->
             if (res.succeeded()) {
                 val vertx = res.result()
-                val mainVerticle = MainVerticle::class.java.name
-                vertx.deployVerticle(mainVerticle)
+                vertx.deployVerticle(MainVerticle::class.java.name)
             } else {
                 StaticLog.error(res.cause(), "启动失败")
             }

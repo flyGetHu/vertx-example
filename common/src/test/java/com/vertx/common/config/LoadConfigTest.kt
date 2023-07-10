@@ -2,6 +2,7 @@ package com.vertx.common.config
 
 import cn.hutool.core.thread.ThreadUtil
 import io.vertx.core.Vertx
+import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -12,7 +13,7 @@ class LoadConfigTest {
     fun testLoadConfig() {
         val vertx = Vertx.vertx()
         CoroutineScope(vertx.dispatcher()).launch {
-            val configParams = LoadConfig.loadConfig()
+            val configParams = LoadConfig.loadConfig(vertx).await()
             println(configParams)
         }
         ThreadUtil.sleep(1000 * 2)
