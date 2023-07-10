@@ -22,10 +22,10 @@ var active = "dev"
 lateinit var appConfig: AppConfig
 
 // vertx全局对象
-var vertx: Vertx = Vertx.currentContext().owner()
+lateinit var vertx: Vertx
 
 // 事件总线
-val eventBus: EventBus = vertx.eventBus()
+lateinit var eventBus: EventBus
 
 /**
  * vertx 共享数据容器
@@ -34,7 +34,7 @@ val eventBus: EventBus = vertx.eventBus()
  * asynchronous locks
  * asynchronous counters
  */
-var sharedData: SharedData = vertx.sharedData()
+lateinit var sharedData: SharedData
 
 /**
  * 加载配置文件
@@ -42,7 +42,8 @@ var sharedData: SharedData = vertx.sharedData()
 fun loadConfig(vertx: Vertx): Future<AppConfig> {
     val promise = Promise.promise<AppConfig>()
     com.vertx.common.config.vertx = vertx
-    StaticLog.info("项目是否为集群环境:${vertx.isClustered}")
+    eventBus = vertx.eventBus()
+    sharedData = vertx.sharedData()
     //配置默认的log日志对象
     val logFactory = Log4j2LogFactory.create()
     LogFactory.setCurrentLogFactory(logFactory)
@@ -58,8 +59,7 @@ fun loadConfig(vertx: Vertx): Future<AppConfig> {
         StaticLog.info("当前项目激活配置环境文件:$activeConfigName")
         val configRetrieverOptions = ConfigRetrieverOptions()
         configRetrieverOptions.addStore(
-            ConfigStoreOptions().setType("file").setFormat("yaml")
-                .setConfig(JsonObject().put("path", activeConfigName))
+            ConfigStoreOptions().setType("file").setFormat("yaml").setConfig(JsonObject().put("path", activeConfigName))
         )
         ConfigRetriever.create(vertx, configRetrieverOptions).config
     }.onComplete {
