@@ -85,19 +85,20 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
+                <!--配置编译顺序先编译kotlin代码再编译java代码,确保java中调用kotlin代码正常-->
                 <executions>
                     <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
+                        <id>kotlin-compile</id>
+                        <phase>process-sources</phase> <!-- 设置合适的编译阶段 -->
                         <goals>
                             <goal>compile</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>test-compile</id>
-                        <phase>test-compile</phase>
+                        <id>java-compile</id>
+                        <phase>process-sources</phase> <!-- 设置合适的编译阶段 -->
                         <goals>
-                            <goal>test-compile</goal>
+                            <goal>compile</goal>
                         </goals>
                     </execution>
                 </executions>

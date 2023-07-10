@@ -4,6 +4,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.bus.DemoBusHandler
 import com.vertx.example.bus.DemoBusHandlerImpl
 import com.vertx.common.bus.BusHandler
+import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 
 /**
@@ -14,11 +15,12 @@ class EventBusVerticle : CoroutineVerticle() {
     /**
      * 启动
      */
-    override suspend fun start() {
+    override fun start(startFuture: Promise<Void>?) {
         StaticLog.info("EventBusVerticle启动类开始启动")
-        BusHandler.register(DemoBusHandlerImpl)
+//        BusHandler.register(DemoBusHandlerImpl)
         StaticLog.info("EventBusVerticle启动类启动成功")
         test()
+        startFuture?.complete()
     }
 
     /**

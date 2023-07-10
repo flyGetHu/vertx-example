@@ -1,17 +1,28 @@
 package com.vertx.example.verticle
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.config.LoadConfig
+import io.vertx.core.Future
+import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.CoroutineVerticle
-import io.vertx.kotlin.coroutines.await
 import java.time.Duration
 import java.time.Instant
 
 class MainVerticle : CoroutineVerticle() {
-    override suspend fun start() {
+    override fun start(startFuture: Promise<Void>?) {
         val timer = Instant.now()
-        vertx.deployVerticle(EventBusVerticle::class.java.name).await()
-        vertx.deployVerticle(TaskVerticle::class.java.name).await()
-        StaticLog.info("启动成功:${Duration.between(timer, Instant.now()).toMillis()}")
+        Future.all(
+            listOf(
+                vertx.deployVerticle(EventBusVerticle::class.java.name),
+                vertx.deployVerticle(TaskVerticle::class.java.name)
+            )
+        ).onComplete {
+            if (it.succeeded()) {
+                StaticLog.info("启动成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
+                startFuture?.complete()
+            } else {
+                StaticLog.error("启动失败:${it.cause()}")
+                startFuture?.fail(it.cause())
+            }
+        }
     }
 }
