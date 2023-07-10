@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="合并示例项目">
-      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/task/TaskDemoHandlerImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/TaskVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/CronSchedulerUtil.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/MainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/MainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/bus/EventBusDemoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/EventBusDemoImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/EventBusVerticle.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/MainVerticle.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +155,7 @@
       <workItem from="1687849041206" duration="8373000" />
       <workItem from="1688960538047" duration="5339000" />
       <workItem from="1688970860469" duration="315000" />
-      <workItem from="1688971548118" duration="5104000" />
+      <workItem from="1688971548118" duration="5421000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -212,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688961648325</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="合并示例项目">
+      <created>1688976860356</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688976860356</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

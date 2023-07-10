@@ -12,7 +12,6 @@
     <artifactId>common</artifactId>
 
     <properties>
-        <main.verticle>com.vertx.example.verticle.MainVerticle</main.verticle>
     </properties>
 
     <dependencies>
