@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>org.vertx</groupId>
-    <artifactId>rpc-demo</artifactId>
+    <artifactId>example</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

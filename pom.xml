@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
-        <module>rpc-demo</module>
+        <module>example</module>
     </modules>
 
     <properties>
@@ -44,6 +44,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-junit5</artifactId>

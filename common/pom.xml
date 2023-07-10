@@ -12,7 +12,7 @@
     <artifactId>common</artifactId>
 
     <properties>
-        <huTool.version>5.8.18</huTool.version>
+        <huTool.version>5.8.20</huTool.version>
     </properties>
 
     <dependencies>
