@@ -2,7 +2,6 @@ package com.vertx.common.task
 
 import cn.hutool.core.date.DateUtil
 import cn.hutool.log.StaticLog
-import com.vertx.common.utils.CronSchedulerUtil
 import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +20,7 @@ interface CronSchedulerHandler {
     /**
      * 定时任务表达式
      */
-    var scheduler: CronSchedulerUtil
+    var scheduler: CronScheduler
 
     /**
      * 定时任务
@@ -51,13 +50,12 @@ interface CronSchedulerHandler {
             StaticLog.info(
                 "定时任务:${description} 下次执行时间:${
                     DateUtil.offsetMillisecond(
-                        DateUtil.date(),
-                        timeUntilNextExecution.toInt()
+                        DateUtil.date(), timeUntilNextExecution.toInt()
                     )
                 }"
             )
             val vertx = Vertx.currentContext().owner()
-            vertx.setTimer(timeUntilNextExecution) { event ->
+            vertx.setTimer(timeUntilNextExecution) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
                         task()
@@ -90,12 +88,11 @@ interface CronSchedulerHandler {
             StaticLog.info(
                 "定时任务:${description} 下次执行时间:${
                     DateUtil.offsetMillisecond(
-                        DateUtil.date(),
-                        timeUntilNextExecution.toInt()
+                        DateUtil.date(), timeUntilNextExecution.toInt()
                     )
                 }"
             )
-            vertx.setTimer(timeUntilNextExecution) { event ->
+            vertx.setTimer(timeUntilNextExecution) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
                         task()

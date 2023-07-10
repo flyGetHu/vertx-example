@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="定时任务组件">
-      <change afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/MainApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/bus/EventBusDemoImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/EventBusVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/MainVerticle.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="合并示例项目">
+      <change afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/task/TaskDemoHandlerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/TaskVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/LoadConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/CronSchedulerUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/MainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/MainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/bus/EventBusDemoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/EventBusDemoImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/EventBusVerticle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/verticle/MainVerticle.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -41,6 +56,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectId" id="2RmIrsB82ZsAiCaTNtnU4eghWrt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,24 +70,28 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/example/src/main",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/example/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "模块",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.36930457",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\example\src\main\resources" />
       <recent name="D:\workspace\java\vertx-example\example\src\main" />
       <recent name="D:\workspace\java\vertx-example\common\src\main\resources" />
       <recent name="D:\workspace\java\vertx-example\common\src\test\java\com\vertx\common\bus" />
@@ -78,7 +100,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\example\src\main\kotlin\com\vertx\example" />
       <recent name="D:\workspace\java\vertx-example\common\src\main\resources\conf" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.vertx.common.task" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.vertx.common" />
@@ -97,6 +123,12 @@
       <recent name="com.vertx.common.bus" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+      <command value="mvn clean install package" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -104,62 +136,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.MainApp">
-    <configuration name="MainLaunch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.common.MainLaunch" />
-      <module name="rpc-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EventBusVerticleTest.testEventBus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rpc-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.verticle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.verticle.EventBusVerticleTest" />
-      <option name="METHOD_NAME" value="testEventBus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoadConfigTest.testLoadConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="common" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.common.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.common.config" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.common.config.LoadConfigTest" />
-      <option name="METHOD_NAME" value="testLoadConfig" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="MainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.MainApp" />
-      <module name="rpc-demo" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainLaunch" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.MainLaunch" />
-      <module name="rpc-demo" />
+      <module name="example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,20 +157,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JUnit.EventBusVerticleTest.testEventBus" />
-      <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
-      <item itemvalue="Kotlin.MainApp" />
-      <item itemvalue="Kotlin.MainLaunch" />
-      <item itemvalue="应用程序.MainLaunch" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainApp" />
-        <item itemvalue="JUnit.EventBusVerticleTest.testEventBus" />
-        <item itemvalue="应用程序.MainLaunch" />
-        <item itemvalue="Kotlin.MainLaunch" />
-        <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
+        <item itemvalue="Kotlin.MainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +173,9 @@
       <option name="presentableId" value="Default" />
       <updated>1687849036203</updated>
       <workItem from="1687849041206" duration="8373000" />
-      <workItem from="1688960538047" duration="823000" />
+      <workItem from="1688960538047" duration="5339000" />
+      <workItem from="1688970860469" duration="315000" />
+      <workItem from="1688971548118" duration="5104000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -233,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688961046031</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="合并示例项目">
+      <created>1688961648325</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688961648325</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +222,18 @@
     <MESSAGE value="init" />
     <MESSAGE value="内网ip服务发现,本地只发现本地服务" />
     <MESSAGE value="定时任务组件" />
-    <option name="LAST_COMMIT_MESSAGE" value="定时任务组件" />
+    <MESSAGE value="合并示例项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="合并示例项目" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1-sources.jar!/org/apache/logging/log4j/core/util/CronExpression.java</url>
+          <line>270</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

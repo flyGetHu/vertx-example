@@ -1,4 +1,4 @@
-package com.vertx.bus
+package com.vertx.example.bus
 
 import com.vertx.common.bus.EventBusHandler
 import io.vertx.core.AsyncResult

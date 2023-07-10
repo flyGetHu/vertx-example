@@ -1,6 +1,8 @@
 package com.vertx.common.config
 
+import cn.hutool.log.LogFactory
 import cn.hutool.log.StaticLog
+import cn.hutool.log.dialect.log4j2.Log4j2LogFactory
 import com.vertx.common.entity.AppConfig
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
@@ -21,6 +23,10 @@ lateinit var appConfig: AppConfig
  */
 object LoadConfig {
     suspend fun loadConfig(): AppConfig {
+        //配置默认的log日志对象
+        val logFactory = Log4j2LogFactory.create()
+        LogFactory.setCurrentLogFactory(logFactory)
+        StaticLog.info("初始化日志对象成功:" + logFactory.name)
         val vertx = Vertx.currentContext().owner()
         val retriever = ConfigRetriever.create(vertx)
         val jsonObject = retriever.config.await()

@@ -1,7 +1,7 @@
-package com.vertx
+package com.vertx.example
 
 import com.hazelcast.config.Config
-import com.vertx.verticle.MainVerticle
+import com.vertx.example.verticle.MainVerticle
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
@@ -20,6 +20,6 @@ object MainApp {
         val vertxOptions = VertxOptions()
         vertxOptions.setClusterManager(mgr)
         Vertx.clusteredVertx(vertxOptions)
-        Vertx.vertx().deployVerticle(MainVerticle)
+        Vertx.vertx().deployVerticle(MainVerticle::class.java.name)
     }
 }
