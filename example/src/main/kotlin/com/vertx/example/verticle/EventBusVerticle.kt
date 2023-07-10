@@ -1,9 +1,9 @@
 package com.vertx.example.verticle
 
 import cn.hutool.log.StaticLog
+import com.vertx.common.bus.BusHandler
 import com.vertx.common.bus.DemoBusHandler
 import com.vertx.example.bus.DemoBusHandlerImpl
-import com.vertx.common.bus.BusHandler
 import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 
@@ -17,7 +17,7 @@ class EventBusVerticle : CoroutineVerticle() {
      */
     override fun start(startFuture: Promise<Void>?) {
         StaticLog.info("EventBusVerticle启动类开始启动")
-//        BusHandler.register(DemoBusHandlerImpl)
+        BusHandler.register(DemoBusHandlerImpl)
         StaticLog.info("EventBusVerticle启动类启动成功")
         test()
         startFuture?.complete()
@@ -27,7 +27,7 @@ class EventBusVerticle : CoroutineVerticle() {
      * 测试
      */
     private fun test() {
-        vertx.setPeriodic(1000) {
+        vertx.setPeriodic(1000 * 5) {
             DemoBusHandler().call("vertx").onSuccess {
                 StaticLog.info("测试eventbus成功:$it")
             }.onFailure {

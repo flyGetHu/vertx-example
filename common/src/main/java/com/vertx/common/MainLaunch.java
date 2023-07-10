@@ -12,6 +12,11 @@ import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
 import java.util.Arrays;
 
 
+/**
+ * 集群启动类
+ * <p>
+ * @author huan
+ */
 public class MainLaunch extends Launcher {
 
     /**
@@ -20,7 +25,7 @@ public class MainLaunch extends Launcher {
     private final String[] CLUSTER_IPS = {"127.0.0.1"};
 
     @Override
-    public void beforeStartingVertx(VertxOptions options) {
+    public void beforeStartingVertx(VertxOptions vertxOptions) {
         Config config = new Config();
         // 获取网络配置
         NetworkConfig networkConfig = config.getNetworkConfig();
@@ -32,10 +37,11 @@ public class MainLaunch extends Launcher {
         // 添加成员节点的IP地址和端口
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         ClusterManager mgr = new HazelcastClusterManager(config);
-        options.setClusterManager(mgr);
+        vertxOptions.setClusterManager(mgr);
+        // 集群启动上下文
         JsonObject startVerticleContext = new JsonObject();
         // 读取配置文件
-        Vertx.clusteredVertx(options).compose(vertx -> {
+        Vertx.clusteredVertx(vertxOptions).compose(vertx -> {
             startVerticleContext.put("vertx", vertx);
             return com.vertx.common.config.InitVertxKt.loadConfig(vertx);
         }).compose(appConfig -> {
@@ -48,7 +54,8 @@ public class MainLaunch extends Launcher {
             final com.vertx.common.entity.Vertx configVertx = appConfig.getVertx();
             deploymentOptions.setInstances(configVertx.getInstances());
             deploymentOptions.setHa(configVertx.getHa());
-            return vertx.deployVerticle(configVertx.getVerticle(), deploymentOptions);
+            final String vertxVerticle = configVertx.getVerticle();
+            return vertx.deployVerticle(vertxVerticle, deploymentOptions);
         }).onComplete(res -> {
             if (res.succeeded()) {
                 StaticLog.info("集群启动成功");
