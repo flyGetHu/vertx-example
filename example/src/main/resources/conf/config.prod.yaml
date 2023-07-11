@@ -1,0 +1,17 @@
+server:
+  port: 3020
+database:
+  mysql:
+    url: ""
+    username: ""
+    password: ""
+    database: ""
+  redis:
+    url: ""
+    database: 0
+    password: ""
+
+vertx:
+  verticle: com.vertx.example.verticle.MainVerticle
+  instances: 1
+  ha: true

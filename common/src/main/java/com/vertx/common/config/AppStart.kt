@@ -15,23 +15,33 @@ import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 /**
  * 应用启动
  * @Author huan
+ * @param vertxOptions 集群配置  为null时使用本地开发配置,只会发现本机成员
  */
-fun appStart() {
-    val config = Config()
-    //关闭组播
-    val networkConfig = config.networkConfig
-    // 只发现本机成员,防止跨网段广播
-    networkConfig.join.multicastConfig.isEnabled = false
-    networkConfig.join.tcpIpConfig.isEnabled = true
-    networkConfig.join.tcpIpConfig.addMember("127.0.0.1")
-    val mgr: ClusterManager = HazelcastClusterManager(config)
-    val vertxOptions = VertxOptions()
-    vertxOptions.setClusterManager(mgr)
+fun appStart(vertxOptions: VertxOptions? = null) {
+    val clusteredVertxOptions: VertxOptions
+    if (vertxOptions == null) {
+        val config = Config()
+        //关闭组播
+        val networkConfig = config.networkConfig
+        // 只发现本机成员,防止跨网段广播
+        networkConfig.join.multicastConfig.isEnabled = false
+        networkConfig.join.tcpIpConfig.isEnabled = true
+        networkConfig.join.tcpIpConfig.addMember("127.0.0.1")
+        val mgr: ClusterManager = HazelcastClusterManager(config)
+        clusteredVertxOptions = VertxOptions()
+        clusteredVertxOptions.setClusterManager(mgr)
+    } else {
+        clusteredVertxOptions = vertxOptions
+        //打包则为线上环境
+        active = "prod"
+    }
     val startVerticleContext = JsonObject()
-    Vertx.clusteredVertx(vertxOptions).compose {
+    Vertx.clusteredVertx(clusteredVertxOptions).compose {
+        StaticLog.info("集群启动成功:${it.isClustered}")
         startVerticleContext.put("vertx", it);
         loadConfig(it)
     }.compose {
+        StaticLog.info("加载配置文件成功")
         startVerticleContext.put("appConfig", it);
         Future.succeededFuture<Void>()
     }.compose {
@@ -45,9 +55,9 @@ fun appStart() {
         vertx.deployVerticle(verticle, deploymentOptions)
     }.onComplete { res ->
         if (res.succeeded()) {
-            StaticLog.info("启动成功")
+            StaticLog.info("项目启动成功")
         } else {
-            StaticLog.error(res.cause(), "启动失败")
+            StaticLog.error(res.cause(), "项目启动失败")
         }
     }
 }

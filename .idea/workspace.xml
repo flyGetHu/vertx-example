@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="集群启动函数提取">
+      <change afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/AppStart.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/AppStart.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +61,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/example/src/main/resources",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/example/src/main/resources/conf",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,12 +70,13 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\example\src\main\resources\conf" />
       <recent name="D:\workspace\java\vertx-example\example\src\main\resources" />
       <recent name="D:\workspace\java\vertx-example\example\src\main" />
       <recent name="D:\workspace\java\vertx-example\common\src\main\resources" />
