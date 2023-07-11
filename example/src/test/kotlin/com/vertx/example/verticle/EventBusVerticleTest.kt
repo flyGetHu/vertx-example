@@ -37,7 +37,7 @@ class EventBusVerticleTest {
             assertTrue(result.succeeded())
             val vertx = result.result()
             CoroutineScope(vertx.dispatcher()).launch {
-                InitVertx.loadConfig(vertx)
+                InitVertx.loadConfig()
                 vertx.setPeriodic(1000 * 5) { _ ->
                     DemoBusHandler().call("vertx").onSuccess {
                         StaticLog.info("测试eventbus成功:$it")

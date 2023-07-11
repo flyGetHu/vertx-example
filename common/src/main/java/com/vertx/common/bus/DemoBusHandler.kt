@@ -13,6 +13,6 @@ open class DemoBusHandler : BusHandler<String, String> {
 
     // 在此处不应该去实现具体的逻辑,除非有默认实现,正常情况下应该是抽象方法,在具体的业务模块中重写该方法
     override suspend fun handleRequest(request: String, resultHandler: Handler<AsyncResult<String>>) {
-        TODO("Not yet implemented")
+        // 在此处不应该去实现具体的逻辑,除非有默认实现,正常情况下应该是抽象方法,在具体的业务模块中重写该方法
     }
 }

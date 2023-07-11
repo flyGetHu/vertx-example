@@ -3,7 +3,6 @@ package com.vertx.example.verticle
 import cn.hutool.log.StaticLog
 import com.vertx.common.client.MysqlClient
 import com.vertx.common.config.InitVertx
-import com.vertx.common.config.appConfig
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 import io.vertx.kotlin.coroutines.await
 import java.time.Duration
@@ -14,9 +13,9 @@ class MainVerticle : CoroutineVerticle() {
         try {
             val timer = Instant.now()
             // 加载配置
-            InitVertx.loadConfig(vertx)
+            InitVertx.loadConfig()
             // 初始化mysql
-            MysqlClient.init(vertx, appConfig.database.mysql)
+            MysqlClient.init()
             vertx.deployVerticle(EventBusVerticle::class.java.name).await()
             vertx.deployVerticle(TaskVerticle::class.java.name).await()
             vertx.deployVerticle(WebVerticle::class.java.name).await()

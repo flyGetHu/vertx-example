@@ -1,8 +1,8 @@
 package com.vertx.common.client
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.entity.Mysql
-import io.vertx.core.Vertx
+import com.vertx.common.config.appConfig
+import com.vertx.common.config.vertx
 import io.vertx.kotlin.coroutines.await
 import io.vertx.sqlclient.PoolOptions
 
@@ -19,11 +19,11 @@ object MysqlClient {
 
     /**
      * mysql客户端
-     * @param vertx vertx
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
      */
-    suspend fun init(vertx: Vertx, config: Mysql) {
+    suspend fun init() {
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
+        val config = appConfig.database.mysql
         val host = config.host
         if (host.isBlank()) {
             StaticLog.error("mysql host is blank:{}", config)

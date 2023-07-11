@@ -3,7 +3,6 @@ package com.vertx.common.config
 import cn.hutool.http.HttpStatus
 import com.vertx.common.entity.ApiError
 import com.vertx.common.entity.ApiResponse
-import com.vertx.common.entity.WebServer
 import com.vertx.common.handler.RequestInterceptor
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
@@ -48,9 +47,10 @@ fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, messag
  * 入参：vertx对象,router对象,初始化路由函数,appConfig.webServer对象
  */
 fun startHttpServer(
-    vertx: io.vertx.core.Vertx, initRouter: io.vertx.ext.web.Router.() -> Unit, serverConfig: WebServer
+    initRouter: io.vertx.ext.web.Router.() -> Unit
 ) {
     val httpServerOptions = io.vertx.core.http.HttpServerOptions()
+    val serverConfig = appConfig.webServer
     httpServerOptions.port = serverConfig.port
     httpServerOptions.host = serverConfig.host
     httpServerOptions.idleTimeout = serverConfig.timeout

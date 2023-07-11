@@ -41,8 +41,8 @@ object InitVertx {
     /**
      * 加载配置文件
      */
-    suspend fun loadConfig(vertx: Vertx): AppConfig {
-        com.vertx.common.config.vertx = vertx
+    suspend fun loadConfig(): AppConfig {
+        vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
         //配置默认的log日志对象
