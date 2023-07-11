@@ -1,12 +1,23 @@
 webserver:
   port: 3020
+  host: "0.0.0.0"
+  name: "example"
+  alpnVersions:
+    - "HTTP_2"
+    - "HTTP_1_1"
+  prefix: "/api/example/*"
+  timeout: 30000
+  logEnabled: true
+  ignorePaths:
+    - "/api/example/health"
+
 database:
   mysql:
-    host: ""
+    host: "192.168.2.234"
     port: 3306
-    username: ""
-    password: ""
-    database: ""
+    username: "integrated_dev"
+    password: "anjun123"
+    database: "integrated_dev"
     # 时间配置单位s
     maxPoolSize: 16
     idleTimeout: 30
