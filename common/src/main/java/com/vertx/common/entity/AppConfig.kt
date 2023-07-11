@@ -11,7 +11,9 @@ data class AppConfig(
     // 数据库配置
     @JsonProperty("database") val database: Database,
     // vertx配置
-    @JsonProperty("vertx") val vertx: Vertx
+    @JsonProperty("vertx") val vertx: Vertx,
+    // WEB客户端
+    @JsonProperty("webclient") val webClient: WebClient
 )
 
 /**
@@ -58,10 +60,8 @@ data class Redis(
  * vertx:
  *   main:
  *     verticle: com.vertx.example.verticle.MainVerticle
- *     worker: false
  *     instances: 1
  *     ha: false
- *     haGroup: ""
  */
 data class Vertx(
     // verticle
@@ -70,4 +70,25 @@ data class Vertx(
     @JsonProperty("instances") val instances: Int,
     // ha
     @JsonProperty("ha") val ha: Boolean,
+)
+
+/**
+ * webclient:
+ *   maxPoolSize: 16
+ *   connectTimeout: 2000
+ *   readIdleTimeout: 20000
+ *   idleTimeout: 10000
+ *   writeIdleTimeout: 10000
+ */
+data class WebClient(
+    // 最大连接数
+    @JsonProperty("maxPoolSize") val maxPoolSize: Int,
+    // 连接超时时间
+    @JsonProperty("connectTimeout") val connectTimeout: Int,
+    // 读取超时时间
+    @JsonProperty("readIdleTimeout") val readIdleTimeout: Int,
+    // 空闲超时时间
+    @JsonProperty("idleTimeout") val idleTimeout: Int,
+    // 写入超时时间
+    @JsonProperty("writeIdleTimeout") val writeIdleTimeout: Int
 )

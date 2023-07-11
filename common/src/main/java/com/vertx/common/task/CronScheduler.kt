@@ -14,7 +14,7 @@ import java.util.*
  * @param cronExpressionString cron表达式
  * &#064;Author:  huan
  */
-class CronScheduler(cronExpressionString: String?) {
+class CronScheduler(cronExpressionString: String) {
 
 
     /**

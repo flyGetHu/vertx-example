@@ -68,7 +68,6 @@ fun loadConfig(vertx: Vertx): Future<AppConfig> {
             val config = params.mapTo(AppConfig::class.java)
             appConfig = config
             promise.complete(config)
-
         } else {
             StaticLog.error("加载配置文件失败:${it.cause()}")
             promise.fail(it.cause())

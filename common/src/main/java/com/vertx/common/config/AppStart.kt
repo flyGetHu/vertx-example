@@ -2,6 +2,7 @@ package com.vertx.common.config
 
 import cn.hutool.log.StaticLog
 import com.hazelcast.config.Config
+import com.vertx.common.client.WebClient
 import com.vertx.common.entity.AppConfig
 import io.vertx.core.DeploymentOptions
 import io.vertx.core.Future
@@ -47,6 +48,9 @@ fun appStart(vertxOptions: VertxOptions? = null) {
     }.compose {
         val vertx = startVerticleContext.get<Vertx>("vertx")
         val appConfig = startVerticleContext.get<AppConfig>("appConfig")
+        //初始化webClient
+        val webClientCfg = appConfig.webClient
+        WebClient.init(webClientCfg)
         val vertxConfig = appConfig.vertx
         val deploymentOptions = DeploymentOptions()
         deploymentOptions.isHa = vertxConfig.ha

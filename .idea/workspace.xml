@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="集群启动函数提取">
-      <change afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="修改启动集群启动器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/WebClient.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/AppStart.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/AppStart.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ExampleMainApp" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="ExampleMainApp" type="JetRunConfigurationType" singleton="true" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleMainApp" />
       <module name="example" />
       <shortenClasspath name="NONE" />
@@ -242,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688995805119</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="修改启动集群启动器">
+      <created>1689039202731</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689039202731</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,8 +262,24 @@
     <MESSAGE value="内网ip服务发现,本地只发现本地服务" />
     <MESSAGE value="定时任务组件" />
     <MESSAGE value="合并示例项目" />
-    <MESSAGE value="修改启动集群启动器" />
     <MESSAGE value="集群启动函数提取" />
-    <option name="LAST_COMMIT_MESSAGE" value="集群启动函数提取" />
+    <MESSAGE value="修改启动集群启动器" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改启动集群启动器" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/AppStart.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt</url>
+          <line>67</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

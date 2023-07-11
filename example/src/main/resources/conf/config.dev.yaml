@@ -15,3 +15,10 @@ vertx:
   verticle: com.vertx.example.verticle.MainVerticle
   instances: 1
   ha: true
+
+webclient:
+  maxPoolSize: 16
+  connectTimeout: 2000
+  readIdleTimeout: 20000
+  idleTimeout: 10000
+  writeIdleTimeout: 10000
