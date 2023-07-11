@@ -63,9 +63,7 @@ fun startHttpServer(
         // 添加日志记录
         .handler {
             if (serverConfig.logEnabled) {
-                val loggerHandler =
-                    io.vertx.ext.web.handler.LoggerHandler.create(io.vertx.ext.web.handler.LoggerFormat.TINY)
-                loggerHandler.handle(it)
+                io.vertx.ext.web.handler.LoggerHandler.create(io.vertx.ext.web.handler.LoggerFormat.DEFAULT).handle(it)
             } else {
                 it.next()
             }
@@ -107,5 +105,5 @@ fun startHttpServer(
         context.errorResponse(message = "接口不支持该方法")
     }
     httpServer.requestHandler(mainRouter).listen(serverConfig.port)
-    cn.hutool.log.StaticLog.info("WebVerticle启动成功:端口:${serverConfig.port}")
+    cn.hutool.log.StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
 }

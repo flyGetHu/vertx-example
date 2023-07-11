@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="测试eventbus">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlCleitn.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/ApiResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/WebRouter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/CoroutinesTest.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="初始化web服务器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/EventBusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/EventBusVerticleTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/ExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/ExampleRouter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689045770498</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="初始化web服务器">
+      <created>1689061173169</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689061173169</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +384,7 @@
     <MESSAGE value="默认初始化webclient" />
     <MESSAGE value="打印日志" />
     <MESSAGE value="测试eventbus" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试eventbus" />
+    <MESSAGE value="初始化web服务器" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化web服务器" />
   </component>
 </project>
