@@ -3,7 +3,7 @@ package com.vertx.example.verticle
 import cn.hutool.log.StaticLog
 import com.hazelcast.config.Config
 import com.vertx.common.bus.DemoBusHandler
-import com.vertx.common.config.loadConfig
+import com.vertx.common.config.InitVertx
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
@@ -14,14 +14,14 @@ import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.extension.ExtendWith
 
 @ExtendWith(VertxExtension::class)
 class EventBusVerticleTest {
 
 
-    @Test
+    @RepeatedTest(3)
     fun test(testContext: VertxTestContext) {
         val config = Config()
         //关闭组播
@@ -37,7 +37,7 @@ class EventBusVerticleTest {
             assertTrue(result.succeeded())
             val vertx = result.result()
             CoroutineScope(vertx.dispatcher()).launch {
-                loadConfig(vertx)
+                InitVertx.loadConfig(vertx)
                 vertx.setPeriodic(1000 * 5) { _ ->
                     DemoBusHandler().call("vertx").onSuccess {
                         StaticLog.info("测试eventbus成功:$it")

@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="打印日志">
-      <change afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/EventBusVerticleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="测试eventbus">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlCleitn.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/ApiResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/WebRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/CoroutinesTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/EventBusVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/TaskVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/TaskVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/InitVertx.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/EventBusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/EventBusVerticleTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +31,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -128,7 +139,39 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EventBusVerticleTest.test (1)">
+  <component name="RunManager" selected="Kotlin.ExampleMainApp">
+    <configuration name="CoroutinesTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.example.verticle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.CoroutinesTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoroutinesTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.example.verticle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.CoroutinesTest" />
+      <option name="METHOD_NAME" value="test(io.vertx.core.Vertx,io.vertx.junit5.VertxTestContext)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EventBusVerticleTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example" />
       <extension name="coverage">
@@ -184,9 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleMainApp" />
+        <item itemvalue="JUnit.CoroutinesTest.test (1)" />
+        <item itemvalue="JUnit.CoroutinesTest.test" />
         <item itemvalue="JUnit.EventBusVerticleTest.test (1)" />
         <item itemvalue="JUnit.EventBusVerticleTest.test" />
-        <item itemvalue="Kotlin.ExampleMainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689044228046</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="测试eventbus">
+      <created>1689045770498</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689045770498</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +390,7 @@
     <MESSAGE value="修改启动集群启动器" />
     <MESSAGE value="默认初始化webclient" />
     <MESSAGE value="打印日志" />
-    <option name="LAST_COMMIT_MESSAGE" value="打印日志" />
+    <MESSAGE value="测试eventbus" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试eventbus" />
   </component>
 </project>
