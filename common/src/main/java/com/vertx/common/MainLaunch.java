@@ -8,6 +8,7 @@ import com.vertx.common.config.VertxLoadConfigKt;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
+import io.vertx.core.eventbus.EventBusOptions;
 import io.vertx.core.impl.launcher.VertxCommandLauncher;
 import io.vertx.core.impl.launcher.VertxLifecycleHooks;
 import io.vertx.core.json.JsonObject;
@@ -15,6 +16,7 @@ import io.vertx.core.spi.cluster.ClusterManager;
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -27,7 +29,8 @@ import java.util.Arrays;
 public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHooks {
 
     /**
-     * 定义集群成员IP地址
+     * 定义线上集群成员IP地址
+     * <p>
      */
     private final String[] CLUSTER_IPS = {"127.0.0.1"};
 
@@ -50,6 +53,13 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         final ClusterManager mgr = new HazelcastClusterManager(config);
         vertxOptions.setClusterManager(mgr);
+        final EventBusOptions eventBusOptions = vertxOptions.getEventBusOptions();
+        // 设置bus集群超时时间
+        eventBusOptions.setConnectTimeout(1000 * 5);
+        // 设置集群ping时间
+        eventBusOptions.setClusterPingInterval(TimeUnit.SECONDS.toMillis(10));
+        // 设置集群ping回复时间
+        eventBusOptions.setClusterPingReplyInterval(TimeUnit.SECONDS.toMillis(10));
         // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
         VertxLoadConfigKt.setActive("prod");
     }
