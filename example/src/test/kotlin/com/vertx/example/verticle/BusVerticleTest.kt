@@ -3,7 +3,7 @@ package com.vertx.example.verticle
 import cn.hutool.log.StaticLog
 import com.hazelcast.config.Config
 import com.vertx.common.bus.DemoBusHandler
-import com.vertx.common.config.InitVertx
+import com.vertx.common.config.VertxLoadConfig
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
@@ -37,7 +37,7 @@ class BusVerticleTest {
             assertTrue(result.succeeded())
             val vertx = result.result()
             CoroutineScope(vertx.dispatcher()).launch {
-                InitVertx.loadConfig()
+                VertxLoadConfig.init()
                 vertx.setPeriodic(1000 * 5) { _ ->
                     DemoBusHandler().call("vertx").onSuccess {
                         StaticLog.info("测试eventbus成功:$it")

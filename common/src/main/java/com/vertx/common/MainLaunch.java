@@ -4,7 +4,7 @@ import cn.hutool.log.StaticLog;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
-import com.vertx.common.config.VertxConfigKt;
+import com.vertx.common.config.VertxLoadConfigKt;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -51,7 +51,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         final ClusterManager mgr = new HazelcastClusterManager(config);
         vertxOptions.setClusterManager(mgr);
         // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
-        VertxConfigKt.setActive("prod");
+        VertxLoadConfigKt.setActive("prod");
     }
 
     @Override

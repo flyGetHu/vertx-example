@@ -36,12 +36,12 @@ lateinit var eventBus: EventBus
  */
 lateinit var sharedData: SharedData
 
-object InitVertx {
+object VertxLoadConfig {
 
     /**
      * 加载配置文件
      */
-    suspend fun loadConfig(): AppConfig {
+    suspend fun init() {
         vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
@@ -68,6 +68,5 @@ object InitVertx {
         val webClientCfg = config.webClient
         WebClient.init(webClientCfg)
         appConfig = config
-        return config
     }
 }
