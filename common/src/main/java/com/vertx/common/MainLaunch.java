@@ -50,7 +50,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         final ClusterManager mgr = new HazelcastClusterManager(config);
         vertxOptions.setClusterManager(mgr);
-        // 配置打包线上配置
+        // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
         InitVertxKt.setActive("prod");
     }
 
