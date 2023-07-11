@@ -51,7 +51,7 @@ interface BusHandler<Request, Response> {
                 promise.complete(body)
             } else {
                 promise.fail(ar.cause())
-                StaticLog.error(ar.cause(), "${this.address}服务调用失败")
+                StaticLog.error(ar.cause(), "RPC服务调用失败:${this.address}")
             }
         }
         return promise.future()
@@ -75,7 +75,7 @@ interface BusHandler<Request, Response> {
                             message.reply(ar.result())
                         } else {
                             message.fail(HttpStatus.HTTP_INTERNAL_ERROR, ar.cause().message)
-                            StaticLog.error(ar.cause(), "${service.address}服务处理失败")
+                            StaticLog.error(ar.cause(), "RPC服务处理失败:${service.address}")
                         }
                     }
                 }

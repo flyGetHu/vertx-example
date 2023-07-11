@@ -33,7 +33,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
 
     @Override
     public void afterConfigParsed(JsonObject config) {
-        StaticLog.info("执行钩子函数:{}\n{}", "afterConfigParsed", config.encode());
+        StaticLog.info("执行钩子函数:{}/{}", "afterConfigParsed", config.encode());
     }
 
     @Override
