@@ -1,5 +1,7 @@
 package com.vertx.common.client
 
+import com.vertx.common.config.vertx
+
 // WEB客户端
 lateinit var webClient: io.vertx.ext.web.client.WebClient
 
@@ -29,6 +31,6 @@ object WebClient {
         webClientOptions.setTrustAll(true)
         webClientOptions.setMaxPoolSize(config.maxPoolSize)
         webClientOptions.setUserAgent("vertx-web-client")
-        webClient = io.vertx.ext.web.client.WebClient.create(io.vertx.core.Vertx.vertx(), webClientOptions)
+        webClient = io.vertx.ext.web.client.WebClient.create(vertx, webClientOptions)
     }
 }

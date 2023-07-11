@@ -4,11 +4,8 @@ import cn.hutool.log.StaticLog;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
-import com.vertx.common.config.AppStartKt;
 import com.vertx.common.config.InitVertxKt;
-import com.vertx.common.entity.AppConfig;
 import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.impl.launcher.VertxCommandLauncher;
@@ -23,6 +20,7 @@ import java.util.Arrays;
 /**
  * 集群启动类
  * <p>
+ * java -jar example-fat.jar -cluster --vertx-id=example-service
  *
  * @author huan
  */
@@ -35,7 +33,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
 
     @Override
     public void afterConfigParsed(JsonObject config) {
-        StaticLog.info("执行钩子函数:{}", "afterConfigParsed");
+        StaticLog.info("执行钩子函数:{}\n{}", "afterConfigParsed", config.encode());
     }
 
     @Override
@@ -52,19 +50,20 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         final ClusterManager mgr = new HazelcastClusterManager(config);
         vertxOptions.setClusterManager(mgr);
-        AppStartKt.appStart(vertxOptions);
+        // 配置打包线上配置
+        InitVertxKt.setActive("prod");
     }
 
     @Override
     public void afterStartingVertx(Vertx vertx) {
-        StaticLog.info("执行钩子函数:{}", "afterStartingVertx");
+        StaticLog.info("执行钩子函数:{},{}", "afterStartingVertx", vertx.isClustered());
     }
 
     @Override
     public void beforeDeployingVerticle(DeploymentOptions deploymentOptions) {
         StaticLog.info("执行钩子函数:{}", "beforeDeployingVerticle");
-        // 设置实例数量为0 防止重复启动 目前没找到更好的解决方案
-        deploymentOptions.setInstances(0);
+        deploymentOptions.setInstances(1);
+        deploymentOptions.setHa(true);
     }
 
     @Override
