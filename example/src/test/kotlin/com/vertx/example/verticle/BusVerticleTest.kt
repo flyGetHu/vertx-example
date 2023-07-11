@@ -18,7 +18,7 @@ import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.extension.ExtendWith
 
 @ExtendWith(VertxExtension::class)
-class EventBusVerticleTest {
+class BusVerticleTest {
 
 
     @RepeatedTest(3)

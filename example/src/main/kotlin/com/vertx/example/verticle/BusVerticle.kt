@@ -8,7 +8,7 @@ import io.vertx.kotlin.coroutines.CoroutineVerticle
 /**
  * 事件总线启动类
  */
-class EventBusVerticle : CoroutineVerticle() {
+class BusVerticle : CoroutineVerticle() {
 
     override suspend fun start() {
         StaticLog.info("EventBusVerticle启动类开始启动")

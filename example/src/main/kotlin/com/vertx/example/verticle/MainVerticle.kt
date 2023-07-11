@@ -16,7 +16,7 @@ class MainVerticle : CoroutineVerticle() {
             InitVertx.loadConfig()
             // 初始化mysql
             MysqlClient.init()
-            vertx.deployVerticle(EventBusVerticle::class.java.name).await()
+            vertx.deployVerticle(BusVerticle::class.java.name).await()
             vertx.deployVerticle(TaskVerticle::class.java.name).await()
             vertx.deployVerticle(WebVerticle::class.java.name).await()
             StaticLog.info("启动示例项目成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
