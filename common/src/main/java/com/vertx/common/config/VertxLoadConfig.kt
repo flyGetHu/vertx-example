@@ -45,6 +45,7 @@ object VertxLoadConfig {
         vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
+        StaticLog.info("项目是否为集群环境:${vertx.isClustered}")
         //配置默认的log日志对象
         val logFactory = Log4j2LogFactory.create()
         LogFactory.setCurrentLogFactory(logFactory)

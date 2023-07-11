@@ -9,6 +9,7 @@ import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
 import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
+import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 import kotlinx.coroutines.CoroutineScope
@@ -36,19 +37,27 @@ class BusVerticleTest {
         Vertx.clusteredVertx(vertxOptions).onComplete { result ->
             assertTrue(result.succeeded())
             val vertx = result.result()
+            val sharedData = vertx.sharedData()
             CoroutineScope(vertx.dispatcher()).launch {
                 VertxLoadConfig.init()
-                vertx.setPeriodic(1000 * 5) { _ ->
-                    DemoBusHandler().call("vertx").onSuccess {
-                        StaticLog.info("测试eventbus成功:$it")
-                        testContext.completeNow()
-                    }.onFailure {
-                        StaticLog.error("测试eventbus失败:$it")
-                        testContext.failNow(it)
+                //测试计数器
+                val counter = sharedData.getCounter("counter").await()
+                vertx.setPeriodic(100) { _ ->
+                    CoroutineScope(vertx.dispatcher()).launch {
+                        val count = counter.decrementAndGet().await()
+                        if (count < 10) {
+                            testContext.completeNow()
+                        }
+                        DemoBusHandler().call("vertx").onSuccess {
+                            StaticLog.info("测试eventbus成功:$it")
+                        }.onFailure {
+                            StaticLog.error("测试eventbus失败:$it")
+                            testContext.failNow(it)
+                        }
                     }
                 }
             }
         }
-        testContext.awaitCompletion(10, java.util.concurrent.TimeUnit.SECONDS)
+        testContext.awaitCompletion(100, java.util.concurrent.TimeUnit.SECONDS)
     }
 }
