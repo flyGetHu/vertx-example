@@ -56,6 +56,10 @@ object VertxWebConfig {
         httpServerOptions.host = serverConfig.host
         httpServerOptions.idleTimeout = serverConfig.timeout
         httpServerOptions.alpnVersions = serverConfig.alpnVersions
+        // 开启gzip压缩
+        httpServerOptions.isCompressionSupported = serverConfig.compressionSupported
+        // 压缩等级
+        httpServerOptions.compressionLevel = serverConfig.compressionLevel
         val httpServer = vertx.createHttpServer(httpServerOptions)
         val mainRouter = io.vertx.ext.web.Router.router(vertx)
         mainRouter.route("/*")

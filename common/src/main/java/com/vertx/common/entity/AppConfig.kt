@@ -52,6 +52,10 @@ data class WebServer(
     @JsonProperty("logEnabled") val logEnabled: Boolean = true,
     // 不进行请求拦截的地址
     @JsonProperty("ignorePaths") val ignorePaths: List<String> = listOf(),
+    // 是否开启gzip压缩
+    @JsonProperty("compressionSupported") val compressionSupported: Boolean = true,
+    // 压缩等级
+    @JsonProperty("compressionLevel") val compressionLevel: Int = 6,
 )
 
 /**
