@@ -33,11 +33,20 @@ fun RoutingContext.jsonResponse(response: Any) {
 }
 
 
+/**
+ * 成功响应
+ * @param data 响应数据
+ */
 fun RoutingContext.successResponse(data: Any) {
     val response = ApiResponse(success = true, data = data)
     jsonResponse(response)
 }
 
+/**
+ * 失败响应
+ * @param code 响应码 默认400
+ * @param message 响应消息
+ */
 fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, message: String) {
     val error = ApiError(code, message)
     val response = ApiResponse(success = false, data = null, error = error)

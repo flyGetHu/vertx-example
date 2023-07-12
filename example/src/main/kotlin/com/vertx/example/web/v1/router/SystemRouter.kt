@@ -1,14 +1,21 @@
-package com.vertx.example.web
+package com.vertx.example.web.v1.router
 
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.launchCoroutine
 import com.vertx.common.config.successResponse
 import io.vertx.ext.web.Router
 
-object ExampleRouter {
+/**
+ * 系统路由
+ */
+object SystemRouter {
 
+    /**
+     * 初始化路由
+     */
     fun init(router: Router) {
-        router.get("/").launchCoroutine {
+        // 获取系统配置
+        router.get("/app/config").launchCoroutine {
             it.successResponse(appConfig)
         }
     }

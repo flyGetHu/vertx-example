@@ -1,5 +1,6 @@
 package com.vertx.example.web
 
+import com.vertx.example.web.v1.V1RouterGroup
 import io.vertx.ext.web.Router
 
 /**
@@ -11,6 +12,6 @@ object WebRouter {
      * 初始化路由
      */
     fun init(router: Router) {
-        ExampleRouter.init(router)
+        V1RouterGroup.init(router)
     }
 }
