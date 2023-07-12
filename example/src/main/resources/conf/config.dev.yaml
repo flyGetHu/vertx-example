@@ -5,7 +5,7 @@ webserver:
   alpnVersions:
     - "HTTP_2"
     - "HTTP_1_1"
-  prefix: "/api/example/*"
+  prefix: "/api/*"
   timeout: 30000
   logEnabled: true
   ignorePaths:
