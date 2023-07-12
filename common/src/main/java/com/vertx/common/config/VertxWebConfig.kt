@@ -42,68 +42,71 @@ fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, messag
     jsonResponse(response)
 }
 
-/**
- * 启动httpserver
- * 入参：vertx对象,router对象,初始化路由函数,appConfig.webServer对象
- */
-fun startHttpServer(
-    initRouter: io.vertx.ext.web.Router.() -> Unit
-) {
-    val httpServerOptions = io.vertx.core.http.HttpServerOptions()
-    val serverConfig = appConfig.webServer
-    httpServerOptions.port = serverConfig.port
-    httpServerOptions.host = serverConfig.host
-    httpServerOptions.idleTimeout = serverConfig.timeout
-    httpServerOptions.alpnVersions = serverConfig.alpnVersions
-    val httpServer = vertx.createHttpServer(httpServerOptions)
-    val mainRouter = io.vertx.ext.web.Router.router(vertx)
-    mainRouter.route("/*")
-        // 添加跨域处理
-        .handler(io.vertx.ext.web.handler.CorsHandler.create())
-        // 添加日志记录
-        .handler {
-            if (serverConfig.logEnabled) {
-                io.vertx.ext.web.handler.LoggerHandler.create(io.vertx.ext.web.handler.LoggerFormat.DEFAULT).handle(it)
-            } else {
-                it.next()
+object VertxWebConfig {
+    /**
+     * 启动httpserver
+     * 入参：vertx对象,router对象,初始化路由函数,appConfig.webServer对象
+     */
+    fun startHttpServer(
+        initRouter: io.vertx.ext.web.Router.() -> Unit
+    ) {
+        val httpServerOptions = io.vertx.core.http.HttpServerOptions()
+        val serverConfig = appConfig.webServer
+        httpServerOptions.port = serverConfig.port
+        httpServerOptions.host = serverConfig.host
+        httpServerOptions.idleTimeout = serverConfig.timeout
+        httpServerOptions.alpnVersions = serverConfig.alpnVersions
+        val httpServer = vertx.createHttpServer(httpServerOptions)
+        val mainRouter = io.vertx.ext.web.Router.router(vertx)
+        mainRouter.route("/*")
+            // 添加跨域处理
+            .handler(io.vertx.ext.web.handler.CorsHandler.create())
+            // 添加日志记录
+            .handler {
+                if (serverConfig.logEnabled) {
+                    io.vertx.ext.web.handler.LoggerHandler.create(io.vertx.ext.web.handler.LoggerFormat.DEFAULT)
+                        .handle(it)
+                } else {
+                    it.next()
+                }
             }
+            // 添加请求拦截器
+            .handler(RequestInterceptor())
+        val router = io.vertx.ext.web.Router.router(vertx)
+        // 初始化路由
+        initRouter(router)
+        mainRouter.route(serverConfig.prefix).subRouter(router)
+        // 统一处理异常
+        mainRouter.errorHandler(HttpStatus.HTTP_INTERNAL_ERROR) { context: RoutingContext ->
+            cn.hutool.log.StaticLog.error(context.failure(), "接口异常:{}", context.request().path())
+            context.errorResponse(message = "接口异常")
         }
-        // 添加请求拦截器
-        .handler(RequestInterceptor())
-    val router = io.vertx.ext.web.Router.router(vertx)
-    // 初始化路由
-    initRouter(router)
-    mainRouter.route(serverConfig.prefix).subRouter(router)
-    // 统一处理异常
-    mainRouter.errorHandler(HttpStatus.HTTP_INTERNAL_ERROR) { context: RoutingContext ->
-        cn.hutool.log.StaticLog.error(context.failure(), "接口异常:{}", context.request().path())
-        context.errorResponse(message = "接口异常")
+        // 超时异常处理
+        mainRouter.errorHandler(HttpStatus.HTTP_UNAVAILABLE) { context: RoutingContext ->
+            cn.hutool.log.StaticLog.error(context.failure(), "接口超时:{}", context.request().path())
+            context.errorResponse(message = "接口超时")
+        }
+        // 404异常处理
+        mainRouter.errorHandler(HttpStatus.HTTP_NOT_FOUND) { context: RoutingContext ->
+            cn.hutool.log.StaticLog.error(
+                context.failure(),
+                "接口不存在{}:{}",
+                context.request().method(),
+                context.request().path()
+            )
+            context.errorResponse(message = "接口不存在")
+        }
+        // 405异常处理
+        mainRouter.errorHandler(HttpStatus.HTTP_BAD_METHOD) { context: RoutingContext ->
+            cn.hutool.log.StaticLog.error(
+                context.failure(),
+                "接口不支持该方法{}:{}",
+                context.request().method(),
+                context.request().path()
+            )
+            context.errorResponse(message = "接口不支持该方法")
+        }
+        httpServer.requestHandler(mainRouter).listen(serverConfig.port)
+        cn.hutool.log.StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
     }
-    // 超时异常处理
-    mainRouter.errorHandler(HttpStatus.HTTP_UNAVAILABLE) { context: RoutingContext ->
-        cn.hutool.log.StaticLog.error(context.failure(), "接口超时:{}", context.request().path())
-        context.errorResponse(message = "接口超时")
-    }
-    // 404异常处理
-    mainRouter.errorHandler(HttpStatus.HTTP_NOT_FOUND) { context: RoutingContext ->
-        cn.hutool.log.StaticLog.error(
-            context.failure(),
-            "接口不存在{}:{}",
-            context.request().method(),
-            context.request().path()
-        )
-        context.errorResponse(message = "接口不存在")
-    }
-    // 405异常处理
-    mainRouter.errorHandler(HttpStatus.HTTP_BAD_METHOD) { context: RoutingContext ->
-        cn.hutool.log.StaticLog.error(
-            context.failure(),
-            "接口不支持该方法{}:{}",
-            context.request().method(),
-            context.request().path()
-        )
-        context.errorResponse(message = "接口不支持该方法")
-    }
-    httpServer.requestHandler(mainRouter).listen(serverConfig.port)
-    cn.hutool.log.StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
 }
