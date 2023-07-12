@@ -38,13 +38,23 @@ object MysqlClient {
         // 时区
         mySQLConnectOptions.properties["serverTimezone"] = config.timezone
         // 重试策略
+        // 重试次数
         mySQLConnectOptions.reconnectAttempts = 30
+        // 重试间隔
         mySQLConnectOptions.reconnectInterval = 1000
+        // 连接池
         val poolOptions = PoolOptions()
+        // 连接池名称 用于日志
+        poolOptions.name = "mysql-pool-${appConfig.app.name}-${appConfig.app.version}"
+        // 最大连接数
         poolOptions.maxSize = config.maxPoolSize
+        // 空闲连接超时时间
         poolOptions.idleTimeout = config.idleTimeout
+        // 连接超时时间
         poolOptions.connectionTimeout = config.connectionTimeout
+        // 最大生命周期
         poolOptions.maxLifetime = config.maxLifetime
+        // 最大等待队列大小
         poolOptions.maxWaitQueueSize = config.maxWaitQueueSize
         val client = io.vertx.mysqlclient.MySQLPool.pool(vertx, mySQLConnectOptions, poolOptions)
         //测试连接

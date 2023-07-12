@@ -7,6 +7,8 @@ import io.vertx.core.http.HttpVersion
  * 配置文件
  */
 data class AppConfig(
+    // app配置
+    @JsonProperty("app") val app: App,
     // 服务配置
     @JsonProperty("webServer") val webServer: WebServer,
     // 数据库配置
@@ -18,6 +20,18 @@ data class AppConfig(
 )
 
 /**
+ * 应用配置
+ */
+data class App(
+    // 应用名称
+    @JsonProperty("name") val name: String,
+    // 应用版本
+    @JsonProperty("version") val version: String,
+    // 应用描述
+    @JsonProperty("description") val description: String,
+)
+
+/**
  * 服务配置
  */
 data class WebServer(
@@ -25,8 +39,6 @@ data class WebServer(
     @JsonProperty("port") val port: Int,
     // 服务地址
     @JsonProperty("host") val host: String = "0.0.0.0",
-    // 服务名称
-    @JsonProperty("name") val name: String = "vertx",
     // 服务版本 alpnVersions
     @JsonProperty("alpnVersions") val alpnVersions: List<HttpVersion> = listOf(
         HttpVersion.HTTP_2,

@@ -1,7 +1,10 @@
+app: # 应用配置
+  name: "example" # 应用名称
+  version: "1.0.0" # 应用版本
+  description: "示例项目" # 应用描述
 webServer: # web服务配置
   port: 3020 # 服务端口
   host: "0.0.0.0" # 服务绑定的ip
-  name: "example" # 服务名称
   alpnVersions: # 支持的协议版本
     - "HTTP_2"
     - "HTTP_1_1"

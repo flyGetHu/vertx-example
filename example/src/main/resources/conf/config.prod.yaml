@@ -1,39 +1,42 @@
-webServer:
-  port: 3020
-  host: "0.0.0.0"
-  name: "example"
-  alpnVersions:
+app: # 应用配置
+  name: "example" # 应用名称
+  version: "1.0.0" # 应用版本
+  description: "示例项目" # 应用描述
+webServer: # web服务配置
+  port: 3020 # 服务端口
+  host: "0.0.0.0" # 服务绑定的ip
+  alpnVersions: # 支持的协议版本
     - "HTTP_2"
     - "HTTP_1_1"
-  prefix: "/api/*"
-  timeout: 30000
-  logEnabled: true
-  ignorePaths:
+  prefix: "/api/*" # 路由前缀
+  timeout: 30000 # web请求超时时间
+  logEnabled: true # 是否开启日志
+  ignorePaths: # 忽略的路径
     - "/api/example/health"
 
-database:
-  mysql:
-    host: "192.168.2.234"
-    port: 3306
-    username: "integrated_dev"
-    password: "anjun123"
-    database: "integrated_dev"
-    charset: "utf8mb4"
-    timezone: "Asia/Shanghai"
-    maxPoolSize: 16
-    idleTimeout: 30
-    connectionTimeout: 2
-    maxLifetime: 1800
-    maxWaitQueueSize: 5000
+database: # 数据库配置
+  mysql: # mysql数据库配置
+    host: "192.168.2.234" # 数据库地址
+    port: 3306 # 数据库端口
+    username: "integrated_dev" # 数据库用户名
+    password: "anjun123" # 数据库密码
+    database: "integrated_dev" # 数据库名称
+    charset: "utf8mb4" # 数据库编码
+    timezone: "Asia/Shanghai" # 数据库时区
+    maxPoolSize: 16 # 最大连接数 时间配置单位s
+    idleTimeout: 30 # 空闲连接超时时间
+    connectionTimeout: 2 # 连接超时时间
+    maxLifetime: 1800 # 连接最大生命周期
+    maxWaitQueueSize: 5000 # 最大等待队列数
 
-vertx:
-  verticle: com.vertx.example.verticle.MainVerticle
-  instances: 1
-  ha: true
+vertx: # vertx配置
+  verticle: com.vertx.example.verticle.MainVerticle # verticle类
+  instances: 1 # verticle实例数
+  ha: true # 是否开启ha
 
-webClient:
-  maxPoolSize: 16
-  connectTimeout: 2000
-  readIdleTimeout: 20000
-  idleTimeout: 10000
-  writeIdleTimeout: 10000
+webClient: # web客户端配置
+  maxPoolSize: 16 # 最大连接数
+  connectTimeout: 2000 # 连接超时时间
+  readIdleTimeout: 20000 # 读取超时时间
+  idleTimeout: 10000 # 空闲连接超时时间
+  writeIdleTimeout: 10000 # 写入超时时间
