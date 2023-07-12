@@ -48,12 +48,8 @@ class BusVerticleTest {
                         if (count < 10) {
                             testContext.completeNow()
                         }
-                        DemoBusHandler().call("vertx").onSuccess {
-                            StaticLog.info("测试eventbus成功:$it")
-                        }.onFailure {
-                            StaticLog.error("测试eventbus失败:$it")
-                            testContext.failNow(it)
-                        }
+                        val appConfig = DemoBusHandler().call("vertx").await()
+                        StaticLog.info("appConfig:{}", appConfig)
                     }
                 }
             }

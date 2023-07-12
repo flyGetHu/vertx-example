@@ -8,13 +8,13 @@ import io.vertx.core.http.HttpVersion
  */
 data class AppConfig(
     // 服务配置
-    @JsonProperty("webserver") val webServer: WebServer,
+    @JsonProperty("webServer") val webServer: WebServer,
     // 数据库配置
     @JsonProperty("database") val database: Database,
     // vertx配置
     @JsonProperty("vertx") val vertx: Vertx,
     // WEB客户端
-    @JsonProperty("webclient") val webClient: WebClient
+    @JsonProperty("webClient") val webClient: WebClient
 )
 
 /**

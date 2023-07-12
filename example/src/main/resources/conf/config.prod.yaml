@@ -1,4 +1,4 @@
-webserver:
+webServer:
   port: 3020
   host: "0.0.0.0"
   name: "example"
@@ -30,7 +30,7 @@ vertx:
   instances: 1
   ha: true
 
-webclient:
+webClient:
   maxPoolSize: 16
   connectTimeout: 2000
   readIdleTimeout: 20000

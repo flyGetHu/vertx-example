@@ -9,6 +9,7 @@ import io.vertx.core.Future
 import io.vertx.core.Handler
 import io.vertx.core.Promise
 import io.vertx.core.eventbus.Message
+import io.vertx.core.json.Json
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -26,6 +27,19 @@ import kotlinx.coroutines.launch
  * @constructor
  */
 interface BusHandler<Request, Response> {
+
+    /**
+     * 在 Kotlin 接口中，由于泛型擦除的限制，
+     * 无法直接获取泛型类型的具体信息。
+     * 但是你可以通过传递一个Class对象来获取具体的响应类型。
+     * The class of the request
+     */
+    val requestClass: Class<Request>
+
+    /**
+     * The class of the request
+     */
+    val responseClass: Class<Response>
 
 
     /**
@@ -45,10 +59,18 @@ interface BusHandler<Request, Response> {
      */
     fun call(request: Request): Future<Response> {
         val promise = Promise.promise<Response>()
-        eventBus.request(this.address, request) { ar: AsyncResult<Message<Response>> ->
+        eventBus.request(this.address, request) { ar: AsyncResult<Message<String>> ->
             if (ar.succeeded()) {
-                val body = ar.result().body()
-                promise.complete(body)
+                val result = ar.result()
+                val body = result.body()
+                //获取Response的泛型类型
+                try {
+                    val response = Json.decodeValue(body, responseClass)
+                    promise.complete(response)
+                } catch (e: Exception) {
+                    promise.fail(e)
+                    StaticLog.error(e, "RPC服务序列化响应对象失败:${this.address}\n${responseClass}\n${body}/")
+                }
             } else {
                 promise.fail(ar.cause())
                 StaticLog.error(ar.cause(), "RPC服务调用失败:${this.address}")
@@ -72,7 +94,8 @@ interface BusHandler<Request, Response> {
                     val request = message.body()
                     service.handleRequest(request) { ar: AsyncResult<Response> ->
                         if (ar.succeeded()) {
-                            message.reply(ar.result())
+                            val result = ar.result()
+                            message.reply(Json.encode(result))
                         } else {
                             message.fail(HttpStatus.HTTP_INTERNAL_ERROR, ar.cause().message)
                             StaticLog.error(ar.cause(), "RPC服务处理失败:${service.address}")

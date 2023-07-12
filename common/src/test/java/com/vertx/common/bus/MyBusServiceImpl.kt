@@ -5,6 +5,8 @@ import io.vertx.core.Future
 import io.vertx.core.Handler
 
 object MyBusServiceImpl : BusHandler<String, String> {
+    override val requestClass: Class<String> = String::class.java
+    override val responseClass: Class<String> = String::class.java
     override val address: String = "test://test"
 
 
