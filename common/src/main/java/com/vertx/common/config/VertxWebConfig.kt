@@ -7,6 +7,8 @@ import com.vertx.common.handler.RequestInterceptor
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
+import io.vertx.ext.web.handler.LoggerFormat
+import io.vertx.ext.web.handler.LoggerHandler
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -68,8 +70,7 @@ object VertxWebConfig {
             // 添加日志记录
             .handler {
                 if (serverConfig.logEnabled) {
-                    io.vertx.ext.web.handler.LoggerHandler.create(io.vertx.ext.web.handler.LoggerFormat.DEFAULT)
-                        .handle(it)
+                    loggerHandler().handle(it)
                 } else {
                     it.next()
                 }
@@ -106,5 +107,29 @@ object VertxWebConfig {
         }
         httpServer.requestHandler(mainRouter).listen(serverConfig.port)
         cn.hutool.log.StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
+    }
+
+    /**
+     * 日志记录
+     */
+    private fun loggerHandler(): LoggerHandler {
+        val loggerHandler = LoggerHandler.create(LoggerFormat.CUSTOM)
+        loggerHandler.customFormatter { routingContext, ms ->
+            val request = routingContext.request()
+            val response = routingContext.response()
+            val statusCode = response.statusCode
+            val remoteAddress = request.remoteAddress()
+            val version = request.version()
+            val method = request.method()
+            val path = request.path()
+            val bytesWritten = request.response().bytesWritten()
+            val userAgent = request.headers().get("user-agent")
+            // 自定义日志格式 json格式
+            val message = """
+                    {"remoteAddress":"$remoteAddress","version":"$version","method":"$method","path":"$path","statusCode":$statusCode,"bytesWritten":$bytesWritten,"userAgent":"$userAgent","ms":$ms}
+                """.trimIndent()
+            message
+        }
+        return loggerHandler
     }
 }
