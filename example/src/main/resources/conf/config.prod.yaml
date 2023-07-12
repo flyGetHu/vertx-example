@@ -18,7 +18,7 @@ database:
     username: "integrated_dev"
     password: "anjun123"
     database: "integrated_dev"
-    # 时间配置单位s
+    charset: "utf8mb4"
     maxPoolSize: 16
     idleTimeout: 30
     connectionTimeout: 2

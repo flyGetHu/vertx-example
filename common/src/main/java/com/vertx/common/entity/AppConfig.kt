@@ -62,6 +62,9 @@ data class Mysql(
     @JsonProperty("password") val password: String,
     // 数据库名称
     @JsonProperty("database") val database: String,
+    // 数据库编码格式
+    @JsonProperty("charset") val charset: String = "utf8mb4",
+    // 连接池配置
     // 最大连接数
     @JsonProperty("maxPoolSize") val maxPoolSize: Int,
     // 空闲超时时间

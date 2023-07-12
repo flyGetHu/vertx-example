@@ -34,6 +34,7 @@ object MysqlClient {
         mySQLConnectOptions.user = config.username
         mySQLConnectOptions.password = config.password
         mySQLConnectOptions.database = config.database
+        mySQLConnectOptions.charset = config.charset
         // 重试策略
         mySQLConnectOptions.reconnectAttempts = 30
         mySQLConnectOptions.reconnectInterval = 1000

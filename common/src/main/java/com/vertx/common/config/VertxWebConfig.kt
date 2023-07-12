@@ -45,7 +45,7 @@ fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, messag
 object VertxWebConfig {
     /**
      * 启动httpserver
-     * 入参：vertx对象,router对象,初始化路由函数,appConfig.webServer对象
+     * @param initRouter 初始化路由主函数
      */
     fun startHttpServer(
         initRouter: io.vertx.ext.web.Router.() -> Unit
@@ -89,20 +89,14 @@ object VertxWebConfig {
         // 404异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_NOT_FOUND) { context: RoutingContext ->
             cn.hutool.log.StaticLog.error(
-                context.failure(),
-                "接口不存在{}:{}",
-                context.request().method(),
-                context.request().path()
+                context.failure(), "接口不存在{}:{}", context.request().method(), context.request().path()
             )
             context.errorResponse(message = "接口不存在")
         }
         // 405异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_BAD_METHOD) { context: RoutingContext ->
             cn.hutool.log.StaticLog.error(
-                context.failure(),
-                "接口不支持该方法{}:{}",
-                context.request().method(),
-                context.request().path()
+                context.failure(), "接口不支持该方法{}:{}", context.request().method(), context.request().path()
             )
             context.errorResponse(message = "接口不支持该方法")
         }
