@@ -64,6 +64,8 @@ data class Mysql(
     @JsonProperty("database") val database: String,
     // 数据库编码格式
     @JsonProperty("charset") val charset: String = "utf8mb4",
+    // 时区
+    @JsonProperty("timezone") val timezone: String = "UTC",
     // 连接池配置
     // 最大连接数
     @JsonProperty("maxPoolSize") val maxPoolSize: Int,

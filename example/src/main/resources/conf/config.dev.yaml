@@ -19,6 +19,7 @@ database: # 数据库配置
     password: "anjun123" # 数据库密码
     database: "integrated_dev" # 数据库名称
     charset: "utf8mb4" # 数据库编码
+    timezone: "Asia/Shanghai" # 数据库时区
     maxPoolSize: 16 # 最大连接数 时间配置单位s
     idleTimeout: 30 # 空闲连接超时时间
     connectionTimeout: 2 # 连接超时时间

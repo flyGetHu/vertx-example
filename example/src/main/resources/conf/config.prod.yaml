@@ -19,6 +19,7 @@ database:
     password: "anjun123"
     database: "integrated_dev"
     charset: "utf8mb4"
+    timezone: "Asia/Shanghai"
     maxPoolSize: 16
     idleTimeout: 30
     connectionTimeout: 2
