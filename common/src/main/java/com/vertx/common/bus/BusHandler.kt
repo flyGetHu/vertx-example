@@ -59,7 +59,9 @@ interface BusHandler<Request, Response> {
      */
     fun call(request: Request): Future<Response> {
         val promise = Promise.promise<Response>()
+        //发送请求
         eventBus.request(this.address, request) { ar: AsyncResult<Message<String>> ->
+            //处理响应
             if (ar.succeeded()) {
                 val result = ar.result()
                 val body = result.body()
