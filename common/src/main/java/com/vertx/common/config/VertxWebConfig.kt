@@ -67,6 +67,8 @@ object VertxWebConfig {
         httpServerOptions.host = serverConfig.host
         httpServerOptions.idleTimeout = serverConfig.timeout
         httpServerOptions.alpnVersions = serverConfig.alpnVersions
+        //websocket 配置 是否注册websocket到eventbus中
+        httpServerOptions.setRegisterWebSocketWriteHandlers(true)
         // 开启gzip压缩
         httpServerOptions.isCompressionSupported = serverConfig.compressionSupported
         // 压缩等级

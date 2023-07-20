@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="自定义web请求日志">
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/WebSocketExamoleRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/FocusnfeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/conf/config.dev.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +22,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -124,6 +131,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Kotlin.ExampleMainApp">
+    <configuration name="FocusnfeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
+      <module name="example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.example.verticle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BusVerticleTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example" />
       <extension name="coverage">
@@ -140,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoroutinesTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FocusnfeTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example" />
       <extension name="coverage">
         <pattern>
@@ -149,14 +169,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.CoroutinesTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoroutinesTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FocusnfeTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example" />
       <extension name="coverage">
         <pattern>
@@ -165,24 +185,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.CoroutinesTest" />
-      <option name="METHOD_NAME" value="test(io.vertx.core.Vertx,io.vertx.junit5.VertxTestContext)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EventBusVerticleTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.example.verticle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.EventBusVerticleTest" />
-      <option name="METHOD_NAME" value="test(io.vertx.junit5.VertxTestContext)" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,10 +216,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleMainApp" />
+        <item itemvalue="JUnit.FocusnfeTest.test2" />
+        <item itemvalue="JUnit.FocusnfeTest.test1" />
+        <item itemvalue="应用程序.FocusnfeTest" />
         <item itemvalue="JUnit.BusVerticleTest.test" />
-        <item itemvalue="JUnit.CoroutinesTest.test (1)" />
-        <item itemvalue="JUnit.CoroutinesTest.test" />
-        <item itemvalue="JUnit.EventBusVerticleTest.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +238,8 @@
       <workItem from="1688994151349" duration="9490000" />
       <workItem from="1689174759349" duration="483000" />
       <workItem from="1689208487172" duration="327000" />
+      <workItem from="1689554369543" duration="7054000" />
+      <workItem from="1689734103608" duration="7711000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
