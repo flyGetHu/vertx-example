@@ -3,7 +3,7 @@ package com.vertx.common.config
 import cn.hutool.http.HttpStatus
 import com.vertx.common.entity.ApiError
 import com.vertx.common.entity.ApiResponse
-import com.vertx.common.handler.RequestInterceptor
+import com.vertx.common.handler.RequestInterceptorHandler
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
@@ -87,7 +87,7 @@ object VertxWebConfig {
                 }
             }
             // 添加请求拦截器
-            .handler(RequestInterceptor())
+            .handler(RequestInterceptorHandler())
         val router = io.vertx.ext.web.Router.router(vertx)
         // 初始化路由
         initRouter(router)

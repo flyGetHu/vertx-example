@@ -9,7 +9,7 @@ import io.vertx.ext.web.RoutingContext
  * 可以对指定请求路径不进行拦截
  * 可以对请求进行拦截 如：权限校验,参数校验等
  */
-class RequestInterceptor : Handler<RoutingContext> {
+class RequestInterceptorHandler : Handler<RoutingContext> {
     override fun handle(context: RoutingContext) {
         val ignorePaths = appConfig.webServer.ignorePaths
         val path = context.request().path()
