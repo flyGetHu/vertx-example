@@ -6,7 +6,6 @@ import io.vertx.core.Vertx
 
 /**
  * CircuitBreakerHandler
- * @param circuitBreaker
  * @constructor
  * @param timeout 500 ms 超时时间
  * @param maxFailures 3 最大失败次数
@@ -18,7 +17,7 @@ data class CircuitBreakerHandler(
     val timeout: Long,
     val maxFailures: Int = 3,
     val fallbackOnFailure: Boolean = true,
-    val resetTimeout: Long = 200
+    val resetTimeout: Long = 10000
 )
 
 fun CircuitBreakerHandler.new(vertx: Vertx? = null): CircuitBreaker {

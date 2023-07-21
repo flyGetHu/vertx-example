@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="WebSocketExamoleRouter">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="断路由">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptorHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +236,7 @@
       <workItem from="1689208487172" duration="327000" />
       <workItem from="1689554369543" duration="7054000" />
       <workItem from="1689734103608" duration="7711000" />
-      <workItem from="1689832770911" duration="3753000" />
+      <workItem from="1689832770911" duration="8753000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -494,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689832823528</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="断路由">
+      <option name="closed" value="true" />
+      <created>1689836809528</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1689836809528</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +536,8 @@
     <MESSAGE value="web服务器添加gzip压缩" />
     <MESSAGE value="自定义web请求日志" />
     <MESSAGE value="WebSocketExamoleRouter" />
-    <option name="LAST_COMMIT_MESSAGE" value="WebSocketExamoleRouter" />
+    <MESSAGE value="断路由" />
+    <option name="LAST_COMMIT_MESSAGE" value="断路由" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

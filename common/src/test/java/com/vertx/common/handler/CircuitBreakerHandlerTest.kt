@@ -20,10 +20,11 @@ class CircuitBreakerHandlerTest {
             maxFailures = 3,
             fallbackOnFailure = true,
             resetTimeout = 200
-        ).new(vertx).fallback {
-            println("执行失败")
-            testContext.completeNow()
-        }.retryPolicy(RetryPolicy.exponentialDelayWithJitter(50, 500))
+        ).new(vertx)
+            .fallback {
+                println("执行失败")
+                testContext.completeNow()
+            }.retryPolicy(RetryPolicy.exponentialDelayWithJitter(50, 500))
         circuitBreakerHandler.execute<String> {
             ThreadUtil.sleep(1000 * 10)
             println("执行成功")
