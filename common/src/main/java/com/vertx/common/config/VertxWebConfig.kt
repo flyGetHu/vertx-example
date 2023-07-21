@@ -1,3 +1,9 @@
+/**
+ * This file contains the implementation of the VertxWebConfig class and some extension functions for RoutingContext and Route.
+ * It provides functions for starting an HTTP server, handling responses, and logging.
+ * The startHttpServer function takes an initRouter function that initializes the main router.
+ * The file also defines extension functions for RoutingContext and Route, which allow launching coroutines and sending JSON responses.
+ */
 package com.vertx.common.config
 
 import cn.hutool.http.HttpStatus

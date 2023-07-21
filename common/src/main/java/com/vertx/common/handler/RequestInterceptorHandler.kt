@@ -1,3 +1,8 @@
+/**
+ * Handler for intercepting requests.
+ * Can exclude specified request paths from interception.
+ * Can intercept requests for purposes such as permission verification, parameter verification, etc.
+ */
 package com.vertx.common.handler
 
 import com.vertx.common.config.appConfig

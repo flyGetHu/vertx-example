@@ -9,28 +9,46 @@ lateinit var webClient: io.vertx.ext.web.client.WebClient
  * WEB客户端
  */
 object WebClient {
-    /**
-     * 初始化webClient
-     * @param config 配置
-     */
-    fun init(
-        config: com.vertx.common.entity.WebClient = com.vertx.common.entity.WebClient(
-            maxPoolSize = 16,
-            connectTimeout = 10000,
-            readIdleTimeout = 10000,
-            writeIdleTimeout = 10000,
-            idleTimeout = 10000
-        )
-    ) {
-        val webClientOptions = io.vertx.ext.web.client.WebClientOptions()
-        webClientOptions.setKeepAlive(true)
-        webClientOptions.setConnectTimeout(config.connectTimeout)
-        webClientOptions.setReadIdleTimeout(config.readIdleTimeout)
-        webClientOptions.setWriteIdleTimeout(config.writeIdleTimeout)
-        webClientOptions.idleTimeout = config.idleTimeout
-        webClientOptions.setTrustAll(true)
-        webClientOptions.setMaxPoolSize(config.maxPoolSize)
-        webClientOptions.setUserAgent("vertx-web-client")
-        webClient = io.vertx.ext.web.client.WebClient.create(vertx, webClientOptions)
-    }
+  /**
+   * 初始化webClient
+   * @param config 配置
+   */
+  fun init(
+    config: com.vertx.common.entity.WebClient = com.vertx.common.entity.WebClient(
+      maxPoolSize = 16,
+      connectTimeout = 10000,
+      readIdleTimeout = 10000,
+      writeIdleTimeout = 10000,
+      idleTimeout = 10000
+    )
+  ) {
+    val webClientOptions = io.vertx.ext.web.client.WebClientOptions()
+
+    // 设置是否保持连接
+    webClientOptions.setKeepAlive(true)
+
+    // 设置连接超时时间
+    webClientOptions.setConnectTimeout(config.connectTimeout)
+
+    // 设置读取空闲超时时间
+    webClientOptions.setReadIdleTimeout(config.readIdleTimeout)
+
+    // 设置写入空闲超时时间
+    webClientOptions.setWriteIdleTimeout(config.writeIdleTimeout)
+
+    // 设置空闲超时时间
+    webClientOptions.idleTimeout = config.idleTimeout
+
+    // 设置是否信任所有证书
+    webClientOptions.setTrustAll(true)
+
+    // 设置最大连接池大小
+    webClientOptions.setMaxPoolSize(config.maxPoolSize)
+
+    // 设置用户代理
+    webClientOptions.setUserAgent("vertx-web-client")
+
+    // 创建WebClient实例
+    webClient = io.vertx.ext.web.client.WebClient.create(vertx, webClientOptions)
+  }
 }

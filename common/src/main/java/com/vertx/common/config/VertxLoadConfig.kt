@@ -1,3 +1,9 @@
+/**
+ * This file contains the VertxLoadConfig object which is responsible for loading the configuration file and initializing the Vertx global object, event bus, shared data container, and log object.
+ * The active variable is used to specify the environment variable to be used. The appConfig variable holds the loaded configuration.
+ * The init() function is a suspend function that initializes the Vertx global object, event bus, shared data container, and log object.
+ * It loads the configuration file based on the active variable and initializes the WebClient object with the loaded configuration.
+ */
 package com.vertx.common.config
 
 import cn.hutool.log.LogFactory

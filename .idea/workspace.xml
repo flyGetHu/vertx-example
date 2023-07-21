@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="断路由">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +234,7 @@
       <workItem from="1689208487172" duration="327000" />
       <workItem from="1689554369543" duration="7054000" />
       <workItem from="1689734103608" duration="7711000" />
-      <workItem from="1689832770911" duration="8753000" />
+      <workItem from="1689832770911" duration="9486000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -499,7 +497,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689836809528</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="断路由">
+      <option name="closed" value="true" />
+      <created>1689923915524</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1689923915524</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

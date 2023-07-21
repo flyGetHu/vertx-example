@@ -1,3 +1,10 @@
+/**
+ * This class is responsible for launching a Vert.x cluster. It extends VertxCommandLauncher and implements VertxLifecycleHooks.
+ * It sets up HazelcastClusterManager as the cluster manager and configures the EventBusOptions for the cluster.
+ * It also defines several hooks that are executed at different stages of the Vert.x lifecycle.
+ * The class has a main method that dispatches the command line arguments to VertxCommandLauncher.
+ * The class is located at d:\workspace\java\vertx-example\common\src\main\java\com\vertx\common\MainLaunch.java.
+ */
 package com.vertx.common;
 
 import cn.hutool.log.StaticLog;

@@ -1,3 +1,11 @@
+/**
+ * CircuitBreakerHandler data class represents a circuit breaker configuration.
+ * @property circuitBreakerName the name of the circuit breaker.
+ * @property timeout the timeout value in milliseconds.
+ * @property maxFailures the maximum number of failures before opening the circuit.
+ * @property fallbackOnFailure a boolean value indicating whether to fallback on failure.
+ * @property resetTimeout the time in milliseconds to wait before attempting to close the circuit again.
+ */
 package com.vertx.common.handler
 
 import io.vertx.circuitbreaker.CircuitBreaker

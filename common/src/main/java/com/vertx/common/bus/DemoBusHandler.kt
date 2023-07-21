@@ -1,3 +1,11 @@
+/**
+ * This class is a demo implementation of the BusHandler interface for handling events on the event bus.
+ * It specifies the request and response classes and the event bus address.
+ * The handleRequest method is left unimplemented and should be overridden in the specific business module.
+ * @param requestClass The class of the request object.
+ * @param responseClass The class of the response object.
+ * @param address The address on the event bus where this handler will listen for events.
+ */
 package com.vertx.common.bus
 
 import com.vertx.common.entity.AppConfig

@@ -1,3 +1,11 @@
+/**
+ * This file contains the definition of the MysqlClient object, which provides a MySQL client for the application.
+ * The object contains a single function, init(), which initializes the MySQL client with the configuration specified in the application configuration file.
+ * The MySQL client is created using the io.vertx.mysqlclient.MySQLPool class, which provides a connection pool for MySQL databases.
+ * The function initializes the MySQLConnectOptions and PoolOptions objects with the configuration values, and creates a new MySQLPool object using the Vert.x event bus.
+ * The function tests the connection by executing a simple query, and sets the mysqlClient variable to the new MySQLPool object.
+ * If the connection is successful, the function logs a message to the console.
+ */
 package com.vertx.common.client
 
 import cn.hutool.log.StaticLog

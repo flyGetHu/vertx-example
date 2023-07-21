@@ -1,3 +1,15 @@
+/**
+ * This file contains the definition of the BusHandler interface, which is a service that can be used to handle requests on the event bus.
+ * It provides a way to register services and call them asynchronously.
+ * The interface defines the request and response types, the service address, and the method to handle requests.
+ * It also provides a method to call the service and a companion object to register services.
+ * @param Request the type of the request
+ * @param Response the type of the response
+ * @property requestClass the class of the request
+ * @property responseClass the class of the response
+ * @property address the address the service is registered on
+ * @constructor creates a new instance of the BusHandler interface
+ */
 package com.vertx.common.bus
 
 import cn.hutool.http.HttpStatus
