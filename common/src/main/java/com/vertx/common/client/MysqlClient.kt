@@ -12,6 +12,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.vertx
+import com.vertx.common.utils.getTableName
 import com.vertx.common.utils.underlineName
 import io.vertx.kotlin.coroutines.await
 import io.vertx.mysqlclient.MySQLClient
@@ -163,16 +164,16 @@ object MysqlClient {
         val fileKeyValue = mutableMapOf<String, Any?>()
         for (field in fields) {
             field.isAccessible = true
-            val name = underlineName(field.name)
+            val name = field.name.underlineName()
             val value = field.get(data)
-            //如果属性值不为空，则添加到map中
-            if (value != null) {
+            //如果属性值不为空，则添加到map中,忽略主键
+            if (value != null && name != "id") {
                 fileKeyValue[name] = value
             }
         }
-        val insertIntoStep = dslContext.insertInto(
-            DSL.table(underlineName(clazz.simpleName)),
-            fileKeyValue.keys.toList().map { DSL.field(it) }).values(fileKeyValue.values)
+        val insertIntoStep =
+            dslContext.insertInto(DSL.table(getTableName(clazz)), fileKeyValue.keys.toList().map { DSL.field(it) })
+                .values(fileKeyValue.values)
         //返回组装好的sql语句,insertIntoStep.sql是带占位符的sql语句 insertIntoStep.params是占位符对应的参数
         //例如：insertIntoStep.sql = insert into user (id,name,age) values (?,?,?) insertIntoStep.params = [1, test, 18]
         //最终返回的sql语句为：insert into user (id,name,age) values (1, 'test', 18);
@@ -198,7 +199,7 @@ object MysqlClient {
         val fileKeyValue = mutableMapOf<String, Any?>()
         for (field in fields) {
             field.isAccessible = true
-            val name = underlineName(field.name)
+            val name = field.name.underlineName()
             val value = field.get(data)
             //如果属性值不为空，则添加到map中,忽略主键
             if (value != null && name != "id") {
@@ -207,7 +208,7 @@ object MysqlClient {
                 fileKeyValue[name] = null
             }
         }
-        val updateStep = dslContext.update(DSL.table(underlineName(clazz.simpleName))).set(fileKeyValue).where(where)
+        val updateStep = dslContext.update(DSL.table(getTableName(clazz))).set(fileKeyValue).where(where)
         val finalSql = updateStep.getSQL(ParamType.INLINED)
         if (active != "prod") {
             StaticLog.debug("更新语句：${finalSql}")
@@ -226,12 +227,12 @@ object MysqlClient {
     private fun <T> buildSelectSql(
         clazz: Class<T>, where: Condition, columns: List<String> = listOf(), lastSql: String = ""
     ): String {
-        var fields = clazz.declaredFields.map { DSL.field(underlineName(it.name)) }
+        var fields = clazz.declaredFields.map { DSL.field(it.name.underlineName()) }
         //如果查询的列不为空，则使用查询的列
         if (columns.isNotEmpty()) {
-            fields = columns.map { DSL.field(underlineName(it)) }
+            fields = columns.map { DSL.field(it.underlineName()) }
         }
-        val selectStep = dslContext.select(fields).from(DSL.table(underlineName(clazz.simpleName))).where(where)
+        val selectStep = dslContext.select(fields).from(DSL.table(getTableName(clazz))).where(where)
         var finalSql = selectStep.getSQL(ParamType.INLINED)
         if (lastSql.isNotBlank()) {
             finalSql += " $lastSql"
@@ -248,7 +249,7 @@ object MysqlClient {
      * @param where 条件
      */
     private fun <T> buildDeleteSql(clazz: Class<T>, where: Condition): String {
-        val deleteStep = dslContext.delete(DSL.table(underlineName(clazz.simpleName))).where(where)
+        val deleteStep = dslContext.delete(DSL.table(getTableName(clazz))).where(where)
         val finalSql = deleteStep.getSQL(ParamType.INLINED)
         if (active != "prod") {
             StaticLog.debug("删除语句：${finalSql}")

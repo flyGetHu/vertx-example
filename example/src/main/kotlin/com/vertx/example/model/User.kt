@@ -2,6 +2,7 @@ package com.vertx.example.model
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.vertx.common.config.TableName
 
 /**
  * create table user
@@ -14,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * );
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@TableName("user")
 data class User(
     @JsonProperty("id") val id: Int?,
     @JsonProperty("name") val name: String?,
