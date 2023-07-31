@@ -1,8 +1,3 @@
-/**
- * This file contains the definition of the V1RouterGroup object, which is responsible for initializing the v1 version router group.
- * The V1RouterGroup object has a single public function, init, which takes a Router object as a parameter and initializes the v1 version router group.
- * The init function creates a new router instance for the v1 version, initializes the system and WebSocketExample routers, and mounts the v1 version router to the main router at the "/v1/*" path.
- */
 package com.vertx.example.web.v1
 
 import com.vertx.common.config.vertx

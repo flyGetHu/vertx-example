@@ -11,8 +11,15 @@ package com.vertx.common.client
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.vertx
+import com.vertx.common.utils.MysqlUtil.buildDeleteSql
+import com.vertx.common.utils.MysqlUtil.buildInsertSql
+import com.vertx.common.utils.MysqlUtil.buildSelectSql
+import com.vertx.common.utils.MysqlUtil.buildUpdateSql
 import io.vertx.kotlin.coroutines.await
+import io.vertx.mysqlclient.MySQLClient
 import io.vertx.sqlclient.PoolOptions
+import org.jooq.Condition
+
 
 // 全局mysql客户端
 lateinit var mysqlClient: io.vertx.mysqlclient.MySQLPool
@@ -39,9 +46,24 @@ object MysqlClient {
         }
         mySQLConnectOptions.host = host
         mySQLConnectOptions.port = config.port
-        mySQLConnectOptions.user = config.username
-        mySQLConnectOptions.password = config.password
-        mySQLConnectOptions.database = config.database
+        val username = config.username
+        if (username.isBlank()) {
+            StaticLog.error("mysql username is blank:{}", config)
+            throw Exception("mysql username is blank")
+        }
+        mySQLConnectOptions.user = username
+        val password = config.password
+        if (password.isBlank()) {
+            StaticLog.error("mysql password is blank:{}", config)
+            throw Exception("mysql password is blank")
+        }
+        mySQLConnectOptions.password = password
+        val database = config.database
+        if (database.isBlank()) {
+            StaticLog.error("mysql database is blank:{}", config)
+            throw Exception("mysql database is blank")
+        }
+        mySQLConnectOptions.database = database
         mySQLConnectOptions.charset = config.charset
         // 时区
         mySQLConnectOptions.properties["serverTimezone"] = config.timezone
@@ -69,5 +91,56 @@ object MysqlClient {
         client.query("select 1").execute().await()
         mysqlClient = client
         StaticLog.info("mysql连接成功")
+    }
+
+    /**
+     * 插入数据
+     * @param data 数据对象
+     * @return 获取最新的id
+     */
+    suspend fun insert(data: Any): Long {
+        val sql = buildInsertSql(data)
+        val rowRowSet = mysqlClient.query(sql).execute().await()
+        return rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
+    }
+
+    /**
+     * 更新数据
+     * @param data 数据对象
+     * @param where 条件
+     * @param isNll 是否更新空值
+     * @return 受影响的行数
+     */
+    suspend fun update(data: Any, where: Condition, isNll: Boolean = false): Int {
+        val sql = buildUpdateSql(data, where, isNll)
+        val rowRowSet = mysqlClient.query(sql).execute().await()
+        return rowRowSet.rowCount()
+    }
+
+    /**
+     * 删除数据
+     * @param clazz 类对象
+     * @param where 条件
+     * @return 受影响的行数
+     */
+    suspend fun delete(clazz: Class<*>, where: Condition): Int {
+        val sql = buildDeleteSql(clazz, where)
+        val rowRowSet = mysqlClient.query(sql).execute().await()
+        return rowRowSet.rowCount()
+    }
+
+    /**
+     * 查询数据
+     * @param clazz 类对象
+     * @param where 条件
+     * @param fields 查询字段
+     * @return 查询结果
+     */
+    suspend fun <T> select(clazz: Class<T>, where: Condition, fields: List<String>): List<T> {
+        val sql = buildSelectSql(clazz, where, fields)
+        val rowRowSet = mysqlClient.query(sql).execute().await().map {
+            it.toJson().mapTo(clazz)
+        }
+        return rowRowSet
     }
 }

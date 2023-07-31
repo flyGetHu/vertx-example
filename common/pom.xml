@@ -65,6 +65,11 @@
             <groupId>io.vertx</groupId>
             <artifactId>vertx-mysql-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>${jooq.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

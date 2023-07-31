@@ -67,23 +67,4 @@ class CronScheduler(cronExpressionString: String) {
     val date = cronExpression!!.getNextValidTimeAfter(now)
     nextExecutionTime = DateUtil.toLocalDateTime(date)
   }
-  
-  /**
-   * 获取下次执行时间距离当前时间的毫秒数
-   *
-   * @return 下次执行时间距离当前时间的毫秒数
-   */
-  fun getTimeUntilNextExecution(): Long {
-    val now = LocalDateTime.now()
-    if (now.isAfter(nextExecutionTime)) {
-      calculateNextExecutionTime()
-    }
-    val duration = Duration.between(now, nextExecutionTime)
-    //Cannot schedule a timer with delay < 1 ms
-    if (duration.toMillis() < 1) {
-      StaticLog.warn("cron表达式{}下次执行时间小于1ms,重新计算", cronExpression!!.cronExpression)
-      return getTimeUntilNextExecution()
-    }
-    return duration.toMillis()
-  }
 }

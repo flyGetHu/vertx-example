@@ -1,18 +1,18 @@
 /**
  * This file contains the definition of the AppConfig data class and its related data classes.
- * 
+ *
  * The AppConfig data class represents the configuration of an application and contains the following properties:
  * - app: an instance of the App data class that represents the application configuration.
  * - webServer: an instance of the WebServer data class that represents the server configuration.
  * - database: an instance of the Database data class that represents the database configuration.
  * - vertx: an instance of the Vertx data class that represents the Vert.x configuration.
  * - webClient: an instance of the WebClient data class that represents the web client configuration.
- * 
+ *
  * The App data class represents the application configuration and contains the following properties:
  * - name: a string that represents the name of the application.
  * - version: a string that represents the version of the application.
  * - description: a string that represents the description of the application.
- * 
+ *
  * The WebServer data class represents the server configuration and contains the following properties:
  * - port: an integer that represents the port number of the server.
  * - host: a string that represents the host address of the server.
@@ -23,10 +23,10 @@
  * - ignorePaths: a list of strings that represents the paths that should not be intercepted by the server.
  * - compressionSupported: a boolean that indicates whether the server supports gzip compression.
  * - compressionLevel: an integer that represents the compression level of the server.
- * 
+ *
  * The Database data class represents the database configuration and contains the following properties:
  * - mysql: an instance of the Mysql data class that represents the MySQL configuration.
- * 
+ *
  * The Mysql data class represents the MySQL configuration and contains the following properties:
  * - host: a string that represents the host address of the MySQL server.
  * - port: an integer that represents the port number of the MySQL server.
@@ -40,12 +40,12 @@
  * - connectionTimeout: an integer that represents the connection timeout of the connections in the connection pool.
  * - maxLifetime: an integer that represents the maximum lifetime of the connections in the connection pool.
  * - maxWaitQueueSize: an integer that represents the maximum size of the wait queue for connections in the connection pool.
- * 
+ *
  * The Vertx data class represents the Vert.x configuration and contains the following properties:
  * - verticle: a string that represents the fully qualified name of the main Verticle class.
  * - instances: an integer that represents the number of instances of the main Verticle class.
  * - ha: a boolean that indicates whether the main Verticle class should be deployed in high-availability mode.
- * 
+ *
  * The WebClient data class represents the web client configuration and contains the following properties:
  * - maxPoolSize: an integer that represents the maximum number of connections in the web client connection pool.
  * - connectTimeout: an integer that represents the connection timeout of the web client.
@@ -57,6 +57,7 @@ package com.vertx.common.entity
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import io.vertx.core.http.HttpVersion
+import kotlin.random.Random
 
 /**
  * 配置文件
@@ -79,11 +80,11 @@ data class AppConfig(
  */
 data class App(
     // 应用名称
-    @JsonProperty("name") val name: String,
+    @JsonProperty("name") val name: String = "",
     // 应用版本
-    @JsonProperty("version") val version: String,
+    @JsonProperty("version") val version: String = "1.0.0",
     // 应用描述
-    @JsonProperty("description") val description: String,
+    @JsonProperty("description") val description: String = "",
 )
 
 /**
@@ -91,16 +92,15 @@ data class App(
  */
 data class WebServer(
     // 服务端口
-    @JsonProperty("port") val port: Int,
+    @JsonProperty("port") val port: Int = Random.nextInt(10000),
     // 服务地址
     @JsonProperty("host") val host: String = "0.0.0.0",
     // 服务版本 alpnVersions
     @JsonProperty("alpnVersions") val alpnVersions: List<HttpVersion> = listOf(
-        HttpVersion.HTTP_2,
-        HttpVersion.HTTP_1_1
+        HttpVersion.HTTP_2, HttpVersion.HTTP_1_1
     ),
     // 请求前缀
-    @JsonProperty("prefix") val prefix: String,
+    @JsonProperty("prefix") val prefix: String = "/api",
     // 请求超时时间
     @JsonProperty("timeout") val timeout: Int = 30000,
     // 是否开启日志
@@ -124,9 +124,9 @@ data class Database(
 // mysql配置
 data class Mysql(
     // 数据库连接地址
-    @JsonProperty("host") val host: String,
+    @JsonProperty("host") val host: String = "127.0.0.1",
     // 数据库端口
-    @JsonProperty("port") val port: Int,
+    @JsonProperty("port") val port: Int = 3306,
     // 数据库用户名
     @JsonProperty("username") val username: String,
     // 数据库密码
@@ -139,17 +139,17 @@ data class Mysql(
     @JsonProperty("timezone") val timezone: String = "UTC",
     // 连接池配置
     // 最大连接数
-    @JsonProperty("maxPoolSize") val maxPoolSize: Int,
+    @JsonProperty("maxPoolSize") val maxPoolSize: Int = 16,
     // 空闲超时时间
-    @JsonProperty("idleTimeout") val idleTimeout: Int,
+    @JsonProperty("idleTimeout") val idleTimeout: Int = 10000,
     // 连接超时时间
-    @JsonProperty("connectionTimeout") val connectionTimeout: Int,
+    @JsonProperty("connectionTimeout") val connectionTimeout: Int = 2000,
     // 最大连接池生存时间
-    @JsonProperty("maxLifetime") val maxLifetime: Int,
+    @JsonProperty("maxLifetime") val maxLifetime: Int = 1800000,
     // 最大等待队列数
-    @JsonProperty("maxWaitQueueSize") val maxWaitQueueSize: Int
+    @JsonProperty("maxWaitQueueSize") val maxWaitQueueSize: Int = Int.MAX_VALUE,
 
-)
+    )
 
 
 /**
@@ -160,12 +160,12 @@ data class Mysql(
  *     ha: false
  */
 data class Vertx(
-    // verticle
+    // verticle 入口类 项目启动加载的第一个verticle,一般情况下为MainVerticle
     @JsonProperty("verticle") val verticle: String,
     // instances
-    @JsonProperty("instances") val instances: Int,
+    @JsonProperty("instances") val instances: Int = 1,
     // ha
-    @JsonProperty("ha") val ha: Boolean,
+    @JsonProperty("ha") val ha: Boolean = false,
 )
 
 /**
@@ -178,13 +178,13 @@ data class Vertx(
  */
 data class WebClient(
     // 最大连接数
-    @JsonProperty("maxPoolSize") val maxPoolSize: Int,
+    @JsonProperty("maxPoolSize") val maxPoolSize: Int = 16,
     // 连接超时时间
-    @JsonProperty("connectTimeout") val connectTimeout: Int,
+    @JsonProperty("connectTimeout") val connectTimeout: Int = 2000,
     // 读取超时时间
-    @JsonProperty("readIdleTimeout") val readIdleTimeout: Int,
+    @JsonProperty("readIdleTimeout") val readIdleTimeout: Int = 20000,
     // 空闲超时时间
-    @JsonProperty("idleTimeout") val idleTimeout: Int,
+    @JsonProperty("idleTimeout") val idleTimeout: Int = 10000,
     // 写入超时时间
-    @JsonProperty("writeIdleTimeout") val writeIdleTimeout: Int
+    @JsonProperty("writeIdleTimeout") val writeIdleTimeout: Int = 10000,
 )

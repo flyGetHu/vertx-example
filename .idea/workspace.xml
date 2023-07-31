@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="断路由">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/MysqlUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/StrUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/utils/MysqlUtilTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http-proxy/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http-proxy/src/main/kotlin/com/vertx/proxy/ProxyMainApp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http-proxy/src/main/kotlin/com/vertx/proxy/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_7_15_10_23____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_7_15_10_23_取消提交了更改_[更改]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlCleitn.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +33,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
-        <option value="Kotlin Object" />
         <option value="Class" />
-        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -33,15 +50,21 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2RmIrsB82ZsAiCaTNtnU4eghWrt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +83,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example",
+    "last_opened_file_path": "D:/workspace/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +92,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -96,11 +119,11 @@
       <recent name="com.vertx.common" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.vertx.common.utils" />
       <recent name="com.vertx.common.handler" />
       <recent name="com.vertx.example.verticle" />
       <recent name="com.vertx.verticle" />
       <recent name="com.vertx.common.config" />
-      <recent name="com.vertx.common.bus" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.vertx.common.utils" />
@@ -124,72 +147,83 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CircuitBreakerHandlerTest.test1">
-    <configuration name="FocusnfeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
-      <module name="example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.example.verticle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CircuitBreakerHandlerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MysqlUtilTest.test4">
+    <configuration name="MysqlTest2.buildSql2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertx.common.handler.*" />
+          <option name="PATTERN" value="com.vertx.common.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.common.handler" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.common.handler.CircuitBreakerHandlerTest" />
-      <option name="METHOD_NAME" value="test1(io.vertx.core.Vertx,io.vertx.junit5.VertxTestContext)" />
+      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlTest2" />
+      <option name="METHOD_NAME" value="buildSql2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FocusnfeTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="example" />
+    <configuration name="MysqlUtilTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertx.example.verticle.*" />
+          <option name="PATTERN" value="com.vertx.common.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
+      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FocusnfeTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="example" />
+    <configuration name="MysqlUtilTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertx.example.verticle.*" />
+          <option name="PATTERN" value="com.vertx.common.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.example.verticle" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.verticle.FocusnfeTest" />
+      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
       <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleMainApp" type="JetRunConfigurationType" singleton="true" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleMainApp" />
-      <module name="example" />
-      <shortenClasspath name="NONE" />
+    <configuration name="MysqlUtilTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlUtilTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -209,15 +243,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
-        <item itemvalue="Kotlin.ExampleMainApp" />
-        <item itemvalue="JUnit.FocusnfeTest.test2" />
-        <item itemvalue="JUnit.FocusnfeTest.test1" />
-        <item itemvalue="应用程序.FocusnfeTest" />
+        <item itemvalue="JUnit.MysqlUtilTest.test4" />
+        <item itemvalue="JUnit.MysqlUtilTest.test3" />
+        <item itemvalue="JUnit.MysqlUtilTest.test2" />
+        <item itemvalue="JUnit.MysqlUtilTest.test1" />
+        <item itemvalue="JUnit.MysqlTest2.buildSql2" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\anjun\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="" />
@@ -234,7 +271,12 @@
       <workItem from="1689208487172" duration="327000" />
       <workItem from="1689554369543" duration="7054000" />
       <workItem from="1689734103608" duration="7711000" />
-      <workItem from="1689832770911" duration="9486000" />
+      <workItem from="1689832770911" duration="15599000" />
+      <workItem from="1690333168024" duration="322000" />
+      <workItem from="1690333516648" duration="70000" />
+      <workItem from="1690333873740" duration="89000" />
+      <workItem from="1690335172231" duration="65000" />
+      <workItem from="1690335272461" duration="38878000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -547,5 +589,9 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
