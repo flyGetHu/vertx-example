@@ -94,7 +94,6 @@
 
 	</appenders>
 	<loggers>
-
 		<!-- 默认显示方式 -->
 		<root level="debug">
 			<appender-ref ref="Console"/>

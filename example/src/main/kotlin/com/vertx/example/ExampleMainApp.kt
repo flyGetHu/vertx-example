@@ -22,6 +22,9 @@ object ExampleMainApp {
         val vertxOptions = VertxOptions()
         vertxOptions.setClusterManager(mgr)
         Vertx.clusteredVertx(vertxOptions).onSuccess {
+            // 关闭jooq的logo
+            System.getProperties().setProperty("org.jooq.no-logo", "true")
+            System.setProperty("org.jooq.no-tips", "true")
             it.deployVerticle(MainVerticle::class.java.name)
             StaticLog.info("集群启动成功:${it.isClustered}")
         }.onFailure {

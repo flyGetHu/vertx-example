@@ -12,7 +12,7 @@ class TaskVerticle : CoroutineVerticle() {
         try {
             StaticLog.info("TaskVerticle启动类开始启动")
             // 启动demo任务
-            TaskDemoHandlerImpl().start()
+            TaskDemoHandlerImpl().start(true)
             StaticLog.info("TaskVerticle启动类启动成功")
         } catch (e: Throwable) {
             StaticLog.error(e, "TaskVerticle启动类启动失败")
