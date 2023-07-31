@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
-        <module name="http-proxy" />
         <module name="example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="http-proxy" target="17" />
       <module name="rpc-demo" target="17" />
     </bytecodeTargetLevel>
   </component>

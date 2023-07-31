@@ -1,6 +1,7 @@
 package com.vertx.example.web.v1
 
 import com.vertx.common.config.vertx
+import com.vertx.example.web.v1.router.MysqlExampleRouter
 import com.vertx.example.web.v1.router.SystemRouter
 import com.vertx.example.web.v1.router.WebSocketExamoleRouter
 import io.vertx.ext.web.Router
@@ -17,6 +18,8 @@ object V1RouterGroup {
         SystemRouter.init(routerV1)
         // websocket路由
         WebSocketExamoleRouter.init(routerV1)
+        // mysql路由
+        MysqlExampleRouter.init(routerV1)
         // 1.0版本路由 挂载到主路由
         router.route("/v1/*").subRouter(routerV1)
     }

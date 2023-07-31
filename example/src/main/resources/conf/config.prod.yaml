@@ -20,9 +20,9 @@ database: # 数据库配置
   mysql: # mysql数据库配置
     host: "192.168.2.234" # 数据库地址
     port: 3306 # 数据库端口
-    username: "integrated_dev" # 数据库用户名
+    username: "anjun" # 数据库用户名
     password: "anjun123" # 数据库密码
-    database: "integrated_dev" # 数据库名称
+    database: "vertx-example" # 数据库名称
     charset: "utf8mb4" # 数据库编码
     timezone: "Asia/Shanghai" # 数据库时区
     maxPoolSize: 16 # 最大连接数 时间配置单位s
