@@ -1,6 +1,6 @@
 package com.vertx.example.mapper
 
-import com.vertx.common.client.MysqlClient
+import com.vertx.common.common.MysqlHelper
 import com.vertx.common.utils.underlineName
 import com.vertx.example.model.User
 import org.jooq.impl.DSL
@@ -10,7 +10,7 @@ object UserMapper {
     suspend fun list(limit: Int): List<User> {
         // where条件构造
         val where = DSL.noCondition()
-        return MysqlClient.select(
+        return MysqlHelper.select(
             User::class.java,
             where,
             User::class.java.declaredFields.map { it.name }.toTypedArray().toList(),
@@ -21,7 +21,7 @@ object UserMapper {
     suspend fun detail(id: Int): User? {
         // where条件构造
         val where = DSL.field(User::id.name.underlineName()).eq(id)
-        return MysqlClient.select(
+        return MysqlHelper.select(
             User::class.java,
             where,
             User::class.java.declaredFields.map { it.name }.toTypedArray().toList(),
@@ -32,7 +32,7 @@ object UserMapper {
     suspend fun deleteById(id: Int): Int {
         // where条件构造
         val where = DSL.field(User::id.name.underlineName()).eq(id)
-        return MysqlClient.delete(
+        return MysqlHelper.delete(
             User::class.java,
             where,
         )
@@ -43,7 +43,7 @@ object UserMapper {
         val where = DSL.field(User::id.name.underlineName()).eq(id)
         // 更新数据
         val data = User(id, name, 0, null, null)
-        return MysqlClient.update(
+        return MysqlHelper.update(
             data,
             where,
         )
@@ -51,7 +51,7 @@ object UserMapper {
 
     suspend fun insert(user: User): Long {
         // 插入数据
-        return MysqlClient.insert(
+        return MysqlHelper.insert(
             user,
         )
     }
