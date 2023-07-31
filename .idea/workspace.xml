@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="示例项目查询" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="示例项目查询">
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,7 +253,7 @@
       <workItem from="1690333516648" duration="70000" />
       <workItem from="1690333873740" duration="89000" />
       <workItem from="1690335172231" duration="65000" />
-      <workItem from="1690335272461" duration="43521000" />
+      <workItem from="1690335272461" duration="43889000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -559,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690798635265</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="示例项目查询">
+      <option name="closed" value="true" />
+      <created>1690798700615</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1690798700615</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -5,8 +5,12 @@ import com.vertx.example.model.User
 
 object UserService {
 
-    suspend fun list(id: Int): List<User> {
-        return UserMapper.list(id)
+    suspend fun list(limit: Int): List<User> {
+        return UserMapper.list(limit)
+    }
+
+    suspend fun detail(id: Int): User? {
+        return UserMapper.detail(id)
     }
 
     suspend fun deleteById(id: Int): Int {

@@ -139,7 +139,12 @@ object MysqlClient {
      * @param fields 查询字段
      * @return 查询结果
      */
-    suspend fun <T> select(clazz: Class<T>, where: Condition, fields: List<String> = listOf()): List<T> {
+    suspend fun <T> select(
+        clazz: Class<T>,
+        where: Condition,
+        fields: List<String> = listOf(),
+        lastSql: String = ""
+    ): List<T> {
         val sql = buildSelectSql(clazz, where, fields)
         val rowRowSet = mysqlPoolClient.query(sql).execute().await().map {
             it.toJson().mapTo(clazz)
