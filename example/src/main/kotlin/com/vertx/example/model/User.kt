@@ -14,6 +14,9 @@ import com.vertx.common.config.TableName
  *     update_time timestamp    not null
  * );
  */
+// JsonIgnoreProperties 忽略未知属性
+// TableName 表名
+// 时间格式的字段需要使用String类型接收,懒得处理了麻烦
 @JsonIgnoreProperties(ignoreUnknown = true)
 @TableName("user")
 data class User(
