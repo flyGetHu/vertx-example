@@ -7,13 +7,38 @@ import org.jooq.impl.DSL
 
 object UserMapper {
 
-    suspend fun list(): List<User> {
+    suspend fun list(id: Int): List<User> {
         // where条件构造
-        val where = DSL.field(User::id.name.underlineName()).eq(1)
+        val where = DSL.field(User::id.name.underlineName()).eq(id)
         return MysqlClient.select(
+            User::class.java, where, User::class.java.declaredFields.map { it.name }.toTypedArray().toList()
+        )
+    }
+
+    suspend fun deleteById(id: Int): Int {
+        // where条件构造
+        val where = DSL.field(User::id.name.underlineName()).eq(id)
+        return MysqlClient.delete(
             User::class.java,
             where,
-            listOf(User::id.name)
+        )
+    }
+
+    suspend fun updateById(id: Int, name: String): Int {
+        // where条件构造
+        val where = DSL.field(User::id.name.underlineName()).eq(id)
+        // 更新数据
+        val data = User(id, name, 0, null, null)
+        return MysqlClient.update(
+            data,
+            where,
+        )
+    }
+
+    suspend fun insert(user: User): Long {
+        // 插入数据
+        return MysqlClient.insert(
+            user,
         )
     }
 }
