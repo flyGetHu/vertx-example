@@ -5,14 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.vertx.common.config.TableName
 
 /**
+ * -- auto-generated definition
  * create table user
  * (
- *     id          int          not null,
+ *     id          int auto_increment
+ *         primary key,
  *     name        varchar(255) not null,
  *     age         int          not null,
  *     create_time timestamp    not null,
  *     update_time timestamp    not null
  * );
+ *
  */
 // JsonIgnoreProperties 忽略未知属性
 // TableName 表名
