@@ -1,4 +1,4 @@
-package com.vertx.common.common
+package com.vertx.common.helper
 
 import cn.hutool.log.StaticLog
 import com.vertx.common.client.mysqlPoolClient
@@ -61,10 +61,7 @@ object MysqlHelper {
      * @return 查询结果
      */
     suspend fun <T> select(
-        clazz: Class<T>,
-        where: Condition,
-        fields: List<String> = listOf(),
-        lastSql: String = ""
+        clazz: Class<T>, where: Condition, fields: List<String> = listOf(), lastSql: String = ""
     ): List<T> {
         val sql = buildSelectSql(clazz, where, fields)
         val rowRowSet = mysqlPoolClient.query(sql).execute().await().map {
@@ -111,7 +108,9 @@ object MysqlHelper {
     }
 
 
-    //jooq上下文
+    /**
+     *  jooq 上下文
+     */
     private val dslContext = DSL.using(SQLDialect.MYSQL, Settings())
 
 
