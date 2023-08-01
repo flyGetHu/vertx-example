@@ -17,6 +17,7 @@
         <module>common-breaker</module>
         <module>example-web</module>
         <module>example-bus</module>
+        <module>example-task</module>
     </modules>
 
     <properties>

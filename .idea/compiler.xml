@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-webserver" />
+        <module name="example-web" />
         <module name="common-mysql" />
+        <module name="example-task" />
         <module name="common-webclient" />
         <module name="common-eventbus" />
         <module name="example-bus" />
-        <module name="example" />
         <module name="common-breaker" />
         <module name="common-core" />
       </profile>

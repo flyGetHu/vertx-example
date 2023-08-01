@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="重命名模块名称">
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/model/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/TestBusService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/TestBusRouter.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="bus&#10;测试">
+      <change afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/MainVerticle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/TaskVerticle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/MysqlConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/task/TaskDemoHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/handler/TaskDemoHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/TaskVerticle.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +28,8 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -143,11 +132,11 @@
       <recent name="com.vertx.verticle" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.vertx.task.handler" />
       <recent name="com.vertx.example.verticle" />
       <recent name="com.vertx.eventbus.bus.impl" />
       <recent name="" />
       <recent name="com.vertx.common.utils" />
-      <recent name="com.vertx.common.task" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.vertx.common.bus" />
@@ -167,7 +156,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ExampleBusMainApp">
+  <component name="RunManager" selected="Kotlin.ExampleTaskMainApp">
     <configuration name="CircuitBreakerHandlerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-breaker" />
       <extension name="coverage">
@@ -179,22 +168,6 @@
       <option name="PACKAGE_NAME" value="com.vertx.common.handler" />
       <option name="MAIN_CLASS_NAME" value="com.vertx.common.handler.CircuitBreakerHandlerTest" />
       <option name="METHOD_NAME" value="test1(io.vertx.core.Vertx,io.vertx.junit5.VertxTestContext)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MysqlUtilTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="common-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.common.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
-      <option name="METHOD_NAME" value="test3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -225,7 +198,14 @@
     </configuration>
     <configuration name="ExampleMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleMainApp" />
-      <module name="example" />
+      <module name="example-web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExampleTaskMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vertx.task.ExampleTaskMainApp" />
+      <module name="example-task" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,18 +225,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
-      <item itemvalue="JUnit.MysqlUtilTest.test3" />
       <item itemvalue="JUnit.MysqlUtilTest.test4" />
+      <item itemvalue="Kotlin.ExampleTaskMainApp" />
       <item itemvalue="Kotlin.ExampleMainApp" />
       <item itemvalue="Kotlin.ExampleBusMainApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleMainApp" />
         <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
-        <item itemvalue="JUnit.MysqlUtilTest.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +268,7 @@
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
       <workItem from="1690852794345" duration="3815000" />
-      <workItem from="1690862909942" duration="7158000" />
+      <workItem from="1690862909942" duration="8248000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -535,22 +515,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00043" summary="示例项目查询">
-      <option name="closed" value="true" />
-      <created>1690798635265</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1690798635265</updated>
-    </task>
-    <task id="LOCAL-00044" summary="示例项目查询">
-      <option name="closed" value="true" />
-      <created>1690798700615</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1690798700615</updated>
-    </task>
     <task id="LOCAL-00045" summary="完成基础的增删改查">
       <option name="closed" value="true" />
       <created>1690799140669</created>
@@ -647,7 +611,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690869569213</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="bus&#10;测试">
+      <option name="closed" value="true" />
+      <created>1690876667472</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1690876667472</updated>
+    </task>
+    <task id="LOCAL-00058" summary="bus&#10;测试">
+      <option name="closed" value="true" />
+      <created>1690876704262</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1690876704262</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +645,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="测试eventbus" />
     <MESSAGE value="初始化web服务器" />
     <MESSAGE value="配置bus超时时间" />
     <MESSAGE value="测试计数器" />
@@ -690,7 +669,8 @@
     <MESSAGE value="拆分eventbus" />
     <MESSAGE value="git lab" />
     <MESSAGE value="重命名模块名称" />
-    <option name="LAST_COMMIT_MESSAGE" value="重命名模块名称" />
+    <MESSAGE value="bus&#10;测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="bus&#10;测试" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
