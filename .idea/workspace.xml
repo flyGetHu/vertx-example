@@ -5,58 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="重命名模块名称">
-      <change afterPath="$PROJECT_DIR$/common-breaker/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/CircuitBreakerHandlerTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/ApiResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/Str.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/test/java/com/vertx/common/config/LoadConfigTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/impl/MyBusServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-eventbus/src/test/kotlin/BusHandlerTestVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/ApiResponse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/CircuitBreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/CircuitBreakerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/Str.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/BusHandlerTestVerticle.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/bus/MyBusServiceImpl.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/config/LoadConfigTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/handler/CircuitBreakerHandlerTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/vertx/common/utils/MysqlUtilTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventbus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventbus/src/main/kotlin/com/vertx/eventbus/bus/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webclient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-webclient/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,8 +135,9 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean install" />
       <command value="mvn clean install package" />
+      <command value="mvn clean install" />
+      <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
     </option>
   </component>
   <component name="RunDashboard">
@@ -196,7 +147,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CircuitBreakerHandlerTest.test1">
+  <component name="RunManager" selected="Kotlin.ExampleMainApp">
     <configuration name="CircuitBreakerHandlerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-breaker" />
       <extension name="coverage">
@@ -283,8 +234,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="Kotlin.ExampleMainApp" />
+        <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
         <item itemvalue="JUnit.MysqlUtilTest.test3" />
         <item itemvalue="JUnit.MysqlUtilTest.test2" />
@@ -319,7 +270,7 @@
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
       <workItem from="1690852794345" duration="3815000" />
-      <workItem from="1690862909942" duration="2503000" />
+      <workItem from="1690862909942" duration="3160000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -566,22 +517,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00040" summary="删除不需要的模块">
-      <option name="closed" value="true" />
-      <created>1690796014649</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1690796014649</updated>
-    </task>
-    <task id="LOCAL-00041" summary="动态表名问题">
-      <option name="closed" value="true" />
-      <created>1690797202363</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1690797202363</updated>
-    </task>
     <task id="LOCAL-00042" summary="示例项目查询">
       <option name="closed" value="true" />
       <created>1690798376282</created>
@@ -678,7 +613,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690863075112</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="重命名模块名称">
+      <option name="closed" value="true" />
+      <created>1690868936463</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1690868936463</updated>
+    </task>
+    <task id="LOCAL-00055" summary="重命名模块名称">
+      <option name="closed" value="true" />
+      <created>1690869029006</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1690869029006</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

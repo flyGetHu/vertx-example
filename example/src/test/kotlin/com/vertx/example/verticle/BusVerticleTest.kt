@@ -2,8 +2,8 @@ package com.vertx.example.verticle
 
 import cn.hutool.log.StaticLog
 import com.hazelcast.config.Config
-import com.vertx.common.bus.DemoBusHandler
 import com.vertx.common.config.VertxLoadConfig
+import com.vertx.eventbus.bus.DemoBusHandler
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
@@ -14,7 +14,7 @@ import io.vertx.kotlin.coroutines.dispatcher
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.extension.ExtendWith
 
