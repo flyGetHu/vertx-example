@@ -14,7 +14,7 @@ object TestBusService {
      * 测试事件总线
      * @return AppConfig
      */
-    suspend fun testBus(): User {
+    suspend fun testBus(): List<User> {
         return DemoBusHandler().call("test").await()
     }
 }

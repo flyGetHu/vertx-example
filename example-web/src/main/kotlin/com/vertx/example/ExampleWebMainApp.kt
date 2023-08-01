@@ -8,7 +8,7 @@ import io.vertx.core.VertxOptions
 import io.vertx.core.spi.cluster.ClusterManager
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager
 
-object ExampleMainApp {
+object ExampleWebMainApp {
     @JvmStatic
     fun main(args: Array<String>) {
         val config = Config()

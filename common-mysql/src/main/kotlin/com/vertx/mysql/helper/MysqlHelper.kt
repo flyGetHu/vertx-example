@@ -63,7 +63,7 @@ object MysqlHelper {
     suspend fun <T> select(
         clazz: Class<T>, where: Condition, fields: List<String> = listOf(), lastSql: String = ""
     ): List<T> {
-        val sql = buildSelectSql(clazz, where, fields)
+        val sql = buildSelectSql(clazz, where, fields, lastSql)
         val rowRowSet = mysqlPoolClient.query(sql).execute().await().map {
             it.toJson().mapTo(clazz)
         }

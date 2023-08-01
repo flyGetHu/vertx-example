@@ -1,9 +1,9 @@
 package com.vertx.example.bus
 
-import cn.hutool.core.date.DateUtil
 import cn.hutool.log.StaticLog
 import com.vertx.common.model.User
 import com.vertx.eventbus.bus.DemoBusHandler
+import com.vertx.example.mapper.UserMapper
 import io.vertx.core.AsyncResult
 import io.vertx.core.Handler
 
@@ -22,9 +22,9 @@ object DemoBusHandlerImpl : DemoBusHandler() {
      * @param resultHandler 处理结果
      * @return
      */
-    override suspend fun handleRequest(request: String, resultHandler: Handler<AsyncResult<User>>) {
+    override suspend fun handleRequest(request: String, resultHandler: Handler<AsyncResult<List<User>>>) {
         StaticLog.info("DemoBusHandlerImpl: $request")
-        val user = User(1, "huan", 12, DateUtil.now(), DateUtil.now())
-        resultHandler.handle(io.vertx.core.Future.succeededFuture(user))
+        val users = UserMapper.list(2)
+        resultHandler.handle(io.vertx.core.Future.succeededFuture(users))
     }
 }
