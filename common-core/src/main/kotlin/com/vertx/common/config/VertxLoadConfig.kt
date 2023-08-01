@@ -29,6 +29,9 @@ var active = "dev"
 // 配置文件
 lateinit var appConfig: AppConfig
 
+// 配置文件json对象 此对象保存配置文件中所有信息,若appConfig对象中没有,则从此对象中获取
+lateinit var appConfigJson: JsonObject
+
 // vertx全局对象
 lateinit var vertx: Vertx
 
@@ -78,6 +81,8 @@ object VertxLoadConfig {
             ConfigStoreOptions().setType("file").setFormat("yaml").setConfig(JsonObject().put("path", activeConfigName))
         )
         val params = ConfigRetriever.create(vertx, configRetrieverOptions).config.await()
+        //若appConfig中不存在对应的配置属性,可以使用此属性获取
+        appConfigJson = params
         val config = params.mapTo(AppConfig::class.java)
         appConfig = config
         isInit = true

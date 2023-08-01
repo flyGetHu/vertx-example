@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="task测试">
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="bus测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +259,7 @@
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
       <workItem from="1690852794345" duration="3815000" />
-      <workItem from="1690862909942" duration="9356000" />
+      <workItem from="1690862909942" duration="10000000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -516,14 +506,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00047" summary="分页查询">
-      <option name="closed" value="true" />
-      <created>1690800072645</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1690800072645</updated>
-    </task>
     <task id="LOCAL-00048" summary="迁移mysql帮助类">
       <option name="closed" value="true" />
       <created>1690800948983</created>
@@ -628,7 +610,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690877651382</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="bus测试">
+      <option name="closed" value="true" />
+      <created>1690878698833</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1690878698833</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="配置bus超时时间" />
     <MESSAGE value="测试计数器" />
     <MESSAGE value="定时rpc接口相应数据泛型的具体类型" />
     <MESSAGE value="数据库默认编码格式" />
@@ -671,7 +660,8 @@
     <MESSAGE value="重命名模块名称" />
     <MESSAGE value="bus&#10;测试" />
     <MESSAGE value="task测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="task测试" />
+    <MESSAGE value="bus测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="bus测试" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
