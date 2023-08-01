@@ -10,7 +10,7 @@
  * @property address the address the service is registered on
  * @constructor creates a new instance of the BusHandler interface
  */
-package com.vertx.common.bus
+package com.vertx.eventbus.bus
 
 import cn.hutool.http.HttpStatus
 import cn.hutool.log.StaticLog

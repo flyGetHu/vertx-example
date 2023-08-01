@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="拆分mysql工具包">
-      <change afterPath="$PROJECT_DIR$/webclient/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/pom.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="拆分webclient和webserver">
+      <change afterPath="$PROJECT_DIR$/eventbus/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/eventbus/src/main/kotlin/com/vertx/eventbus/bus/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +80,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/webserver/src/main/kotlin/com/vertx/webserver/config",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/eventbus/src/main/kotlin/com/vertx/eventbus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\eventbus\src\main\kotlin\com\vertx\eventbus" />
       <recent name="D:\workspace\java\vertx-example\webserver\src\main\kotlin\com\vertx\webserver\config" />
       <recent name="D:\workspace\java\vertx-example\webclient\src\main\kotlin\com\vertx\webclient\client" />
       <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\config" />
       <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\utils" />
-      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -121,6 +111,7 @@
       <recent name="D:\workspace\java\vertx-example\common\src\main\resources\conf" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.vertx.webserver.handler" />
       <recent name="com.vertx.common.task" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -277,7 +268,7 @@
       <workItem from="1690335172231" duration="65000" />
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
-      <workItem from="1690852794345" duration="2324000" />
+      <workItem from="1690852794345" duration="3028000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -524,14 +515,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00037" summary="断路由">
-      <option name="closed" value="true" />
-      <created>1689836809528</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1689836809528</updated>
-    </task>
     <task id="LOCAL-00038" summary="断路由">
       <option name="closed" value="true" />
       <created>1689923915524</created>
@@ -636,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690854067504</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="拆分webclient和webserver">
+      <option name="closed" value="true" />
+      <created>1690855377742</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1690855377742</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +645,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="集群启动函数提取" />
     <MESSAGE value="修改启动集群启动器" />
     <MESSAGE value="默认初始化webclient" />
     <MESSAGE value="打印日志" />
@@ -679,7 +669,8 @@
     <MESSAGE value="分页查询" />
     <MESSAGE value="迁移mysql帮助类" />
     <MESSAGE value="拆分mysql工具包" />
-    <option name="LAST_COMMIT_MESSAGE" value="拆分mysql工具包" />
+    <MESSAGE value="拆分webclient和webserver" />
+    <option name="LAST_COMMIT_MESSAGE" value="拆分webclient和webserver" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

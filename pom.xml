@@ -14,6 +14,7 @@
         <module>mysql</module>
         <module>webclient</module>
         <module>webserver</module>
+        <module>eventbus</module>
     </modules>
 
     <properties>

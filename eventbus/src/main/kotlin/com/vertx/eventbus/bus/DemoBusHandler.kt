@@ -6,7 +6,7 @@
  * @param responseClass The class of the response object.
  * @param address The address on the event bus where this handler will listen for events.
  */
-package com.vertx.common.bus
+package com.vertx.eventbus.bus
 
 import com.vertx.common.entity.AppConfig
 import io.vertx.core.AsyncResult
