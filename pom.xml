@@ -15,7 +15,7 @@
         <module>common-webserver</module>
         <module>common-eventbus</module>
         <module>common-breaker</module>
-        <module>example</module>
+        <module>example-web</module>
         <module>example-bus</module>
     </modules>
 
