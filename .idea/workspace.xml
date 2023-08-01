@@ -4,36 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="迁移mysql帮助类">
-      <change afterPath="$PROJECT_DIR$/mysql/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="拆分mysql工具包">
+      <change afterPath="$PROJECT_DIR$/webclient/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/BusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/ApiResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/CircuitBreakerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/DateUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/Str.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/Str.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/model/User.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +90,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/mysql/src/main/kotlin/com/vertx/mysql/config",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/webserver/src/main/kotlin/com/vertx/webserver/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,11 +105,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\webserver\src\main\kotlin\com\vertx\webserver\config" />
+      <recent name="D:\workspace\java\vertx-example\webclient\src\main\kotlin\com\vertx\webclient\client" />
       <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\config" />
       <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\utils" />
       <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql" />
-      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\client" />
-      <recent name="D:\workspace\java\vertx-example" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -290,7 +277,7 @@
       <workItem from="1690335172231" duration="65000" />
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
-      <workItem from="1690852794345" duration="1201000" />
+      <workItem from="1690852794345" duration="2324000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -537,14 +524,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00036" summary="WebSocketExamoleRouter">
-      <option name="closed" value="true" />
-      <created>1689832823528</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1689832823528</updated>
-    </task>
     <task id="LOCAL-00037" summary="断路由">
       <option name="closed" value="true" />
       <created>1689836809528</created>
@@ -649,7 +628,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690801181927</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="拆分mysql工具包">
+      <option name="closed" value="true" />
+      <created>1690854067504</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1690854067504</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +654,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="合并示例项目" />
     <MESSAGE value="集群启动函数提取" />
     <MESSAGE value="修改启动集群启动器" />
     <MESSAGE value="默认初始化webclient" />
@@ -692,7 +678,8 @@
     <MESSAGE value="关闭jooq广告" />
     <MESSAGE value="分页查询" />
     <MESSAGE value="迁移mysql帮助类" />
-    <option name="LAST_COMMIT_MESSAGE" value="迁移mysql帮助类" />
+    <MESSAGE value="拆分mysql工具包" />
+    <option name="LAST_COMMIT_MESSAGE" value="拆分mysql工具包" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

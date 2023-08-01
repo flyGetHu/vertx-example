@@ -9,7 +9,6 @@ package com.vertx.common.config
 import cn.hutool.log.LogFactory
 import cn.hutool.log.StaticLog
 import cn.hutool.log.dialect.log4j2.Log4j2LogFactory
-import com.vertx.common.client.WebClient
 import com.vertx.common.entity.AppConfig
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
@@ -75,9 +74,6 @@ object VertxLoadConfig {
         )
         val params = ConfigRetriever.create(vertx, configRetrieverOptions).config.await()
         val config = params.mapTo(AppConfig::class.java)
-        //初始化webClient
-        val webClientCfg = config.webClient
-        WebClient.init(webClientCfg)
         appConfig = config
         isInit = true
     }

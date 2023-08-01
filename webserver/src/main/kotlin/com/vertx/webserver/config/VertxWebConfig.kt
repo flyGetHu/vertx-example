@@ -4,12 +4,16 @@
  * The startHttpServer function takes an initRouter function that initializes the main router.
  * The file also defines extension functions for RoutingContext and Route, which allow launching coroutines and sending JSON responses.
  */
-package com.vertx.common.config
+package com.vertx.webserver.config
 
 import cn.hutool.http.HttpStatus
+import cn.hutool.log.StaticLog
+import com.vertx.common.config.appConfig
+import com.vertx.common.config.isInit
+import com.vertx.common.config.vertx
 import com.vertx.common.entity.ApiError
 import com.vertx.common.entity.ApiResponse
-import com.vertx.common.handler.RequestInterceptorHandler
+import com.vertx.webserver.handler.RequestInterceptorHandler
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
@@ -67,6 +71,10 @@ object VertxWebConfig {
     fun startHttpServer(
         initRouter: io.vertx.ext.web.Router.() -> Unit
     ) {
+        if (!isInit) {
+            StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+            throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+        }
         val httpServerOptions = io.vertx.core.http.HttpServerOptions()
         val serverConfig = appConfig.webServer
         httpServerOptions.port = serverConfig.port

@@ -31,13 +31,12 @@ object MysqlClient {
      * mysql客户端
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
      */
-    suspend fun init() {
+    suspend fun init(config: com.vertx.common.entity.Mysql) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
         }
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
-        val config = appConfig.database.mysql
         val host = config.host
         if (host.isBlank()) {
             StaticLog.error("mysql host is blank:{}", config)

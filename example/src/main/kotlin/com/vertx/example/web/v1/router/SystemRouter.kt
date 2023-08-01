@@ -1,8 +1,8 @@
 package com.vertx.example.web.v1.router
 
 import com.vertx.common.config.appConfig
-import com.vertx.common.config.launchCoroutine
-import com.vertx.common.config.successResponse
+import com.vertx.webserver.config.launchCoroutine
+import com.vertx.webserver.config.successResponse
 import io.vertx.ext.web.Router
 
 /**

@@ -1,4 +1,4 @@
-package com.vertx.common.client
+package com.vertx.webclient.client
 
 import com.vertx.common.config.vertx
 

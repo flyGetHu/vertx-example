@@ -1,7 +1,7 @@
 package com.vertx.example.verticle
 
-import com.vertx.common.config.VertxWebConfig
 import com.vertx.example.web.WebRouter
+import com.vertx.webserver.config.VertxWebConfig
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 
 /**

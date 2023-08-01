@@ -3,7 +3,7 @@
  * Can exclude specified request paths from interception.
  * Can intercept requests for purposes such as permission verification, parameter verification, etc.
  */
-package com.vertx.common.handler
+package com.vertx.webserver.handler
 
 import com.vertx.common.config.appConfig
 import io.vertx.core.Handler

@@ -1,10 +1,10 @@
 package com.vertx.example.web.v1.router
 
-import com.vertx.common.config.launchCoroutine
-import com.vertx.common.config.successResponse
 import com.vertx.common.config.vertx
 import com.vertx.example.model.User
 import com.vertx.example.service.UserService
+import com.vertx.webserver.config.launchCoroutine
+import com.vertx.webserver.config.successResponse
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.BodyHandler
 

@@ -12,6 +12,8 @@
         <module>common</module>
         <module>example</module>
         <module>mysql</module>
+        <module>webclient</module>
+        <module>webserver</module>
     </modules>
 
     <properties>
