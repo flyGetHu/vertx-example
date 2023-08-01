@@ -48,7 +48,7 @@ fun RoutingContext.jsonResponse(response: Any) {
  * @param data 响应数据
  */
 fun RoutingContext.successResponse(data: Any) {
-    val response = ApiResponse(success = true, data = data)
+    val response = ApiResponse(success = true, data = data, error = ApiError(HttpStatus.HTTP_OK, ""))
     jsonResponse(response)
 }
 

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="加载配置文件json">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="删除多余实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,9 +229,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
@@ -266,7 +265,7 @@
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
       <workItem from="1690852794345" duration="3815000" />
-      <workItem from="1690862909942" duration="13523000" />
+      <workItem from="1690862909942" duration="13828000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -513,22 +512,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00049" summary="迁移mysql帮助类">
-      <option name="closed" value="true" />
-      <created>1690801181927</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1690801181927</updated>
-    </task>
-    <task id="LOCAL-00050" summary="拆分mysql工具包">
-      <option name="closed" value="true" />
-      <created>1690854067504</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1690854067504</updated>
-    </task>
     <task id="LOCAL-00051" summary="拆分webclient和webserver">
       <option name="closed" value="true" />
       <created>1690855377742</created>
@@ -625,7 +608,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690879217758</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="加载配置文件json">
+      <option name="closed" value="true" />
+      <created>1690882792640</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1690882792640</updated>
+    </task>
+    <task id="LOCAL-00064" summary="删除多余实现">
+      <option name="closed" value="true" />
+      <created>1690882896060</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1690882896060</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +642,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="定时rpc接口相应数据泛型的具体类型" />
     <MESSAGE value="数据库默认编码格式" />
     <MESSAGE value="App配置" />
     <MESSAGE value="项目进度计划" />
@@ -668,7 +666,8 @@
     <MESSAGE value="task测试" />
     <MESSAGE value="bus测试" />
     <MESSAGE value="加载配置文件json" />
-    <option name="LAST_COMMIT_MESSAGE" value="加载配置文件json" />
+    <MESSAGE value="删除多余实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除多余实现" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
