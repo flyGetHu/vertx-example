@@ -14,6 +14,7 @@ package com.vertx.eventbus.handler
 
 import cn.hutool.http.HttpStatus
 import cn.hutool.log.StaticLog
+import com.vertx.common.config.active
 import com.vertx.common.config.eventBus
 import com.vertx.common.config.vertx
 import io.vertx.core.AsyncResult
@@ -117,12 +118,23 @@ interface BusHandler<Request, Response> {
                 CoroutineScope(vertx.dispatcher()).launch {
                     val request = message.body()
                     service.handleRequest(request) { ar: AsyncResult<Response> ->
+                        var result: Response? = null
                         if (ar.succeeded()) {
-                            val result = ar.result()
+                            result = ar.result()
                             message.reply(Json.encode(result))
                         } else {
                             message.fail(HttpStatus.HTTP_INTERNAL_ERROR, ar.cause().message)
                             StaticLog.error(ar.cause(), "RPC服务处理失败:$address")
+                        }
+                        // 非生产环境打印日志
+                        if (active != "prod") {
+                            StaticLog.info(
+                                """
+                                RPC服务处理请求: $address
+                                请求参数: ${request.toString()}
+                                响应结果: ${result.toString()}
+                            """.trimIndent()
+                            )
                         }
                     }
                 }

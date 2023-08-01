@@ -1,7 +1,7 @@
 package com.vertx.example.mapper
 
+import com.vertx.common.model.User
 import com.vertx.common.utils.underlineName
-import com.vertx.example.model.User
 import com.vertx.mysql.helper.MysqlHelper
 import org.jooq.impl.DSL
 

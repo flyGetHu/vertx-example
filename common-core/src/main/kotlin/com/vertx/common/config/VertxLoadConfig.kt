@@ -67,6 +67,11 @@ object VertxLoadConfig {
             env = jsonObject.getString("active")
         }
         activeConfigName += "$env.yaml"
+        val devExists = vertx.fileSystem().exists(activeConfigName).await()
+        if (!devExists) {
+            StaticLog.warn("当前项目激活配置环境文件:$activeConfigName 不存在,请检查配置文件是否需要加载配置文件!")
+            return
+        }
         StaticLog.info("当前项目激活配置环境文件:$activeConfigName")
         val configRetrieverOptions = ConfigRetrieverOptions()
         configRetrieverOptions.addStore(

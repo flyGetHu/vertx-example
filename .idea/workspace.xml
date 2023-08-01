@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="重命名模块名称">
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/model/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/TestBusService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/TestBusRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/MysqlConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +38,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -75,7 +95,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/common-breaker/src/test/kotlin/com/vertx/breaker/handler",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/common-core/src/main/kotlin/com/vertx/common/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,11 +110,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\common-core\src\main\kotlin\com\vertx\common\config" />
+      <recent name="D:\workspace\java\vertx-example\common-core\src\main\kotlin\com\vertx\common" />
       <recent name="D:\workspace\java\vertx-example\common-breaker\src\test\kotlin\com\vertx\breaker\handler" />
       <recent name="D:\workspace\java\vertx-example\eventbus\src\main\kotlin\com\vertx\eventbus" />
       <recent name="D:\workspace\java\vertx-example\webserver\src\main\kotlin\com\vertx\webserver\config" />
-      <recent name="D:\workspace\java\vertx-example\webclient\src\main\kotlin\com\vertx\webclient\client" />
-      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\config" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -123,11 +143,11 @@
       <recent name="com.vertx.verticle" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.vertx.example.verticle" />
       <recent name="com.vertx.eventbus.bus.impl" />
       <recent name="" />
       <recent name="com.vertx.common.utils" />
       <recent name="com.vertx.common.task" />
-      <recent name="com.vertx.common.bus" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.vertx.common.bus" />
@@ -136,8 +156,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install package" />
-      <command value="mvn clean install" />
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -147,7 +167,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ExampleMainApp">
+  <component name="RunManager" selected="Kotlin.ExampleBusMainApp">
     <configuration name="CircuitBreakerHandlerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-breaker" />
       <extension name="coverage">
@@ -159,22 +179,6 @@
       <option name="PACKAGE_NAME" value="com.vertx.common.handler" />
       <option name="MAIN_CLASS_NAME" value="com.vertx.common.handler.CircuitBreakerHandlerTest" />
       <option name="METHOD_NAME" value="test1(io.vertx.core.Vertx,io.vertx.junit5.VertxTestContext)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MysqlUtilTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="common-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vertx.common.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertx.common.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.vertx.common.utils.MysqlUtilTest" />
-      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,6 +216,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExampleBusMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleBusMainApp" />
+      <module name="example-bus" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExampleMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleMainApp" />
       <module name="example" />
@@ -232,13 +243,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
+      <item itemvalue="JUnit.MysqlUtilTest.test3" />
+      <item itemvalue="JUnit.MysqlUtilTest.test4" />
+      <item itemvalue="Kotlin.ExampleMainApp" />
+      <item itemvalue="Kotlin.ExampleBusMainApp" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleMainApp" />
         <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
         <item itemvalue="JUnit.MysqlUtilTest.test3" />
-        <item itemvalue="JUnit.MysqlUtilTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +288,7 @@
       <workItem from="1690335272461" duration="47483000" />
       <workItem from="1690852390639" duration="172000" />
       <workItem from="1690852794345" duration="3815000" />
-      <workItem from="1690862909942" duration="3160000" />
+      <workItem from="1690862909942" duration="7158000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -517,14 +535,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00042" summary="示例项目查询">
-      <option name="closed" value="true" />
-      <created>1690798376282</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1690798376282</updated>
-    </task>
     <task id="LOCAL-00043" summary="示例项目查询">
       <option name="closed" value="true" />
       <created>1690798635265</created>
@@ -629,7 +639,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690869029006</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="重命名模块名称">
+      <option name="closed" value="true" />
+      <created>1690869569213</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1690869569213</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

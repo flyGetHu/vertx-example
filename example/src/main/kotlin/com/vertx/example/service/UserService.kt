@@ -1,7 +1,7 @@
 package com.vertx.example.service
 
+import com.vertx.common.model.User
 import com.vertx.example.mapper.UserMapper
-import com.vertx.example.model.User
 
 object UserService {
 

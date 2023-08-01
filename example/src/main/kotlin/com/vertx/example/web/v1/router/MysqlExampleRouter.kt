@@ -1,7 +1,7 @@
 package com.vertx.example.web.v1.router
 
 import com.vertx.common.config.vertx
-import com.vertx.example.model.User
+import com.vertx.common.model.User
 import com.vertx.example.service.UserService
 import com.vertx.webserver.config.launchCoroutine
 import com.vertx.webserver.config.successResponse

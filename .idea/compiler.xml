@@ -10,6 +10,7 @@
         <module name="common-mysql" />
         <module name="common-webclient" />
         <module name="common-eventbus" />
+        <module name="example-bus" />
         <module name="example" />
         <module name="common-breaker" />
         <module name="common-core" />

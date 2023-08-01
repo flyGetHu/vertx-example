@@ -16,6 +16,7 @@
         <module>common-eventbus</module>
         <module>common-breaker</module>
         <module>example</module>
+        <module>example-bus</module>
     </modules>
 
     <properties>
