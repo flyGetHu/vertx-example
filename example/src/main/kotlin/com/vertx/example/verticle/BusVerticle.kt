@@ -1,7 +1,7 @@
 package com.vertx.example.verticle
 
 import cn.hutool.log.StaticLog
-import com.vertx.eventbus.bus.BusHandler
+import com.vertx.eventbus.handler.BusHandler
 import com.vertx.example.bus.DemoBusHandlerImpl
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 

@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mysql" />
-        <module name="common" />
-        <module name="webclient" />
-        <module name="webserver" />
-        <module name="eventbus" />
+        <module name="common-webserver" />
+        <module name="common-mysql" />
+        <module name="common-webclient" />
+        <module name="common-eventbus" />
         <module name="example" />
+        <module name="common-breaker" />
+        <module name="common-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
