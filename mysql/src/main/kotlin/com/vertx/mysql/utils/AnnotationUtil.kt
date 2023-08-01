@@ -1,6 +1,7 @@
-package com.vertx.common.utils
+package com.vertx.mysql.utils
 
-import com.vertx.common.config.TableName
+import com.vertx.common.utils.underlineName
+import com.vertx.mysql.config.TableName
 
 /**
  * 获取表名

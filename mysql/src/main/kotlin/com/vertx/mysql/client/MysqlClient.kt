@@ -6,10 +6,11 @@
  * The function tests the connection by executing a simple query, and sets the mysqlClient variable to the new MySQLPool object.
  * If the connection is successful, the function logs a message to the console.
  */
-package com.vertx.common.client
+package com.vertx.mysql.client
 
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.appConfig
+import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import io.vertx.kotlin.coroutines.await
 import io.vertx.sqlclient.PoolOptions
@@ -31,6 +32,10 @@ object MysqlClient {
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
      */
     suspend fun init() {
+        if (!isInit) {
+            StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+            throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+        }
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
         val config = appConfig.database.mysql
         val host = config.host

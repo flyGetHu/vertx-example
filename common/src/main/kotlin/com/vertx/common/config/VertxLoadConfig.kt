@@ -21,6 +21,9 @@ import io.vertx.core.shareddata.SharedData
 import io.vertx.kotlin.coroutines.await
 
 
+// 是否已经初始化
+var isInit = false
+
 // 环境变量 如需要使用自定义的环境变量,修改此处即可 默认config.dev.yaml
 var active = "dev"
 
@@ -46,6 +49,7 @@ object VertxLoadConfig {
 
     /**
      * 加载配置文件
+     * @see appConfig
      */
     suspend fun init() {
         vertx = Vertx.currentContext().owner()
@@ -75,5 +79,6 @@ object VertxLoadConfig {
         val webClientCfg = config.webClient
         WebClient.init(webClientCfg)
         appConfig = config
+        isInit = true
     }
 }

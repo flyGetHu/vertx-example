@@ -1,8 +1,8 @@
 package com.vertx.example.verticle
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.client.MysqlClient
 import com.vertx.common.config.VertxLoadConfig
+import com.vertx.mysql.client.MysqlClient
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 import io.vertx.kotlin.coroutines.await
 import java.time.Duration

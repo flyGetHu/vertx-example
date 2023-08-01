@@ -1,4 +1,4 @@
-package com.vertx.common.config
+package com.vertx.mysql.config
 
 /**
  * 表名注解

@@ -4,11 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="分页查询">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/common/MysqlHelper.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="迁移mysql帮助类">
+      <change afterPath="$PROJECT_DIR$/mysql/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/bus/DemoBusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/client/WebClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/config/MysqlConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/config/VertxWebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/ApiResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/CircuitBreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/CircuitBreakerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/handler/RequestInterceptorHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronScheduler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronScheduler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/DateUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/vertx/common/utils/Str.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/com/vertx/common/utils/Str.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/model/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +58,15 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/auth/EnvironmentFocusNFeEnum.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/enumeration/MDeTipoManifestacaoEnum.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/filter/RequestHeaderInfoFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/model/request/mde/body/MDeManifestarBodyRequest.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/repository/download/FocusDownloadRepositoryImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/repository/mde/FocusMDeV2ProxyClient.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/repository/mde/FocusMDeV2Repository.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,10 +82,9 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2RmIrsB82ZsAiCaTNtnU4eghWrt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,7 +103,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/mysql/src/main/kotlin/com/vertx/mysql/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,22 +112,23 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\config" />
+      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\utils" />
+      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql" />
+      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\client" />
       <recent name="D:\workspace\java\vertx-example" />
-      <recent name="D:\workspace\java\vertx-example\example\src\main\resources\conf" />
-      <recent name="D:\workspace\java\vertx-example\example\src\main\resources" />
-      <recent name="D:\workspace\java\vertx-example\example\src\main" />
-      <recent name="D:\workspace\java\vertx-example\common\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\mysql\src\main\kotlin\com\vertx\mysql\client" />
       <recent name="D:\workspace\java\vertx-example\example\src\main\resources\conf" />
       <recent name="D:\workspace\java\vertx-example\example\src\main\kotlin\com\vertx\example" />
       <recent name="D:\workspace\java\vertx-example\common\src\main\resources\conf" />
@@ -253,7 +288,9 @@
       <workItem from="1690333516648" duration="70000" />
       <workItem from="1690333873740" duration="89000" />
       <workItem from="1690335172231" duration="65000" />
-      <workItem from="1690335272461" duration="45805000" />
+      <workItem from="1690335272461" duration="47483000" />
+      <workItem from="1690852390639" duration="172000" />
+      <workItem from="1690852794345" duration="1201000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -596,7 +633,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690800072645</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="迁移mysql帮助类">
+      <option name="closed" value="true" />
+      <created>1690800948983</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1690800948983</updated>
+    </task>
+    <task id="LOCAL-00049" summary="迁移mysql帮助类">
+      <option name="closed" value="true" />
+      <created>1690801181927</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1690801181927</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +667,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="定时任务组件" />
     <MESSAGE value="合并示例项目" />
     <MESSAGE value="集群启动函数提取" />
     <MESSAGE value="修改启动集群启动器" />
@@ -639,7 +691,8 @@
     <MESSAGE value="完成基础的增删改查" />
     <MESSAGE value="关闭jooq广告" />
     <MESSAGE value="分页查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="分页查询" />
+    <MESSAGE value="迁移mysql帮助类" />
+    <option name="LAST_COMMIT_MESSAGE" value="迁移mysql帮助类" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

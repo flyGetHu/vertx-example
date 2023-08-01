@@ -1,10 +1,10 @@
-package com.vertx.common.helper
+package com.vertx.mysql.helper
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.client.mysqlPoolClient
 import com.vertx.common.config.active
-import com.vertx.common.utils.getTableName
 import com.vertx.common.utils.underlineName
+import com.vertx.mysql.client.mysqlPoolClient
+import com.vertx.mysql.utils.getTableName
 import io.vertx.kotlin.coroutines.await
 import io.vertx.mysqlclient.MySQLClient
 import org.jooq.Condition

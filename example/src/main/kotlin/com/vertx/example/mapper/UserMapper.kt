@@ -1,8 +1,8 @@
 package com.vertx.example.mapper
 
-import com.vertx.common.helper.MysqlHelper
 import com.vertx.common.utils.underlineName
 import com.vertx.example.model.User
+import com.vertx.mysql.helper.MysqlHelper
 import org.jooq.impl.DSL
 
 object UserMapper {
