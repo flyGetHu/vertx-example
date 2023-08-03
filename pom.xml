@@ -19,6 +19,7 @@
         <module>example-bus</module>
         <module>example-task</module>
         <module>common-rabbitmq</module>
+        <module>example-rabbitmq</module>
     </modules>
 
     <properties>

@@ -31,10 +31,14 @@ object MysqlClient {
      * mysql客户端
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
      */
-    suspend fun init(config: com.vertx.common.entity.Mysql) {
+    suspend fun init(config: com.vertx.common.entity.Mysql?) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+        }
+        if (config == null) {
+            StaticLog.error("mysql配置为空")
+            throw Exception("mysql配置为空")
         }
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
         val host = config.host
@@ -73,7 +77,8 @@ object MysqlClient {
         // 连接池
         val poolOptions = PoolOptions()
         // 连接池名称 用于日志
-        poolOptions.name = "mysql-pool-${appConfig.app.name}-${appConfig.app.version}"
+        val app = appConfig.app ?: throw Exception("app is null")
+        poolOptions.name = "mysql-pool-${app.name}-${app.version}"
         // 最大连接数
         poolOptions.maxSize = config.maxPoolSize
         // 空闲连接超时时间

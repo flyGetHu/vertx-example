@@ -55,6 +55,7 @@
  */
 package com.vertx.common.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import io.vertx.core.http.HttpVersion
 import kotlin.random.Random
@@ -62,131 +63,220 @@ import kotlin.random.Random
 /**
  * 配置文件
  */
-data class AppConfig(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class AppConfig {
     // app配置
-    @JsonProperty("app") val app: App,
+    @JsonProperty("app")
+    val app: App? = null
+
     // 服务配置
-    @JsonProperty("webServer") val webServer: WebServer,
+    @JsonProperty("webServer")
+    val webServer: WebServer? = null
+
     // 数据库配置
-    @JsonProperty("database") val database: Database,
+    @JsonProperty("database")
+    val database: Database? = null
+
     // mq配置
-    @JsonProperty("mq") val mq: Mq,
+    @JsonProperty("mq")
+    val mq: Mq? = null
+
     // vertx配置
-    @JsonProperty("vertx") val vertx: Vertx,
+    @JsonProperty("vertx")
+    val vertx: Vertx? = null
+
     // WEB客户端
-    @JsonProperty("webClient") val webClient: WebClient
-)
+    @JsonProperty("webClient")
+    val webClient: WebClient? = null
+}
 
 
 /**
  * 应用配置
  */
-data class App(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class App {
     // 应用名称
-    @JsonProperty("name") val name: String = "",
+    @JsonProperty("name")
+    val name: String = ""
+
     // 应用版本
-    @JsonProperty("version") val version: String = "1.0.0",
+    @JsonProperty("version")
+    val version: String = "1.0.0"
+
     // 应用描述
-    @JsonProperty("description") val description: String = "",
-)
+    @JsonProperty("description")
+    val description: String = ""
+}
 
 /**
  * 服务配置
  */
-data class WebServer(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class WebServer {
     // 服务端口
-    @JsonProperty("port") val port: Int = Random.nextInt(10000),
+    @JsonProperty("port")
+    val port: Int = Random.nextInt(10000)
+
     // 服务地址
-    @JsonProperty("host") val host: String = "0.0.0.0",
+    @JsonProperty("host")
+    val host: String = "0.0.0.0"
+
     // 服务版本 alpnVersions
-    @JsonProperty("alpnVersions") val alpnVersions: List<HttpVersion> = listOf(
+    @JsonProperty("alpnVersions")
+    val alpnVersions: List<HttpVersion> = listOf(
         HttpVersion.HTTP_2, HttpVersion.HTTP_1_1
-    ),
+    )
+
     // 请求前缀
-    @JsonProperty("prefix") val prefix: String = "/api",
+    @JsonProperty("prefix")
+    val prefix: String = "/api"
+
     // 请求超时时间
-    @JsonProperty("timeout") val timeout: Int = 30000,
+    @JsonProperty("timeout")
+    val timeout: Int = 30000
+
     // 是否开启日志
-    @JsonProperty("logEnabled") val logEnabled: Boolean = true,
+    @JsonProperty("logEnabled")
+    val logEnabled: Boolean = true
+
     // 不进行请求拦截的地址
-    @JsonProperty("ignorePaths") val ignorePaths: List<String> = listOf(),
+    @JsonProperty("ignorePaths")
+    val ignorePaths: List<String> = listOf()
+
     // 是否开启gzip压缩
-    @JsonProperty("compressionSupported") val compressionSupported: Boolean = true,
+    @JsonProperty("compressionSupported")
+    val compressionSupported: Boolean = true
+
     // 压缩等级
-    @JsonProperty("compressionLevel") val compressionLevel: Int = 6,
-)
+    @JsonProperty("compressionLevel")
+    val compressionLevel: Int = 6
+}
 
 /**
  * 数据库配置
  */
-data class Database(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Database {
     // mysql配置
-    @JsonProperty("mysql") val mysql: Mysql,
-)
+    @JsonProperty("mysql")
+    val mysql: Mysql? = null
+}
 
-data class Mq(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Mq {
     // rabbitmq配置
-    @JsonProperty("rabbitmq") val rabbitmq: Rabbitmq
-)
+    @JsonProperty("rabbitmq")
+    val rabbitmq: Rabbitmq? = null
+}
 
-data class Rabbitmq(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Rabbitmq {
     // 主机地址
-    @JsonProperty("host") val host: String = "127.0.0.1",
+    @JsonProperty("host")
+    val host: String = "127.0.0.1"
+
     // 端口
-    @JsonProperty("port") val port: Int = 5672,
+    @JsonProperty("port")
+    val port: Int = 5672
+
     // 用户名
-    @JsonProperty("username") val username: String = "guest",
+    @JsonProperty("username")
+    val username: String = "guest"
+
     // 密码
-    @JsonProperty("password") val password: String = "guest",
+    @JsonProperty("password")
+    val password: String = "guest"
+
     // 虚拟主机
-    @JsonProperty("virtualHost") val virtualHost: String = "/",
+    @JsonProperty("virtualHost")
+    val virtualHost: String = "/"
+
     // requestedChannelMax 最大通道数
-    @JsonProperty("requestedChannelMax") val requestedChannelMax: Int = 4095,
+    @JsonProperty("requestedChannelMax")
+    val requestedChannelMax: Int = 4095
+
     // 自动重连
-    @JsonProperty("automaticRecoveryEnabled") val automaticRecoveryEnabled: Boolean = true,
+    @JsonProperty("automaticRecoveryEnabled")
+    val automaticRecoveryEnabled: Boolean = true
+
     // 重连间隔
-    @JsonProperty("networkRecoveryInterval") val networkRecoveryInterval: Long = 5000,
+    @JsonProperty("networkRecoveryInterval")
+    val networkRecoveryInterval: Long = 5000
+
     // handshakeTimeout 连接握手超时时间
-    @JsonProperty("handshakeTimeout") val handshakeTimeout: Int = 10000,
+    @JsonProperty("handshakeTimeout")
+    val handshakeTimeout: Int = 10000
+
     // 连接超时时间
-    @JsonProperty("connectionTimeout") val connectionTimeout: Int = 10000,
+    @JsonProperty("connectionTimeout")
+    val connectionTimeout: Int = 10000
+
     // reconnectAttempts 重连次数
-    @JsonProperty("reconnectAttempts") val reconnectAttempts: Int = 100,
+    @JsonProperty("reconnectAttempts")
+    val reconnectAttempts: Int = 100
+
     // reconnectInterval 重连间隔
-    @JsonProperty("reconnectInterval") val reconnectInterval: Long = 500,
+    @JsonProperty("reconnectInterval")
+    val reconnectInterval: Long = 500
+
     // requestedHeartbeat 心跳间隔
-    @JsonProperty("requestedHeartbeat") val requestedHeartbeat: Int = 10,
-)
+    @JsonProperty("requestedHeartbeat")
+    val requestedHeartbeat: Int = 10
+}
 
 // mysql配置
-data class Mysql(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Mysql {
     // 数据库连接地址
-    @JsonProperty("host") val host: String = "127.0.0.1",
+    @JsonProperty("host")
+    val host: String = "127.0.0.1"
+
     // 数据库端口
-    @JsonProperty("port") val port: Int = 3306,
+    @JsonProperty("port")
+    val port: Int = 3306
+
     // 数据库用户名
-    @JsonProperty("username") val username: String,
+    @JsonProperty("username")
+    val username: String = "root"
+
     // 数据库密码
-    @JsonProperty("password") val password: String,
+    @JsonProperty("password")
+    val password: String = "root"
+
     // 数据库名称
-    @JsonProperty("database") val database: String,
+    @JsonProperty("database")
+    val database: String = "test"
+
     // 数据库编码格式
-    @JsonProperty("charset") val charset: String = "utf8mb4",
+    @JsonProperty("charset")
+    val charset: String = "utf8mb4"
+
     // 时区
-    @JsonProperty("timezone") val timezone: String = "UTC",
+    @JsonProperty("timezone")
+    val timezone: String = "UTC"
+
     // 连接池配置
     // 最大连接数
-    @JsonProperty("maxPoolSize") val maxPoolSize: Int = 16,
-    // 空闲超时时间
-    @JsonProperty("idleTimeout") val idleTimeout: Int = 10000,
-    // 连接超时时间
-    @JsonProperty("connectionTimeout") val connectionTimeout: Int = 2000,
-    // 最大连接池生存时间
-    @JsonProperty("maxLifetime") val maxLifetime: Int = 1800000,
-    // 最大等待队列数
-    @JsonProperty("maxWaitQueueSize") val maxWaitQueueSize: Int = Int.MAX_VALUE,
+    @JsonProperty("maxPoolSize")
+    val maxPoolSize: Int = 16
 
-    )
+    // 空闲超时时间
+    @JsonProperty("idleTimeout")
+    val idleTimeout: Int = 10000
+
+    // 连接超时时间
+    @JsonProperty("connectionTimeout")
+    val connectionTimeout: Int = 2000
+
+    // 最大连接池生存时间
+    @JsonProperty("maxLifetime")
+    val maxLifetime: Int = 1800000
+
+    // 最大等待队列数
+    @JsonProperty("maxWaitQueueSize")
+    val maxWaitQueueSize: Int = Int.MAX_VALUE
+}
 
 
 /**
@@ -196,14 +286,20 @@ data class Mysql(
  *     instances: 1
  *     ha: false
  */
-data class Vertx(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Vertx {
     // verticle 入口类 项目启动加载的第一个verticle,一般情况下为MainVerticle
-    @JsonProperty("verticle") val verticle: String,
+    @JsonProperty("verticle")
+    val verticle: String = "com.vertx.example.verticle.MainVerticle"
+
     // instances
-    @JsonProperty("instances") val instances: Int = 1,
+    @JsonProperty("instances")
+    val instances: Int = 1
+
     // ha
-    @JsonProperty("ha") val ha: Boolean = false,
-)
+    @JsonProperty("ha")
+    val ha: Boolean = false
+}
 
 /**
  * webclient:
@@ -213,15 +309,25 @@ data class Vertx(
  *   idleTimeout: 10000
  *   writeIdleTimeout: 10000
  */
-data class WebClient(
+@JsonIgnoreProperties(ignoreUnknown = true)
+class WebClient {
     // 最大连接数
-    @JsonProperty("maxPoolSize") val maxPoolSize: Int = 16,
+    @JsonProperty("maxPoolSize")
+    val maxPoolSize: Int = 16
+
     // 连接超时时间
-    @JsonProperty("connectTimeout") val connectTimeout: Int = 2000,
+    @JsonProperty("connectTimeout")
+    val connectTimeout: Int = 2000
+
     // 读取超时时间
-    @JsonProperty("readIdleTimeout") val readIdleTimeout: Int = 20000,
+    @JsonProperty("readIdleTimeout")
+    val readIdleTimeout: Int = 20000
+
     // 空闲超时时间
-    @JsonProperty("idleTimeout") val idleTimeout: Int = 10000,
+    @JsonProperty("idleTimeout")
+    val idleTimeout: Int = 10000
+
     // 写入超时时间
-    @JsonProperty("writeIdleTimeout") val writeIdleTimeout: Int = 10000,
-)
+    @JsonProperty("writeIdleTimeout")
+    val writeIdleTimeout: Int = 10000
+}

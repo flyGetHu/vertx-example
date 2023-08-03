@@ -19,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/example-bus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-bus/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-bus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example-rabbitmq/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example-rabbitmq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-task/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-task/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-web/src/main/java" charset="UTF-8" />
