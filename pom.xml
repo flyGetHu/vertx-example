@@ -15,10 +15,10 @@
         <module>common-webserver</module>
         <module>common-eventbus</module>
         <module>common-breaker</module>
+        <module>common-rabbitmq</module>
         <module>example-web</module>
         <module>example-bus</module>
         <module>example-task</module>
-        <module>common-rabbitmq</module>
         <module>example-rabbitmq</module>
     </modules>
 

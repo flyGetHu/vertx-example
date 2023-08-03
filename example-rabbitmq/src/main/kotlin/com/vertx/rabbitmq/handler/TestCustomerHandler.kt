@@ -1,11 +1,10 @@
-package com.vertx.rabbitmq.consumer
+package com.vertx.rabbitmq.handler
 
 import cn.hutool.log.StaticLog
 import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.enums.ModelEnum
 import com.vertx.common.model.User
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
-import com.vertx.rabbitmq.handler.RabbitMqHandler
 
 /**
  * rabbit队列处理器接口
