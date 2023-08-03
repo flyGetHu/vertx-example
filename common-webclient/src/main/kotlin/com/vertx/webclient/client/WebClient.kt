@@ -1,6 +1,7 @@
 package com.vertx.webclient.client
 
 import com.vertx.common.config.vertx
+import com.vertx.common.entity.app.WebClient
 
 // WEB客户端
 lateinit var webClient: io.vertx.ext.web.client.WebClient
@@ -14,7 +15,7 @@ object WebClient {
    * @param config 配置
    */
   fun init(
-    config: com.vertx.common.entity.WebClient = com.vertx.common.entity.WebClient(
+      config: WebClient = WebClient(
       maxPoolSize = 16,
       connectTimeout = 10000,
       readIdleTimeout = 10000,

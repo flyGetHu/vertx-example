@@ -1,4 +1,4 @@
-package com.vertx.common.entity
+package com.vertx.common.entity.web
 
 /**
  * ApiResponse is a generic data class that represents the response of an API call.

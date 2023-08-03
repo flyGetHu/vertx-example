@@ -53,7 +53,7 @@
  * - idleTimeout: an integer that represents the idle timeout of the web client.
  * - writeIdleTimeout: an integer that represents the write idle timeout of the web client.
  */
-package com.vertx.common.entity
+package com.vertx.common.entity.app
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
@@ -223,6 +223,10 @@ class Rabbitmq {
     // requestedHeartbeat 心跳间隔
     @JsonProperty("requestedHeartbeat")
     val requestedHeartbeat: Int = 10
+
+    // 最大Qos
+    @JsonProperty("maxQos")
+    var maxQos: Int = 1
 }
 
 // mysql配置

@@ -1,6 +1,7 @@
 package com.vertx.rabbitmq.client
 
 import com.vertx.common.config.vertx
+import com.vertx.common.entity.app.Rabbitmq
 import io.vertx.kotlin.coroutines.await
 import io.vertx.rabbitmq.RabbitMQOptions
 
@@ -16,7 +17,10 @@ object RabbitMqClient {
     /**
      * rabbitmq客户端初始化
      */
-    suspend fun init(config: com.vertx.common.entity.Rabbitmq) {
+    suspend fun init(config: Rabbitmq?) {
+        if (config == null) {
+            throw Exception("rabbitmq config is null")
+        }
         val rabbitMQOptions = RabbitMQOptions()
         val host = config.host
         if (host.isBlank()) {
@@ -59,5 +63,7 @@ object RabbitMqClient {
         rabbitMqClient.start().await()
         //设置客户端为confirm模式
         rabbitMqClient.confirmSelect().await()
+        //设置客户端最大qos
+        rabbitMqClient.basicQos(config.maxQos).await()
     }
 }

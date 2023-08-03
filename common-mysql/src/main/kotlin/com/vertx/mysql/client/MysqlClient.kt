@@ -12,6 +12,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
+import com.vertx.common.entity.app.Mysql
 import io.vertx.kotlin.coroutines.await
 import io.vertx.sqlclient.PoolOptions
 
@@ -31,7 +32,7 @@ object MysqlClient {
      * mysql客户端
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
      */
-    suspend fun init(config: com.vertx.common.entity.Mysql?) {
+    suspend fun init(config: Mysql?) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")

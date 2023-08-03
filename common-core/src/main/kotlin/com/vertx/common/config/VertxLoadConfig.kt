@@ -9,7 +9,7 @@ package com.vertx.common.config
 import cn.hutool.log.LogFactory
 import cn.hutool.log.StaticLog
 import cn.hutool.log.dialect.log4j2.Log4j2LogFactory
-import com.vertx.common.entity.AppConfig
+import com.vertx.common.entity.app.AppConfig
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
 import io.vertx.config.ConfigStoreOptions

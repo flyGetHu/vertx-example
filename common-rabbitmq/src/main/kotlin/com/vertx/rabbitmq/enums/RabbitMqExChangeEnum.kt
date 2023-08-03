@@ -1,15 +1,22 @@
 package com.vertx.rabbitmq.enums
 
+import com.vertx.common.model.User
+
 /**
  * rabbitmq交换机枚举
  * @property type 交换机类型
  * @property exchanger 交换机名称
  */
 enum class RabbitMqExChangeEnum(
+    // 交换机类型
     val type: RabbitMqExChangeTypeEnum,
+    // 交换机名称
     val exchanger: String,
+    // 消息类型
     val messageType: Any = String::class.java,
+    // 是否持久化
     val durable: Boolean = true,
+    // 是否自动删除
     val autoDelete: Boolean = false,
 ) {
     /**
@@ -17,23 +24,5 @@ enum class RabbitMqExChangeEnum(
      */
     DEFAULT(RabbitMqExChangeTypeEnum.DEFAULT, ""),
 
-    /**
-     * 直连交换机
-     */
-    DIRECT(RabbitMqExChangeTypeEnum.DIRECT, "direct"),
-
-    /**
-     * 主题交换机
-     */
-    TOPIC(RabbitMqExChangeTypeEnum.TOPIC, "topic"),
-
-    /**
-     * 头交换机
-     */
-    HEADERS(RabbitMqExChangeTypeEnum.HEADERS, "headers"),
-
-    /**
-     * 扇形交换机
-     */
-    FANOUT(RabbitMqExChangeTypeEnum.FANOUT, "fanout");
+    TESTRabbitMqExChangeEnum(RabbitMqExChangeTypeEnum.FANOUT, "test", User::class.java, true, false)
 }

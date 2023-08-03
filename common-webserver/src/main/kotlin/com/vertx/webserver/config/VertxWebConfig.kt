@@ -11,8 +11,8 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
-import com.vertx.common.entity.ApiError
-import com.vertx.common.entity.ApiResponse
+import com.vertx.common.entity.web.ApiError
+import com.vertx.common.entity.web.ApiResponse
 import com.vertx.webserver.handler.RequestInterceptorHandler
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route

@@ -1,6 +1,7 @@
-package com.vertx.common.entity
+package com.vertx.common.entity.mq
 
 import cn.hutool.core.lang.UUID
+import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
  * 消息数据
@@ -8,10 +9,10 @@ import cn.hutool.core.lang.UUID
  * @property id 消息id
  * @property msg 消息
  */
-class MessageData<T>(// 消息
-    var msg: T
+class MqMessageData<T>(// 消息
+    @JsonProperty("msg") var msg: T
 ) {
     // 消息id
+    @JsonProperty("id")
     var id = UUID.fastUUID().toString()
-
 }
