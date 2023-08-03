@@ -154,7 +154,7 @@ object RabbitMqHelper {
         queueOptions.setAutoAck(autoAck)
         val rabbitMQConsumer = rabbitMqClient.basicConsumer(queueName, queueOptions).await()
         val requestClass = rabbitMqHandler.requestClass
-
+        // 消费消息 执行业务逻辑
         rabbitMQConsumer.handler { rabbitMQMessage ->
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
@@ -193,6 +193,12 @@ object RabbitMqHelper {
                     }
                 }
             }
+        }
+        rabbitMQConsumer.exceptionHandler {
+            StaticLog.error(it, "注册消费者失败:队列名称:$queueName")
+        }
+        rabbitMQConsumer.endHandler {
+            StaticLog.info("消费者关闭:队列名称:$queueName")
         }
         StaticLog.info("注册消费者成功:队列名称:$queueName")
     }

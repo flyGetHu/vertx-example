@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-webserver" />
         <module name="example-web" />
+        <module name="common-rabbitmq" />
         <module name="common-mysql" />
         <module name="example-task" />
         <module name="common-webclient" />
