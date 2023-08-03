@@ -5,9 +5,11 @@ import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.enums.ModelEnum
 import com.vertx.common.model.User
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
+import com.vertx.rabbitmq.handler.TestCustomerHandler.requestClass
 
 /**
  * rabbit队列处理器接口
+ * @property requestClass 请求类
  */
 object TestCustomerHandler : RabbitMqHandler<User> {
     override val requestClass: Class<User> = User::class.java

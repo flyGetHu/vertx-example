@@ -6,11 +6,15 @@ import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 
 /**
  * rabbit队列处理器接口
+ * 此接口用于定义rabbitmq队列的基本信息
+ *
  * @param Request 请求对象类型
- * @property requestClass 请求对象类型
+ * @property handler 消费处理器,具体处理业务逻辑,接收到消息后,会调用此处理器
+ * @property persistence 持久化处理器,在发送消息前,会调用此处理器,将消息持久化到数据库,如果不需要持久化,则空函数即可
+ * @property callback 回调处理器,在发送消息后,会调用此处理器,将消息发送结果回调给调用方,如果不需要回调,则空函数即可
  */
 interface RabbitMqHandler<Request> {
-    // The class of the request, e.g. User::class.java
+    // 队列消息实体类型
     val requestClass: Class<Request>
 
 
