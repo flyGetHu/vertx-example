@@ -69,11 +69,14 @@ data class AppConfig(
     @JsonProperty("webServer") val webServer: WebServer,
     // 数据库配置
     @JsonProperty("database") val database: Database,
+    // mq配置
+    @JsonProperty("mq") val mq: Mq,
     // vertx配置
     @JsonProperty("vertx") val vertx: Vertx,
     // WEB客户端
     @JsonProperty("webClient") val webClient: WebClient
 )
+
 
 /**
  * 应用配置
@@ -119,6 +122,40 @@ data class WebServer(
 data class Database(
     // mysql配置
     @JsonProperty("mysql") val mysql: Mysql,
+)
+
+data class Mq(
+    // rabbitmq配置
+    @JsonProperty("rabbitmq") val rabbitmq: Rabbitmq
+)
+
+data class Rabbitmq(
+    // 主机地址
+    @JsonProperty("host") val host: String = "127.0.0.1",
+    // 端口
+    @JsonProperty("port") val port: Int = 5672,
+    // 用户名
+    @JsonProperty("username") val username: String = "guest",
+    // 密码
+    @JsonProperty("password") val password: String = "guest",
+    // 虚拟主机
+    @JsonProperty("virtualHost") val virtualHost: String = "/",
+    // requestedChannelMax 最大通道数
+    @JsonProperty("requestedChannelMax") val requestedChannelMax: Int = 4095,
+    // 自动重连
+    @JsonProperty("automaticRecoveryEnabled") val automaticRecoveryEnabled: Boolean = true,
+    // 重连间隔
+    @JsonProperty("networkRecoveryInterval") val networkRecoveryInterval: Long = 5000,
+    // handshakeTimeout 连接握手超时时间
+    @JsonProperty("handshakeTimeout") val handshakeTimeout: Int = 10000,
+    // 连接超时时间
+    @JsonProperty("connectionTimeout") val connectionTimeout: Int = 10000,
+    // reconnectAttempts 重连次数
+    @JsonProperty("reconnectAttempts") val reconnectAttempts: Int = 100,
+    // reconnectInterval 重连间隔
+    @JsonProperty("reconnectInterval") val reconnectInterval: Long = 500,
+    // requestedHeartbeat 心跳间隔
+    @JsonProperty("requestedHeartbeat") val requestedHeartbeat: Int = 10,
 )
 
 // mysql配置

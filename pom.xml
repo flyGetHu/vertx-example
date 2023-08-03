@@ -18,6 +18,7 @@
         <module>example-web</module>
         <module>example-bus</module>
         <module>example-task</module>
+        <module>common-rabbitmq</module>
     </modules>
 
     <properties>

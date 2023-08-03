@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="添加error默认code和msg">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="sql查询">
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/MessageData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeEnum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeTypeEnum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +34,9 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -39,6 +53,7 @@
     <option name="projectConfigVersion" value="5" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/4.4.4/vertx-core-4.4.4-sources.jar!/io/vertx/core/eventbus/EventBus.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/auth/EnvironmentFocusNFeEnum.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/enumeration/MDeTipoManifestacaoEnum.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/frekele/fiscal/focusnfe-api-client/1.0.4/focusnfe-api-client-1.0.4-sources.jar!/org/frekele/fiscal/focus/nfe/client/filter/RequestHeaderInfoFilter.java" root0="SKIP_INSPECTION" />
@@ -115,6 +130,7 @@
       <recent name="D:\workspace\java\vertx-example\example\src\main\resources\conf" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.vertx.common.enums" />
       <recent name="com.vertx.eventbus.handler" />
       <recent name="com.vertx.breaker.handler" />
       <recent name="com.vertx.webserver.handler" />
@@ -131,11 +147,11 @@
       <recent name="com.vertx.verticle" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.vertx.common.entity" />
       <recent name="com.vertx.task.handler" />
       <recent name="com.vertx.example.verticle" />
       <recent name="com.vertx.eventbus.bus.impl" />
       <recent name="" />
-      <recent name="com.vertx.common.utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.vertx.common.bus" />
@@ -144,8 +160,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
-      <command value="mvn clean install" />
       <command value="mvn clean install package" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -269,7 +285,7 @@
       <workItem from="1690852794345" duration="3815000" />
       <workItem from="1690862909942" duration="14670000" />
       <workItem from="1690937758809" duration="1337000" />
-      <workItem from="1691023512038" duration="463000" />
+      <workItem from="1691023512038" duration="10899000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -516,22 +532,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00052" summary="拆分eventbus">
-      <option name="closed" value="true" />
-      <created>1690855941831</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1690855941831</updated>
-    </task>
-    <task id="LOCAL-00053" summary="git lab">
-      <option name="closed" value="true" />
-      <created>1690863075112</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1690863075112</updated>
-    </task>
     <task id="LOCAL-00054" summary="重命名模块名称">
       <option name="closed" value="true" />
       <created>1690868936463</created>
@@ -628,7 +628,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690883156431</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="修改bus接口执行返回参数">
+      <option name="closed" value="true" />
+      <created>1691024129633</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1691024129633</updated>
+    </task>
+    <task id="LOCAL-00067" summary="sql查询">
+      <option name="closed" value="true" />
+      <created>1691024818440</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1691024818440</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,8 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="App配置" />
-    <MESSAGE value="项目进度计划" />
     <MESSAGE value="web服务器添加gzip压缩" />
     <MESSAGE value="自定义web请求日志" />
     <MESSAGE value="WebSocketExamoleRouter" />
@@ -671,7 +685,9 @@
     <MESSAGE value="加载配置文件json" />
     <MESSAGE value="删除多余实现" />
     <MESSAGE value="添加error默认code和msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加error默认code和msg" />
+    <MESSAGE value="修改bus接口执行返回参数" />
+    <MESSAGE value="sql查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="sql查询" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
