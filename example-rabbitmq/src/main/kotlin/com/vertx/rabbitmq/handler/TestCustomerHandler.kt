@@ -23,7 +23,6 @@ object TestCustomerHandler : RabbitMqHandler<User> {
     override var autoAck: Boolean = true
     override var maxRetry: Int = 3
     override var retryInterval: Long = 1000
-    override var delayTime: Long = 1000
     override var handler: suspend (User) -> String? = { message: User ->
         StaticLog.debug("消费成功:${message}")
         null

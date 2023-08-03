@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="测试mq消息发送以及消费">
-      <change afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="打包配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,9 +188,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleRabbitMqMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="ExampleRabbitMqMainApp" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.rabbitmq.ExampleRabbitMqMainApp" />
       <module name="example-rabbitmq" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -241,10 +232,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>
@@ -279,7 +270,7 @@
       <workItem from="1690852794345" duration="3815000" />
       <workItem from="1690862909942" duration="14670000" />
       <workItem from="1690937758809" duration="1337000" />
-      <workItem from="1691023512038" duration="27005000" />
+      <workItem from="1691023512038" duration="27328000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -526,14 +517,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00062" summary="加载配置文件json">
-      <option name="closed" value="true" />
-      <created>1690879217758</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1690879217758</updated>
-    </task>
     <task id="LOCAL-00063" summary="加载配置文件json">
       <option name="closed" value="true" />
       <created>1690882792640</created>
@@ -638,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691051518050</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="打包配置">
+      <option name="closed" value="true" />
+      <created>1691053699015</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1691053699015</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="初步sql封装" />
     <MESSAGE value="删除不需要的模块" />
     <MESSAGE value="动态表名问题" />
     <MESSAGE value="示例项目查询" />
@@ -681,7 +671,8 @@
     <MESSAGE value="mq 测试" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="测试mq消息发送以及消费" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试mq消息发送以及消费" />
+    <MESSAGE value="打包配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="打包配置" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
