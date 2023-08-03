@@ -19,10 +19,10 @@ import com.vertx.common.config.eventBus
 import com.vertx.common.config.vertx
 import io.vertx.core.AsyncResult
 import io.vertx.core.Future
-import io.vertx.core.Handler
 import io.vertx.core.Promise
 import io.vertx.core.eventbus.Message
 import io.vertx.core.json.Json
+import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -62,8 +62,13 @@ interface BusHandler<Request, Response> {
 
     /**
      * 服务提供方处理请求
+     * @param request 请求参数
+     * @return Future<Response> 响应结果
      */
-    suspend fun handleRequest(request: Request, resultHandler: Handler<AsyncResult<Response>>)
+    suspend fun handleRequest(request: Request): Future<Response> {
+        StaticLog.info("BusHandler: $request")
+        return Future.succeededFuture()
+    }
 
     /**
      * Call the service
@@ -116,26 +121,23 @@ interface BusHandler<Request, Response> {
             StaticLog.info("注册服务: $address")
             eventBus.consumer(address) { message: Message<Request> ->
                 CoroutineScope(vertx.dispatcher()).launch {
-                    val request = message.body()
-                    service.handleRequest(request) { ar: AsyncResult<Response> ->
-                        var result: Response? = null
-                        if (ar.succeeded()) {
-                            result = ar.result()
-                            message.reply(Json.encode(result))
-                        } else {
-                            message.fail(HttpStatus.HTTP_INTERNAL_ERROR, ar.cause().message)
-                            StaticLog.error(ar.cause(), "RPC服务处理失败:$address")
-                        }
+                    try {
+                        val request = message.body()
+                        val response = service.handleRequest(request).await()
+                        message.reply(Json.encode(response))
                         // 非生产环境打印日志
                         if (active != "prod") {
                             StaticLog.info(
                                 """
-                                RPC服务处理请求: $address
-                                请求参数: ${request.toString()}
-                                响应结果: ${result.toString()}
-                            """.trimIndent()
+                                    RPC服务处理请求: $address
+                                    请求参数: ${request.toString()}
+                                    响应结果: ${response.toString()}
+                                """.trimIndent()
                             )
                         }
+                    } catch (e: Throwable) {
+                        message.fail(HttpStatus.HTTP_INTERNAL_ERROR, e.message)
+                        StaticLog.error(e, "RPC服务处理请求失败: $address")
                     }
                 }
             }

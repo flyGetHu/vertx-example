@@ -10,8 +10,7 @@ package com.vertx.eventbus.bus
 
 import com.vertx.common.model.User
 import com.vertx.eventbus.handler.BusHandler
-import io.vertx.core.AsyncResult
-import io.vertx.core.Handler
+import io.vertx.core.Future
 
 /**
  * 事件总线处理器 测试demo
@@ -25,7 +24,8 @@ open class DemoBusHandler : BusHandler<String, List<User>> {
     override val address: String = "demo://eventbus"
 
     // 在此处不应该去实现具体的逻辑,除非有默认实现,正常情况下应该是抽象方法,在具体的业务模块中重写该方法
-    override suspend fun handleRequest(request: String, resultHandler: Handler<AsyncResult<List<User>>>) {
+    override suspend fun handleRequest(request: String): Future<List<User>> {
         // 在此处不应该去实现具体的逻辑,除非有默认实现,正常情况下应该是抽象方法,在具体的业务模块中重写该方法
+        return Future.succeededFuture()
     }
 }

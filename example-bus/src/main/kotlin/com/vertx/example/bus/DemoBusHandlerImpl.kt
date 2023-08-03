@@ -4,8 +4,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.model.User
 import com.vertx.eventbus.bus.DemoBusHandler
 import com.vertx.example.mapper.UserMapper
-import io.vertx.core.AsyncResult
-import io.vertx.core.Handler
+import io.vertx.core.Future
 
 /**
  * 事件总线服务提供方实现类
@@ -19,12 +18,11 @@ object DemoBusHandlerImpl : DemoBusHandler() {
     /**
      * BUS处理逻辑
      * @param request 请求参数
-     * @param resultHandler 处理结果
-     * @return
+     * @return Future<Response> 响应结果
      */
-    override suspend fun handleRequest(request: String, resultHandler: Handler<AsyncResult<List<User>>>) {
+    override suspend fun handleRequest(request: String): Future<List<User>> {
         StaticLog.info("DemoBusHandlerImpl: $request")
         val users = UserMapper.list(2)
-        resultHandler.handle(io.vertx.core.Future.succeededFuture(users))
+        return Future.succeededFuture(users)
     }
 }
