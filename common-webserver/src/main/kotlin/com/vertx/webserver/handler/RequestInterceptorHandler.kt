@@ -16,7 +16,8 @@ import io.vertx.ext.web.RoutingContext
  */
 class RequestInterceptorHandler : Handler<RoutingContext> {
     override fun handle(context: RoutingContext) {
-        val ignorePaths = appConfig.webServer.ignorePaths
+        val webServer = appConfig.webServer ?: throw Exception("未配置webserver")
+        val ignorePaths = webServer.ignorePaths
         val path = context.request().path()
         //对指定请求不进行拦截
         if (ignorePaths.contains(path)) {

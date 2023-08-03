@@ -19,7 +19,7 @@ class MainVerticle : CoroutineVerticle() {
             // 初始化web客户端
             WebClient.init(appConfig.webClient)
             // 初始化mysql
-            MysqlClient.init(appConfig.database.mysql)
+            MysqlClient.init(appConfig.database?.mysql)
             vertx.deployVerticle(WebVerticle::class.java.name).await()
             StaticLog.info("启动示例项目成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
         } catch (e: Exception) {

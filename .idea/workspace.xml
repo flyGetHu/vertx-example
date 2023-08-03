@@ -251,10 +251,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>

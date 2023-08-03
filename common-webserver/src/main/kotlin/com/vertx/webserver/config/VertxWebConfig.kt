@@ -76,7 +76,7 @@ object VertxWebConfig {
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
         }
         val httpServerOptions = io.vertx.core.http.HttpServerOptions()
-        val serverConfig = appConfig.webServer
+        val serverConfig = appConfig.webServer ?: throw Exception("未配置webserver")
         httpServerOptions.port = serverConfig.port
         httpServerOptions.host = serverConfig.host
         httpServerOptions.idleTimeout = serverConfig.timeout
@@ -108,30 +108,30 @@ object VertxWebConfig {
         mainRouter.route(serverConfig.prefix).subRouter(router)
         // 统一处理异常
         mainRouter.errorHandler(HttpStatus.HTTP_INTERNAL_ERROR) { context: RoutingContext ->
-            cn.hutool.log.StaticLog.error(context.failure(), "接口异常:{}", context.request().path())
+            StaticLog.error(context.failure(), "接口异常:{}", context.request().path())
             context.errorResponse(message = "接口异常")
         }
         // 超时异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_UNAVAILABLE) { context: RoutingContext ->
-            cn.hutool.log.StaticLog.error(context.failure(), "接口超时:{}", context.request().path())
+            StaticLog.error(context.failure(), "接口超时:{}", context.request().path())
             context.errorResponse(message = "接口超时")
         }
         // 404异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_NOT_FOUND) { context: RoutingContext ->
-            cn.hutool.log.StaticLog.error(
+            StaticLog.error(
                 context.failure(), "接口不存在{}:{}", context.request().method(), context.request().path()
             )
             context.errorResponse(message = "接口不存在")
         }
         // 405异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_BAD_METHOD) { context: RoutingContext ->
-            cn.hutool.log.StaticLog.error(
+            StaticLog.error(
                 context.failure(), "接口不支持该方法{}:{}", context.request().method(), context.request().path()
             )
             context.errorResponse(message = "接口不支持该方法")
         }
         httpServer.requestHandler(mainRouter).listen(serverConfig.port)
-        cn.hutool.log.StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
+        StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
     }
 
     /**
