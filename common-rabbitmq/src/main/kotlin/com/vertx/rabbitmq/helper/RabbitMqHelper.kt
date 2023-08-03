@@ -73,7 +73,7 @@ object RabbitMqHelper {
     suspend fun sendMessageToExchange(
         rabbitMqExChangeEnum: RabbitMqExChangeEnum,
         message: Any,
-        persistenceMessage: suspend (MqMessageData<Any>) -> Boolean
+        persistenceMessage: (suspend (MqMessageData<Any>) -> Boolean)?
     ) {
         // 检查交换机类型是否支持发送消息到交换机
         if (rabbitMqExChangeEnum.type == RabbitMqExChangeTypeEnum.DIRECT) {
@@ -82,9 +82,11 @@ object RabbitMqHelper {
         // 组装消息
         val mqMessageData = MqMessageData(message)
         // 持久化消息
-        val persistenceRes = persistenceMessage(mqMessageData)
-        if (persistenceRes) {
-            StaticLog.warn("消息持久化失败:交换机名称:${rabbitMqExChangeEnum.exchanger},消息:$mqMessageData")
+        if (persistenceMessage != null) {
+            val persistence = persistenceMessage(mqMessageData)
+            if (!persistence) {
+                StaticLog.warn("消息持久化失败:交换机名称:${rabbitMqExChangeEnum.exchanger},消息:$mqMessageData")
+            }
         }
         // 检查交换机消息类型是否匹配
         if (rabbitMqExChangeEnum.messageType != message::class.java) {
@@ -92,9 +94,14 @@ object RabbitMqHelper {
         }
         // 发送消息
         rabbitMqClient.basicPublish(
-            rabbitMqExChangeEnum.exchanger, "", MessageProperties.PERSISTENT_TEXT_PLAIN, Json.encodeToBuffer(message)
+            rabbitMqExChangeEnum.exchanger,
+            "",
+            MessageProperties.PERSISTENT_TEXT_PLAIN,
+            Json.encodeToBuffer(mqMessageData)
         ).await()
-        StaticLog.info("发送消息成功:队列名称:${rabbitMqExChangeEnum.exchanger},消息:$message")
+        if (active != "prod") {
+            StaticLog.debug("发送消息成功:队列名称:${rabbitMqExChangeEnum.exchanger},消息:$message")
+        }
     }
 
 
@@ -128,7 +135,9 @@ object RabbitMqHelper {
             }
             promise.future()
         }.await()
-        StaticLog.info("发送消息成功:队列名称:$queueName,消息:$message")
+        if (active != "prod") {
+            StaticLog.debug("发送消息成功:队列名称:$queueName,消息:$message")
+        }
     }
 
     // 定义消息重试次数map
@@ -215,6 +224,9 @@ object RabbitMqHelper {
                     // 回调
                     rabbitMqHandler.callback("", msgId)
                     ackMessage(autoAck, deliveryTag, msgId)
+                    if (active != "prod") {
+                        StaticLog.debug("消息处理成功:队列名称:$queueName,消息:$rabbitMqMsg")
+                    }
                 } catch (e: Throwable) {
                     // 回调
                     if (msgId.isNotBlank()) {

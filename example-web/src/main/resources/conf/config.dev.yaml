@@ -32,11 +32,11 @@ database: # 数据库配置
     maxWaitQueueSize: 5000 #
 mq:
   rabbitmq: # rabbitmq配置 com.vertx.common.entity.Rabbitmq
-    host: "127.0.0.1" # rabbitmq地址
+    host: "192.168.2.234" # rabbitmq地址
     port: 5672 # rabbitmq端口
     username: "guest" # rabbitmq用户名
     password: "guest" # rabbitmq密码
-    virtualHost: "/" # rabbitmq虚拟主机
+    virtualHost: "/vertx-example" # rabbitmq虚拟主机
     maxQos: 10 # 最大qos
     requestedChannelMax: 4095 #
     automaticRecoveryEnabled: true # 是否开启自动恢复

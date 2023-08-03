@@ -4,6 +4,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.VertxLoadConfig
 import com.vertx.common.config.appConfig
 import com.vertx.mysql.client.MysqlClient
+import com.vertx.rabbitmq.client.RabbitMqClient
 import com.vertx.webclient.client.WebClient
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 import io.vertx.kotlin.coroutines.await
@@ -20,6 +21,8 @@ class MainVerticle : CoroutineVerticle() {
             WebClient.init(appConfig.webClient)
             // 初始化mysql
             MysqlClient.init(appConfig.database?.mysql)
+            // 初始化rabbitmq
+            RabbitMqClient.init(appConfig.mq?.rabbitmq)
             vertx.deployVerticle(WebVerticle::class.java.name).await()
             StaticLog.info("启动示例项目成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
         } catch (e: Exception) {

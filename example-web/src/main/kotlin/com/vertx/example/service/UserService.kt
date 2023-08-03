@@ -2,11 +2,21 @@ package com.vertx.example.service
 
 import com.vertx.common.model.User
 import com.vertx.example.mapper.UserMapper
+import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
+import com.vertx.rabbitmq.helper.RabbitMqHelper
 
 object UserService {
 
     suspend fun list(limit: Int): List<User> {
-        return UserMapper.list(limit)
+        val users = UserMapper.list(limit)
+        for (user in users) {
+            RabbitMqHelper.sendMessageToExchange(
+                RabbitMqExChangeEnum.TESTRabbitMqExChangeEnum,
+                user,
+                persistenceMessage = null
+            )
+        }
+        return users
     }
 
     suspend fun detail(id: Int): User? {

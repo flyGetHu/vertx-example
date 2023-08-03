@@ -4,30 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="RabbitMqClient">
-      <change afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/consumer/TestCustomerHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/MainVerticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/RabbitMqConsumerVerticle.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/MessageData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/mq/MqMessageData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,9 +236,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>
@@ -289,7 +273,7 @@
       <workItem from="1690852794345" duration="3815000" />
       <workItem from="1690862909942" duration="14670000" />
       <workItem from="1690937758809" duration="1337000" />
-      <workItem from="1691023512038" duration="20711000" />
+      <workItem from="1691023512038" duration="22208000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -536,22 +520,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00058" summary="bus&#10;测试">
-      <option name="closed" value="true" />
-      <created>1690876704262</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1690876704262</updated>
-    </task>
-    <task id="LOCAL-00059" summary="task测试">
-      <option name="closed" value="true" />
-      <created>1690877534321</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1690877534321</updated>
-    </task>
     <task id="LOCAL-00060" summary="task测试">
       <option name="closed" value="true" />
       <created>1690877651382</created>
@@ -648,7 +616,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691035894902</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="mq 测试">
+      <option name="closed" value="true" />
+      <created>1691047387117</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1691047387117</updated>
+    </task>
+    <task id="LOCAL-00073" summary="fix bug">
+      <option name="closed" value="true" />
+      <created>1691047649374</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1691047649374</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,8 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="自定义web请求日志" />
-    <MESSAGE value="WebSocketExamoleRouter" />
     <MESSAGE value="断路由" />
     <MESSAGE value="初步sql封装" />
     <MESSAGE value="删除不需要的模块" />
@@ -691,7 +673,9 @@
     <MESSAGE value="修改bus接口执行返回参数" />
     <MESSAGE value="sql查询" />
     <MESSAGE value="RabbitMqClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="RabbitMqClient" />
+    <MESSAGE value="mq 测试" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
