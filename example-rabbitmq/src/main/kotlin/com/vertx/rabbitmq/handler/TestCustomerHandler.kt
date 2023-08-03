@@ -16,11 +16,11 @@ object TestCustomerHandler : RabbitMqHandler<User> {
 
     override val queueName: String = "test"
     override var date: String = "2023-08-03"
-    override var durable: Boolean = true
+    override var durable: Boolean = false
     override var exclusive: Boolean = false
     override var confirm: Boolean = true
     override var maxInternalQueueSize: Int = 100
-    override var autoAck: Boolean = false
+    override var autoAck: Boolean = true
     override var maxRetry: Int = 3
     override var retryInterval: Long = 1000
     override var delayTime: Long = 1000

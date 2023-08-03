@@ -66,6 +66,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         // 添加成员节点的IP地址和端口
         joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
         final ClusterManager mgr = new HazelcastClusterManager(config);
+        vertxOptions.setPreferNativeTransport(true);
         vertxOptions.setClusterManager(mgr);
         final EventBusOptions eventBusOptions = vertxOptions.getEventBusOptions();
         // 设置bus集群超时时间

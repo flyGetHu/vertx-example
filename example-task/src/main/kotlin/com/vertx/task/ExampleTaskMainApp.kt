@@ -21,6 +21,7 @@ object ExampleTaskMainApp {
         networkConfig.join.tcpIpConfig.addMember("127.0.0.1")
         val mgr: ClusterManager = HazelcastClusterManager(config)
         val vertxOptions = VertxOptions()
+        vertxOptions.setPreferNativeTransport(true)
         vertxOptions.setClusterManager(mgr)
         Vertx.clusteredVertx(vertxOptions).onSuccess {
             // 关闭jooq的logo
