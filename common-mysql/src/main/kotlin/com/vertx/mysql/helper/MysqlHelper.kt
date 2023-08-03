@@ -15,6 +15,8 @@ import org.jooq.impl.DSL
 
 /**
  * mysql帮助类
+ * 用于简化mysql操作
+ * 所有建表都应存在id字段，且为自增主键
  */
 object MysqlHelper {
     /**
@@ -77,7 +79,6 @@ object MysqlHelper {
      * @param fields 查询字段
      * @param page 页码 默认为1
      * @param pageSize 每页条数 默认为10
-     * @param lastSql 最后的sql语句 例如：order by id desc limit 1
      * @return 查询结果
      */
     suspend fun <T> selectPage(
@@ -86,12 +87,7 @@ object MysqlHelper {
         fields: List<String> = listOf(),
         page: Int = 1,
         pageSize: Int = 10,
-        lastSql: String = ""
     ): List<T> {
-        if (lastSql.isNotBlank()) {
-            StaticLog.warn("分页查询不支持自定义最后的sql语句")
-            return listOf()
-        }
         if (page < 1) {
             StaticLog.warn("分页查询页码不能小于1")
             return listOf()
