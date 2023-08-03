@@ -158,20 +158,25 @@ object RabbitMqHelper {
         rabbitMQConsumer.handler { rabbitMQMessage ->
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
+                    // 消息确认
                     val deliveryTag = rabbitMQMessage.envelope().deliveryTag
+                    // 消息解析
                     val messageData = Json.decodeValue(rabbitMQMessage.body(), MessageData::class.java)
                     val msgId = messageData.id
                     val message = messageData.msg
+                    // 消息解析失败
                     if (message == null) {
                         StaticLog.error("消息解析失败:队列名称:$queueName,消息:$messageData")
                         ackMessage(autoAck, msgId, deliveryTag)
                         return@launch
                     }
+                    // 消息类型不匹配
                     if (message::class.java != requestClass) {
                         StaticLog.error("消息类型不匹配:队列名称:$queueName,消息:$messageData")
                         ackMessage(autoAck, messageData.id, deliveryTag)
                         return@launch
                     }
+                    // 消息持久化
                     val res = rabbitMqHandler.handler(message as T)
                     if (!res) {
                         StaticLog.error("消息处理失败:队列名称:$queueName,消息:$messageData")
