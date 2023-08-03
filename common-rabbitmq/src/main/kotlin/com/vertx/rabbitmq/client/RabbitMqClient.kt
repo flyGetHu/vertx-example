@@ -1,3 +1,11 @@
+/**
+ * This file contains the RabbitMqClient object which is used to create and initialize a RabbitMQ client.
+ * The RabbitMqClient object has a single public function called init which takes a Rabbitmq object as a parameter.
+ * The init function initializes the RabbitMQ client with the provided configuration.
+ * The RabbitMqClient object also contains a lateinit variable called rabbitMqClient which is used to store the created RabbitMQ client.
+ * The RabbitMqClient object is responsible for setting up the RabbitMQ client with the provided configuration and starting it.
+ * The RabbitMqClient object also sets the client to confirm mode and sets the maximum QoS for the client.
+ */
 package com.vertx.rabbitmq.client
 
 import com.vertx.common.config.vertx

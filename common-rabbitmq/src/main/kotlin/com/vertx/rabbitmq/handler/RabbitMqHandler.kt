@@ -1,3 +1,23 @@
+/**
+ * This interface defines the basic information of a RabbitMQ queue.
+ *
+ * @param Request the type of the request object
+ * @property requestClass the class of the request object
+ * @property exchange the exchange of the RabbitMQ queue
+ * @property moduleName the module name of the RabbitMQ queue
+ * @property queueName the name of the RabbitMQ queue
+ * @property date the start date of the business, in the format yyyy-MM-dd
+ * @property durable whether the queue is durable or not, default is true
+ * @property exclusive whether the queue is exclusive or not, default is false
+ * @property confirm whether to wait for confirmation after sending a message, default is false
+ * @property maxInternalQueueSize the maximum size of the internal queue, default is 100
+ * @property autoAck whether to automatically acknowledge the message after consuming it, default is false
+ * @property maxRetry the maximum number of retries, default is 3
+ * @property retryInterval the interval between retries, in milliseconds, default is 1000
+ * @property handler the consumer handler, which handles the business logic of consuming messages
+ * @property persistence the persistence handler, which handles the persistence logic of messages before sending them
+ * @property callback the callback handler, which handles the callback logic after sending messages
+ */
 package com.vertx.rabbitmq.handler
 
 import com.vertx.common.entity.mq.MqMessageData

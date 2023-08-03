@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="打包配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleRabbitMqMainApp" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="ExampleRabbitMqMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vertx.rabbitmq.ExampleRabbitMqMainApp" />
       <module name="example-rabbitmq" />
       <shortenClasspath name="NONE" />
@@ -232,10 +232,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>
@@ -270,7 +270,7 @@
       <workItem from="1690852794345" duration="3815000" />
       <workItem from="1690862909942" duration="14670000" />
       <workItem from="1690937758809" duration="1337000" />
-      <workItem from="1691023512038" duration="27328000" />
+      <workItem from="1691023512038" duration="28233000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -517,22 +517,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00063" summary="加载配置文件json">
-      <option name="closed" value="true" />
-      <created>1690882792640</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1690882792640</updated>
-    </task>
-    <task id="LOCAL-00064" summary="删除多余实现">
-      <option name="closed" value="true" />
-      <created>1690882896060</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1690882896060</updated>
-    </task>
     <task id="LOCAL-00065" summary="添加error默认code和msg">
       <option name="closed" value="true" />
       <created>1690883156431</created>
@@ -629,7 +613,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691053699015</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="打包配置">
+      <option name="closed" value="true" />
+      <created>1691054013246</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1691054013246</updated>
+    </task>
+    <task id="LOCAL-00078" summary="打包配置">
+      <option name="closed" value="true" />
+      <created>1691054332535</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1691054332535</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
