@@ -218,7 +218,7 @@ object MysqlHelper {
                 val name = field.name.underlineName()
                 val value = field.get(item)
                 //如果属性值不为空，则添加到map中,忽略主键
-                if (value != null && name != "id") {
+                if (name != "id") {
                     map[name] = value
                 }
             }
