@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="分页查询">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="批量更新和插入">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,8 +153,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
-      <command value="mvn clean install" />
       <command value="mvn clean install package" />
+      <command value="mvn clean install package -pl example-bus -am" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -517,14 +519,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00067" summary="sql查询">
-      <option name="closed" value="true" />
-      <created>1691024818440</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1691024818440</updated>
-    </task>
     <task id="LOCAL-00068" summary="RabbitMqClient">
       <option name="closed" value="true" />
       <created>1691034448332</created>
@@ -629,7 +623,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691116142954</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="批量更新和插入">
+      <option name="closed" value="true" />
+      <created>1691116854576</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1691116854576</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="动态表名问题" />
     <MESSAGE value="示例项目查询" />
     <MESSAGE value="完成基础的增删改查" />
     <MESSAGE value="关闭jooq广告" />
@@ -672,7 +673,8 @@
     <MESSAGE value="打包配置" />
     <MESSAGE value="文档" />
     <MESSAGE value="分页查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="分页查询" />
+    <MESSAGE value="批量更新和插入" />
+    <option name="LAST_COMMIT_MESSAGE" value="批量更新和插入" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

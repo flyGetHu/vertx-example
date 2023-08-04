@@ -26,7 +26,7 @@ object MysqlHelper {
      * @return 获取最新的id
      */
     suspend fun insert(data: Any): Long {
-        val sql = buildInsertSql(data)
+        val sql = buildInsertSql(listOf(data))
         val rowRowSet = mysqlPoolClient.query(sql).execute().await()
         return rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
     }
@@ -47,18 +47,16 @@ object MysqlHelper {
         // 影响行数
         var count = 0
         //批量插入数据
-        val sqlList = data.map { buildInsertSql(it) }
-        val lists = CollUtil.split(sqlList, batchSize)
+        val lists = CollUtil.split(data, batchSize)
         val connection = mysqlPoolClient.connection.await()
         try {
             for (list in lists) {
+                val querySql = buildInsertSql(list)
                 //开启事务
                 val transaction = connection.begin().await()
                 try {
-                    for (querySql in list) {
-                        val rows = connection.query(querySql).execute().await()
-                        count += rows.rowCount()
-                    }
+                    val rows = connection.query(querySql).execute().await()
+                    count += rows.rowCount()
                     //提交事务
                     transaction.commit().await()
                 } catch (e: Exception) {
@@ -201,27 +199,38 @@ object MysqlHelper {
 
     /**
      * 封装插入语句
-     * @param data 数据对象
+     * @param dataList 数据对象
      */
-    private fun buildInsertSql(data: Any): String {
-        //获取类对象
-        val clazz = data::class.java
+    private fun buildInsertSql(dataList: List<Any>): String {
+        if (dataList.isEmpty()) {
+            StaticLog.warn("批量插入数据为空")
+            return ""
+        }
+        val clazz = dataList[0]::class.java
         //获取类的属性
         val fields = clazz.declaredFields
         //获取类的属性名
-        val fileKeyValue = mutableMapOf<String, Any?>()
-        for (field in fields) {
-            field.isAccessible = true
-            val name = field.name.underlineName()
-            val value = field.get(data)
-            //如果属性值不为空，则添加到map中,忽略主键
-            if (value != null && name != "id") {
-                fileKeyValue[name] = value
+        val fileKeyValueList = mutableListOf<MutableMap<String, Any?>>()
+        for (item in dataList) {
+            val map = mutableMapOf<String, Any?>()
+            for (field in fields) {
+                field.isAccessible = true
+                val name = field.name.underlineName()
+                val value = field.get(item)
+                //如果属性值不为空，则添加到map中,忽略主键
+                if (value != null && name != "id") {
+                    map[name] = value
+                }
             }
+            fileKeyValueList.add(map)
         }
         val insertIntoStep =
-            dslContext.insertInto(DSL.table(getTableName(clazz)), fileKeyValue.keys.toList().map { DSL.field(it) })
-                .values(fileKeyValue.values)
+            dslContext.insertInto(
+                DSL.table(getTableName(clazz)),
+                fileKeyValueList[0].keys.toList().map { DSL.field(it) })
+        for (mutableMap in fileKeyValueList) {
+            insertIntoStep.values(mutableMap.values.toList())
+        }
         //返回组装好的sql语句,insertIntoStep.sql是带占位符的sql语句 insertIntoStep.params是占位符对应的参数
         //例如：insertIntoStep.sql = insert into user (id,name,age) values (?,?,?) insertIntoStep.params = [1, test, 18]
         //最终返回的sql语句为：insert into user (id,name,age) values (1, 'test', 18);
