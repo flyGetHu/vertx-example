@@ -38,7 +38,7 @@ fun Route.launchCoroutine(fn: suspend (RoutingContext) -> Unit) {
 }
 
 // 扩展函数，用于发送 JSON 响应
-fun RoutingContext.jsonResponse(response: Any) {
+fun RoutingContext.jsonResponse(response: Any?) {
     this.response().putHeader("Content-Type", "application/json").end(Json.encodePrettily(response))
 }
 
@@ -47,7 +47,7 @@ fun RoutingContext.jsonResponse(response: Any) {
  * 成功响应
  * @param data 响应数据
  */
-fun RoutingContext.successResponse(data: Any) {
+fun RoutingContext.successResponse(data: Any?) {
     val response = ApiResponse(success = true, data = data, error = ApiError(HttpStatus.HTTP_OK, ""))
     jsonResponse(response)
 }

@@ -20,6 +20,7 @@
         <module>example-bus</module>
         <module>example-task</module>
         <module>example-rabbitmq</module>
+        <module>common-redis</module>
     </modules>
 
     <properties>

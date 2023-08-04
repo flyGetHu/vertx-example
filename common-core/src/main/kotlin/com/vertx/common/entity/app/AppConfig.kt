@@ -161,6 +161,10 @@ class Database {
     // mysql配置
     @JsonProperty("mysql")
     val mysql: Mysql? = null
+
+    // redis配置
+    @JsonProperty("redis")
+    val redis: Redis? = null
 }
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -286,6 +290,36 @@ class Mysql {
     val maxWaitQueueSize: Int = Int.MAX_VALUE
 }
 
+
+/**
+ * redis配置
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Redis {
+    // 主机地址
+    @JsonProperty("host")
+    val host: String = "127.0.0.1"
+
+    // 端口
+    @JsonProperty("port")
+    val port: Int = 6379
+
+    // 密码
+    @JsonProperty("password")
+    val password: String = ""
+
+    // 数据库
+    @JsonProperty("database")
+    val database: Int = 0
+
+    // 最大连接数
+    @JsonProperty("maxPoolSize")
+    val maxPoolSize: Int = 16
+
+    // 最大等待队列数
+    @JsonProperty("maxPoolWaiting")
+    val maxPoolWaiting: Int = 24
+}
 
 /**
  * vertx:

@@ -1,0 +1,11 @@
+GET http://localhost:3020/api/example/v1/redis/lock/name
+Accept: application/json
+
+###
+GET http://localhost:3020/api/example/v1/redis/get/name
+Accept: application/json
+
+###
+#测试新增
+POST http://localhost:3020/api/example/v1/redis/set/name/huan
+Accept: application/json

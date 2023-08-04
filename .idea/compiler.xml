@@ -15,6 +15,7 @@
         <module name="common-webclient" />
         <module name="common-eventbus" />
         <module name="example-bus" />
+        <module name="common-redis" />
         <module name="common-breaker" />
         <module name="common-core" />
       </profile>
