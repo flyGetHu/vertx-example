@@ -3,6 +3,7 @@ package com.vertx.rabbitmq.helper
 import cn.hutool.log.StaticLog
 import com.rabbitmq.client.MessageProperties
 import com.vertx.common.config.active
+import com.vertx.common.config.appConfig
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.utils.underlineName
@@ -98,7 +99,22 @@ object RabbitMqHelper {
             "",
             MessageProperties.PERSISTENT_TEXT_PLAIN,
             Json.encodeToBuffer(mqMessageData)
-        ).await()
+        ).compose {
+            val promise = Promise.promise<Void>()
+            if (appConfig.mq?.rabbitmq?.sendConfirm == true) {
+                rabbitMqClient.waitForConfirms(TimeUnit.SECONDS.toMillis(5)).onComplete {
+                    if (it.failed()) {
+                        promise.fail(it.cause())
+                        StaticLog.error("发送消息失败:交换机:${rabbitMqExChangeEnum.exchanger},消息:$message")
+                    } else {
+                        promise.complete()
+                    }
+                }
+            } else {
+                promise.complete()
+            }
+            promise.future()
+        }.await()
         if (active != "prod") {
             StaticLog.debug("发送消息成功:队列名称:${rabbitMqExChangeEnum.exchanger},消息:$message")
         }
@@ -121,7 +137,7 @@ object RabbitMqHelper {
             rabbitMqHandler.exchange.exchanger, queueName, Json.encodeToBuffer(mqMessageData)
         ).compose {
             val promise = Promise.promise<Void>()
-            if (rabbitMqHandler.confirm) {
+            if (appConfig.mq?.rabbitmq?.sendConfirm == true) {
                 rabbitMqClient.waitForConfirms(TimeUnit.SECONDS.toMillis(5)).onComplete {
                     if (it.failed()) {
                         promise.fail(it.cause())

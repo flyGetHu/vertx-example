@@ -51,15 +51,25 @@ interface RabbitMqHandler<Request> {
     // 业务开始日期 命名方式:yyyy-MM-dd,如:2023-08-03
     var date: String
 
-    // 是否持久化,默认true,若为false,则重启服务后队列消失
+    /**
+     * 是否持久化,默认true,若为false,则重启服务后队列消失
+     * durable 属性：当队列被声明为持久化（durable）时，意味着该队列将在 RabbitMQ 服务器重启后仍然保留。
+     * 持久化队列的消息会被保存在磁盘上，以确保消息不会因服务器重启而丢失。
+     * exclusive 属性：当队列被声明为独占（exclusive）时，意味着该队列只能被声明它的连接所访问。连接断开时，
+     * 队列会被自动删除。独占队列通常用于实现连接级别的私有队列，例如在消费者和生产者之间进行通信。
+     * 冲突情况：
+     * 如果队列同时被声明为 durable 和 exclusive，这可能会导致冲突。因为 exclusive 队列通常用于在连接级别提供私有性，
+     * 这意味着只有声明该队列的连接可以访问它。但是，如果队列是持久化的，那么即使连接断开，队列也会被保留，这可能与 exclusive 的预期行为相冲突。
+     * 另一方面，如果队列被声明为 non-durable（即不持久化）和 exclusive，这种情况通常是允许的。这是因为即使队列是独占的，
+     * 它不会在连接断开时保留，而且由于不持久化，队列和队列中的消息都不会存储在磁盘上。
+     */
     var durable: Boolean
 
 
     // 是否排他,默认false,若为true,则其他用户无法访问此队列
+    // 配置exclusive为true,就算配置durable也为true,也会在重启后消失
+    // 要想持久化,则需要配置durable为true,exclusive为false
     var exclusive: Boolean
-
-    // 是否发送确认,默认false,若为true,则发送消息后,需要等待确认
-    var confirm: Boolean
 
     // 最大内部队列大小 默认100 0为不限制,超过此大小,则不再接收消息
     var maxInternalQueueSize: Int

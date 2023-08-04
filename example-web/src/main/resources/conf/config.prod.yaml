@@ -37,6 +37,7 @@ mq:
     username: "guest" # rabbitmq用户名
     password: "guest" # rabbitmq密码
     virtualHost: "/vertx-example" # rabbitmq虚拟主机
+    sendConfirm: false # 是否开启发送确认
     maxQos: 10 # 最大qos
     requestedChannelMax: 4095 #
     automaticRecoveryEnabled: true # 是否开启自动恢复

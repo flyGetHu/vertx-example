@@ -192,6 +192,10 @@ class Rabbitmq {
     @JsonProperty("virtualHost")
     val virtualHost: String = "/"
 
+    // 发送是否确认
+    @JsonProperty("sendConfirm")
+    var sendConfirm: Boolean = false
+
     // requestedChannelMax 最大通道数
     @JsonProperty("requestedChannelMax")
     val requestedChannelMax: Int = 4095

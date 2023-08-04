@@ -70,7 +70,9 @@ object RabbitMqClient {
         //启动rabbitmq客户端
         rabbitMqClient.start().await()
         //设置客户端为confirm模式
-        rabbitMqClient.confirmSelect().await()
+        if (config.sendConfirm) {
+            rabbitMqClient.confirmSelect().await()
+        }
         //设置客户端最大qos
         rabbitMqClient.basicQos(config.maxQos).await()
     }

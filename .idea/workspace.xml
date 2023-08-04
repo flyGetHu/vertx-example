@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="批量更新和插入">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="批量插入">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ExampleWebMainApp">
+  <component name="RunManager" selected="Kotlin.ExampleRabbitMqMainApp">
     <configuration name="MysqlUtilTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-core" />
       <extension name="coverage">
@@ -233,10 +240,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>
@@ -519,22 +526,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00068" summary="RabbitMqClient">
-      <option name="closed" value="true" />
-      <created>1691034448332</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1691034448332</updated>
-    </task>
-    <task id="LOCAL-00069" summary="RabbitMqClient">
-      <option name="closed" value="true" />
-      <created>1691034605236</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1691034605236</updated>
-    </task>
     <task id="LOCAL-00070" summary="RabbitMqClient">
       <option name="closed" value="true" />
       <created>1691034682182</created>
@@ -631,7 +622,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691116854576</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="批量更新和插入">
+      <option name="closed" value="true" />
+      <created>1691129906793</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1691129906793</updated>
+    </task>
+    <task id="LOCAL-00083" summary="批量插入">
+      <option name="closed" value="true" />
+      <created>1691130134155</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1691130134155</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,7 +656,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="示例项目查询" />
     <MESSAGE value="完成基础的增删改查" />
     <MESSAGE value="关闭jooq广告" />
     <MESSAGE value="迁移mysql帮助类" />
@@ -674,7 +680,8 @@
     <MESSAGE value="文档" />
     <MESSAGE value="分页查询" />
     <MESSAGE value="批量更新和插入" />
-    <option name="LAST_COMMIT_MESSAGE" value="批量更新和插入" />
+    <MESSAGE value="批量插入" />
+    <option name="LAST_COMMIT_MESSAGE" value="批量插入" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
