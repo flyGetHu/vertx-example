@@ -19,6 +19,10 @@ object UserService {
         return users
     }
 
+    suspend fun page(page: Int, pageSize: Int): List<User> {
+        return UserMapper.page(page, pageSize)
+    }
+
     suspend fun detail(id: Int): User? {
         return UserMapper.detail(id)
     }
@@ -33,5 +37,9 @@ object UserService {
 
     suspend fun insert(user: User): Long {
         return UserMapper.insert(user)
+    }
+
+    suspend fun insertBatch(userList: List<User>): Int {
+        return UserMapper.insertBatch(userList)
     }
 }

@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="文档">
+      <change afterPath="$PROJECT_DIR$/common-mysql/src/test/java/com/vertx/mysql/helper/MysqlHelperTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
         <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Enum" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>

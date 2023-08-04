@@ -5,6 +5,7 @@ import com.vertx.common.model.User
 import com.vertx.example.service.UserService
 import com.vertx.webserver.config.launchCoroutine
 import com.vertx.webserver.config.successResponse
+import io.vertx.core.json.Json
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.BodyHandler
 
@@ -16,6 +17,13 @@ object MysqlExampleRouter {
         routerSub.get("/list/:limit").launchCoroutine {
             val limit = it.pathParam("limit").toInt()
             val list = UserService.list(limit)
+            it.successResponse(list)
+        }
+
+        routerSub.get("/page/:page/:pageSize").launchCoroutine {
+            val limit = it.pathParam("page").toInt()
+            val offset = it.pathParam("pageSize").toInt()
+            val list = UserService.page(limit, offset)
             it.successResponse(list)
         }
 
@@ -46,6 +54,15 @@ object MysqlExampleRouter {
         routerSub.post("/insert").handler(BodyHandler.create()).launchCoroutine {
             val user = it.body().asJsonObject().mapTo(User::class.java)
             val res = UserService.insert(user)
+            it.successResponse(res)
+        }
+
+        routerSub.post("/insert/batch").handler(BodyHandler.create()).launchCoroutine {
+            val jsonArray = it.body().asJsonArray()
+            val userList = jsonArray.map { item ->
+                Json.decodeValue(item.toString(), User::class.java)
+            }
+            val res = UserService.insertBatch(userList)
             it.successResponse(res)
         }
         router.route("/user/*").subRouter(routerSub)

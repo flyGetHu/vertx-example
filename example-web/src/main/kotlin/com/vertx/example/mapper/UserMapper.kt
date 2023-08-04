@@ -18,6 +18,18 @@ object UserMapper {
         )
     }
 
+    suspend fun page(page: Int, pageSize: Int): List<User> {
+        // where条件构造
+        val where = DSL.noCondition()
+        return MysqlHelper.selectPage(
+            User::class.java,
+            where,
+            User::class.java.declaredFields.map { it.name }.toTypedArray().toList(),
+            page,
+            pageSize
+        )
+    }
+
     suspend fun detail(id: Int): User? {
         // where条件构造
         val where = DSL.field(User::id.name.underlineName()).eq(id)
@@ -55,4 +67,13 @@ object UserMapper {
             user,
         )
     }
+
+
+    suspend fun insertBatch(userList: List<User>): Int {
+        // 插入数据
+        return MysqlHelper.insertBatch(
+            userList,
+        )
+    }
+
 }
