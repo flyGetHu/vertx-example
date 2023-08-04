@@ -48,7 +48,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
     @Override
     public void afterConfigParsed(JsonObject config) {
         // 隐藏jooq的logo
-        System.getProperties().setProperty("org.jooq.no-logo", "true");
+        System.setProperty("org.jooq.no-logo", "true");
         System.setProperty("org.jooq.no-tips", "true");
         StaticLog.info("执行钩子函数:{}/{}", "afterConfigParsed", config.encode());
     }

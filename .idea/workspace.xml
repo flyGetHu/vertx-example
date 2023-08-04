@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="打包配置">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,30 +78,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/example-bus/src/main/resources/conf",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "typescript.add.unambiguous.imports.on.the.fly": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workspace/java/vertx-example/example-bus/src/main/resources/conf&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\java\vertx-example\example-bus\src\main\resources\conf" />
@@ -164,7 +162,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ExampleRabbitMqMainApp">
+  <component name="RunManager" selected="Kotlin.ExampleWebMainApp">
     <configuration name="MysqlUtilTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-core" />
       <extension name="coverage">
@@ -233,9 +231,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.MysqlUtilTest.test4" />
       </list>
     </recent_temporary>
@@ -270,7 +268,8 @@
       <workItem from="1690852794345" duration="3815000" />
       <workItem from="1690862909942" duration="14670000" />
       <workItem from="1690937758809" duration="1337000" />
-      <workItem from="1691023512038" duration="28233000" />
+      <workItem from="1691023512038" duration="31320000" />
+      <workItem from="1691110523761" duration="2106000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -517,14 +516,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00065" summary="添加error默认code和msg">
-      <option name="closed" value="true" />
-      <created>1690883156431</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1690883156431</updated>
-    </task>
     <task id="LOCAL-00066" summary="修改bus接口执行返回参数">
       <option name="closed" value="true" />
       <created>1691024129633</created>
@@ -629,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691054332535</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="文档">
+      <option name="closed" value="true" />
+      <created>1691055243691</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1691055243691</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +646,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="删除不需要的模块" />
     <MESSAGE value="动态表名问题" />
     <MESSAGE value="示例项目查询" />
     <MESSAGE value="完成基础的增删改查" />
@@ -672,7 +670,8 @@
     <MESSAGE value="fix bug" />
     <MESSAGE value="测试mq消息发送以及消费" />
     <MESSAGE value="打包配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="打包配置" />
+    <MESSAGE value="文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="文档" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
