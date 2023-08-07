@@ -37,12 +37,15 @@ object RedisExampleRouter {
         routerSub.get("/lock/:key").launchCoroutine { ctx ->
             val key = ctx.pathParam("key")
             val res = RedisLockHelper.lock(key, 10)
-            if (res) {
-                ctx.successResponse("lock success")
-            } else {
-                ctx.successResponse("lock fail")
+            try {
+                if (res) {
+                    ctx.successResponse("lock success")
+                } else {
+                    ctx.successResponse("lock fail")
+                }
+            } finally {
+                RedisLockHelper.unlock(key)
             }
-            RedisLockHelper.unlock(key)
         }
 
         router.route("/redis/*").subRouter(routerSub)

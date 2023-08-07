@@ -49,26 +49,25 @@ object RedisLockHelper {
      * @return 是否解锁成功
      */
     suspend fun unlock(key: String): Boolean {
+        //保证原子性
         val promise = Promise.promise<Boolean>()
-        val lockKey = "redis.shared.lock.$key"
-        sharedData.getLockWithTimeout(lockKey, TimeUnit.SECONDS.toMillis(2)).onFailure {
-            StaticLog.error(it, "redis unlock error")
-            promise.complete(false)
-        }.onSuccess {
+        val redisLock = "redis.shard.lock.$key"
+        sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(1)).onComplete {
             CoroutineScope(vertx.dispatcher()).launch {
-                try {
-                    val res = RedisHelper.Str.get(key)
-                    if (!res.isNullOrBlank() && res == key) {
+                if (it.succeeded()) {
+                    val response = redisClient.get(key).await()
+                    if (response.toString() == key) {
                         RedisHelper.Str.del(key)
                         promise.complete(true)
                     } else {
                         promise.complete(false)
                     }
-                } finally {
-                    it.release()
+                } else {
+                    StaticLog.error(it.cause(), "redis分布式锁解锁失败")
+                    promise.complete(false)
                 }
             }
-            }
+        }
         return promise.future().await()
     }
 }
