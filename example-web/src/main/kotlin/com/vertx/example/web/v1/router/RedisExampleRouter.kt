@@ -35,8 +35,7 @@ object RedisExampleRouter {
         }
 
         //测试分布式锁
-        routerSub.get("/lock/:key").launchCoroutine { ctx ->
-            val key = ctx.pathParam("key")
+        routerSub.get("/lock/test").launchCoroutine { ctx ->
             val redisLockKeyEnum = RedisLockKeyEnum.LOCK_TEST
             val res = RedisLockHelper.lock(redisLockKeyEnum, 10)
             try {
