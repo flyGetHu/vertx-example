@@ -1,6 +1,7 @@
 package com.vertx.example.web.v1.router
 
 import com.vertx.common.config.vertx
+import com.vertx.redis.enums.RedisLockKeyEnum
 import com.vertx.redis.helper.RedisHelper
 import com.vertx.redis.helper.RedisLockHelper
 import com.vertx.webserver.config.launchCoroutine
@@ -36,7 +37,8 @@ object RedisExampleRouter {
         //测试分布式锁
         routerSub.get("/lock/:key").launchCoroutine { ctx ->
             val key = ctx.pathParam("key")
-            val res = RedisLockHelper.lock(key, 10)
+            val redisLockKeyEnum = RedisLockKeyEnum.LOCK_TEST
+            val res = RedisLockHelper.lock(redisLockKeyEnum, 10)
             try {
                 if (res) {
                     ctx.successResponse("lock success")
@@ -44,7 +46,7 @@ object RedisExampleRouter {
                     ctx.successResponse("lock fail")
                 }
             } finally {
-                RedisLockHelper.unlock(key)
+                RedisLockHelper.unlock(redisLockKeyEnum)
             }
         }
 

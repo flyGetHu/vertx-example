@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 模块添加">
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/enums/RedisLockKeyEnum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +24,9 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -165,8 +161,8 @@
     <option name="myCommands">
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
       <command value="mvn clean install package -pl example-bus -am" />
-      <command value="mvn clean install package" />
       <command value="mvn clean install" />
+      <command value="mvn clean install package" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -232,8 +228,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="HTTP 请求.redis-test | #1" />
       </list>
@@ -517,14 +513,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00075" summary="测试mq消息发送以及消费">
-      <option name="closed" value="true" />
-      <created>1691051518050</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1691051518050</updated>
-    </task>
     <task id="LOCAL-00076" summary="打包配置">
       <option name="closed" value="true" />
       <created>1691053699015</created>
@@ -629,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691376314304</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="redis 模块添加">
+      <option name="closed" value="true" />
+      <created>1691377911059</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1691377911059</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

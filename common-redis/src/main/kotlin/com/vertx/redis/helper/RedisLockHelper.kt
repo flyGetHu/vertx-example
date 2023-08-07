@@ -4,6 +4,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.sharedData
 import com.vertx.common.config.vertx
 import com.vertx.redis.client.redisClient
+import com.vertx.redis.enums.RedisLockKeyEnum
 import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
@@ -31,7 +32,8 @@ object RedisLockHelper {
      * @param expire 锁的过期时间
      * @return 是否获得锁
      */
-    suspend fun lock(key: String, expire: Long): Boolean {
+    suspend fun lock(redisLockKeyEnum: RedisLockKeyEnum, expire: Long): Boolean {
+        val key = redisLockKeyEnum.name.lowercase()
         val response = redisClient.setnx(key, key).await()
         if (response.toInteger() == 1) {
             // 设置成功，获得锁
@@ -45,12 +47,13 @@ object RedisLockHelper {
      * 解锁
      * 如果锁存在，且锁的值和传入的值相等，删除锁并返回true
      * 如果锁不存在，或者锁的值和传入的值不相等，返回false
-     * @param key 锁的key
+     * @param redisLockKeyEnum 锁的key枚举 用于区分不同的锁
      * @return 是否解锁成功
      */
-    suspend fun unlock(key: String): Boolean {
+    suspend fun unlock(redisLockKeyEnum: RedisLockKeyEnum): Boolean {
         //保证原子性
         val promise = Promise.promise<Boolean>()
+        val key = redisLockKeyEnum.name.lowercase()
         val redisLock = "redis.shard.lock.$key"
         sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(3)).onComplete {
             CoroutineScope(vertx.dispatcher()).launch {
