@@ -2,14 +2,9 @@ package com.vertx.redis.helper
 
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.sharedData
-import com.vertx.common.config.vertx
 import com.vertx.redis.client.redisClient
 import com.vertx.redis.enums.RedisLockKeyEnum
-import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.await
-import io.vertx.kotlin.coroutines.dispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 /**
@@ -52,29 +47,22 @@ object RedisLockHelper {
      */
     suspend fun unlock(redisLockKeyEnum: RedisLockKeyEnum): Boolean {
         //保证原子性
-        val promise = Promise.promise<Boolean>()
         val key = redisLockKeyEnum.name.lowercase()
         val redisLock = "redis.shard.lock.$key"
-        sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(3)).onComplete {
-            CoroutineScope(vertx.dispatcher()).launch {
-                if (it.succeeded()) {
-                    try {
-                        val response = RedisHelper.Str.get(key)
-                        if (!response.isNullOrBlank() && response == key) {
-                            RedisHelper.Str.del(key)
-                            promise.complete(true)
-                        } else {
-                            promise.complete(false)
-                        }
-                    } finally {
-                        it.result().release()
-                    }
-                } else {
-                    StaticLog.error(it.cause(), "redis分布式锁解锁失败")
-                    promise.complete(false)
+        try {
+            val lock = sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(3)).await()
+            try {
+                val response = RedisHelper.Str.get(key)
+                if (!response.isNullOrBlank() && response == key) {
+                    RedisHelper.Str.del(key)
                 }
+            } finally {
+                lock.release()
             }
+        } catch (e: Throwable) {
+            StaticLog.error(e, "redis unlock error")
+            return false
         }
-        return promise.future().await()
+        return true
     }
 }
