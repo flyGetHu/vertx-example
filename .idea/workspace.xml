@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="批量插入">
-      <change afterPath="$PROJECT_DIR$/common-redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/client/RedisClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/redis-test.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 模块添加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.prod.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/config/VertxWebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,9 +158,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
-      <command value="mvn clean install package" />
       <command value="mvn clean install package -pl example-bus -am" />
       <command value="mvn clean install" />
+      <command value="mvn clean install package" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -529,14 +511,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00071" summary="RabbitMqClient">
-      <option name="closed" value="true" />
-      <created>1691035894902</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1691035894902</updated>
-    </task>
     <task id="LOCAL-00072" summary="mq 测试">
       <option name="closed" value="true" />
       <created>1691047387117</created>
@@ -641,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691133471208</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="redis 模块添加">
+      <option name="closed" value="true" />
+      <created>1691148770249</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1691148770249</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +641,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成基础的增删改查" />
     <MESSAGE value="关闭jooq广告" />
     <MESSAGE value="迁移mysql帮助类" />
     <MESSAGE value="拆分mysql工具包" />
@@ -684,7 +665,8 @@
     <MESSAGE value="分页查询" />
     <MESSAGE value="批量更新和插入" />
     <MESSAGE value="批量插入" />
-    <option name="LAST_COMMIT_MESSAGE" value="批量插入" />
+    <MESSAGE value="redis 模块添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis 模块添加" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

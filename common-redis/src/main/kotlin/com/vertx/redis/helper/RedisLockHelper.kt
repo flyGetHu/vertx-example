@@ -2,8 +2,13 @@ package com.vertx.redis.helper
 
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.sharedData
+import com.vertx.common.config.vertx
 import com.vertx.redis.client.redisClient
+import io.vertx.core.Promise
 import io.vertx.kotlin.coroutines.await
+import io.vertx.kotlin.coroutines.dispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 /**
@@ -44,21 +49,26 @@ object RedisLockHelper {
      * @return 是否解锁成功
      */
     suspend fun unlock(key: String): Boolean {
-        try {
-            val lock = sharedData.getLockWithTimeout("redis.shared.lock.$key", TimeUnit.SECONDS.toMillis(2)).await()
-            try {
-                val response = redisClient.get(key).await()
-                if (response.toString() == key) {
-                    RedisHelper.Str.del(key)
-                    return true
+        val promise = Promise.promise<Boolean>()
+        val lockKey = "redis.shared.lock.$key"
+        sharedData.getLockWithTimeout(lockKey, TimeUnit.SECONDS.toMillis(2)).onFailure {
+            StaticLog.error(it, "redis unlock error")
+            promise.complete(false)
+        }.onSuccess {
+            CoroutineScope(vertx.dispatcher()).launch {
+                try {
+                    val res = RedisHelper.Str.get(key)
+                    if (!res.isNullOrBlank() && res == key) {
+                        RedisHelper.Str.del(key)
+                        promise.complete(true)
+                    } else {
+                        promise.complete(false)
+                    }
+                } finally {
+                    it.release()
                 }
-                return false
-            } finally {
-                lock.release()
             }
-        } catch (e: Exception) {
-            StaticLog.error(e, "redis unlock error")
-            return false
-        }
+            }
+        return promise.future().await()
     }
 }
