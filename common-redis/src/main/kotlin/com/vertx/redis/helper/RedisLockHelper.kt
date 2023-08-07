@@ -68,7 +68,6 @@ object RedisLockHelper {
                         }
                     } finally {
                         it.result().release()
-                        StaticLog.info("redis分布式锁解锁成功")
                     }
                 } else {
                     StaticLog.error(it.cause(), "redis分布式锁解锁失败")

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 模块添加">
-      <change afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/enums/RedisLockKeyEnum.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 锁添加枚举类进行限制">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,8 +226,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="HTTP 请求.redis-test | #1" />
       </list>
@@ -513,22 +511,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00076" summary="打包配置">
-      <option name="closed" value="true" />
-      <created>1691053699015</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1691053699015</updated>
-    </task>
-    <task id="LOCAL-00077" summary="打包配置">
-      <option name="closed" value="true" />
-      <created>1691054013246</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1691054013246</updated>
-    </task>
     <task id="LOCAL-00078" summary="打包配置">
       <option name="closed" value="true" />
       <created>1691054332535</created>
@@ -625,7 +607,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691377911059</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="redis 锁添加枚举类进行限制">
+      <option name="closed" value="true" />
+      <created>1691378668837</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378668837</updated>
+    </task>
+    <task id="LOCAL-00091" summary="redis 锁添加枚举类进行限制">
+      <option name="closed" value="true" />
+      <created>1691378726251</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378726251</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +641,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="关闭jooq广告" />
     <MESSAGE value="迁移mysql帮助类" />
     <MESSAGE value="拆分mysql工具包" />
     <MESSAGE value="拆分webclient和webserver" />
@@ -668,7 +665,8 @@
     <MESSAGE value="批量更新和插入" />
     <MESSAGE value="批量插入" />
     <MESSAGE value="redis 模块添加" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis 模块添加" />
+    <MESSAGE value="redis 锁添加枚举类进行限制" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis 锁添加枚举类进行限制" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
