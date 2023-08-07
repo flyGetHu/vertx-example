@@ -55,12 +55,17 @@ object RedisLockHelper {
         sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(3)).onComplete {
             CoroutineScope(vertx.dispatcher()).launch {
                 if (it.succeeded()) {
-                    val response = RedisHelper.Str.get(key)
-                    if (!response.isNullOrBlank() && response == key) {
-                        RedisHelper.Str.del(key)
-                        promise.complete(true)
-                    } else {
-                        promise.complete(false)
+                    try {
+                        val response = RedisHelper.Str.get(key)
+                        if (!response.isNullOrBlank() && response == key) {
+                            RedisHelper.Str.del(key)
+                            promise.complete(true)
+                        } else {
+                            promise.complete(false)
+                        }
+                    } finally {
+                        it.result().release()
+                        StaticLog.info("redis分布式锁解锁成功")
                     }
                 } else {
                     StaticLog.error(it.cause(), "redis分布式锁解锁失败")

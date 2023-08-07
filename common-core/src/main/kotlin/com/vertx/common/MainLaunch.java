@@ -21,6 +21,7 @@ import io.vertx.core.impl.launcher.VertxCommandLauncher;
 import io.vertx.core.impl.launcher.VertxLifecycleHooks;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.spi.cluster.ClusterManager;
+import io.vertx.spi.cluster.hazelcast.ConfigUtil;
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
 
 import java.util.Arrays;
@@ -57,7 +58,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
     @Override
     public void beforeStartingVertx(VertxOptions vertxOptions) {
         StaticLog.info("执行钩子函数:{}", "beforeStartingVertx");
-        final Config config = new Config();
+        final Config config = ConfigUtil.loadConfig();
         // 获取网络配置
         final NetworkConfig networkConfig = config.getNetworkConfig();
         // 获取Join配置

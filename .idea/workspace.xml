@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 模块添加">
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/workspace/java/vertx-example/example-bus/src/main/resources/conf",
+    "last_opened_file_path": "D:/workspace/java/vertx-example/common-core/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,11 +117,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\java\vertx-example\common-core\src\main\resources" />
       <recent name="D:\workspace\java\vertx-example\example-bus\src\main\resources\conf" />
       <recent name="D:\workspace\java\vertx-example\example-web\src\main\resources\conf" />
       <recent name="D:\workspace\java\vertx-example\example-rabbitmq\src\main\resources\conf" />
       <recent name="D:\workspace\java\vertx-example\common-mysql\src\main\resources" />
-      <recent name="D:\workspace\java\vertx-example\example-rabbitmq\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -232,9 +231,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="HTTP 请求.redis-test | #1" />
       </list>
@@ -518,14 +517,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00074" summary="测试mq消息发送以及消费">
-      <option name="closed" value="true" />
-      <created>1691048954851</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1691048954851</updated>
-    </task>
     <task id="LOCAL-00075" summary="测试mq消息发送以及消费">
       <option name="closed" value="true" />
       <created>1691051518050</created>
@@ -630,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691374636548</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="redis 模块添加">
+      <option name="closed" value="true" />
+      <created>1691376314304</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1691376314304</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
