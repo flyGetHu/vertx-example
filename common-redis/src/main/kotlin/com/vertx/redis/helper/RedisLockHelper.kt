@@ -52,11 +52,11 @@ object RedisLockHelper {
         //保证原子性
         val promise = Promise.promise<Boolean>()
         val redisLock = "redis.shard.lock.$key"
-        sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(1)).onComplete {
+        sharedData.getLockWithTimeout(redisLock, TimeUnit.SECONDS.toMillis(3)).onComplete {
             CoroutineScope(vertx.dispatcher()).launch {
                 if (it.succeeded()) {
-                    val response = redisClient.get(key).await()
-                    if (response.toString() == key) {
+                    val response = RedisHelper.Str.get(key)
+                    if (!response.isNullOrBlank() && response == key) {
                         RedisHelper.Str.del(key)
                         promise.complete(true)
                     } else {

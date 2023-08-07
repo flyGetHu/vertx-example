@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="redis 模块添加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisLockHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,8 +232,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="HTTP 请求.redis-test | #1" />
@@ -512,14 +518,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00073" summary="fix bug">
-      <option name="closed" value="true" />
-      <created>1691047649374</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1691047649374</updated>
-    </task>
     <task id="LOCAL-00074" summary="测试mq消息发送以及消费">
       <option name="closed" value="true" />
       <created>1691048954851</created>
@@ -624,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691371413041</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="redis 模块添加">
+      <option name="closed" value="true" />
+      <created>1691374636548</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1691374636548</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,17 +677,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/hazelcast/hazelcast/4.2.8/hazelcast-4.2.8-sources.jar!/com/hazelcast/cp/internal/datastructures/semaphore/proxy/SessionAwareSemaphoreProxy.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

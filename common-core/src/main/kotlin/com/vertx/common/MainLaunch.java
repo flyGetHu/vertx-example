@@ -11,6 +11,7 @@ import cn.hutool.log.StaticLog;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
+import com.hazelcast.config.TcpIpConfig;
 import com.vertx.common.config.VertxLoadConfigKt;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -62,11 +63,11 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         // 获取Join配置
         final JoinConfig joinConfig = networkConfig.getJoin();
         // 启用TCP/IP发现机制
-        joinConfig.getTcpIpConfig().setEnabled(true);
+        final TcpIpConfig tcpIpConfig = joinConfig.getTcpIpConfig();
+        tcpIpConfig.setEnabled(true);
         // 添加成员节点的IP地址和端口
-        joinConfig.getTcpIpConfig().setMembers(Arrays.asList(CLUSTER_IPS));
+        tcpIpConfig.setMembers(Arrays.asList(CLUSTER_IPS));
         final ClusterManager mgr = new HazelcastClusterManager(config);
-        vertxOptions.setPreferNativeTransport(true);
         vertxOptions.setClusterManager(mgr);
         final EventBusOptions eventBusOptions = vertxOptions.getEventBusOptions();
         // 设置bus集群超时时间
