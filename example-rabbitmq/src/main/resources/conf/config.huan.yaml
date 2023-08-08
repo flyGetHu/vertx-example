@@ -1,0 +1,21 @@
+mq:
+  rabbitmq: # rabbitmq配置 com.vertx.common.entity.Rabbitmq
+    host: "127.0.0.1" # rabbitmq地址
+    port: 5672 # rabbitmq端口
+    username: "guest" # rabbitmq用户名
+    password: "guest" # rabbitmq密码
+    virtualHost: "/vertx-example" # rabbitmq虚拟主机
+    sendConfirm: false # 是否开启发送确认
+    maxQos: 10 # 最大qos
+    requestedChannelMax: 4095 #
+    automaticRecoveryEnabled: true # 是否开启自动恢复
+    networkRecoveryInterval: 5000 # 网络恢复间隔
+    handshakeTimeout: 10000 # 握手超时时间
+    connectionTimeout: 10000 # 连接超时时间
+    reconnectAttempts: 100 # 重连次数
+    reconnectInterval: 500 # 重连间隔
+    requestedHeartbeat: 10 # 心跳间隔
+vertx: # vertx配置
+  verticle: com.vertx.rabbitmq.verticle.MainVerticle # verticle类
+  instances: 1 # verticle实例数
+  ha: true # 是否开启ha

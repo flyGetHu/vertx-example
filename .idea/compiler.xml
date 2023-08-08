@@ -21,6 +21,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common" target="11" />
+      <module name="example" target="11" />
       <module name="http-proxy" target="17" />
       <module name="rpc-demo" target="17" />
     </bytecodeTargetLevel>

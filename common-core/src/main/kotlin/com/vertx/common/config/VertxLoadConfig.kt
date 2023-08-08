@@ -24,7 +24,7 @@ import io.vertx.kotlin.coroutines.await
 var isInit = false
 
 // 环境变量 如需要使用自定义的环境变量,修改此处即可 默认config.dev.yaml
-var active = "dev"
+var active = "huan"
 
 // 配置文件
 lateinit var appConfig: AppConfig

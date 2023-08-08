@@ -1,4 +1,4 @@
-GET http://localhost:3020/api/example/v1/redis/lock/name
+GET http://localhost:3020/api/example/v1/redis/lock/test
 Accept: application/json
 
 ###
