@@ -21,7 +21,7 @@ object TestCustomerHandler : RabbitMqHandler<User> {
     override var durable: Boolean = true
     override var exclusive: Boolean = false
     override var maxInternalQueueSize: Int = 100
-    override var autoAck: Boolean = true
+    override var autoAck: Boolean = false
     override var maxRetry: Int = 3
     override var retryInterval: Long = 1000
     override var handler: suspend (User) -> String? = { message: User ->
