@@ -3,8 +3,8 @@ package com.vertx.example.web.v1.router
 import com.vertx.common.config.vertx
 import com.vertx.common.model.User
 import com.vertx.example.service.UserService
-import com.vertx.webserver.config.launchCoroutine
-import com.vertx.webserver.config.successResponse
+import com.vertx.webserver.helper.launchCoroutine
+import com.vertx.webserver.helper.successResponse
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.BodyHandler

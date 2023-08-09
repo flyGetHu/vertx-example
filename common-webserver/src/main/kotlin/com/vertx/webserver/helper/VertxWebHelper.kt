@@ -4,7 +4,7 @@
  * The startHttpServer function takes an initRouter function that initializes the main router.
  * The file also defines extension functions for RoutingContext and Route, which allow launching coroutines and sending JSON responses.
  */
-package com.vertx.webserver.config
+package com.vertx.webserver.helper
 
 import cn.hutool.http.HttpStatus
 import cn.hutool.log.StaticLog

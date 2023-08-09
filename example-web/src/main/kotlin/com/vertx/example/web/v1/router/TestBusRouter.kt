@@ -1,8 +1,8 @@
 package com.vertx.example.web.v1.router
 
 import com.vertx.example.service.TestBusService
-import com.vertx.webserver.config.launchCoroutine
-import com.vertx.webserver.config.successResponse
+import com.vertx.webserver.helper.launchCoroutine
+import com.vertx.webserver.helper.successResponse
 import io.vertx.ext.web.Router
 
 object TestBusRouter {
