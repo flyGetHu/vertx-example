@@ -24,7 +24,7 @@ import io.vertx.kotlin.coroutines.await
 var isInit = false
 
 // 环境变量 如需要使用自定义的环境变量,修改此处即可 默认config.dev.yaml
-var active = "huan"
+var active = "dev"
 
 // 配置文件
 lateinit var appConfig: AppConfig
@@ -51,9 +51,11 @@ object VertxLoadConfig {
 
     /**
      * 加载配置文件
+     * @param active 环境变量,默认dev,如果需要使用自定义的环境变量,调用此方法前修改此参数即可
+     * 如此参数为test,则会加载config.test.yaml配置文件
      * @see appConfig
      */
-    suspend fun init() {
+    suspend fun init(active: String = "dev") {
         vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
@@ -75,6 +77,7 @@ object VertxLoadConfig {
             StaticLog.warn("当前项目激活配置环境文件:$activeConfigName 不存在,请检查配置文件是否需要加载配置文件!")
             return
         }
+        com.vertx.common.config.active = env
         StaticLog.info("当前项目激活配置环境文件:$activeConfigName")
         val configRetrieverOptions = ConfigRetrieverOptions()
         configRetrieverOptions.addStore(
