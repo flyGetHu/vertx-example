@@ -1,10 +1,12 @@
 package com.vertx.breaker.handler
 
+import cn.hutool.core.thread.ThreadUtil
 import io.vertx.core.Vertx
 import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -14,12 +16,25 @@ class TestBreakerHandlerImplTest {
 
     @Test
     fun test(vertx: Vertx, testContext: VertxTestContext) {
-        val testBreakerHandlerImpl = TestBreakerHandlerImpl()
         CoroutineScope(vertx.dispatcher()).launch {
-            val res = testBreakerHandlerImpl.execute(vertx)
-            println("res: $res")
-            testContext.completeNow()
+            for (i in 1..100) {
+                val res = BreakerHandler.execute(
+                    vertx = vertx,
+                    timeout = 500,
+                    maxRetries = 3,
+                    action = {
+                        println("action")
+                        delay(1000)
+                        "action"
+                    },
+                    fallback = {
+                        println("fallback")
+                        "fallback"
+                    },
+                )
+                println("res: $res")
+            }
         }
-        testContext.awaitCompletion(10, java.util.concurrent.TimeUnit.SECONDS)
+        ThreadUtil.sleep(10000)
     }
 }
