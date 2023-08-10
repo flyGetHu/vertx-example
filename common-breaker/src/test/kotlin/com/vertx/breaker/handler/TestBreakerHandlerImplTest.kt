@@ -1,6 +1,7 @@
 package com.vertx.breaker.handler
 
 import cn.hutool.core.thread.ThreadUtil
+import com.vertx.breaker.enums.CircuitBreakerEnum
 import io.vertx.core.Vertx
 import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
@@ -20,7 +21,7 @@ class TestBreakerHandlerImplTest {
             for (i in 1..1000) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     val res = BreakerHandler.execute(
-                        name = "breaker-test-2",
+                        circuitBreakerEnum = CircuitBreakerEnum.TEST_BREAKER,
                         vertx = vertx,
                         timeout = 500,
                         maxRetries = 0,

@@ -1,6 +1,7 @@
 package com.vertx.breaker.handler
 
 import cn.hutool.log.StaticLog
+import com.vertx.breaker.enums.CircuitBreakerEnum
 import io.vertx.circuitbreaker.CircuitBreaker
 import io.vertx.circuitbreaker.CircuitBreakerOptions
 import io.vertx.circuitbreaker.RetryPolicy
@@ -33,7 +34,7 @@ object BreakerHandler {
      * @param vertx Vertx实例,默认为com.vertx.common.config.vertx
      */
     suspend fun <T> execute(
-        name: String,
+        circuitBreakerEnum: CircuitBreakerEnum,
         action: suspend () -> T,
         fallback: (Throwable) -> T,
         timeout: Long = 10000,
@@ -53,6 +54,7 @@ object BreakerHandler {
         if (metricsRollingBuckets < 1) throw IllegalArgumentException("metricsRollingBuckets must be greater than 0")
         if (failuresRollingWindow < 1) throw IllegalArgumentException("failuresRollingWindow must be greater than 0")
         if (failuresRollingWindow > metricsRollingWindow) throw IllegalArgumentException("failuresRollingWindow must be less than or equal to metricsRollingWindow")
+        val name = circuitBreakerEnum.name.lowercase()
         val breaker = getCircuitBreaker(
             name,
             timeout,

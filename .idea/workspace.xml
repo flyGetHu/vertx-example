@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="短路由重试">
+      <change afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/enums/CircuitBreakerEnum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/BreakerRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/BreakerRouter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +24,10 @@
       <list>
         <option value="Kotlin File" />
         <option value="Class" />
-        <option value="Kotlin Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -263,10 +267,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
         <item itemvalue="JUnit.CircuitBreakerHelperTest.testExecute" />
         <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +310,7 @@
       <workItem from="1691466692292" duration="1899000" />
       <workItem from="1691468614325" duration="323000" />
       <workItem from="1691628846543" duration="57000" />
-      <workItem from="1691645940677" duration="6351000" />
+      <workItem from="1691645940677" duration="8500000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -553,14 +557,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00086" summary="redis 模块添加">
-      <option name="closed" value="true" />
-      <created>1691371413041</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1691371413041</updated>
-    </task>
     <task id="LOCAL-00087" summary="redis 模块添加">
       <option name="closed" value="true" />
       <created>1691374636548</created>
@@ -665,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691652253840</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="短路由重试">
+      <option name="closed" value="true" />
+      <created>1691652330051</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1691652330051</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
