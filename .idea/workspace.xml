@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="短路由函数定义完成">
+      <change afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/BreakerRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +26,9 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="Kotlin Enum" />
-        <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -86,36 +89,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/java/vertx-example/example-bus/src/main/resources/conf&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;,
-    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "D:/Workspace/java/vertx-example/example-bus/src/main/resources/conf",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36930457",
+    "settings.editor.selected.configurable": "swagger",
+    "typescript.add.unambiguous.imports.on.the.fly": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\java\vertx-example\example-bus\src\main\resources\conf" />
@@ -179,7 +182,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestBreakerHandlerImplTest.test">
+  <component name="RunManager" selected="Kotlin.ExampleWebMainApp">
     <configuration name="CircuitBreakerHandlerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common-breaker" />
       <extension name="coverage">
@@ -235,9 +238,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleTaskMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vertx.task.ExampleTaskMainApp" />
-      <module name="example-task" />
+    <configuration name="ExampleWebMainApp" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vertx.example.ExampleWebMainApp" />
+      <module name="example-web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -259,16 +262,16 @@
       <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
       <item itemvalue="JUnit.CircuitBreakerHelperTest.testExecute" />
       <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
+      <item itemvalue="Kotlin.ExampleWebMainApp" />
       <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-      <item itemvalue="Kotlin.ExampleTaskMainApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
         <item itemvalue="JUnit.CircuitBreakerHelperTest.testExecute" />
         <item itemvalue="JUnit.CircuitBreakerHandlerTest.test1" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -308,6 +311,7 @@
       <workItem from="1691466692292" duration="1899000" />
       <workItem from="1691468614325" duration="323000" />
       <workItem from="1691628846543" duration="57000" />
+      <workItem from="1691645940677" duration="4629000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>

@@ -22,6 +22,8 @@ object V1RouterGroup {
         TestBusRouter.init(routerV1)
         // redis路由
         RedisExampleRouter.init(routerV1)
+        // breaker路由
+        BreakerRouter.init(routerV1)
         // 1.0版本路由 挂载到主路由
         router.route("/v1/*").subRouter(routerV1)
     }

@@ -6,6 +6,7 @@ import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -22,12 +23,14 @@ class TestBreakerHandlerImplTest {
                         vertx = vertx,
                         timeout = 500,
                         maxRetries = 3,
-                        metricsRollingWindow = 100,
+                        maxFailures = 1,
+                        metricsRollingWindow = 1,
                         metricsRollingBuckets = 1,
-                        failuresRollingWindow = 80,
+                        failuresRollingWindow = 1,
                         action = {
                             println("action")
                             "action"
+                            delay(1000)
                         },
                         fallback = {
                             println("fallback")
