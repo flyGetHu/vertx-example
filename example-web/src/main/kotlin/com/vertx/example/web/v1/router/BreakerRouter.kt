@@ -19,7 +19,7 @@ object BreakerRouter {
                 name = "breaker-test-1",
                 timeout = 500,
                 maxRetries = 2,
-                maxFailures = 30,
+                maxFailures = 5,
                 resetTimeout = 500,
                 failuresRollingWindow = 60000,
                 metricsRollingWindow = 60000,
