@@ -16,8 +16,13 @@ object BreakerRouter {
 
         routerSub.get("/test").launchCoroutine {
             val res = BreakerHandler.execute(
+                name = "breaker-test-1",
                 timeout = 500,
                 maxRetries = 2,
+                maxFailures = 30,
+                resetTimeout = 500,
+                failuresRollingWindow = 60000,
+                metricsRollingWindow = 60000,
                 action = {
                     StaticLog.info("action")
                     val randomInt = RandomUtil.randomLong(300, 1000)

@@ -20,17 +20,18 @@ class TestBreakerHandlerImplTest {
             for (i in 1..1000) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     val res = BreakerHandler.execute(
+                        name = "breaker-test-2",
                         vertx = vertx,
                         timeout = 500,
-                        maxRetries = 3,
-                        maxFailures = 1,
-                        metricsRollingWindow = 1,
-                        metricsRollingBuckets = 1,
-                        failuresRollingWindow = 1,
+                        maxRetries = 0,
+                        maxFailures = 5,
+                        metricsRollingWindow = 1000,
+                        metricsRollingBuckets = 10,
+                        failuresRollingWindow = 500,
                         action = {
                             println("action")
-                            "action"
                             delay(1000)
+                            "action"
                         },
                         fallback = {
                             println("fallback")
