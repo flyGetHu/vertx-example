@@ -12,6 +12,7 @@ import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
 import com.hazelcast.config.TcpIpConfig;
+import com.hazelcast.config.cp.CPSubsystemConfig;
 import com.vertx.common.config.VertxLoadConfigKt;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -59,6 +60,10 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
     public void beforeStartingVertx(VertxOptions vertxOptions) {
         StaticLog.info("执行钩子函数:{}", "beforeStartingVertx");
         final Config config = ConfigUtil.loadConfig();
+        final CPSubsystemConfig cpSubsystemConfig = new CPSubsystemConfig();
+        // 设置CP成员节点数量
+        cpSubsystemConfig.setCPMemberCount(3);
+        config.setCPSubsystemConfig(cpSubsystemConfig);
         // 获取网络配置
         final NetworkConfig networkConfig = config.getNetworkConfig();
         // 获取Join配置
