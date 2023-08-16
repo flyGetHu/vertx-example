@@ -34,7 +34,7 @@ object MysqlHelper {
     /**
      * 批量插入数据
      * 会根据batchSize分批次插入,每次一个事务,如果更新失败会回滚
-     * 如何数据量大于batchSize,则会分批次插入,有可能导致部分数据插入成功,部分数据插入失败
+     * 如何数据量大于batchSize,则会分批次插入
      * @param data 数据对象
      * @param batchSize 批量大小
      * @return 受影响的行数
@@ -49,22 +49,20 @@ object MysqlHelper {
         //批量插入数据
         val lists = CollUtil.split(data, batchSize)
         val connection = mysqlPoolClient.connection.await()
+        //开启事务
+        val transaction = connection.begin().await()
         try {
             for (list in lists) {
                 val querySql = buildInsertSql(list)
-                //开启事务
-                val transaction = connection.begin().await()
-                try {
-                    val rows = connection.query(querySql).execute().await()
-                    count += rows.rowCount()
-                    //提交事务
-                    transaction.commit().await()
-                } catch (e: Exception) {
-                    //回滚事务
-                    transaction.rollback().await()
-                    StaticLog.error(e, "批量插入数据失败")
-                }
+                val rows = connection.query(querySql).execute().await()
+                count += rows.rowCount()
             }
+            //提交事务
+            transaction.commit().await()
+        } catch (e: Throwable) {
+            //回滚事务
+            transaction.rollback().await()
+            StaticLog.error(e, "批量插入数据失败")
         } finally {
             connection.close().await()
         }
@@ -87,7 +85,7 @@ object MysqlHelper {
     /**
      * 批量更新数据
      * 会根据batchSize分批次更新,每次一个事务,如果更新失败会回滚
-     * 如何数据量大于batchSize,则会分批次更新,有可能导致部分数据更新成功,部分数据更新失败
+     * 如何数据量大于batchSize,则会分批次更新
      * @param data 数据对象
      * @param where 条件
      * @param isNll 是否更新空值
@@ -107,23 +105,21 @@ object MysqlHelper {
         val sqlList = data.map { buildUpdateSql(it, where, isNll) }
         val lists = CollUtil.split(sqlList, batchSize)
         val connection = mysqlPoolClient.connection.await()
+        //开启事务
+        val transaction = connection.begin().await()
         try {
             for (list in lists) {
-                //开启事务
-                val transaction = connection.begin().await()
-                try {
-                    for (querySql in list) {
-                        val rows = connection.query(querySql).execute().await()
-                        count += rows.rowCount()
-                    }
-                    //提交事务
-                    transaction.commit().await()
-                } catch (e: Exception) {
-                    //回滚事务
-                    transaction.rollback().await()
-                    StaticLog.error(e, "批量更新数据失败", list)
+                for (querySql in list) {
+                    val rows = connection.query(querySql).execute().await()
+                    count += rows.rowCount()
                 }
             }
+            //提交事务
+            transaction.commit().await()
+        } catch (e: Throwable) {
+            //回滚事务
+            transaction.rollback().await()
+            StaticLog.error(e, "批量更新数据失败", lists)
         } finally {
             connection.close().await()
         }
