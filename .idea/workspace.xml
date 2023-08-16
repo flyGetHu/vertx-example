@@ -4,101 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="熔断器枚举类限制">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="配置cp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/enums/CircuitBreakerEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/enums/CircuitBreakerEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/test/kotlin/com/vertx/breaker/handler/TestBreakerHandlerImplTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/MysqlConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/MysqlConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/app/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/mq/MqMessageData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/mq/MqMessageData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/DateUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/Str.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/utils/Str.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/test/java/com/vertx/common/config/LoadConfigTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/test/java/com/vertx/common/config/LoadConfigTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/bus/DemoBusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-eventbus/src/test/kotlin/BusHandlerTestVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/test/kotlin/BusHandlerTestVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/utils/AnnotationUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/test/java/com/vertx/mysql/helper/MysqlHelperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/test/java/com/vertx/mysql/helper/MysqlHelperTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeTypeEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/enums/RabbitMqExChangeTypeEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/client/RedisClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/client/RedisClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/enums/RedisLockKeyEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/enums/RedisLockKeyEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/helper/RedisHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/ExampleBusMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/bus/DemoBusHandlerImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/BusVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.huan.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.huan.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/resources/conf/config.prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/ExampleRabbitMqMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/RabbitMqConsumerVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/RabbitMqConsumerVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.huan.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.huan.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/resources/conf/config.prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/ExampleTaskMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/handler/TaskDemoHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/handler/TaskDemoHandlerImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/TaskVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/TaskVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/ExampleWebMainApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/mapper/UserMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/WebRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/WebRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/V1RouterGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/BreakerRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/BreakerRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/MysqlExampleRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/RedisExampleRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/SystemRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/TestBusRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/TestBusRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/WebSocketExamoleRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/web/v1/router/WebSocketExamoleRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.huan.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.huan.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/resources/conf/config.prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/BusVerticleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/CoroutinesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/CoroutinesTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/redis-test.http" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/test/kotlin/com/vertx/example/verticle/redis-test.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-example.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,36 +89,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/huan/workspace/java/vertx-example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
-    "typescript.add.unambiguous.imports.on.the.fly": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/huan/workspace/java/vertx-example&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "redis"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;redis&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\java\vertx-example\example-bus\src\main\resources\conf" />
@@ -338,9 +250,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
-        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
       </list>
     </recent_temporary>
@@ -382,7 +294,12 @@
       <workItem from="1691468614325" duration="323000" />
       <workItem from="1691628846543" duration="57000" />
       <workItem from="1691645940677" duration="12834000" />
-      <workItem from="1692086917622" duration="4862000" />
+      <workItem from="1692086917622" duration="8216000" />
+      <workItem from="1692150517833" duration="52000" />
+      <workItem from="1692150783686" duration="249000" />
+      <workItem from="1692151042158" duration="233000" />
+      <workItem from="1692151286477" duration="482000" />
+      <workItem from="1692151778772" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -629,14 +546,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00088" summary="redis 模块添加">
-      <option name="closed" value="true" />
-      <created>1691376314304</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1691376314304</updated>
-    </task>
     <task id="LOCAL-00089" summary="redis 模块添加">
       <option name="closed" value="true" />
       <created>1691377911059</created>
@@ -741,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691654872346</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="配置cp">
+      <option name="closed" value="true" />
+      <created>1692094496657</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1692094496658</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -763,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="重命名模块名称" />
     <MESSAGE value="bus&#10;测试" />
     <MESSAGE value="task测试" />
     <MESSAGE value="bus测试" />
@@ -788,7 +704,8 @@
     <MESSAGE value="短路由函数定义完成" />
     <MESSAGE value="短路由重试" />
     <MESSAGE value="熔断器枚举类限制" />
-    <option name="LAST_COMMIT_MESSAGE" value="熔断器枚举类限制" />
+    <MESSAGE value="配置cp" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置cp" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -14,7 +14,6 @@ object ExampleBusMainApp {
     @JvmStatic
     fun main(args: Array<String>) {
         val hazelcastConfig = ConfigUtil.loadConfig()
-        hazelcastConfig.cpSubsystemConfig.cpMemberCount = 3
         //关闭组播
         val networkConfig = hazelcastConfig.networkConfig
         // 只发现本机成员,防止跨网段广播
