@@ -234,11 +234,11 @@ object MysqlHelper {
         //返回组装好的sql语句,insertIntoStep.sql是带占位符的sql语句 insertIntoStep.params是占位符对应的参数
         //例如：insertIntoStep.sql = insert into user (id,name,age) values (?,?,?) insertIntoStep.params = [1, test, 18]
         //最终返回的sql语句为：insert into user (id,name,age) values (1, 'test', 18);
-        val finalSql = insertIntoStep.getSQL(ParamType.INLINED)
+        val finalSql = "${insertIntoStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
             StaticLog.debug("插入语句：${finalSql}")
         }
-        return "$finalSql;"
+        return finalSql
     }
 
     /**
@@ -266,11 +266,11 @@ object MysqlHelper {
             }
         }
         val updateStep = dslContext.update(DSL.table(getTableName(clazz))).set(fileKeyValue).where(where)
-        val finalSql = updateStep.getSQL(ParamType.INLINED)
+        val finalSql = "${updateStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
             StaticLog.debug("更新语句：${finalSql}")
         }
-        return "$finalSql;"
+        return finalSql
     }
 
 
@@ -294,10 +294,11 @@ object MysqlHelper {
         if (lastSql.isNotBlank()) {
             finalSql += " $lastSql"
         }
+        finalSql += ";"
         if (active != "prod") {
             StaticLog.debug("查询语句：${finalSql}")
         }
-        return "$finalSql;"
+        return finalSql
     }
 
     /**
@@ -307,7 +308,7 @@ object MysqlHelper {
      */
     private fun <T> buildDeleteSql(clazz: Class<T>, where: Condition): String {
         val deleteStep = dslContext.delete(DSL.table(getTableName(clazz))).where(where)
-        val finalSql = deleteStep.getSQL(ParamType.INLINED)
+        val finalSql = "${deleteStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
             StaticLog.debug("删除语句：${finalSql}")
         }
