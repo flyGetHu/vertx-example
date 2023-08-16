@@ -21,7 +21,7 @@
            https://www.hazelcast.com/schema/config/hazelcast-config-4.2.xsd">
 
 
-    <!--  配置文档  https://docs.hazelcast.com/imdg/latest/system-properties.html-->
+    <!--  配置文档  https://docs.hazelcast.com/imdg/latest/-->
 
     <multimap name="__vertx.subs">
         <backup-count>1</backup-count>
@@ -37,7 +37,6 @@
     </map>
     <!--   cp子系统保证集群使用分布式锁,分布式计数器和共享map等操作保证数据一致性     -->
     <cp-subsystem>
-        <!--  cp子系统数量,此处数量应为集群实例对应的数量      -->
         <cp-member-count>3</cp-member-count>
         <group-size>3</group-size>
         <semaphores>
