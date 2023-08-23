@@ -67,9 +67,11 @@ object VertxWebConfig {
     /**
      * 启动httpserver
      * @param initRouter 初始化路由主函数
+     * @param requestInterceptorHandler 请求拦截器,根据需要自定义
      */
     fun startHttpServer(
-        initRouter: io.vertx.ext.web.Router.() -> Unit
+        initRouter: io.vertx.ext.web.Router.() -> Unit,
+        requestInterceptorHandler: io.vertx.core.Handler<RoutingContext> = RequestInterceptorHandler()
     ) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
@@ -101,7 +103,7 @@ object VertxWebConfig {
                 }
             }
             // 添加请求拦截器
-            .handler(RequestInterceptorHandler())
+            .handler(requestInterceptorHandler)
         val router = io.vertx.ext.web.Router.router(vertx)
         // 初始化路由
         initRouter(router)

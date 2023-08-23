@@ -10,6 +10,6 @@ import io.vertx.kotlin.coroutines.CoroutineVerticle
 class WebVerticle : CoroutineVerticle() {
     override suspend fun start() {
         // 启动http服务
-        VertxWebConfig.startHttpServer(WebRouter::init)
+        VertxWebConfig.startHttpServer(WebRouter::init, com.vertx.example.handler.RequestInterceptorHandler())
     }
 }

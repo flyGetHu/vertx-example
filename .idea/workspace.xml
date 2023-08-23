@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="sql&#10;拼接批量插入整体事务">
+      <change afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/handler/RequestInterceptorHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/TestBusService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +26,9 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -106,7 +108,7 @@
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -247,10 +249,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
       </list>
     </recent_temporary>
@@ -298,7 +300,12 @@
       <workItem from="1692151042158" duration="233000" />
       <workItem from="1692151286477" duration="482000" />
       <workItem from="1692151778772" duration="3166000" />
-      <workItem from="1692166520622" duration="3170000" />
+      <workItem from="1692166520622" duration="8107000" />
+      <workItem from="1692237295464" duration="5073000" />
+      <workItem from="1692603303269" duration="127000" />
+      <workItem from="1692603849326" duration="56000" />
+      <workItem from="1692603915054" duration="1861000" />
+      <workItem from="1692762683473" duration="3305000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -545,14 +552,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00092" summary="redis 锁添加枚举类进行限制">
-      <option name="closed" value="true" />
-      <created>1691378952704</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1691378952704</updated>
-    </task>
     <task id="LOCAL-00093" summary="redis 锁添加枚举类进行限制">
       <option name="closed" value="true" />
       <created>1691379308098</created>
@@ -657,7 +656,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692155110834</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="sql&#10;拼接批量插入整体事务">
+      <option name="closed" value="true" />
+      <created>1692179482265</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1692179482265</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,6 +723,11 @@
           <properties class="com.rabbitmq.client.ShutdownSignalException" package="com.rabbitmq.client" />
           <option name="timeStamp" value="59" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/handler/RequestInterceptorHandler.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
