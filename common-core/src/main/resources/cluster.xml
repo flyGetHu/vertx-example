@@ -40,6 +40,10 @@
         <!--   为了保证cp系统可用,可以启动 cp-member-count 个与业务无关的服务,维护cp系统最小成员    -->
         <cp-member-count>3</cp-member-count>
         <group-size>3</group-size>
+        <session-time-to-live-seconds>10</session-time-to-live-seconds>
+        <session-heartbeat-interval-seconds>1</session-heartbeat-interval-seconds>
+        <missing-cp-member-auto-removal-seconds>10</missing-cp-member-auto-removal-seconds>
+        <fail-on-indeterminate-operation-state>true</fail-on-indeterminate-operation-state>
         <semaphores>
             <semaphore>
                 <name>__vertx.*</name>

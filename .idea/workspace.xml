@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="sql&#10;拼接批量插入整体事务">
-      <change afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/handler/RequestInterceptorHandler.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="配置自定义web请求拦截器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/handler/RequestInterceptorHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,8 +248,8 @@
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="JUnit.TestBreakerHandlerImplTest.test" />
       </list>
     </recent_temporary>
@@ -305,7 +302,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="3305000" />
+      <workItem from="1692762683473" duration="6148000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -552,14 +549,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00093" summary="redis 锁添加枚举类进行限制">
-      <option name="closed" value="true" />
-      <created>1691379308098</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1691379308098</updated>
-    </task>
     <task id="LOCAL-00094" summary="redis 锁添加枚举类进行限制">
       <option name="closed" value="true" />
       <created>1691468591860</created>
@@ -664,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692179482265</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="配置自定义web请求拦截器">
+      <option name="closed" value="true" />
+      <created>1692772173297</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1692772173298</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="加载配置文件json" />
     <MESSAGE value="删除多余实现" />
     <MESSAGE value="添加error默认code和msg" />
     <MESSAGE value="修改bus接口执行返回参数" />
@@ -711,7 +707,8 @@
     <MESSAGE value="配置集群cp子系统" />
     <MESSAGE value="sql语句打印添加末尾;" />
     <MESSAGE value="sql&#10;拼接批量插入整体事务" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql&#10;拼接批量插入整体事务" />
+    <MESSAGE value="配置自定义web请求拦截器" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置自定义web请求拦截器" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -723,11 +720,6 @@
           <properties class="com.rabbitmq.client.ShutdownSignalException" package="com.rabbitmq.client" />
           <option name="timeStamp" value="59" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/handler/RequestInterceptorHandler.kt</url>
-          <line>34</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

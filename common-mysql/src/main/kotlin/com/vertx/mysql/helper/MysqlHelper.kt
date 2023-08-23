@@ -232,7 +232,7 @@ object MysqlHelper {
         //最终返回的sql语句为：insert into user (id,name,age) values (1, 'test', 18);
         val finalSql = "${insertIntoStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
-            StaticLog.debug("插入语句：${finalSql}")
+            StaticLog.info("插入语句：${finalSql}")
         }
         return finalSql
     }
@@ -264,7 +264,7 @@ object MysqlHelper {
         val updateStep = dslContext.update(DSL.table(getTableName(clazz))).set(fileKeyValue).where(where)
         val finalSql = "${updateStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
-            StaticLog.debug("更新语句：${finalSql}")
+            StaticLog.info("更新语句：${finalSql}")
         }
         return finalSql
     }
@@ -292,7 +292,7 @@ object MysqlHelper {
         }
         finalSql += ";"
         if (active != "prod") {
-            StaticLog.debug("查询语句：${finalSql}")
+            StaticLog.info("查询语句：${finalSql}")
         }
         return finalSql
     }
@@ -306,7 +306,7 @@ object MysqlHelper {
         val deleteStep = dslContext.delete(DSL.table(getTableName(clazz))).where(where)
         val finalSql = "${deleteStep.getSQL(ParamType.INLINED)};"
         if (active != "prod") {
-            StaticLog.debug("删除语句：${finalSql}")
+            StaticLog.info("删除语句：${finalSql}")
         }
         return "$finalSql;"
     }
