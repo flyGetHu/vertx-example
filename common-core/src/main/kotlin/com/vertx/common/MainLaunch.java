@@ -14,6 +14,7 @@ import com.hazelcast.config.NetworkConfig;
 import com.hazelcast.config.TcpIpConfig;
 import com.hazelcast.config.cp.CPSubsystemConfig;
 import com.vertx.common.config.VertxLoadConfigKt;
+import com.vertx.common.enums.EnvEnum;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -83,7 +84,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         // 设置集群ping回复时间
         eventBusOptions.setClusterPingReplyInterval(TimeUnit.SECONDS.toMillis(10));
         // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
-        VertxLoadConfigKt.setActive("prod");
+        VertxLoadConfigKt.setActive(EnvEnum.PROD.getEnv());
     }
 
     @Override

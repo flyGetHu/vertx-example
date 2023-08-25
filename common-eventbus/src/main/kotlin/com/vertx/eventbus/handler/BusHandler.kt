@@ -17,6 +17,7 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
 import com.vertx.common.config.eventBus
 import com.vertx.common.config.vertx
+import com.vertx.common.enums.EnvEnum
 import io.vertx.core.AsyncResult
 import io.vertx.core.Future
 import io.vertx.core.Promise
@@ -126,7 +127,7 @@ interface BusHandler<Request, Response> {
                         val response = service.handleRequest(request).await()
                         message.reply(Json.encode(response))
                         // 非生产环境打印日志
-                        if (active != "prod") {
+                        if (active != EnvEnum.PROD.env) {
                             StaticLog.info(
                                 """
                                     RPC服务处理请求: $address

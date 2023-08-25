@@ -3,6 +3,7 @@ package com.vertx.mysql.helper
 import cn.hutool.core.collection.CollUtil
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
+import com.vertx.common.enums.EnvEnum
 import com.vertx.common.utils.underlineName
 import com.vertx.mysql.client.mysqlPoolClient
 import com.vertx.mysql.utils.getTableName
@@ -231,7 +232,7 @@ object MysqlHelper {
         //例如：insertIntoStep.sql = insert into user (id,name,age) values (?,?,?) insertIntoStep.params = [1, test, 18]
         //最终返回的sql语句为：insert into user (id,name,age) values (1, 'test', 18);
         val finalSql = "${insertIntoStep.getSQL(ParamType.INLINED)};"
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.info("插入语句：${finalSql}")
         }
         return finalSql
@@ -263,7 +264,7 @@ object MysqlHelper {
         }
         val updateStep = dslContext.update(DSL.table(getTableName(clazz))).set(fileKeyValue).where(where)
         val finalSql = "${updateStep.getSQL(ParamType.INLINED)};"
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.info("更新语句：${finalSql}")
         }
         return finalSql
@@ -291,7 +292,7 @@ object MysqlHelper {
             finalSql += " $lastSql"
         }
         finalSql += ";"
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.info("查询语句：${finalSql}")
         }
         return finalSql
@@ -305,7 +306,7 @@ object MysqlHelper {
     private fun <T> buildDeleteSql(clazz: Class<T>, where: Condition): String {
         val deleteStep = dslContext.delete(DSL.table(getTableName(clazz))).where(where)
         val finalSql = "${deleteStep.getSQL(ParamType.INLINED)};"
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.info("删除语句：${finalSql}")
         }
         return "$finalSql;"

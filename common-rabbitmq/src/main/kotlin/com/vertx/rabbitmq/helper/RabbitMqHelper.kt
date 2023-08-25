@@ -6,6 +6,7 @@ import com.vertx.common.config.active
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.mq.MqMessageData
+import com.vertx.common.enums.EnvEnum
 import com.vertx.common.utils.underlineName
 import com.vertx.rabbitmq.client.rabbitMqClient
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
@@ -115,7 +116,7 @@ object RabbitMqHelper {
             }
             promise.future()
         }.await()
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.debug("发送消息成功:队列名称:${rabbitMqExChangeEnum.exchanger},消息:$message")
         }
     }
@@ -151,7 +152,7 @@ object RabbitMqHelper {
             }
             promise.future()
         }.await()
-        if (active != "prod") {
+        if (active != EnvEnum.PROD.env) {
             StaticLog.debug("发送消息成功:队列名称:$queueName,消息:$message")
         }
     }
@@ -240,7 +241,7 @@ object RabbitMqHelper {
                     // 回调
                     rabbitMqHandler.callback("", msgId)
                     ackMessage(autoAck, deliveryTag, msgId)
-                    if (active != "prod") {
+                    if (active != EnvEnum.PROD.env) {
                         StaticLog.debug("消息处理成功:队列名称:$queueName,消息:$rabbitMqMsg")
                     }
                 } catch (e: Throwable) {

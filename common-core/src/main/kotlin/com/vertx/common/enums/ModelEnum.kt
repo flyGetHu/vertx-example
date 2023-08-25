@@ -1,7 +1,7 @@
 package com.vertx.common.enums
 
 /**
- * 模型枚举
+ * 业务模块枚举
  * @param modelName 模块名称
  * @param description 模块描述
  */

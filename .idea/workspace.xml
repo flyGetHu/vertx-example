@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="base64扩展">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="定时任务是否在指定环境才可运行">
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/EnvEnum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/enums/ModelEnum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-eventbus/src/main/kotlin/com/vertx/eventbus/handler/BusHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +309,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="17302000" />
+      <workItem from="1692762683473" duration="17689000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -550,14 +556,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00096" summary="短路由使用">
-      <option name="closed" value="true" />
-      <created>1691574552346</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1691574552346</updated>
-    </task>
     <task id="LOCAL-00097" summary="短路由函数定义完成">
       <option name="closed" value="true" />
       <created>1691576283707</created>
@@ -662,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692930818314</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="定时任务是否在指定环境才可运行">
+      <option name="closed" value="true" />
+      <created>1692931353528</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1692931353528</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +690,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改bus接口执行返回参数" />
     <MESSAGE value="sql查询" />
     <MESSAGE value="RabbitMqClient" />
     <MESSAGE value="mq 测试" />
@@ -709,7 +714,8 @@
     <MESSAGE value="配置自定义web请求拦截器" />
     <MESSAGE value="配置日志" />
     <MESSAGE value="base64扩展" />
-    <option name="LAST_COMMIT_MESSAGE" value="base64扩展" />
+    <MESSAGE value="定时任务是否在指定环境才可运行" />
+    <option name="LAST_COMMIT_MESSAGE" value="定时任务是否在指定环境才可运行" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
