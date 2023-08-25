@@ -2,6 +2,7 @@ package com.vertx.common.task
 
 import cn.hutool.core.date.DateUtil
 import cn.hutool.log.StaticLog
+import com.vertx.common.config.active
 import com.vertx.common.config.vertx
 import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.dispatcher
@@ -36,8 +37,15 @@ interface CronSchedulerHandler {
      * 启动定时任务
      * Starts the scheduled task.
      * @param initStart 是否初始化启动 (whether to initialize the task on startup)
+     * @param startEnv 启动环境 (startup environment) 如果不为空,则只有在active为startEnv时才会启动定时任务
      */
-    fun start(initStart: Boolean = false) {
+    fun start(initStart: Boolean = false, startEnv: String = "") {
+        if (startEnv.isNotBlank()) {
+            if (active != startEnv) {
+                StaticLog.info("当前环境为${active},不启动定时任务:${description}")
+                return
+            }
+        }
         //如果是初始化启动,则直接执行任务
         //If it is an initialization start, execute the task directly.
         if (initStart) {
@@ -79,7 +87,13 @@ interface CronSchedulerHandler {
      * 演示使用,正常情况不需要传递vertx
      * For demonstration purposes only. In normal use, vertx should not be passed as a parameter.
      */
-    fun start(vertx: Vertx, initStart: Boolean = false) {
+    fun start(vertx: Vertx, initStart: Boolean = false, startEnv: String = "") {
+        if (startEnv.isNotBlank()) {
+            if (active != startEnv) {
+                StaticLog.info("当前环境为${active},不启动定时任务:${description}")
+                return
+            }
+        }
         if (initStart) {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
