@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="mq任务接口定义">
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/annotation/InjectSingleton.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +198,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ImageUtilsTest.test">
+  <component name="RunManager" selected="Kotlin.ExampleRabbitMqMainApp">
     <configuration name="ImageUtilsTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example-web" />
       <extension name="coverage">
@@ -267,9 +265,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="JUnit.ImageUtilsTest.test" />
       </list>
@@ -323,7 +321,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="32525000" />
+      <workItem from="1692762683473" duration="35782000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -570,14 +568,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00101" summary="熔断器枚举类限制">
-      <option name="closed" value="true" />
-      <created>1691654872345</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1691654872346</updated>
-    </task>
     <task id="LOCAL-00102" summary="配置cp">
       <option name="closed" value="true" />
       <created>1692094496657</created>
@@ -682,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693206573426</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="mq任务接口定义">
+      <option name="closed" value="true" />
+      <created>1693207305705</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1693207305705</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
