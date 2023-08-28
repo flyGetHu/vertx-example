@@ -1,5 +1,6 @@
 package com.vertx.example.service
 
+import cn.hutool.core.lang.Singleton
 import com.vertx.common.model.User
 import com.vertx.example.mapper.UserMapper
 import com.vertx.rabbitmq.handler.TestCustomerHandler
@@ -7,10 +8,12 @@ import com.vertx.rabbitmq.helper.RabbitMqHelper
 
 object UserService {
 
+    private val testCustomerHandler = Singleton.get(TestCustomerHandler::class.java)
+
     suspend fun list(limit: Int): List<User> {
         val users = UserMapper.list(limit)
         for (user in users) {
-            RabbitMqHelper.sendMessageToExchange(TestCustomerHandler, user)
+            RabbitMqHelper.sendMessageToExchange(testCustomerHandler, user)
         }
         return users
     }
