@@ -7,6 +7,7 @@ import com.vertx.mysql.client.MysqlClient
 import com.vertx.rabbitmq.client.RabbitMqClient
 import com.vertx.redis.client.RedisClient
 import com.vertx.webclient.client.WebClient
+import io.vertx.core.DeploymentOptions
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 import io.vertx.kotlin.coroutines.await
 import java.time.Duration
@@ -26,7 +27,7 @@ class MainVerticle : CoroutineVerticle() {
             RabbitMqClient.init(appConfig.mq?.rabbitmq)
             // 初始化redis
             RedisClient.init(appConfig.database?.redis)
-            vertx.deployVerticle(WebVerticle::class.java.name).await()
+            vertx.deployVerticle(WebVerticle::class.java.name, DeploymentOptions().setInstances(6)).await()
             StaticLog.info("启动示例项目成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
         } catch (e: Exception) {
             StaticLog.error(e, "启动示例项目失败:")

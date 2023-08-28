@@ -83,6 +83,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         eventBusOptions.setClusterPingInterval(TimeUnit.SECONDS.toMillis(10));
         // 设置集群ping回复时间
         eventBusOptions.setClusterPingReplyInterval(TimeUnit.SECONDS.toMillis(10));
+        vertxOptions.setEventBusOptions(eventBusOptions);
         // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
         VertxLoadConfigKt.setActive(EnvEnum.PROD.getEnv());
     }

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="mq任务接口定义">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="web响应格式化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,10 +267,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="JUnit.ImageUtilsTest.test" />
       </list>
     </recent_temporary>
@@ -322,7 +323,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="38158000" />
+      <workItem from="1692762683473" duration="38875000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -569,14 +570,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00104" summary="sql语句打印添加末尾;">
-      <option name="closed" value="true" />
-      <created>1692154784325</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1692154784325</updated>
-    </task>
     <task id="LOCAL-00105" summary="sql&#10;拼接批量插入整体事务">
       <option name="closed" value="true" />
       <created>1692155110834</created>
@@ -681,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693215907894</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="web响应格式化">
+      <option name="closed" value="true" />
+      <created>1693216385172</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1693216385172</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +704,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mq 测试" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="测试mq消息发送以及消费" />
     <MESSAGE value="打包配置" />
@@ -728,7 +728,8 @@
     <MESSAGE value="定时任务是否在指定环境才可运行" />
     <MESSAGE value="定时任务回调" />
     <MESSAGE value="mq任务接口定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="mq任务接口定义" />
+    <MESSAGE value="web响应格式化" />
+    <option name="LAST_COMMIT_MESSAGE" value="web响应格式化" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
