@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="mq任务接口定义">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/resources/cluster.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,10 +266,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
+        <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="JUnit.ImageUtilsTest.test" />
       </list>
     </recent_temporary>
@@ -322,7 +322,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="37532000" />
+      <workItem from="1692762683473" duration="38158000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -569,14 +569,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00103" summary="配置集群cp子系统">
-      <option name="closed" value="true" />
-      <created>1692152085998</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1692152085998</updated>
-    </task>
     <task id="LOCAL-00104" summary="sql语句打印添加末尾;">
       <option name="closed" value="true" />
       <created>1692154784325</created>
@@ -681,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693213158592</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="mq任务接口定义">
+      <option name="closed" value="true" />
+      <created>1693215907894</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1693215907894</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

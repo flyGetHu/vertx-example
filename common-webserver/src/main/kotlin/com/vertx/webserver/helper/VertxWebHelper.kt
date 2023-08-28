@@ -39,7 +39,7 @@ fun Route.launchCoroutine(fn: suspend (RoutingContext) -> Unit) {
 
 // 扩展函数，用于发送 JSON 响应
 fun RoutingContext.jsonResponse(response: Any?) {
-    this.response().putHeader("Content-Type", "application/json").end(Json.encodePrettily(response))
+    this.response().putHeader("Content-Type", "application/json").end(Json.encode(response))
 }
 
 
@@ -66,8 +66,7 @@ fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, messag
 object VertxWebConfig {
     /**
      * 启动httpserver
-     * @param initRouter 初始化路由主函数
-     * @param requestInterceptorHandler 请求拦截器,根据需要自定义
+     * @param webServiceOptions web服务配置
      */
     fun startHttpServer(webServiceOptions: WebServiceOptions) {
         if (!isInit) {
