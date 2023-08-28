@@ -79,7 +79,7 @@ object BreakerHandler {
             StaticLog.error(e, "circuitBreaker fallback error name: $name")
             fallback(e)
         }
-        return breaker.execute<T> {
+        return breaker.execute {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
                     it.complete(action())

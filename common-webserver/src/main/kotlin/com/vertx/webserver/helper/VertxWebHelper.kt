@@ -13,7 +13,7 @@ import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.web.ApiError
 import com.vertx.common.entity.web.ApiResponse
-import com.vertx.webserver.handler.RequestInterceptorHandler
+import com.vertx.webserver.entity.WebServiceOptions
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
@@ -69,10 +69,7 @@ object VertxWebConfig {
      * @param initRouter 初始化路由主函数
      * @param requestInterceptorHandler 请求拦截器,根据需要自定义
      */
-    fun startHttpServer(
-        initRouter: io.vertx.ext.web.Router.() -> Unit,
-        requestInterceptorHandler: io.vertx.core.Handler<RoutingContext> = RequestInterceptorHandler()
-    ) {
+    fun startHttpServer(webServiceOptions: WebServiceOptions) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
@@ -103,10 +100,10 @@ object VertxWebConfig {
                 }
             }
             // 添加请求拦截器
-            .handler(requestInterceptorHandler)
+            .handler(webServiceOptions.requestInterceptorHandler)
         val router = io.vertx.ext.web.Router.router(vertx)
         // 初始化路由
-        initRouter(router)
+        webServiceOptions.initRouter(router)
         mainRouter.route(serverConfig.prefix).subRouter(router)
         // 统一处理异常
         mainRouter.errorHandler(HttpStatus.HTTP_INTERNAL_ERROR) { context: RoutingContext ->

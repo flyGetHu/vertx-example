@@ -1,6 +1,7 @@
 package com.vertx.example.verticle
 
 import com.vertx.example.web.WebRouter
+import com.vertx.webserver.entity.WebServiceOptions
 import com.vertx.webserver.helper.VertxWebConfig
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 
@@ -10,6 +11,9 @@ import io.vertx.kotlin.coroutines.CoroutineVerticle
 class WebVerticle : CoroutineVerticle() {
     override suspend fun start() {
         // 启动http服务
-        VertxWebConfig.startHttpServer(WebRouter::init, com.vertx.example.handler.RequestInterceptorHandler())
+        val webServiceOptions = WebServiceOptions()
+        webServiceOptions.initRouter = WebRouter::init
+        webServiceOptions.requestInterceptorHandler = com.vertx.example.handler.RequestInterceptorHandler()
+        VertxWebConfig.startHttpServer(webServiceOptions)
     }
 }

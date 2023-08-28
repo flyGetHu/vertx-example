@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateUtil
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
 import com.vertx.common.config.vertx
-import com.vertx.common.enums.EnvEnum
+import com.vertx.common.entity.task.TaskOptions
 import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -40,7 +40,8 @@ interface CronSchedulerHandler {
      * @param initStart 是否初始化启动 (whether to initialize the task on startup)
      * @param startEnv 启动环境 (startup environment) 如果不为空,则只有在active为startEnv时才会启动定时任务
      */
-    fun start(initStart: Boolean = false, startEnv: EnvEnum? = null) {
+    fun start(taskOptions: TaskOptions) {
+        val startEnv = taskOptions.startEnv
         if (startEnv != null) {
             if (active != startEnv.env) {
                 StaticLog.info("当前环境为${active},不启动定时任务:${description}")
@@ -49,20 +50,21 @@ interface CronSchedulerHandler {
         }
         //如果是初始化启动,则直接执行任务
         //If it is an initialization start, execute the task directly.
-        if (initStart) {
+        if (taskOptions.initStart) {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
                     task()
                 } catch (e: Throwable) {
                     StaticLog.error(e, "定时任务执行异常:${description}")
                 }
-                start(false)
+                taskOptions.initStart = false
+                start(taskOptions)
             }
             return
         }
         //如果不是初始化启动,则计算下次执行时间,防止初始化执行的同时,也执行了定时任务
         //If it is not an initialization start, calculate the next execution time to prevent the task from being executed while initializing.
-        if (!initStart) {
+        if (!taskOptions.initStart) {
             val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
             StaticLog.info(
                 "定时任务:${description} 下次执行时间:${
@@ -78,7 +80,8 @@ interface CronSchedulerHandler {
                     } catch (e: Throwable) {
                         StaticLog.error(e, "定时任务执行异常:${description}")
                     }
-                    start(false)
+                    taskOptions.initStart = false
+                    start(taskOptions)
                 }
             }
         }
@@ -88,25 +91,27 @@ interface CronSchedulerHandler {
      * 演示使用,正常情况不需要传递vertx
      * For demonstration purposes only. In normal use, vertx should not be passed as a parameter.
      */
-    fun start(vertx: Vertx, initStart: Boolean = false, startEnv: EnvEnum? = null) {
+    fun start(taskOptions: TaskOptions, vertx: Vertx = com.vertx.common.config.vertx) {
+        val startEnv = taskOptions.startEnv
         if (startEnv != null) {
             if (active != startEnv.env) {
                 StaticLog.info("当前环境为${active},不启动定时任务:${description}")
                 return
             }
         }
-        if (initStart) {
+        if (taskOptions.initStart) {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
                     task()
                 } catch (e: Throwable) {
                     StaticLog.error(e, "定时任务执行异常:${description}")
                 }
-                start(vertx = vertx, initStart = false)
+                taskOptions.initStart = false
+                start(taskOptions, vertx = vertx)
             }
             return
         }
-        if (!initStart) {
+        if (!taskOptions.initStart) {
             val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
             StaticLog.info(
                 "定时任务:${description} 下次执行时间:${
@@ -122,7 +127,8 @@ interface CronSchedulerHandler {
                     } catch (e: Throwable) {
                         StaticLog.error(e, "定时任务执行异常:${description}")
                     }
-                    start(vertx = vertx, initStart = false)
+                    taskOptions.initStart = false
+                    start(taskOptions, vertx = vertx)
                 }
             }
         }
