@@ -38,7 +38,7 @@
     <!--   cp子系统保证集群使用分布式锁,分布式计数器和共享map等操作保证数据一致性     -->
     <cp-subsystem>
         <!--   为了保证cp系统可用,可以启动 cp-member-count 个与业务无关的服务,维护cp系统最小成员    -->
-        <cp-member-count>3</cp-member-count>
+        <cp-member-count>4</cp-member-count>
         <group-size>3</group-size>
         <session-time-to-live-seconds>10</session-time-to-live-seconds>
         <session-heartbeat-interval-seconds>1</session-heartbeat-interval-seconds>
