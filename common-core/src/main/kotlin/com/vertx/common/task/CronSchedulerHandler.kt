@@ -1,6 +1,7 @@
 package com.vertx.common.task
 
 import cn.hutool.core.date.DateUtil
+import cn.hutool.core.exceptions.ExceptionUtil
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
 import com.vertx.common.config.vertx
@@ -31,8 +32,9 @@ interface CronSchedulerHandler {
     /**
      * 定时任务
      * Coroutine function that defines the task to be executed.
+     * @return 返回值为定时任务执行结果,如果不为null,则代表定时任务执行失败,会打印错误日志
      */
-    suspend fun task()
+    suspend fun task(): String?
 
     /**
      * 启动定时任务
@@ -53,9 +55,11 @@ interface CronSchedulerHandler {
         if (taskOptions.initStart) {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
-                    task()
+                    val msg = task()
+                    taskOptions.taskCallback?.let { it(msg, description) }
                 } catch (e: Throwable) {
                     StaticLog.error(e, "定时任务执行异常:${description}")
+                    taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
                 taskOptions.initStart = false
                 start(taskOptions)
@@ -76,9 +80,11 @@ interface CronSchedulerHandler {
             vertx.setTimer(timeUntilNextExecution) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
-                        task()
+                        val msg = task()
+                        taskOptions.taskCallback?.let { it(msg, description) }
                     } catch (e: Throwable) {
                         StaticLog.error(e, "定时任务执行异常:${description}")
+                        taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                     }
                     taskOptions.initStart = false
                     start(taskOptions)
@@ -102,9 +108,11 @@ interface CronSchedulerHandler {
         if (taskOptions.initStart) {
             CoroutineScope(vertx.dispatcher()).launch {
                 try {
-                    task()
+                    val msg = task()
+                    taskOptions.taskCallback?.let { it(msg, description) }
                 } catch (e: Throwable) {
                     StaticLog.error(e, "定时任务执行异常:${description}")
+                    taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
                 taskOptions.initStart = false
                 start(taskOptions, vertx = vertx)
@@ -123,9 +131,11 @@ interface CronSchedulerHandler {
             vertx.setTimer(timeUntilNextExecution) {
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
-                        task()
+                        val msg = task()
+                        taskOptions.taskCallback?.let { it(msg, description) }
                     } catch (e: Throwable) {
                         StaticLog.error(e, "定时任务执行异常:${description}")
+                        taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                     }
                     taskOptions.initStart = false
                     start(taskOptions, vertx = vertx)
