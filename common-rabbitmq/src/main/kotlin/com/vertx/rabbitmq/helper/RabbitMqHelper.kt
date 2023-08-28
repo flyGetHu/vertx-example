@@ -72,11 +72,12 @@ object RabbitMqHelper {
      * @param message 消息 与交换机类型匹配
      * @param persistenceMessage 持久化消息函数,如果不需要持久化消息,则传入空函数
      */
-    suspend fun sendMessageToExchange(
-        rabbitMqExChangeEnum: RabbitMqExChangeEnum,
-        message: Any,
-        persistenceMessage: (suspend (MqMessageData<Any>) -> Boolean)?
+    suspend fun <T> sendMessageToExchange(
+        rabbitMqHandler: RabbitMqHandler<T>,
+        message: T,
     ) {
+        // 组装交换机名称
+        val rabbitMqExChangeEnum = rabbitMqHandler.exchange
         // 检查交换机类型是否支持发送消息到交换机
         if (rabbitMqExChangeEnum.type == RabbitMqExChangeTypeEnum.DIRECT) {
             throw Exception("direct类型交换机不支持发送消息到交换机")
@@ -84,29 +85,25 @@ object RabbitMqHelper {
         // 组装消息
         val mqMessageData = MqMessageData(message)
         // 持久化消息
-        if (persistenceMessage != null) {
-            val persistence = persistenceMessage(mqMessageData)
-            if (!persistence) {
-                StaticLog.warn("消息持久化失败:交换机名称:${rabbitMqExChangeEnum.exchanger},消息:$mqMessageData")
-            }
+        val persistence = rabbitMqHandler.persistence(mqMessageData)
+        val exchanger = rabbitMqExChangeEnum.exchanger
+        if (!persistence.isNullOrBlank()) {
+            StaticLog.warn("消息持久化失败:交换机名称:$exchanger,消息:$mqMessageData")
         }
         // 检查交换机消息类型是否匹配
-        if (rabbitMqExChangeEnum.messageType != message::class.java) {
+        if (rabbitMqExChangeEnum.messageType != message!!::class.java) {
             throw Exception("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(
-            rabbitMqExChangeEnum.exchanger,
-            "",
-            MessageProperties.PERSISTENT_TEXT_PLAIN,
-            Json.encodeToBuffer(mqMessageData)
+            exchanger, "", MessageProperties.PERSISTENT_TEXT_PLAIN, Json.encodeToBuffer(mqMessageData)
         ).compose {
             val promise = Promise.promise<Void>()
             if (appConfig.mq?.rabbitmq?.sendConfirm == true) {
                 rabbitMqClient.waitForConfirms(TimeUnit.SECONDS.toMillis(5)).onComplete {
                     if (it.failed()) {
                         promise.fail(it.cause())
-                        StaticLog.error("发送消息失败:交换机:${rabbitMqExChangeEnum.exchanger},消息:$message")
+                        StaticLog.error("发送消息失败:交换机:$exchanger,消息:$message")
                     } else {
                         promise.complete()
                     }
@@ -117,13 +114,16 @@ object RabbitMqHelper {
             promise.future()
         }.await()
         if (active != EnvEnum.PROD.env) {
-            StaticLog.debug("发送消息成功:队列名称:${rabbitMqExChangeEnum.exchanger},消息:$message")
+            StaticLog.debug("发送消息成功:队列名称:$exchanger,消息:$message")
         }
     }
 
 
     // 发送消息到队列
-    suspend fun <T> sendMessageToQueue(rabbitMqHandler: RabbitMqHandler<T>, message: T) {
+    suspend fun <T> sendMessageToQueue(
+        rabbitMqHandler: RabbitMqHandler<T>,
+        message: T,
+    ) {
         // 组装队列名称
         val queueName = assembleQueueName(rabbitMqHandler)
         // 组装消息
@@ -132,6 +132,10 @@ object RabbitMqHelper {
         val persistence = rabbitMqHandler.persistence(mqMessageData)
         if (!persistence.isNullOrBlank()) {
             StaticLog.warn("消息持久化失败:队列名称:$queueName,消息:$mqMessageData")
+        }
+        // 检查交换机消息类型是否匹配
+        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
+            throw Exception("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(

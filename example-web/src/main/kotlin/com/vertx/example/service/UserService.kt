@@ -2,7 +2,7 @@ package com.vertx.example.service
 
 import com.vertx.common.model.User
 import com.vertx.example.mapper.UserMapper
-import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
+import com.vertx.rabbitmq.handler.TestCustomerHandler
 import com.vertx.rabbitmq.helper.RabbitMqHelper
 
 object UserService {
@@ -10,11 +10,7 @@ object UserService {
     suspend fun list(limit: Int): List<User> {
         val users = UserMapper.list(limit)
         for (user in users) {
-            RabbitMqHelper.sendMessageToExchange(
-                RabbitMqExChangeEnum.TESTRabbitMqExChangeEnum,
-                user,
-                persistenceMessage = null
-            )
+            RabbitMqHelper.sendMessageToExchange(TestCustomerHandler, user)
         }
         return users
     }

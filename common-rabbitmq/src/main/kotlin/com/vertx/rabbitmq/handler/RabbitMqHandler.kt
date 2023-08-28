@@ -85,6 +85,7 @@ interface RabbitMqHandler<Request> {
     var retryInterval: Long
 
     /**
+     * 消费方
      * 消息消费处理器,用于处理消费消息的业务逻辑
      * @param message 消息
      * @return String 空字符串表示消费成功,否则消费失败
@@ -92,14 +93,18 @@ interface RabbitMqHandler<Request> {
     var handler: suspend (Request) -> String?
 
     /**
+     * 发送方
      * 消息持久化策略,消息发送前会执行此逻辑,可以将消息保存到数据库或者redis中,用于消息重试
+     * 此函数主要由发送方实现,如果不需要持久化,则空函数即可
      * @param message 消息
      * @return String 空字符串表示消费成功,否则消费失败
      */
     var persistence: suspend (MqMessageData<Request>) -> String?
 
     /**
+     * 消费方
      * 消息消费完成后回调函数,用于通知生产者消息是否消费成功,或者更新消息状态
+     * 此函数主要由消费方实现,如果不需要回调,则空函数即可
      * @param  msg 空字符串表示消费成功,否则消费失败
      * @param  msgId 消息id
      * @return String 空字符串表示消费成功,否则消费失败

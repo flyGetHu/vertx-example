@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="定时任务是否在指定环境才可运行">
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/entity/task/TaskOptions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/entity/WebServiceOptions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="定时任务回调">
+      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-breaker/src/main/kotlin/com/vertx/breaker/handler/BreakerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/task/CronSchedulerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webserver/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/TaskVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/verticle/TaskVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/WebVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/RabbitMqHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/handler/TestCustomerHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/RabbitMqConsumerVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/RabbitMqConsumerVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/handler/TaskDemoHandlerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/src/main/kotlin/com/vertx/task/handler/TaskDemoHandlerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/service/UserService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +28,9 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -161,11 +160,11 @@
       <recent name="D:\workspace\java\vertx-example\breaker\src\main\kotlin\com\vertx\breaker\handler" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.vertx.rabbitmq.handler" />
       <recent name="com.vertx.breaker.config" />
       <recent name="com.vertx.breaker.handler" />
       <recent name="com.vertx.common.entity.mq" />
       <recent name="com.vertx.common.enums" />
-      <recent name="com.vertx.eventbus.handler" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.vertx.common" />
@@ -273,8 +272,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="JUnit.ImageUtilsTest.test" />
       </list>
@@ -328,7 +327,7 @@
       <workItem from="1692603303269" duration="127000" />
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
-      <workItem from="1692762683473" duration="22045000" />
+      <workItem from="1692762683473" duration="31817000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -575,22 +574,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00098" summary="短路由重试">
-      <option name="closed" value="true" />
-      <created>1691650853472</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1691650853474</updated>
-    </task>
-    <task id="LOCAL-00099" summary="短路由重试">
-      <option name="closed" value="true" />
-      <created>1691652253840</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1691652253840</updated>
-    </task>
     <task id="LOCAL-00100" summary="短路由重试">
       <option name="closed" value="true" />
       <created>1691652330051</created>
@@ -687,7 +670,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692931616425</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="定时任务是否在指定环境才可运行">
+      <option name="closed" value="true" />
+      <created>1693188078007</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1693188078007</updated>
+    </task>
+    <task id="LOCAL-00113" summary="定时任务回调">
+      <option name="closed" value="true" />
+      <created>1693191049532</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1693191049532</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,7 +708,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sql查询" />
     <MESSAGE value="RabbitMqClient" />
     <MESSAGE value="mq 测试" />
     <MESSAGE value="fix bug" />
@@ -734,7 +732,8 @@
     <MESSAGE value="配置日志" />
     <MESSAGE value="base64扩展" />
     <MESSAGE value="定时任务是否在指定环境才可运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="定时任务是否在指定环境才可运行" />
+    <MESSAGE value="定时任务回调" />
+    <option name="LAST_COMMIT_MESSAGE" value="定时任务回调" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
