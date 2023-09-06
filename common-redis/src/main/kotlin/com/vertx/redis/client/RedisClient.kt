@@ -22,22 +22,16 @@ lateinit var redisClient: RedisAPI
  * @param config Redis配置 [com.vertx.common.entity.app.Redis]
  */
 object RedisClient {
+
     /**
      * 初始化
      * @param config Redis配置 [com.vertx.common.entity.app.Redis]
+     * @param isDef 是否设置为默认客户端,默认为true,如果为true,则会将此客户端设置为全局客户端,否则返回此客户端
      */
-    suspend fun init(config: com.vertx.common.entity.app.Redis?) {
+    suspend fun init(config: com.vertx.common.entity.app.Redis, isDef: Boolean = true): RedisAPI? {
         if (!isInit) {
             throw Exception("vertx is not init")
         }
-        if (config == null) {
-            throw Exception("redis config is null")
-        }
-        createRedisClient(config)
-        StaticLog.info("redisClient 初始化成功")
-    }
-
-    private suspend fun createRedisClient(config: com.vertx.common.entity.app.Redis) {
         val redisOptions = RedisOptions()
         val host = config.host
         if (host.isBlank()) {
@@ -58,7 +52,14 @@ object RedisClient {
                 attemptReconnect(0, config)
             }
         }
-        redisClient = RedisAPI.api(connection)
+        val api = RedisAPI.api(connection)
+        if (isDef) {
+            redisClient = api
+        } else {
+            return api
+        }
+        StaticLog.info("redisClient 初始化成功")
+        return null
     }
 
 
@@ -72,7 +73,7 @@ object RedisClient {
             // retry with backoff up to 10240 ms
             delay(1000)
             try {
-                createRedisClient(config)
+                init(config)
             } catch (e: Throwable) {
                 StaticLog.error(e, "redisClient链接断开,重试第${retry + 1}次")
                 attemptReconnect(retry + 1, config)

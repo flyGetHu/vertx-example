@@ -14,7 +14,7 @@ class MainVerticle : CoroutineVerticle() {
             val timer = Instant.now()
             VertxLoadConfig.init()
             // 初始化rabbitmq
-            RabbitMqClient.init(appConfig.mq?.rabbitmq)
+            RabbitMqClient.init(appConfig.mq?.rabbitmq!!)
             vertx.deployVerticle(RabbitMqConsumerVerticle::class.java.name).await()
             StaticLog.info("启动示例BUS项目成功:${Instant.now().toEpochMilli() - timer.toEpochMilli()}ms")
         } catch (e: Exception) {

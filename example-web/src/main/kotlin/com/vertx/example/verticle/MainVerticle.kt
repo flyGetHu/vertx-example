@@ -20,13 +20,13 @@ class MainVerticle : CoroutineVerticle() {
             // 加载配置
             VertxLoadConfig.init()
             // 初始化web客户端
-            WebClient.init(appConfig.webClient)
+            WebClient.init(appConfig.webClient!!)
             // 初始化mysql
-            MysqlClient.init(appConfig.database?.mysql)
+            MysqlClient.init(appConfig.database?.mysql!!)
             // 初始化rabbitmq
-            RabbitMqClient.init(appConfig.mq?.rabbitmq)
+            RabbitMqClient.init(appConfig.mq?.rabbitmq!!)
             // 初始化redis
-            RedisClient.init(appConfig.database?.redis)
+            RedisClient.init(appConfig.database?.redis!!)
             vertx.deployVerticle(WebVerticle::class.java.name, DeploymentOptions().setInstances(6)).await()
             StaticLog.info("启动示例项目成功:${Duration.between(timer, Instant.now()).toMillis()}ms")
         } catch (e: Exception) {

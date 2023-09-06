@@ -14,6 +14,7 @@ import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.app.Mysql
 import io.vertx.kotlin.coroutines.await
+import io.vertx.mysqlclient.MySQLPool
 import io.vertx.sqlclient.PoolOptions
 
 
@@ -31,15 +32,12 @@ object MysqlClient {
     /**
      * mysql客户端
      * @param config 配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
+     * @param isDef 是否设置为默认客户端,默认为true,如果为true,则会将此客户端设置为全局客户端,否则返回此客户端
      */
-    suspend fun init(config: Mysql?) {
+    suspend fun init(config: Mysql, isDef: Boolean = true): MySQLPool? {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
             throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
-        }
-        if (config == null) {
-            StaticLog.error("mysql配置为空")
-            throw Exception("mysql配置为空")
         }
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
         val host = config.host
@@ -93,7 +91,12 @@ object MysqlClient {
         val client = io.vertx.mysqlclient.MySQLPool.pool(vertx, mySQLConnectOptions, poolOptions)
         //测试连接
         client.query("select 1").execute().await()
-        mysqlPoolClient = client
+        if (isDef) {
+            mysqlPoolClient = client
+        } else {
+            return client
+        }
         StaticLog.info("mysql连接成功")
+        return null
     }
 }

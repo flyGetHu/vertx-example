@@ -13,13 +13,9 @@ object WebClient {
     /**
      * 初始化webClient
      * @param config 配置
+     * @param isDef 是否设置为默认客户端,默认为true,如果为true,则会将此客户端设置为全局客户端,否则返回此客户端
      */
-    fun init(
-        config: WebClient?
-    ) {
-        if (config == null) {
-            throw Exception("webClient配置为空")
-        }
+    fun init(config: WebClient, isDef: Boolean = true): io.vertx.ext.web.client.WebClient? {
         val webClientOptions = io.vertx.ext.web.client.WebClientOptions()
 
         // 设置是否保持连接
@@ -47,6 +43,12 @@ object WebClient {
         webClientOptions.setUserAgent("vertx-web-client")
 
         // 创建WebClient实例
-        webClient = io.vertx.ext.web.client.WebClient.create(vertx, webClientOptions)
+        val client = io.vertx.ext.web.client.WebClient.create(vertx, webClientOptions)
+        if (isDef) {
+            webClient = client
+        } else {
+            return client
+        }
+        return null
     }
 }

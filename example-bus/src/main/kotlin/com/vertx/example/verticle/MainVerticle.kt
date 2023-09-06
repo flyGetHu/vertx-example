@@ -15,7 +15,7 @@ class MainVerticle : CoroutineVerticle() {
             val timer = Instant.now()
             VertxLoadConfig.init()
             // 初始化mysql
-            MysqlClient.init(appConfig.database?.mysql)
+            MysqlClient.init(appConfig.database?.mysql!!)
             vertx.deployVerticle(BusVerticle::class.java.name).await()
             StaticLog.info("启动示例BUS项目成功:${Instant.now().toEpochMilli() - timer.toEpochMilli()}ms")
         } catch (e: Exception) {

@@ -11,11 +11,12 @@ package com.vertx.rabbitmq.client
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.app.Rabbitmq
 import io.vertx.kotlin.coroutines.await
+import io.vertx.rabbitmq.RabbitMQClient
 import io.vertx.rabbitmq.RabbitMQOptions
 
 
 //rabbitmq客户端
-lateinit var rabbitMqClient: io.vertx.rabbitmq.RabbitMQClient
+lateinit var rabbitMqClient: RabbitMQClient
 
 /**
  * rabbitmq客户端
@@ -24,11 +25,10 @@ object RabbitMqClient {
 
     /**
      * rabbitmq客户端初始化
+     * @param config rabbitmq配置 详见common\src\main\kotlin\com\vertx\common\entity\AppConfig.kt
+     * @param isDef 是否设置为默认客户端,默认为true,如果为true,则会将此客户端设置为全局客户端,否则返回此客户端
      */
-    suspend fun init(config: Rabbitmq?) {
-        if (config == null) {
-            throw Exception("rabbitmq config is null")
-        }
+    suspend fun init(config: Rabbitmq, isDef: Boolean = true): RabbitMQClient? {
         val rabbitMQOptions = RabbitMQOptions()
         val host = config.host
         if (host.isBlank()) {
@@ -66,14 +66,20 @@ object RabbitMqClient {
         rabbitMQOptions.requestedHeartbeat = config.requestedHeartbeat
 
         //创建rabbitmq客户端
-        rabbitMqClient = io.vertx.rabbitmq.RabbitMQClient.create(vertx, rabbitMQOptions)
+        val rabbitMQClient = RabbitMQClient.create(vertx, rabbitMQOptions)
         //启动rabbitmq客户端
-        rabbitMqClient.start().await()
+        rabbitMQClient.start().await()
         //设置客户端为confirm模式
         if (config.sendConfirm) {
-            rabbitMqClient.confirmSelect().await()
+            rabbitMQClient.confirmSelect().await()
         }
         //设置客户端最大qos
-        rabbitMqClient.basicQos(config.maxQos).await()
+        rabbitMQClient.basicQos(config.maxQos).await()
+        if (isDef) {
+            rabbitMqClient = rabbitMQClient
+        } else {
+            return rabbitMQClient
+        }
+        return null
     }
 }
