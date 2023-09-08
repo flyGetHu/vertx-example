@@ -24,7 +24,7 @@ import io.vertx.kotlin.coroutines.await
 var isInit = false
 
 // 环境变量 如需要使用自定义的环境变量,修改此处即可 默认config.dev.yaml
-var active = "dev"
+var active = ""
 
 // 配置文件
 lateinit var appConfig: AppConfig
@@ -70,6 +70,10 @@ object VertxLoadConfig {
         var env = active
         if (jsonObject.containsKey("active")) {
             env = jsonObject.getString("active")
+        }
+        // 如果com.vertx.common.config.active不是空则按照此值来初始化
+        if (com.vertx.common.config.active.isNotBlank()) {
+            env = com.vertx.common.config.active
         }
         activeConfigName += "$env.yaml"
         val devExists = vertx.fileSystem().exists(activeConfigName).await()

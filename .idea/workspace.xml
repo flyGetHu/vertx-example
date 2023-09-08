@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="配置eventbus配置">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="适配多数据源情况下,自行根据各自client init函数进行创建新的链接">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-mysql/src/main/kotlin/com/vertx/mysql/client/MysqlClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/client/RabbitMqClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/client/RedisClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/src/main/kotlin/com/vertx/redis/client/RedisClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-webclient/src/main/kotlin/com/vertx/webclient/client/WebClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/src/main/kotlin/com/vertx/rabbitmq/verticle/MainVerticle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/src/main/kotlin/com/vertx/example/verticle/MainVerticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/kotlin/com/vertx/common/config/VertxLoadConfig.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,36 +90,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/huan/workspace/java/vertx-example&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "/home/huan/workspace/java/vertx-example",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36930457",
+    "settings.editor.selected.configurable": "http.proxy",
+    "typescript.add.unambiguous.imports.on.the.fly": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
   </component>
@@ -196,7 +192,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ExampleRabbitMqMainApp">
+  <component name="RunManager" selected="Kotlin.ExampleWebMainApp">
     <configuration name="ImageUtilsTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="example-web" />
       <extension name="coverage">
@@ -263,8 +259,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="JUnit.ImageUtilsTest.test" />
@@ -320,6 +316,8 @@
       <workItem from="1692603849326" duration="56000" />
       <workItem from="1692603915054" duration="1861000" />
       <workItem from="1692762683473" duration="41961000" />
+      <workItem from="1694143847411" duration="599000" />
+      <workItem from="1694151862934" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -566,14 +564,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00106" summary="sql&#10;拼接批量插入整体事务">
-      <option name="closed" value="true" />
-      <created>1692179482265</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1692179482265</updated>
-    </task>
     <task id="LOCAL-00107" summary="配置自定义web请求拦截器">
       <option name="closed" value="true" />
       <created>1692772173297</created>
@@ -678,7 +668,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693217060872</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="适配多数据源情况下,自行根据各自client init函数进行创建新的链接">
+      <option name="closed" value="true" />
+      <created>1693978710453</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1693978710454</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +698,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="测试mq消息发送以及消费" />
     <MESSAGE value="打包配置" />
     <MESSAGE value="文档" />
     <MESSAGE value="分页查询" />
@@ -725,7 +722,8 @@
     <MESSAGE value="mq任务接口定义" />
     <MESSAGE value="web响应格式化" />
     <MESSAGE value="配置eventbus配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置eventbus配置" />
+    <MESSAGE value="适配多数据源情况下,自行根据各自client init函数进行创建新的链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="适配多数据源情况下,自行根据各自client init函数进行创建新的链接" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
