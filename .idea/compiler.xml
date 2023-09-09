@@ -6,18 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-webserver" />
         <module name="example-web" />
+        <module name="vertx-common-redis-kt" />
         <module name="example-rabbitmq" />
-        <module name="common-rabbitmq" />
-        <module name="common-mysql" />
+        <module name="vertx-common-mysql-kt" />
         <module name="example-task" />
-        <module name="common-webclient" />
-        <module name="common-eventbus" />
+        <module name="vertx-common-rabbitmq-kt" />
+        <module name="vertx-common-webserver-kt" />
+        <module name="vertx-common-core-kt" />
         <module name="example-bus" />
-        <module name="common-redis" />
-        <module name="common-breaker" />
-        <module name="common-core" />
+        <module name="vertx-common-breaker-kt" />
+        <module name="vertx-common-eventbus-kt" />
+        <module name="vertx-common-webclient-kt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

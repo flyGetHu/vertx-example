@@ -22,19 +22,19 @@
     <dependencies>
         <dependency>
             <groupId>com.vertx</groupId>
-            <artifactId>common-core</artifactId>
+            <artifactId>vertx-common-core-kt</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.vertx</groupId>
-            <artifactId>common-eventbus</artifactId>
+            <artifactId>vertx-common-eventbus-kt</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.vertx</groupId>
-            <artifactId>common-mysql</artifactId>
+            <artifactId>vertx-common-mysql-kt</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

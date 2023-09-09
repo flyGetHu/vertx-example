@@ -9,18 +9,18 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>common-core</module>
-        <module>common-mysql</module>
-        <module>common-webclient</module>
-        <module>common-webserver</module>
-        <module>common-eventbus</module>
-        <module>common-breaker</module>
-        <module>common-rabbitmq</module>
+        <module>vertx-common-core-kt</module>
+        <module>vertx-common-mysql-kt</module>
+        <module>vertx-common-webclient-kt</module>
+        <module>vertx-common-webserver-kt</module>
+        <module>vertx-common-eventbus-kt</module>
+        <module>vertx-common-breaker-kt</module>
+        <module>vertx-common-rabbitmq-kt</module>
         <module>example-web</module>
         <module>example-bus</module>
         <module>example-task</module>
         <module>example-rabbitmq</module>
-        <module>common-redis</module>
+        <module>vertx-common-redis-kt</module>
     </modules>
 
     <properties>
