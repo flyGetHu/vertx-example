@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="兼容老项目web响应">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="关闭集群cp系统">
+      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedCounterEnum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedLockEnum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedCounterHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedLockHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/release.bat" beforeDir="false" afterPath="$PROJECT_DIR$/release.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +25,10 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Annotation" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -147,7 +140,7 @@
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -350,7 +343,8 @@
       <workItem from="1692762683473" duration="41961000" />
       <workItem from="1694143847411" duration="599000" />
       <workItem from="1694151862934" duration="8975000" />
-      <workItem from="1694398070764" duration="8276000" />
+      <workItem from="1694398070764" duration="10088000" />
+      <workItem from="1694415517798" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -597,14 +591,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00110" summary="定时任务是否在指定环境才可运行">
-      <option name="closed" value="true" />
-      <created>1692931353528</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1692931353528</updated>
-    </task>
     <task id="LOCAL-00111" summary="定时任务是否在指定环境才可运行">
       <option name="closed" value="true" />
       <created>1692931616425</created>
@@ -709,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694396603526</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="关闭集群cp系统">
+      <option name="closed" value="true" />
+      <created>1694411044433</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1694411044433</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,7 +725,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="批量更新和插入" />
     <MESSAGE value="批量插入" />
     <MESSAGE value="redis 模块添加" />
     <MESSAGE value="redis 锁添加枚举类进行限制" />
@@ -756,7 +749,8 @@
     <MESSAGE value="初始化配置文件正式环境配置文件" />
     <MESSAGE value="修改模块名称,并打包上传私有mvn仓库" />
     <MESSAGE value="兼容老项目web响应" />
-    <option name="LAST_COMMIT_MESSAGE" value="兼容老项目web响应" />
+    <MESSAGE value="关闭集群cp系统" />
+    <option name="LAST_COMMIT_MESSAGE" value="关闭集群cp系统" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
