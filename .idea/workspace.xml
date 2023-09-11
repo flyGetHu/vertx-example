@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="修改模块名称,并打包上传私有mvn仓库">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="兼容老项目web响应">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/release.bat" beforeDir="false" afterPath="$PROJECT_DIR$/release.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,11 +291,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.release" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
-        <item itemvalue="Batch.release" />
       </list>
     </recent_temporary>
   </component>
@@ -354,7 +349,8 @@
       <workItem from="1692603915054" duration="1861000" />
       <workItem from="1692762683473" duration="41961000" />
       <workItem from="1694143847411" duration="599000" />
-      <workItem from="1694151862934" duration="7511000" />
+      <workItem from="1694151862934" duration="8975000" />
+      <workItem from="1694398070764" duration="8276000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -601,14 +597,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00109" summary="base64扩展">
-      <option name="closed" value="true" />
-      <created>1692930818314</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1692930818314</updated>
-    </task>
     <task id="LOCAL-00110" summary="定时任务是否在指定环境才可运行">
       <option name="closed" value="true" />
       <created>1692931353528</created>
@@ -713,7 +701,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694236416629</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="兼容老项目web响应">
+      <option name="closed" value="true" />
+      <created>1694396603526</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1694396603526</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,7 +731,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="分页查询" />
     <MESSAGE value="批量更新和插入" />
     <MESSAGE value="批量插入" />
     <MESSAGE value="redis 模块添加" />
@@ -760,7 +755,8 @@
     <MESSAGE value="适配多数据源情况下,自行根据各自client init函数进行创建新的链接" />
     <MESSAGE value="初始化配置文件正式环境配置文件" />
     <MESSAGE value="修改模块名称,并打包上传私有mvn仓库" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改模块名称,并打包上传私有mvn仓库" />
+    <MESSAGE value="兼容老项目web响应" />
+    <option name="LAST_COMMIT_MESSAGE" value="兼容老项目web响应" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

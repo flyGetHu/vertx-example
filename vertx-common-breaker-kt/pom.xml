@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.vertx</groupId>
+            <groupId>org.vertx</groupId>
             <artifactId>vertx-common-core-kt</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>

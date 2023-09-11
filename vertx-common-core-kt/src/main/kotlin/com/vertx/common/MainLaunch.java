@@ -43,10 +43,16 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
      * 定义线上集群成员IP地址
      * <p>
      */
-    private final String[] CLUSTER_IPS = {"127.0.0.1"};
+    private final String[] CLUSTER_IPS;
+
+    public MainLaunch(String[] CLUSTER_IPS) {
+        this.CLUSTER_IPS = CLUSTER_IPS;
+    }
+
 
     public static void main(String[] args) {
-        new MainLaunch().dispatch(args);
+        final String[] clusterIps = new String[]{"127.0.0.1"};
+        new MainLaunch(clusterIps).dispatch(args);
     }
 
     @Override
