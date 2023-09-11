@@ -1,12 +1,12 @@
 package com.vertx.example.bus
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.config.sharedData
+import com.vertx.common.enums.SharedCounterEnum
+import com.vertx.common.helper.SharedCounterHelper
 import com.vertx.common.model.User
 import com.vertx.eventbus.bus.DemoBusHandler
 import com.vertx.example.mapper.UserMapper
 import io.vertx.core.Future
-import io.vertx.kotlin.coroutines.await
 
 /**
  * 事件总线服务提供方实现类
@@ -25,7 +25,7 @@ object DemoBusHandlerImpl : DemoBusHandler() {
     override suspend fun handleRequest(request: String): Future<List<User>> {
         StaticLog.info("DemoBusHandlerImpl: $request")
         val users = UserMapper.list(2)
-        val counterNum = sharedData.getCounter("counter").await().addAndGet(1).await()
+        val counterNum = SharedCounterHelper.getCounterNum(SharedCounterEnum.TEST_SHARED_COUNTER)
         StaticLog.info("DemoBusHandlerImpl: $counterNum")
         return Future.succeededFuture(users)
     }

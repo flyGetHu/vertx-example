@@ -1,7 +1,8 @@
 package com.vertx.example.service
 
 import cn.hutool.log.StaticLog
-import com.vertx.common.config.sharedData
+import com.vertx.common.enums.SharedCounterEnum
+import com.vertx.common.helper.SharedCounterHelper
 import com.vertx.common.model.User
 import com.vertx.eventbus.bus.DemoBusHandler
 import io.vertx.kotlin.coroutines.await
@@ -17,7 +18,7 @@ object TestBusService {
      * @return AppConfig
      */
     suspend fun testBus(): List<User> {
-        val counterNum = sharedData.getCounter("counter").await().addAndGet(1).await()
+        val counterNum = SharedCounterHelper.getCounterNum(SharedCounterEnum.TEST_SHARED_COUNTER)
         StaticLog.info("TestBusService: $counterNum")
         return DemoBusHandler().call("test").await()
     }
