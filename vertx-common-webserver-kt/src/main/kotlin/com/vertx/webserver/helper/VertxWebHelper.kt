@@ -11,7 +11,6 @@ import cn.hutool.log.StaticLog
 import com.vertx.common.config.appConfig
 import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
-import com.vertx.common.entity.web.ApiError
 import com.vertx.common.entity.web.ApiResponse
 import com.vertx.webserver.entity.WebServiceOptions
 import io.vertx.core.json.Json
@@ -47,8 +46,8 @@ fun RoutingContext.jsonResponse(response: Any?) {
  * 成功响应
  * @param data 响应数据
  */
-fun RoutingContext.successResponse(data: Any?) {
-    val response = ApiResponse(success = true, data = data, error = ApiError(HttpStatus.HTTP_OK, ""))
+fun RoutingContext.successResponse(data: Any?, extra: Any? = null) {
+    val response = ApiResponse(code = HttpStatus.HTTP_OK, msg = "", data = data, extra = extra)
     jsonResponse(response)
 }
 
@@ -57,9 +56,8 @@ fun RoutingContext.successResponse(data: Any?) {
  * @param code 响应码 默认400
  * @param message 响应消息
  */
-fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, message: String) {
-    val error = ApiError(code, message)
-    val response = ApiResponse(success = false, data = null, error = error)
+fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, message: String, extra: Any? = null) {
+    val response = ApiResponse(code = code, msg = message, extra = extra)
     jsonResponse(response)
 }
 

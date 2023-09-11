@@ -2,6 +2,12 @@
 chcp 65001
 setlocal enabledelayedexpansion
 
+rem 项目打包命令
+set PACKAGE_PROJECT= mvn clean install package
+
+rem 打包项目
+call %PACKAGE_PROJECT%
+
 rem 设置Maven命令
 set MAVEN_COMMAND=mvn clean install org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -DskipTests
 
