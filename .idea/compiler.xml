@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="example-web" />
         <module name="vertx-common-redis-kt" />
+        <module name="example-web" />
         <module name="example-rabbitmq" />
         <module name="vertx-common-mysql-kt" />
         <module name="example-task" />

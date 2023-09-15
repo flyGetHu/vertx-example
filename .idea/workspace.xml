@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="共享计数器&#10;共享锁">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="修改包名">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release.bat" beforeDir="false" afterPath="$PROJECT_DIR$/release.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +339,8 @@
       <workItem from="1694143847411" duration="599000" />
       <workItem from="1694151862934" duration="8975000" />
       <workItem from="1694398070764" duration="10088000" />
-      <workItem from="1694415517798" duration="16616000" />
+      <workItem from="1694415517798" duration="17666000" />
+      <workItem from="1694745086499" duration="352000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -584,14 +587,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00113" summary="定时任务回调">
-      <option name="closed" value="true" />
-      <created>1693191049532</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1693191049532</updated>
-    </task>
     <task id="LOCAL-00114" summary="mq任务接口定义">
       <option name="closed" value="true" />
       <created>1693206573426</created>
@@ -696,7 +691,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694419938859</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="修改包名">
+      <option name="closed" value="true" />
+      <created>1694743011938</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1694743011938</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +721,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redis 模块添加" />
     <MESSAGE value="redis 锁添加枚举类进行限制" />
     <MESSAGE value="动态配置加载" />
     <MESSAGE value="短路由使用" />
@@ -743,7 +745,8 @@
     <MESSAGE value="兼容老项目web响应" />
     <MESSAGE value="关闭集群cp系统" />
     <MESSAGE value="共享计数器&#10;共享锁" />
-    <option name="LAST_COMMIT_MESSAGE" value="共享计数器&#10;共享锁" />
+    <MESSAGE value="修改包名" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改包名" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
