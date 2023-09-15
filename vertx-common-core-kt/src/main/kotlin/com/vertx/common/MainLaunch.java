@@ -45,6 +45,11 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
      */
     private final String[] CLUSTER_IPS;
 
+    /**
+     * Initializes MainLaunch with the provided cluster IPs.
+     *
+     * @param CLUSTER_IPS An array of cluster IPs.
+     */
     public MainLaunch(String[] CLUSTER_IPS) {
         this.CLUSTER_IPS = CLUSTER_IPS;
     }
@@ -66,7 +71,9 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
     @Override
     public void beforeStartingVertx(VertxOptions vertxOptions) {
         StaticLog.info("执行钩子函数:{}", "beforeStartingVertx");
+        // 加载配置文件
         final Config config = ConfigUtil.loadConfig();
+        // 设置CP子系统配置
         final CPSubsystemConfig cpSubsystemConfig = new CPSubsystemConfig();
         // 设置CP成员节点数量
         cpSubsystemConfig.setCPMemberCount(3);
