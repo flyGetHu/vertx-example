@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="关闭集群cp系统">
-      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedCounterEnum.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedLockEnum.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedCounterHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedLockHelper.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="共享计数器&#10;共享锁">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,11 +151,6 @@
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
   </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/tmp/qodana_output2/qodana.sarif.json" reportGuid="f071873c-0539-4113-a519-d1b23913fe6b" reportId="vertx-example/qodana/2023-08-25" />
-    </option>
-  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\java\vertx-example\example-bus\src\main\resources\conf" />
@@ -210,6 +202,7 @@
       <command value="mvn clean install -Dmaven.plugin.validation=VERBOSE " />
       <command value="mvn clean install package -pl example-bus -am" />
       <command value="mvn clean install" />
+      <command value="mvn clean install -U package -DskipTests" />
       <command value="mvn clean install package" />
     </option>
   </component>
@@ -285,9 +278,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Batch.release" />
-        <item itemvalue="Kotlin.ExampleTaskMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="Kotlin.ExampleTaskMainApp" />
         <item itemvalue="Kotlin.ExampleRabbitMqMainApp" />
       </list>
     </recent_temporary>
@@ -344,7 +337,7 @@
       <workItem from="1694143847411" duration="599000" />
       <workItem from="1694151862934" duration="8975000" />
       <workItem from="1694398070764" duration="10088000" />
-      <workItem from="1694415517798" duration="2982000" />
+      <workItem from="1694415517798" duration="16616000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -591,22 +584,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00111" summary="定时任务是否在指定环境才可运行">
-      <option name="closed" value="true" />
-      <created>1692931616425</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1692931616425</updated>
-    </task>
-    <task id="LOCAL-00112" summary="定时任务是否在指定环境才可运行">
-      <option name="closed" value="true" />
-      <created>1693188078007</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1693188078007</updated>
-    </task>
     <task id="LOCAL-00113" summary="定时任务回调">
       <option name="closed" value="true" />
       <created>1693191049532</created>
@@ -703,7 +680,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694411044433</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="共享计数器&#10;共享锁">
+      <option name="closed" value="true" />
+      <created>1694419637608</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1694419637609</updated>
+    </task>
+    <task id="LOCAL-00126" summary="共享计数器&#10;共享锁">
+      <option name="closed" value="true" />
+      <created>1694419938859</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1694419938859</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,7 +718,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="批量插入" />
     <MESSAGE value="redis 模块添加" />
     <MESSAGE value="redis 锁添加枚举类进行限制" />
     <MESSAGE value="动态配置加载" />
@@ -750,7 +742,8 @@
     <MESSAGE value="修改模块名称,并打包上传私有mvn仓库" />
     <MESSAGE value="兼容老项目web响应" />
     <MESSAGE value="关闭集群cp系统" />
-    <option name="LAST_COMMIT_MESSAGE" value="关闭集群cp系统" />
+    <MESSAGE value="共享计数器&#10;共享锁" />
+    <option name="LAST_COMMIT_MESSAGE" value="共享计数器&#10;共享锁" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
