@@ -79,7 +79,14 @@ interface BusHandler<Request, Response> {
     fun call(request: Request): Future<Response> {
         val promise = Promise.promise<Response>()
         //发送请求
-        eventBus.request(this.address, request) { ar: AsyncResult<Message<String>> ->
+        val encodeParam = try {
+            Json.encode(request)
+        } catch (e: Exception) {
+            StaticLog.error(e, "RPC服务序列化请求对象失败:${this.address}\n${requestClass}\n${request}/")
+            promise.fail(e)
+            return promise.future()
+        }
+        eventBus.request(this.address, encodeParam) { ar: AsyncResult<Message<String>> ->
             //处理响应
             if (ar.succeeded()) {
                 val result = ar.result()
