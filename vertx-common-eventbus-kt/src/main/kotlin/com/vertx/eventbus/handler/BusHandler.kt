@@ -127,19 +127,21 @@ interface BusHandler<Request, Response> {
             }
             addressMap[address] = address
             StaticLog.info("注册服务: $address")
-            eventBus.consumer(address) { message: Message<Request> ->
+            eventBus.consumer(address) { message: Message<String> ->
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
-                        val request = message.body()
+                        val request = Json.decodeValue(message.body(), service.requestClass)
                         val response = service.handleRequest(request).await()
-                        message.reply(Json.encode(response))
+                        val responseJson = Json.encode(response)
+                        message.reply(responseJson)
                         // 非生产环境打印日志
                         if (active != EnvEnum.PROD.env) {
+                            val requestJson = Json.encode(request)
                             StaticLog.info(
                                 """
                                     RPC服务处理请求: $address
-                                    请求参数: ${request.toString()}
-                                    响应结果: ${response.toString()}
+                                    请求参数: $requestJson
+                                    响应结果: $responseJson
                                 """.trimIndent()
                             )
                         }

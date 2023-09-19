@@ -105,26 +105,26 @@ object VertxWebConfig {
         // 统一处理异常
         mainRouter.errorHandler(HttpStatus.HTTP_INTERNAL_ERROR) { context: RoutingContext ->
             StaticLog.error(context.failure(), "接口异常:{}", context.request().path())
-            context.errorResponse(message = "接口异常")
+            context.errorResponse(code = HttpStatus.HTTP_INTERNAL_ERROR, message = "接口异常")
         }
         // 超时异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_UNAVAILABLE) { context: RoutingContext ->
             StaticLog.error(context.failure(), "接口超时:{}", context.request().path())
-            context.errorResponse(message = "接口超时")
+            context.errorResponse(code = HttpStatus.HTTP_UNAVAILABLE, message = "接口超时")
         }
         // 404异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_NOT_FOUND) { context: RoutingContext ->
             StaticLog.error(
                 context.failure(), "接口不存在{}:{}", context.request().method(), context.request().path()
             )
-            context.errorResponse(message = "接口不存在")
+            context.errorResponse(code = HttpStatus.HTTP_NOT_FOUND, message = "接口不存在")
         }
         // 405异常处理
         mainRouter.errorHandler(HttpStatus.HTTP_BAD_METHOD) { context: RoutingContext ->
             StaticLog.error(
                 context.failure(), "接口不支持该方法{}:{}", context.request().method(), context.request().path()
             )
-            context.errorResponse(message = "接口不支持该方法")
+            context.errorResponse(code = HttpStatus.HTTP_BAD_METHOD, message = "接口不支持该方法")
         }
         httpServer.requestHandler(mainRouter).listen(serverConfig.port)
         StaticLog.info("Web服务端启动成功:端口:${serverConfig.port}")
