@@ -3,6 +3,7 @@ package com.vertx.mysql.helper
 import cn.hutool.core.collection.CollUtil
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.active
+import com.vertx.common.entity.mysql.PageResult
 import com.vertx.common.enums.EnvEnum
 import com.vertx.common.utils.underlineName
 import com.vertx.mysql.client.mysqlPoolClient
@@ -171,20 +172,27 @@ object MysqlHelper {
         fields: List<String> = listOf(),
         page: Int = 1,
         pageSize: Int = 10,
-    ): List<T> {
+    ): PageResult<T>? {
         if (page < 1) {
             StaticLog.warn("分页查询页码不能小于1")
-            return listOf()
+            return null
         }
         if (pageSize < 1) {
             StaticLog.warn("分页查询每页条数不能小于1")
-            return listOf()
+            return null
         }
-        val sql = buildSelectSql(clazz, where, fields, lastSql = " limit ${(page - 1) * pageSize},${pageSize * page}")
+        val sql = buildSelectSql(
+            clazz,
+            where,
+            fields,
+            lastSql = " order by id desc limit ${(page - 1) * pageSize},$pageSize"
+        )
         val rowRowSet = mysqlPoolClient.query(sql).execute().await().map {
             it.toJson().mapTo(clazz)
         }
-        return rowRowSet
+        val selectCountSql = buildCountSql(clazz, where)
+        val count = mysqlPoolClient.query(selectCountSql).execute().await().firstOrNull()?.getLong(0) ?: 0
+        return PageResult(page, pageSize, count, (count / pageSize).toInt() + 1, rowRowSet)
     }
 
 
@@ -193,6 +201,15 @@ object MysqlHelper {
      */
     private val dslContext = DSL.using(SQLDialect.MYSQL, Settings())
 
+
+    private fun buildCountSql(clazz: Class<*>, where: Condition): String {
+        val selectCount =
+            dslContext.selectCount().from(DSL.table(getTableName(clazz))).where(where).getSQL(ParamType.INLINED)
+        if (active != EnvEnum.PROD.env) {
+            StaticLog.info("查询语句：${selectCount}")
+        }
+        return selectCount
+    }
 
     /**
      * 封装插入语句
@@ -221,10 +238,9 @@ object MysqlHelper {
             }
             fileKeyValueList.add(map)
         }
-        val insertIntoStep =
-            dslContext.insertInto(
-                DSL.table(getTableName(clazz)),
-                fileKeyValueList[0].keys.toList().map { DSL.field(it) })
+        val insertIntoStep = dslContext.insertInto(
+            DSL.table(getTableName(clazz)),
+            fileKeyValueList[0].keys.toList().map { DSL.field(it) })
         for (mutableMap in fileKeyValueList) {
             insertIntoStep.values(mutableMap.values.toList())
         }

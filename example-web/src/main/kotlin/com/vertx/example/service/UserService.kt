@@ -1,6 +1,7 @@
 package com.vertx.example.service
 
 import cn.hutool.core.lang.Singleton
+import com.vertx.common.entity.mysql.PageResult
 import com.vertx.common.model.User
 import com.vertx.example.mapper.UserMapper
 import com.vertx.rabbitmq.handler.TestCustomerHandler
@@ -18,7 +19,7 @@ object UserService {
         return users
     }
 
-    suspend fun page(page: Int, pageSize: Int): List<User> {
+    suspend fun page(page: Int, pageSize: Int): PageResult<User>? {
         return UserMapper.page(page, pageSize)
     }
 

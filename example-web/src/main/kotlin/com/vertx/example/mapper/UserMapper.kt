@@ -1,5 +1,6 @@
 package com.vertx.example.mapper
 
+import com.vertx.common.entity.mysql.PageResult
 import com.vertx.common.model.User
 import com.vertx.common.utils.underlineName
 import com.vertx.mysql.helper.MysqlHelper
@@ -18,9 +19,9 @@ object UserMapper {
         )
     }
 
-    suspend fun page(page: Int, pageSize: Int): List<User> {
+    suspend fun page(page: Int, pageSize: Int): PageResult<User>? {
         // where条件构造
-        val where = DSL.noCondition()
+        val where = DSL.field(User::id.name.underlineName()).le(3)
         return MysqlHelper.selectPage(
             User::class.java,
             where,
