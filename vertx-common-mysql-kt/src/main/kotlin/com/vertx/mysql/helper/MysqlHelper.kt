@@ -10,6 +10,7 @@ import com.vertx.mysql.client.mysqlPoolClient
 import com.vertx.mysql.utils.getTableName
 import io.vertx.kotlin.coroutines.await
 import io.vertx.mysqlclient.MySQLClient
+import io.vertx.sqlclient.SqlConnection
 import org.jooq.Condition
 import org.jooq.SQLDialect
 import org.jooq.conf.ParamType
@@ -27,9 +28,14 @@ object MysqlHelper {
      * @param data 数据对象
      * @return 获取最新的id
      */
-    suspend fun insert(data: Any): Long {
+    suspend fun insert(data: Any, connection: SqlConnection? = null): Long {
         val sql = buildInsertSql(listOf(data))
-        val rowRowSet = mysqlPoolClient.query(sql).execute().await()
+        val query = if (connection != null) {
+            connection.query(sql)
+        } else {
+            mysqlPoolClient.query(sql)
+        }
+        val rowRowSet = query.execute().await()
         return rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
     }
 
@@ -39,9 +45,10 @@ object MysqlHelper {
      * 如何数据量大于batchSize,则会分批次插入
      * @param data 数据对象
      * @param batchSize 批量大小
+     * @param connection 数据库连接
      * @return 受影响的行数
      */
-    suspend fun insertBatch(data: List<Any>, batchSize: Int = 100): Int {
+    suspend fun insertBatch(data: List<Any>, batchSize: Int = 100, connection: SqlConnection? = null): Int {
         if (data.isEmpty()) {
             StaticLog.warn("批量插入数据为空")
             return 0
@@ -50,13 +57,13 @@ object MysqlHelper {
         var count = 0
         //批量插入数据
         val lists = CollUtil.split(data, batchSize)
-        val connection = mysqlPoolClient.connection.await()
+        val connect = connection ?: mysqlPoolClient.connection.await()
         //开启事务
-        val transaction = connection.begin().await()
+        val transaction = connect.begin().await()
         try {
             for (list in lists) {
                 val querySql = buildInsertSql(list)
-                val rows = connection.query(querySql).execute().await()
+                val rows = connect.query(querySql).execute().await()
                 count += rows.rowCount()
             }
             //提交事务
@@ -66,7 +73,7 @@ object MysqlHelper {
             transaction.rollback().await()
             StaticLog.error(e, "批量插入数据失败")
         } finally {
-            connection.close().await()
+            connect.close().await()
         }
         return count
     }
@@ -76,11 +83,16 @@ object MysqlHelper {
      * @param data 数据对象
      * @param where 条件
      * @param isNll 是否更新空值
+     * @param connection 数据库连接
      * @return 受影响的行数
      */
-    suspend fun update(data: Any, where: Condition, isNll: Boolean = false): Int {
+    suspend fun update(data: Any, where: Condition, isNll: Boolean = false, connection: SqlConnection? = null): Int {
         val sql = buildUpdateSql(data, where, isNll)
-        val rowRowSet = mysqlPoolClient.query(sql).execute().await()
+        val rowRowSet = if (connection != null) {
+            connection.query(sql).execute().await()
+        } else {
+            mysqlPoolClient.query(sql).execute().await()
+        }
         return rowRowSet.rowCount()
     }
 
@@ -92,10 +104,15 @@ object MysqlHelper {
      * @param where 条件
      * @param isNll 是否更新空值
      * @param batchSize 批量大小
+     * @param connection 数据库连接
      * @return 受影响的行数
      */
     suspend fun updateBatch(
-        data: List<Any>, where: Condition, isNll: Boolean = false, batchSize: Int = 100
+        data: List<Any>,
+        where: Condition,
+        isNll: Boolean = false,
+        batchSize: Int = 100,
+        connection: SqlConnection? = null
     ): Int {
         if (data.isEmpty()) {
             StaticLog.warn("批量更新数据为空")
@@ -106,13 +123,13 @@ object MysqlHelper {
         //批量更新数据
         val sqlList = data.map { buildUpdateSql(it, where, isNll) }
         val lists = CollUtil.split(sqlList, batchSize)
-        val connection = mysqlPoolClient.connection.await()
+        val connect = connection ?: mysqlPoolClient.connection.await()
         //开启事务
-        val transaction = connection.begin().await()
+        val transaction = connect.begin().await()
         try {
             for (list in lists) {
                 for (querySql in list) {
-                    val rows = connection.query(querySql).execute().await()
+                    val rows = connect.query(querySql).execute().await()
                     count += rows.rowCount()
                 }
             }
@@ -123,7 +140,7 @@ object MysqlHelper {
             transaction.rollback().await()
             StaticLog.error(e, "批量更新数据失败", lists)
         } finally {
-            connection.close().await()
+            connect.close().await()
         }
         return count
     }
@@ -132,11 +149,16 @@ object MysqlHelper {
      * 删除数据
      * @param clazz 类对象
      * @param where 条件
+     * @param connection 数据库连接
      * @return 受影响的行数
      */
-    suspend fun delete(clazz: Class<*>, where: Condition): Int {
+    suspend fun delete(clazz: Class<*>, where: Condition, connection: SqlConnection? = null): Int {
         val sql = buildDeleteSql(clazz, where)
-        val rowRowSet = mysqlPoolClient.query(sql).execute().await()
+        val rowRowSet = if (connection != null) {
+            connection.query(sql).execute().await()
+        } else {
+            mysqlPoolClient.query(sql).execute().await()
+        }
         return rowRowSet.rowCount()
     }
 
@@ -182,10 +204,7 @@ object MysqlHelper {
             return null
         }
         val sql = buildSelectSql(
-            clazz,
-            where,
-            fields,
-            lastSql = " order by id desc limit ${(page - 1) * pageSize},$pageSize"
+            clazz, where, fields, lastSql = " order by id desc limit ${(page - 1) * pageSize},$pageSize"
         )
         val rowRowSet = mysqlPoolClient.query(sql).execute().await().map {
             it.toJson().mapTo(clazz)
