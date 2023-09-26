@@ -9,7 +9,7 @@
         <version>1.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.vertx</groupId>
+    <version>1.0.2-SNAPSHOT</version>
     <artifactId>vertx-common-mysql-kt</artifactId>
 
     <properties>
