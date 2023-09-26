@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。">
+      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/mysql/PageResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/mysql/PageResult.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +352,7 @@
       <workItem from="1694745086499" duration="352000" />
       <workItem from="1695086691364" duration="5033000" />
       <workItem from="1695101583114" duration="1834000" />
-      <workItem from="1695114525005" duration="10462000" />
+      <workItem from="1695114525005" duration="11025000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -589,14 +599,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00122" summary="修改模块名称,并打包上传私有mvn仓库">
-      <option name="closed" value="true" />
-      <created>1694236416629</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1694236416629</updated>
-    </task>
     <task id="LOCAL-00123" summary="兼容老项目web响应">
       <option name="closed" value="true" />
       <created>1694396603526</created>
@@ -701,7 +703,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695706766168</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。">
+      <option name="closed" value="true" />
+      <created>1695707044158</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1695707044159</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -723,7 +733,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sql语句打印添加末尾;" />
     <MESSAGE value="sql&#10;拼接批量插入整体事务" />
     <MESSAGE value="配置自定义web请求拦截器" />
     <MESSAGE value="配置日志" />
@@ -748,7 +757,8 @@
     <MESSAGE value="Update groupId and add compiler plugin configuration&#10;&#10;Update groupId from 'com.vertx' to 'org.vertx' in all project's POM files for correct organization identification. This change was required as 'com.vertx' was a placeholder and 'org.vertx' is the accurate groupId for our organization's Maven repository. Now it matches our organization's official domain name.&#10;&#10;Furthermore, a plugin configuration for 'maven-compiler-plugin' has been added in the main POM file. This ensures the project uses JDK version 17 for compilation, ensuring that our project uses the latest stable version of the JDK for best performance and security.&#10;&#10;Lastly, the 'project-jdk-name' attribute in '.idea/misc.xml' has been modified from 'corretto-17' to '17', reflecting the change to the standard JDK 17 as our base version of Java for this project.&#10;更新groupId并添加编译器插件配置&#10;&#10;将所有项目 POM 文件中的 groupId 从“com.vertx”更新为“org.vertx”，以获得正确的组织标识。需要进行此更改，因为“com.vertx”是占位符，而“org.vertx”是我们组织的 Maven 存储库的准确 groupId。现在它与我们组织的官方域名相匹配。&#10;&#10;此外，“maven-compiler-plugin”的插件配置已添加到主 POM 文件中。这可以确保项目使用 JDK 版本 17 进行编译，从而确保我们的项目使用最新稳定版本的 JDK 以获得最佳性能和安全性。&#10;&#10;最后，“.idea/misc.xml”中的“project-jdk-name”属性已从“corretto-17”修改为“17”，反映了对标准 JDK 17 作为我们的 Java 基本版本的更改项目。" />
     <MESSAGE value="为用户映射和查询添加分页&#10;&#10;实现了一个新的 PageResult 数据类，它将包含带有相关信息（当前页、总页数等）的分页数据。然后，这用于更改 UserMapper 和 UserService，以返回用户查询的 PageResult，而不是简单的用户列表。通过添加针对零或负页面或页面大小输入的保护措施以及更详细的查询，MysqlHelper 中的页面功能得到了进一步改进。这不仅通过仅从数据库查询必要的用户来提高性能，而且还为前端提供了对数据处理的更多控制。" />
     <MESSAGE value="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。" />
-    <option name="LAST_COMMIT_MESSAGE" value="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。" />
+    <MESSAGE value="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
