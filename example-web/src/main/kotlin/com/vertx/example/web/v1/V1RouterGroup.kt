@@ -25,6 +25,6 @@ object V1RouterGroup {
         // breaker路由
         BreakerRouter.init(routerV1)
         // 1.0版本路由 挂载到主路由
-        router.route("/v1/*").subRouter(routerV1)
+        router.route("/customer/v1/*").subRouter(routerV1)
     }
 }

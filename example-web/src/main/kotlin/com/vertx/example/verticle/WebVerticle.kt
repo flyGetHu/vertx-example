@@ -13,7 +13,6 @@ class WebVerticle : CoroutineVerticle() {
         // 启动http服务
         val webServiceOptions = WebServiceOptions()
         webServiceOptions.initRouter = WebRouter::init
-        webServiceOptions.requestInterceptorHandler = com.vertx.example.handler.RequestInterceptorHandler()
         VertxWebConfig.startHttpServer(webServiceOptions)
     }
 }

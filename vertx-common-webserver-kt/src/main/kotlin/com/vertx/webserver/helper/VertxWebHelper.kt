@@ -103,15 +103,6 @@ object VertxWebConfig {
                     it.next()
                 }
             }
-            // 添加请求拦截器
-            .launchCoroutine {
-                val res = webServiceOptions.requestInterceptorHandler.handle(it)
-                if (res.isNotBlank()) {
-                    it.errorResponse(code = HttpStatus.HTTP_UNAUTHORIZED, message = res)
-                } else {
-                    it.next()
-                }
-            }
         val router = io.vertx.ext.web.Router.router(vertx)
         // 初始化路由
         webServiceOptions.initRouter(router)
