@@ -1,9 +1,8 @@
 package com.vertx.webserver.entity
 
 import com.vertx.webserver.handler.RequestInterceptorHandler
-import io.vertx.core.Handler
+import com.vertx.webserver.handler.RequestInterceptorHandlerImpl
 import io.vertx.ext.web.Router
-import io.vertx.ext.web.RoutingContext
 
 /**
  * WebService configuration class
@@ -17,5 +16,5 @@ class WebServiceOptions {
     /**
      * 请求拦截器
      */
-    var requestInterceptorHandler: Handler<RoutingContext> = RequestInterceptorHandler()
+    var requestInterceptorHandler: RequestInterceptorHandler = RequestInterceptorHandlerImpl()
 }

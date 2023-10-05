@@ -13,6 +13,7 @@ import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.web.ApiResponse
 import com.vertx.webserver.entity.WebServiceOptions
+import io.vertx.core.Vertx
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
@@ -22,10 +23,16 @@ import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+// 协程上下文中的key
+const val coroutineScope = "coroutineScope"
+
 // 扩展函数，用于在 RoutingContext 中启动协程
 fun Route.launchCoroutine(fn: suspend (RoutingContext) -> Unit) {
     handler { ctx ->
+        val context = Vertx.currentContext()
         CoroutineScope(vertx.dispatcher()).launch {
+            // 将 RoutingContext 传入协程上下文
+            context.put(coroutineScope, this)
             try {
                 fn(ctx)
             } catch (e: Exception) {
@@ -97,7 +104,14 @@ object VertxWebConfig {
                 }
             }
             // 添加请求拦截器
-            .handler(webServiceOptions.requestInterceptorHandler)
+            .launchCoroutine {
+                val res = webServiceOptions.requestInterceptorHandler.handle(it)
+                if (res.isNotBlank()) {
+                    it.errorResponse(code = HttpStatus.HTTP_UNAUTHORIZED, message = res)
+                } else {
+                    it.next()
+                }
+            }
         val router = io.vertx.ext.web.Router.router(vertx)
         // 初始化路由
         webServiceOptions.initRouter(router)
