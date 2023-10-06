@@ -34,7 +34,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * 集群启动类
  * <p>
- * java -jar example-fat.jar -cluster --vertx-id=example-service
+ * java -jar example-fat.jar -active=dev -cluster --vertx-id=example-service
+ * <p>
+ * -active=dev 激活指定配置文件,prod为生产环境,dev为开发环境,test为测试环境
+ * -cluster 集群模式
+ * --vertx-id=example-service 指定vertx的id
  *
  * @author huan
  */
