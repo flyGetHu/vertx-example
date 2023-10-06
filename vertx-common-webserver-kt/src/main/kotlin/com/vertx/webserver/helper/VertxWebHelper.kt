@@ -63,7 +63,7 @@ fun RoutingContext.successResponse(data: Any?, extra: Any? = null) {
  * @param code 响应码 默认400
  * @param message 响应消息
  */
-fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_BAD_REQUEST, message: String, extra: Any? = null) {
+fun RoutingContext.errorResponse(code: Int = HttpStatus.HTTP_INTERNAL_ERROR, message: String, extra: Any? = null) {
     val response = ApiResponse(code = code, msg = message, extra = extra)
     jsonResponse(response)
 }
