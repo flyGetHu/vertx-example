@@ -23,7 +23,7 @@ import io.vertx.kotlin.coroutines.await
 // 是否已经初始化
 var isInit = false
 
-// 环境变量 如需要使用自定义的环境变量,修改此处即可 默认config.dev.yaml
+// 环境变量 此环境变量不允许改动
 var active = ""
 
 // 配置文件
