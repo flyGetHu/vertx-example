@@ -66,6 +66,7 @@ object VertxLoadConfig {
         StaticLog.info("初始化日志对象成功:" + logFactory.name)
         val retriever = ConfigRetriever.create(vertx)
         val jsonObject = retriever.config.await()
+        StaticLog.info("获取环境变量成功:\n${jsonObject.encodePrettily()}")
         var activeConfigName = "conf/config."
         var env = active
         if (jsonObject.containsKey("active")) {

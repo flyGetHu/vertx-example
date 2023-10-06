@@ -7,6 +7,7 @@
  */
 package com.vertx.common;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.StaticLog;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
@@ -98,7 +99,9 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         eventBusOptions.setClusterPingReplyInterval(TimeUnit.SECONDS.toMillis(10));
         vertxOptions.setEventBusOptions(eventBusOptions);
         // 配置打包线上配置 会启用配置文件conf/config-prod.yaml
-        VertxLoadConfigKt.setActive(EnvEnum.PROD.getEnv());
+        if (StrUtil.isBlank(VertxLoadConfigKt.getActive())) {
+            VertxLoadConfigKt.setActive(EnvEnum.PROD.getEnv());
+        }
     }
 
     @Override
@@ -132,6 +135,14 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
     @Override
     public void dispatch(String[] args) {
         StaticLog.info("启动参数:{}", Arrays.toString(args));
+        // 从args中找出是否有-active=prod参数,有的话就设置为生产环境
+        for (String arg : args) {
+            if (arg.startsWith("-active=")) {
+                final String active = arg.substring(8);
+                VertxLoadConfigKt.setActive(active);
+                break;
+            }
+        }
         super.dispatch(args);
     }
 }
