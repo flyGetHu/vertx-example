@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。">
-      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/ApiResponseStatusEnum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/entity/web/ApiResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/test/java/com/vertx/common/config/LoadConfigTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/test/java/com/vertx/common/config/LoadConfigTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/src/main/kotlin/com/vertx/webserver/helper/VertxWebHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,37 +108,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/huan/workspace/java/vertx-example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36930457",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "typescript.add.unambiguous.imports.on.the.fly": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/huan/workspace/java/vertx-example&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "redis"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;redis&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
   </component>
@@ -354,7 +349,8 @@
       <workItem from="1695086691364" duration="5033000" />
       <workItem from="1695101583114" duration="1834000" />
       <workItem from="1695114525005" duration="11025000" />
-      <workItem from="1696468479313" duration="20108000" />
+      <workItem from="1696468479313" duration="20869000" />
+      <workItem from="1696574674106" duration="2582000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -601,30 +597,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00134" summary="为用户映射和查询添加分页&#10;&#10;实现了一个新的 PageResult 数据类，它将包含带有相关信息（当前页、总页数等）的分页数据。然后，这用于更改 UserMapper 和 UserService，以返回用户查询的 PageResult，而不是简单的用户列表。通过添加针对零或负页面或页面大小输入的保护措施以及更详细的查询，MysqlHelper 中的页面功能得到了进一步改进。这不仅通过仅从数据库查询必要的用户来提高性能，而且还为前端提供了对数据处理的更多控制。">
-      <option name="closed" value="true" />
-      <created>1695700777288</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1695700777288</updated>
-    </task>
-    <task id="LOCAL-00135" summary="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。">
-      <option name="closed" value="true" />
-      <created>1695706766168</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1695706766168</updated>
-    </task>
-    <task id="LOCAL-00136" summary="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。">
-      <option name="closed" value="true" />
-      <created>1695707044158</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1695707044159</updated>
-    </task>
     <task id="LOCAL-00137" summary="重构请求拦截器使其更加灵活&#10;&#10;将`RequestInterceptorHandler`类重构为一个接口，并创建了实现该接口的`RequestInterceptorHandlerImpl`类，以具有实际的请求拦截逻辑。此更改提供了更大的灵活性 - 其他类现在也可以实现此接口，以促进不同的拦截策略。这些更改被重构并应用于整个应用程序以保持功能一致性。">
       <option name="closed" value="true" />
       <created>1696471962256</created>
@@ -713,7 +685,31 @@
       <option name="project" value="LOCAL" />
       <updated>1696571562792</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="重构 ApiResponse 并添加状态字段&#10;&#10;重构了 ApiResponse 数据类以包含新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，还更新了 pom.xml 文件中的 vertx-common-core-kt 和 vertx-common-webserver-kt 版本，以表示代码库中引入的新更改。">
+      <option name="closed" value="true" />
+      <created>1696572305141</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1696572305141</updated>
+    </task>
+    <task id="LOCAL-00149" summary="将 pom.xml 文件中的版本更新为 1.0.5-SNAPSHOT&#10;&#10;所有 pom.xml 文件中的版本号已从 1.0.4-SNAPSHOT 更新为 1.0.5-SNAPSHOT。这是跟踪新版本下源代码中引入的新更改所必需的。">
+      <option name="closed" value="true" />
+      <created>1696572352841</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1696572352841</updated>
+    </task>
+    <task id="LOCAL-00150" summary="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。">
+      <option name="closed" value="true" />
+      <created>1696572616146</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1696572616147</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,9 +731,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改模块名称,并打包上传私有mvn仓库" />
-    <MESSAGE value="兼容老项目web响应" />
-    <MESSAGE value="关闭集群cp系统" />
     <MESSAGE value="共享计数器&#10;共享锁" />
     <MESSAGE value="修改包名" />
     <MESSAGE value="Simplify release.bat and update .gitignore&#10;&#10;In release.bat, we remove the initial command lines &quot;@echo off&quot;,&quot;chcp 65001&quot;, and &quot;setlocal enabledelayedexpansion&quot;, and the terminal command &quot;endlocal&quot;. This simplifies the build and deployment script, making it easily digestible and maintainable. Updates to the .gitignore file include removal of '*.iws', '*.iml', and '*.ipr' to clean the ignored patterns list, as these files are no longer relevant in our project structure." />
@@ -760,7 +753,10 @@
     <MESSAGE value="更新 VertxLoadConfig 注释&#10;&#10;更改了 VertxLoadConfig.kt 中“active”变量的注释以增强不变性。进行此改进是为了确保活动环境变量无法被修改，因为它在应用程序的配置中起着关键作用。" />
     <MESSAGE value="移除修改配置文件入口" />
     <MESSAGE value="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。" />
-    <option name="LAST_COMMIT_MESSAGE" value="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。" />
+    <MESSAGE value="重构 ApiResponse 并添加状态字段&#10;&#10;重构了 ApiResponse 数据类以包含新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，还更新了 pom.xml 文件中的 vertx-common-core-kt 和 vertx-common-webserver-kt 版本，以表示代码库中引入的新更改。" />
+    <MESSAGE value="将 pom.xml 文件中的版本更新为 1.0.5-SNAPSHOT&#10;&#10;所有 pom.xml 文件中的版本号已从 1.0.4-SNAPSHOT 更新为 1.0.5-SNAPSHOT。这是跟踪新版本下源代码中引入的新更改所必需的。" />
+    <MESSAGE value="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

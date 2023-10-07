@@ -86,6 +86,7 @@ object VertxLoadConfig {
             ConfigStoreOptions().setType("file").setFormat("yaml").setConfig(JsonObject().put("path", activeConfigName))
         )
         val params = ConfigRetriever.create(vertx, configRetrieverOptions).config.await()
+        StaticLog.info("加载配置文件成功:\n${params.encodePrettily()}")
         //若appConfig中不存在对应的配置属性,可以使用此属性获取
         appConfigJson = params
         val config = params.mapTo(AppConfig::class.java)
