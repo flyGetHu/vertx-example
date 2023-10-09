@@ -9,7 +9,7 @@
         <version>1.0.7</version>
     </parent>
 
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <artifactId>vertx-common-redis-kt</artifactId>
 
     <properties>

@@ -276,7 +276,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Batch.release" />
       <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
       <item itemvalue="Kotlin.ExampleBusMainApp" />
       <item itemvalue="Kotlin.ExampleTaskMainApp" />
@@ -287,7 +286,6 @@
         <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
-        <item itemvalue="Batch.release" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
       </list>
     </recent_temporary>

@@ -128,6 +128,38 @@ object RedisHelper {
             }
             return res
         }
+
+        /**
+         * 增加Redis中指定键的值。
+         *
+         * @param key 递增的键
+         * @return 键的递增值，如果发生错误则返回 null
+         */
+        suspend fun incr(key: String): Long? {
+            val res = try {
+                redisClient.incr(key).await().toString().toLong()
+            } catch (e: Throwable) {
+                StaticLog.error(e, "redis incr error")
+                null
+            }
+            return res
+        }
+
+        /**
+         * 减少 Redis 数据库中某个键的值。
+         *
+         * @param key 其值将递减的键
+         * @return 键的递减值，如果发生错误则返回 null
+         */
+        suspend fun decr(key: String): Long? {
+            val res = try {
+                redisClient.decr(key).await().toString().toLong()
+            } catch (e: Throwable) {
+                StaticLog.error(e, "redis decr error")
+                null
+            }
+            return res
+        }
     }
 
     /**
