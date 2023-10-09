@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。">
+      <change afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/ISharedLockSharedLockEnum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedLockEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/enums/SharedLockSharedLockEnum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedLockHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/helper/SharedLockHelper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -595,14 +598,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00137" summary="重构请求拦截器使其更加灵活&#10;&#10;将`RequestInterceptorHandler`类重构为一个接口，并创建了实现该接口的`RequestInterceptorHandlerImpl`类，以具有实际的请求拦截逻辑。此更改提供了更大的灵活性 - 其他类现在也可以实现此接口，以促进不同的拦截策略。这些更改被重构并应用于整个应用程序以保持功能一致性。">
-      <option name="closed" value="true" />
-      <created>1696471962256</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1696471962256</updated>
-    </task>
     <task id="LOCAL-00138" summary="重构请求拦截器以获得更大的灵活性&#10;&#10;删除了旧的、严格的 RequestInterceptorHandler 并将其替换为接口。创建了一个新类RequestInterceptorHandlerImpl，它用实际的请求拦截逻辑来实现该接口。这一变化提供了增强的灵活性。现在，其他类可以实现此接口，从而推动不同的拦截策略。这些更改已在整个应用程序中进行了重构，以保持功能的一致性。">
       <option name="closed" value="true" />
       <created>1696484233989</created>
@@ -707,7 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696572616147</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。">
+      <option name="closed" value="true" />
+      <created>1696834254217</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1696834254218</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,8 +732,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="共享计数器&#10;共享锁" />
-    <MESSAGE value="修改包名" />
     <MESSAGE value="Simplify release.bat and update .gitignore&#10;&#10;In release.bat, we remove the initial command lines &quot;@echo off&quot;,&quot;chcp 65001&quot;, and &quot;setlocal enabledelayedexpansion&quot;, and the terminal command &quot;endlocal&quot;. This simplifies the build and deployment script, making it easily digestible and maintainable. Updates to the .gitignore file include removal of '*.iws', '*.iml', and '*.ipr' to clean the ignored patterns list, as these files are no longer relevant in our project structure." />
     <MESSAGE value="Add *.xml to .gitignore file&#10;&#10;This commit updates the .gitignore file to ignore all .xml files. This is done to prevent potential conflicts with developers' personal IDE settings and ensure that only relevant source code files are included in the repository." />
     <MESSAGE value="改进对请求序列化的错误处理&#10;提交增强了BusHandler.kt中请求序列化期间对异常的处理。try-catch块现在包含请求对象的序列化，确保在此过程中抛出的任何异常都被捕获并记录。进行此更改是为了避免应用程序崩溃，并在出现序列化问题时提供更清晰的错误消息。" />
@@ -754,7 +755,9 @@
     <MESSAGE value="重构 ApiResponse 并添加状态字段&#10;&#10;重构了 ApiResponse 数据类以包含新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，还更新了 pom.xml 文件中的 vertx-common-core-kt 和 vertx-common-webserver-kt 版本，以表示代码库中引入的新更改。" />
     <MESSAGE value="将 pom.xml 文件中的版本更新为 1.0.5-SNAPSHOT&#10;&#10;所有 pom.xml 文件中的版本号已从 1.0.4-SNAPSHOT 更新为 1.0.5-SNAPSHOT。这是跟踪新版本下源代码中引入的新更改所必需的。" />
     <MESSAGE value="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新版本至1.0.6&#10;&#10;所有 pom.xml 文件已从 1.0.5-SNAPSHOT 更新到 1.0.6。这对于跟踪新版本源代码中引入的新更改是必要的。" />
+    <MESSAGE value="Add incr and decr methods to RedisHelper &#10;&#10;Introduced new functions for incrementing (incr) and decrementing (decr) a specified key's value in Redis within the RedisHelper class. This was done to facilitate more flexibility for Redis database management tasks. Also, removed unused itemvalue(&quot;Batch.release&quot;) from .idea/workspace.xml for cleaner workspace." />
+    <MESSAGE value="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。" />
+    <option name="LAST_COMMIT_MESSAGE" value="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
