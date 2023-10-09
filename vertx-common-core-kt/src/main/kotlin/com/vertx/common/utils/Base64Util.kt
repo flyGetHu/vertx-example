@@ -2,7 +2,9 @@ package com.vertx.common.utils
 
 import cn.hutool.core.codec.Base64
 import cn.hutool.log.StaticLog
-import java.io.FileOutputStream
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
 
 /**
  * base64工具类
@@ -11,30 +13,25 @@ import java.io.FileOutputStream
  * @param path 图片路径
  * @return 转换结果
  */
-fun Base64.base64ToImage(base64Str: String, path: String): Boolean {
-    //对字节数组字符串进行Base64解码并生成图片
-    //图像数据为空
-    if (base64Str.isEmpty()) {
-        StaticLog.error("base64转图片失败：base64为空")
+fun Base64.base64ToImage(base64Str: String, outputPath: String): Boolean {
+    if (base64Str.isBlank()) {
+        StaticLog.warn("base64 conversion to image failed: base64 is blank")
         return false
     }
-    try {
-        //Base64解码
+    if (outputPath.isBlank()) {
+        StaticLog.warn("base64 conversion to image failed: output path is blank")
+        return false
+    }
+    return try {
         val bytes = Base64.decode(base64Str)
-        for (i in bytes.indices) {
-            //调整异常数据
-            if (bytes[i] < 0) {
-                bytes[i] = (bytes[i] + 256).toByte()
-            }
+        val path: Path = Paths.get(outputPath)
+
+        Files.newOutputStream(path).use { os ->
+            os.write(bytes)
         }
-        //生成jpeg图片
-        val out = FileOutputStream(path)
-        out.write(bytes)
-        out.flush()
-        out.close()
+        true
     } catch (e: Exception) {
-        StaticLog.error(e, "base64转图片失败")
-        return false
+        StaticLog.error(e, "base64 conversion to image failed with error: ")
+        false
     }
-    return true
 }
