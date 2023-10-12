@@ -25,7 +25,7 @@ object DemoBusHandlerImpl : DemoBusHandler() {
     override suspend fun handleRequest(request: String): Future<List<User>> {
         StaticLog.info("DemoBusHandlerImpl: $request")
         val users = UserMapper.list(2)
-        val counterNum = SharedCounterHelper.getCounterNum(SharedCounterEnum.TEST_SHARED_COUNTER)
+        val counterNum = SharedCounterHelper.getCounterAndAdd(SharedCounterEnum.TEST_SHARED_COUNTER)
         StaticLog.info("DemoBusHandlerImpl: $counterNum")
         return Future.succeededFuture(users)
     }
