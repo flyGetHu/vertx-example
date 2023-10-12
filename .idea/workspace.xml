@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="重命名SharedLockEnum并添加接口ISharedLockSharedLockEnum&#10;&#10;枚举“SharedLockEnum”已重命名为“SharedLockSharedLockEnum”以更好地表示其用途。为了提供更多的灵活性和适应性，引入了接口“ISharedLockSharedLockEnum”。 “SharedLockHelper”中的各种函数现在将此接口作为参数而不是具体的枚举，从而允许更多样化的实现。对函数“key()”的“key”调用也进行了调整。">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,10 +288,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
+        <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
       </list>
     </recent_temporary>
   </component>
@@ -354,7 +355,7 @@
       <workItem from="1696468479313" duration="20869000" />
       <workItem from="1696574674106" duration="2582000" />
       <workItem from="1696841197516" duration="1343000" />
-      <workItem from="1697073354822" duration="817000" />
+      <workItem from="1697073354822" duration="6419000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -601,14 +602,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00139" summary="更新版本">
-      <option name="closed" value="true" />
-      <created>1696496598553</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1696496598553</updated>
-    </task>
     <task id="LOCAL-00140" summary="更改 VertxWebHelper 中的默认错误状态代码&#10;&#10;在 VertxWebHelper.kt 中，errorResponse 函数中的默认状态代码已从 HTTP_BAD_REQUEST (400) 更新为 HTTP_INTERNAL_ERROR(500)。此更改更好地将默认错误状态与更常见的内部错误场景保持一致。">
       <option name="closed" value="true" />
       <created>1696561169185</created>
@@ -713,7 +706,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696836113372</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。">
+      <option name="closed" value="true" />
+      <created>1697075140770</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1697075140770</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,7 +737,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add *.xml to .gitignore file&#10;&#10;This commit updates the .gitignore file to ignore all .xml files. This is done to prevent potential conflicts with developers' personal IDE settings and ensure that only relevant source code files are included in the repository." />
     <MESSAGE value="改进对请求序列化的错误处理&#10;提交增强了BusHandler.kt中请求序列化期间对异常的处理。try-catch块现在包含请求对象的序列化，确保在此过程中抛出的任何异常都被捕获并记录。进行此更改是为了避免应用程序崩溃，并在出现序列化问题时提供更清晰的错误消息。" />
     <MESSAGE value="Refactor release script for smoother deployment &#10;&#10;The release.bat script was modified by removing the mvn clean install -U package -DskipTests command. Now the deployment only executes the mvn clean install -U org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -DskipTests command. This change was made to streamline the deployment process and avoid unnecessary building steps during a release." />
     <MESSAGE value="添加JSON注释并改进异常处理&#10;进行了增强以促进JSON序列化并改进错误报告。&#10;对于“ApiResponse.kt”，添加了@JsonIgnoreProperties和@JsonProperty注释，以实现JSON数据和ApiResponse数据类字段之间的有效映射。&#10;在“BusHandler.kt”中，解码后的JSON请求和响应现在打印在日志中，以便在不处于生产环境中时更好地跟踪请求。&#10;最后，对于“VertxWebHelper.kt”，更新了错误处理程序以返回错误代码和消息，从而在出现常见API错误（如“找不到”或“不允许使用方法”）时提供更有意义的响应。" />
@@ -761,7 +761,8 @@
     <MESSAGE value="Add incr and decr methods to RedisHelper &#10;&#10;Introduced new functions for incrementing (incr) and decrementing (decr) a specified key's value in Redis within the RedisHelper class. This was done to facilitate more flexibility for Redis database management tasks. Also, removed unused itemvalue(&quot;Batch.release&quot;) from .idea/workspace.xml for cleaner workspace." />
     <MESSAGE value="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。" />
     <MESSAGE value="重命名SharedLockEnum并添加接口ISharedLockSharedLockEnum&#10;&#10;枚举“SharedLockEnum”已重命名为“SharedLockSharedLockEnum”以更好地表示其用途。为了提供更多的灵活性和适应性，引入了接口“ISharedLockSharedLockEnum”。 “SharedLockHelper”中的各种函数现在将此接口作为参数而不是具体的枚举，从而允许更多样化的实现。对函数“key()”的“key”调用也进行了调整。" />
-    <option name="LAST_COMMIT_MESSAGE" value="重命名SharedLockEnum并添加接口ISharedLockSharedLockEnum&#10;&#10;枚举“SharedLockEnum”已重命名为“SharedLockSharedLockEnum”以更好地表示其用途。为了提供更多的灵活性和适应性，引入了接口“ISharedLockSharedLockEnum”。 “SharedLockHelper”中的各种函数现在将此接口作为参数而不是具体的枚举，从而允许更多样化的实现。对函数“key()”的“key”调用也进行了调整。" />
+    <MESSAGE value="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。" />
+    <option name="LAST_COMMIT_MESSAGE" value="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
