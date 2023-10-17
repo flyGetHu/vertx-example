@@ -81,7 +81,7 @@ public class MainLaunch extends VertxCommandLauncher implements VertxLifecycleHo
         // 设置CP子系统配置
         final CPSubsystemConfig cpSubsystemConfig = new CPSubsystemConfig();
         // 设置CP成员节点数量
-        cpSubsystemConfig.setCPMemberCount(3);
+        cpSubsystemConfig.setCPMemberCount(0);
         config.setCPSubsystemConfig(cpSubsystemConfig);
         // 获取网络配置
         final NetworkConfig networkConfig = config.getNetworkConfig();
