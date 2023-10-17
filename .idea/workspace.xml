@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/resources/cluster.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,9 +301,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
-        <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
       </list>
     </recent_temporary>
@@ -355,7 +368,9 @@
       <workItem from="1696468479313" duration="20869000" />
       <workItem from="1696574674106" duration="2582000" />
       <workItem from="1696841197516" duration="1343000" />
-      <workItem from="1697073354822" duration="6419000" />
+      <workItem from="1697073354822" duration="11418000" />
+      <workItem from="1697100434051" duration="2606000" />
+      <workItem from="1697523303941" duration="1477000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -602,30 +617,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00140" summary="更改 VertxWebHelper 中的默认错误状态代码&#10;&#10;在 VertxWebHelper.kt 中，errorResponse 函数中的默认状态代码已从 HTTP_BAD_REQUEST (400) 更新为 HTTP_INTERNAL_ERROR(500)。此更改更好地将默认错误状态与更常见的内部错误场景保持一致。">
-      <option name="closed" value="true" />
-      <created>1696561169185</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1696561169185</updated>
-    </task>
-    <task id="LOCAL-00141" summary="改进MainLaunch中的环境配置设置&#10;&#10;添加了条件语句，仅当之前未设置时才在 vertx-common-core-kt MainLaunch 中设置活动配置。这允许必要条件在运行时传递参数，从而促进更通用的应用程序部署。此外，还集成了可视化日志，以在 VertxLoadConfig.kt 中提供环境变量的检索状态，从而改进调试过程。">
-      <option name="closed" value="true" />
-      <created>1696563360118</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1696563360118</updated>
-    </task>
-    <task id="LOCAL-00142" summary="改进 MainLaunch 中的环境设置&#10;&#10;添加了条件语句，以便仅在 vertx-common-core-kt 的 MainLaunch 中设置活动配置（如果之前未设置）。这允许在运行时传递所需的参数，从而促进更通用的应用程序部署。此外，集成日志记录在 VertxLoadConfig.kt 中提供环境变量检索的状态，从而改进了调试过程。">
-      <option name="closed" value="true" />
-      <created>1696563665155</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1696563665155</updated>
-    </task>
     <task id="LOCAL-00143" summary="更新 pom.xml 文件中的版本&#10;&#10;将多个 pom.xml 文件的版本号从 1.0.2-SNAPSHOT 增加到 1.0.3-SNAPSHOT。这样做是为了为软件的新版本做准备。版本号根据语义版本控制约定进行更新。">
       <option name="closed" value="true" />
       <created>1696563881620</created>
@@ -714,7 +705,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697075140770</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="提交消息还包括从源代码存储库中删除特定于开发人员的工作区文件，以维护干净的项目结构。">
+      <option name="closed" value="true" />
+      <created>1697089859930</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1697089859930</updated>
+    </task>
+    <task id="LOCAL-00155" summary="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。">
+      <option name="closed" value="true" />
+      <created>1697092438871</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1697092438871</updated>
+    </task>
+    <task id="LOCAL-00156" summary="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。">
+      <option name="closed" value="true" />
+      <created>1697100017617</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1697100017617</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,16 +745,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="改进对请求序列化的错误处理&#10;提交增强了BusHandler.kt中请求序列化期间对异常的处理。try-catch块现在包含请求对象的序列化，确保在此过程中抛出的任何异常都被捕获并记录。进行此更改是为了避免应用程序崩溃，并在出现序列化问题时提供更清晰的错误消息。" />
-    <MESSAGE value="Refactor release script for smoother deployment &#10;&#10;The release.bat script was modified by removing the mvn clean install -U package -DskipTests command. Now the deployment only executes the mvn clean install -U org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -DskipTests command. This change was made to streamline the deployment process and avoid unnecessary building steps during a release." />
-    <MESSAGE value="添加JSON注释并改进异常处理&#10;进行了增强以促进JSON序列化并改进错误报告。&#10;对于“ApiResponse.kt”，添加了@JsonIgnoreProperties和@JsonProperty注释，以实现JSON数据和ApiResponse数据类字段之间的有效映射。&#10;在“BusHandler.kt”中，解码后的JSON请求和响应现在打印在日志中，以便在不处于生产环境中时更好地跟踪请求。&#10;最后，对于“VertxWebHelper.kt”，更新了错误处理程序以返回错误代码和消息，从而在出现常见API错误（如“找不到”或“不允许使用方法”）时提供更有意义的响应。" />
     <MESSAGE value="Update groupId and add compiler plugin configuration&#10;&#10;Update groupId from 'com.vertx' to 'org.vertx' in all project's POM files for correct organization identification. This change was required as 'com.vertx' was a placeholder and 'org.vertx' is the accurate groupId for our organization's Maven repository. Now it matches our organization's official domain name.&#10;&#10;Furthermore, a plugin configuration for 'maven-compiler-plugin' has been added in the main POM file. This ensures the project uses JDK version 17 for compilation, ensuring that our project uses the latest stable version of the JDK for best performance and security.&#10;&#10;Lastly, the 'project-jdk-name' attribute in '.idea/misc.xml' has been modified from 'corretto-17' to '17', reflecting the change to the standard JDK 17 as our base version of Java for this project.&#10;更新groupId并添加编译器插件配置&#10;&#10;将所有项目 POM 文件中的 groupId 从“com.vertx”更新为“org.vertx”，以获得正确的组织标识。需要进行此更改，因为“com.vertx”是占位符，而“org.vertx”是我们组织的 Maven 存储库的准确 groupId。现在它与我们组织的官方域名相匹配。&#10;&#10;此外，“maven-compiler-plugin”的插件配置已添加到主 POM 文件中。这可以确保项目使用 JDK 版本 17 进行编译，从而确保我们的项目使用最新稳定版本的 JDK 以获得最佳性能和安全性。&#10;&#10;最后，“.idea/misc.xml”中的“project-jdk-name”属性已从“corretto-17”修改为“17”，反映了对标准 JDK 17 作为我们的 Java 基本版本的更改项目。" />
     <MESSAGE value="为用户映射和查询添加分页&#10;&#10;实现了一个新的 PageResult 数据类，它将包含带有相关信息（当前页、总页数等）的分页数据。然后，这用于更改 UserMapper 和 UserService，以返回用户查询的 PageResult，而不是简单的用户列表。通过添加针对零或负页面或页面大小输入的保护措施以及更详细的查询，MysqlHelper 中的页面功能得到了进一步改进。这不仅通过仅从数据库查询必要的用户来提高性能，而且还为前端提供了对数据处理的更多控制。" />
     <MESSAGE value="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。" />
@@ -762,7 +786,10 @@
     <MESSAGE value="向 RedisHelper 添加 incr 和 decr 方法&#10;&#10;本次提交引入了 RedisHelper 类中的“incr”和“decr”方法。这些方法分别递增和递减 Redis 数据库中指定键的值。如果发生错误，它们将返回递增或递减的值或 null。&#10;该补丁还更新了 pom.xml 文件中的 vertx-common-redis-kt 版本，并从工作区设置中删除了“Batch.release”。这两项更改都有助于使项目规范和设置保持最新。" />
     <MESSAGE value="重命名SharedLockEnum并添加接口ISharedLockSharedLockEnum&#10;&#10;枚举“SharedLockEnum”已重命名为“SharedLockSharedLockEnum”以更好地表示其用途。为了提供更多的灵活性和适应性，引入了接口“ISharedLockSharedLockEnum”。 “SharedLockHelper”中的各种函数现在将此接口作为参数而不是具体的枚举，从而允许更多样化的实现。对函数“key()”的“key”调用也进行了调整。" />
     <MESSAGE value="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。" />
-    <option name="LAST_COMMIT_MESSAGE" value="将pom.xml版本更新为1.0.9&#10;&#10;每个 pom.xml 文件的版本从 1.0.7 更改为 1.0.9，以确保整个项目的一致性并反映依赖项中的更新。 “vertx-common-core-kt”资源中的“cluster.xml”文件也已被修改，并注释掉了一些更改。" />
+    <MESSAGE value="Update pom.xml version to 1.0.9&#10;&#10;Each pom.xml file's version changed from 1.0.7 to 1.0.9, ensuring the consistency of the entire project and reflecting updates in dependencies. The &quot;cluster.xml&quot; file in the &quot;vertx-common-core-kt&quot; resource has also been modified with some changes commented out." />
+    <MESSAGE value="提交消息还包括从源代码存储库中删除特定于开发人员的工作区文件，以维护干净的项目结构。" />
+    <MESSAGE value="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。" />
+    <option name="LAST_COMMIT_MESSAGE" value="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -770,7 +797,7 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="com.rabbitmq.client.ShutdownSignalException" package="com.rabbitmq.client" />
           <option name="timeStamp" value="59" />
         </breakpoint>
