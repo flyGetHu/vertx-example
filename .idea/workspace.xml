@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。">
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="更新版本">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-bus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-bus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-rabbitmq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-task/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-task/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-breaker-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-core-kt/src/main/kotlin/com/vertx/common/MainLaunch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-eventbus-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-redis-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webclient-kt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-webserver-kt/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,37 +109,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/huan/workspace/java/vertx-example&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.36930457&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "/home/huan/workspace/java/vertx-example",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36930457",
+    "settings.editor.selected.configurable": "settings.qodana",
+    "typescript.add.unambiguous.imports.on.the.fly": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
   </component>
@@ -370,7 +356,8 @@
       <workItem from="1696841197516" duration="1343000" />
       <workItem from="1697073354822" duration="11418000" />
       <workItem from="1697100434051" duration="2606000" />
-      <workItem from="1697523303941" duration="1477000" />
+      <workItem from="1697523303941" duration="4328000" />
+      <workItem from="1697694205995" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -617,30 +604,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00143" summary="更新 pom.xml 文件中的版本&#10;&#10;将多个 pom.xml 文件的版本号从 1.0.2-SNAPSHOT 增加到 1.0.3-SNAPSHOT。这样做是为了为软件的新版本做准备。版本号根据语义版本控制约定进行更新。">
-      <option name="closed" value="true" />
-      <created>1696563881620</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1696563881620</updated>
-    </task>
-    <task id="LOCAL-00144" summary="更新 VertxLoadConfig 注释&#10;&#10;更改了 VertxLoadConfig.kt 中“active”变量的注释以增强不变性。进行此改进是为了确保活动环境变量无法被修改，因为它在应用程序的配置中起着关键作用。">
-      <option name="closed" value="true" />
-      <created>1696564289934</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1696564289934</updated>
-    </task>
-    <task id="LOCAL-00145" summary="移除修改配置文件入口">
-      <option name="closed" value="true" />
-      <created>1696566004350</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1696566004350</updated>
-    </task>
     <task id="LOCAL-00146" summary="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。">
       <option name="closed" value="true" />
       <created>1696571511202</created>
@@ -729,7 +692,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697100017617</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="在 MainLaunch 中更新 CP 成员节点计数&#10;&#10;将 MainLaunch 类中的 CP 子系统成员节点计数配置从 3 更改为 0，以防止节点不足时出现集群初始化的潜在问题。如果没有至少 3 个可用节点，则先前的设置可能会导致集群挂起，这可能会对应用程序启动产生负面影响。通过将其设置为 0，它允许应用程序以任意数量的节点启动，从而增强其可扩展性和可靠性。">
+      <option name="closed" value="true" />
+      <created>1697532250479</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1697532250479</updated>
+    </task>
+    <task id="LOCAL-00158" summary="更新版本">
+      <option name="closed" value="true" />
+      <created>1697532266349</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1697532266349</updated>
+    </task>
+    <task id="LOCAL-00159" summary="更新版本">
+      <option name="closed" value="true" />
+      <created>1697532518435</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1697532518435</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,13 +751,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update groupId and add compiler plugin configuration&#10;&#10;Update groupId from 'com.vertx' to 'org.vertx' in all project's POM files for correct organization identification. This change was required as 'com.vertx' was a placeholder and 'org.vertx' is the accurate groupId for our organization's Maven repository. Now it matches our organization's official domain name.&#10;&#10;Furthermore, a plugin configuration for 'maven-compiler-plugin' has been added in the main POM file. This ensures the project uses JDK version 17 for compilation, ensuring that our project uses the latest stable version of the JDK for best performance and security.&#10;&#10;Lastly, the 'project-jdk-name' attribute in '.idea/misc.xml' has been modified from 'corretto-17' to '17', reflecting the change to the standard JDK 17 as our base version of Java for this project.&#10;更新groupId并添加编译器插件配置&#10;&#10;将所有项目 POM 文件中的 groupId 从“com.vertx”更新为“org.vertx”，以获得正确的组织标识。需要进行此更改，因为“com.vertx”是占位符，而“org.vertx”是我们组织的 Maven 存储库的准确 groupId。现在它与我们组织的官方域名相匹配。&#10;&#10;此外，“maven-compiler-plugin”的插件配置已添加到主 POM 文件中。这可以确保项目使用 JDK 版本 17 进行编译，从而确保我们的项目使用最新稳定版本的 JDK 以获得最佳性能和安全性。&#10;&#10;最后，“.idea/misc.xml”中的“project-jdk-name”属性已从“corretto-17”修改为“17”，反映了对标准 JDK 17 作为我们的 Java 基本版本的更改项目。" />
     <MESSAGE value="为用户映射和查询添加分页&#10;&#10;实现了一个新的 PageResult 数据类，它将包含带有相关信息（当前页、总页数等）的分页数据。然后，这用于更改 UserMapper 和 UserService，以返回用户查询的 PageResult，而不是简单的用户列表。通过添加针对零或负页面或页面大小输入的保护措施以及更详细的查询，MysqlHelper 中的页面功能得到了进一步改进。这不仅通过仅从数据库查询必要的用户来提高性能，而且还为前端提供了对数据处理的更多控制。" />
     <MESSAGE value="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。" />
     <MESSAGE value="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。" />
     <MESSAGE value="重构请求拦截器使其更加灵活&#10;&#10;将`RequestInterceptorHandler`类重构为一个接口，并创建了实现该接口的`RequestInterceptorHandlerImpl`类，以具有实际的请求拦截逻辑。此更改提供了更大的灵活性 - 其他类现在也可以实现此接口，以促进不同的拦截策略。这些更改被重构并应用于整个应用程序以保持功能一致性。" />
     <MESSAGE value="重构请求拦截器以获得更大的灵活性&#10;&#10;删除了旧的、严格的 RequestInterceptorHandler 并将其替换为接口。创建了一个新类RequestInterceptorHandlerImpl，它用实际的请求拦截逻辑来实现该接口。这一变化提供了增强的灵活性。现在，其他类可以实现此接口，从而推动不同的拦截策略。这些更改已在整个应用程序中进行了重构，以保持功能的一致性。" />
-    <MESSAGE value="更新版本" />
     <MESSAGE value="更改 VertxWebHelper 中的默认错误状态代码&#10;&#10;在 VertxWebHelper.kt 中，errorResponse 函数中的默认状态代码已从 HTTP_BAD_REQUEST (400) 更新为 HTTP_INTERNAL_ERROR(500)。此更改更好地将默认错误状态与更常见的内部错误场景保持一致。" />
     <MESSAGE value="改进MainLaunch中的环境配置设置&#10;&#10;添加了条件语句，仅当之前未设置时才在 vertx-common-core-kt MainLaunch 中设置活动配置。这允许必要条件在运行时传递参数，从而促进更通用的应用程序部署。此外，还集成了可视化日志，以在 VertxLoadConfig.kt 中提供环境变量的检索状态，从而改进调试过程。" />
     <MESSAGE value="改进 MainLaunch 中的环境设置&#10;&#10;添加了条件语句，仅在先前未设置的情况下才在 vertx-common-core-kt 的 MainLaunch 中设置活动配置。这允许在运行时传递所需的参数，从而促进更通用的应用程序部署。此外，集成日志记录可在 VertxLoadConfig.kt 中提供环境变量的检索状态，从而改进调试过程。" />
@@ -789,7 +774,9 @@
     <MESSAGE value="Update pom.xml version to 1.0.9&#10;&#10;Each pom.xml file's version changed from 1.0.7 to 1.0.9, ensuring the consistency of the entire project and reflecting updates in dependencies. The &quot;cluster.xml&quot; file in the &quot;vertx-common-core-kt&quot; resource has also been modified with some changes commented out." />
     <MESSAGE value="提交消息还包括从源代码存储库中删除特定于开发人员的工作区文件，以维护干净的项目结构。" />
     <MESSAGE value="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。" />
-    <option name="LAST_COMMIT_MESSAGE" value="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。" />
+    <MESSAGE value="在 MainLaunch 中更新 CP 成员节点计数&#10;&#10;将 MainLaunch 类中的 CP 子系统成员节点计数配置从 3 更改为 0，以防止节点不足时出现集群初始化的潜在问题。如果没有至少 3 个可用节点，则先前的设置可能会导致集群挂起，这可能会对应用程序启动产生负面影响。通过将其设置为 0，它允许应用程序以任意数量的节点启动，从而增强其可扩展性和可靠性。" />
+    <MESSAGE value="更新版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新版本" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

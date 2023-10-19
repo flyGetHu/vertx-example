@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0.11</version>
+        <version>1.0.12</version>
     </parent>
 
-    <version>1.0.11</version>
+    <version>1.0.12</version>
     <artifactId>vertx-common-rabbitmq-kt</artifactId>
 
     <properties>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.vertx</groupId>
             <artifactId>vertx-common-core-kt</artifactId>
-            <version>1.0.11</version>
+            <version>1.0.12</version>
         </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
