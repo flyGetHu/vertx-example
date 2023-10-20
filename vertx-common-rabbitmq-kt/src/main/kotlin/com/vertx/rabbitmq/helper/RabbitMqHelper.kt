@@ -130,6 +130,9 @@ object RabbitMqHelper {
     ) {
         // 组装队列名称
         val queueName = assembleQueueName(rabbitMqHandler)
+        if (queueName.isBlank()) {
+            throw RabbitMQSendException("队列名称不能为空")
+        }
         // 组装消息
         val mqMessageData = MqMessageData(message)
         // 持久化消息
