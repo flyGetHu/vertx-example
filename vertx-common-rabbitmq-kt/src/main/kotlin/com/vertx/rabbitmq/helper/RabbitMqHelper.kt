@@ -11,6 +11,7 @@ import com.vertx.common.utils.underlineName
 import com.vertx.rabbitmq.client.rabbitMqClient
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 import com.vertx.rabbitmq.enums.RabbitMqExChangeTypeEnum
+import com.vertx.rabbitmq.exception.RabbitMQSendException
 import com.vertx.rabbitmq.handler.RabbitMqHandler
 import io.vertx.core.Promise
 import io.vertx.core.json.DecodeException
@@ -80,19 +81,22 @@ object RabbitMqHelper {
         val rabbitMqExChangeEnum = rabbitMqHandler.exchange
         // 检查交换机类型是否支持发送消息到交换机
         if (rabbitMqExChangeEnum.type == RabbitMqExChangeTypeEnum.DIRECT) {
-            throw Exception("direct类型交换机不支持发送消息到交换机")
+            throw RabbitMQSendException("direct类型交换机不支持发送消息到交换机")
         }
         // 组装消息
         val mqMessageData = MqMessageData(message)
+        val exchanger = rabbitMqExChangeEnum.exchanger
+        if (exchanger.isBlank()) {
+            throw RabbitMQSendException("发送交换机不能为空")
+        }
         // 持久化消息
         val persistence = rabbitMqHandler.persistence(mqMessageData)
-        val exchanger = rabbitMqExChangeEnum.exchanger
         if (!persistence.isNullOrBlank()) {
             StaticLog.warn("消息持久化失败:交换机名称:$exchanger,消息:$mqMessageData")
         }
         // 检查交换机消息类型是否匹配
         if (rabbitMqExChangeEnum.messageType != message!!::class.java) {
-            throw Exception("消息类型不匹配")
+            throw RabbitMQSendException("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(
@@ -135,7 +139,7 @@ object RabbitMqHelper {
         }
         // 检查交换机消息类型是否匹配
         if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
-            throw Exception("消息类型不匹配")
+            throw RabbitMQSendException("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(
