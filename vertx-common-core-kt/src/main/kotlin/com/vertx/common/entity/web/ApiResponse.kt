@@ -35,11 +35,14 @@ data class ApiResponse(
  * @param extra 响应中包含的额外信息。默认为空字符串。
  * @return 更新后的 ApiResponse 对象，包含成功状态以及提供的数据和额外信息。
  */
-fun ApiResponse.successResponse(data: Any? = "", extra: Any? = ""): ApiResponse {
-    this.status = ApiResponseStatusEnum.OK
-    this.data = data
-    this.extra = extra
-    return this
+fun successResponse(data: Any? = "", extra: Any? = ""): ApiResponse {
+    return ApiResponse(
+        status = ApiResponseStatusEnum.OK,
+        code = HttpStatus.HTTP_OK,
+        msg = "",
+        data = data,
+        extra = extra
+    )
 }
 
 /**
@@ -51,16 +54,11 @@ fun ApiResponse.successResponse(data: Any? = "", extra: Any? = ""): ApiResponse 
  * @param extra 与错误响应相关的附加信息。默认值为空字符串。
  * @return 代表错误响应的更新后的 ApiResponse 对象。
  */
-fun ApiResponse.errorResponse(
+fun errorResponse(
     msg: String,
     code: Int = HttpStatus.HTTP_INTERNAL_ERROR,
     data: Any? = "",
     extra: Any? = ""
 ): ApiResponse {
-    this.status = ApiResponseStatusEnum.ERROR
-    this.code = code
-    this.msg = msg
-    this.data = data
-    this.extra = extra
-    return this
+    return ApiResponse(status = ApiResponseStatusEnum.ERROR, code = code, msg = msg, data = data, extra = extra)
 }
