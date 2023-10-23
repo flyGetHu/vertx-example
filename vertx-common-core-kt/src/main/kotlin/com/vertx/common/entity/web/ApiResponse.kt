@@ -48,17 +48,17 @@ fun successResponse(data: Any? = "", extra: Any? = ""): ApiResponse {
 /**
  * 更新 ApiResponse 对象的属性以表示错误响应。
  *
- * @param msg 要设置的错误消息。
+ * @param message 要设置的错误消息。
  * @param code 要设置的错误代码。默认值为 HttpStatus.HTTP_INTERNAL_ERROR。
  * @param data 与错误响应关联的附加数据。默认值为空字符串。
  * @param extra 与错误响应相关的附加信息。默认值为空字符串。
  * @return 代表错误响应的更新后的 ApiResponse 对象。
  */
 fun errorResponse(
-    msg: String,
+    message: String,
     code: Int = HttpStatus.HTTP_INTERNAL_ERROR,
     data: Any? = "",
     extra: Any? = ""
 ): ApiResponse {
-    return ApiResponse(status = ApiResponseStatusEnum.ERROR, code = code, msg = msg, data = data, extra = extra)
+    return ApiResponse(status = ApiResponseStatusEnum.ERROR, code = code, msg = message, data = data, extra = extra)
 }
