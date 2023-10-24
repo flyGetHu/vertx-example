@@ -5,6 +5,6 @@ package com.vertx.common.enums
  * @param modelName 模块名称
  * @param description 模块描述
  */
-enum class ModelEnum(val modelName: String, val description: String) {
-    TEST("test", "测试模块"),
+enum class ModelEnum(override var modelName: String, override var description: String) : IModelEnum {
+    TEST__MODEL("test", "测试模块"),
 }

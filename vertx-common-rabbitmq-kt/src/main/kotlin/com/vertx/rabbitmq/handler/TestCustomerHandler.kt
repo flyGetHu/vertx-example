@@ -9,7 +9,7 @@ import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 open class TestCustomerHandler : RabbitMqHandler<User> {
     override val requestClass: Class<User> = User::class.java
     override val exchange: RabbitMqExChangeEnum = RabbitMqExChangeEnum.TESTRabbitMqExChangeEnum
-    override val moduleName: ModelEnum = ModelEnum.TEST
+    override val moduleName: ModelEnum = ModelEnum.TEST__MODEL
 
     override val queueName: String = "test"
     override var date: String = "2023-08-03"

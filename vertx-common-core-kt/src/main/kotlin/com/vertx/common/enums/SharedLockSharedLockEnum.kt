@@ -5,10 +5,6 @@ package com.vertx.common.enums
  *
  * @property key 与共享锁关联的密钥。
  */
-enum class SharedLockSharedLockEnum(var key: String) : ISharedLockSharedLockEnum {
-    TEST_SHARED_LOCK("test_lock") {
-        override fun key(): String {
-            return key
-        }
-    },
+enum class SharedLockSharedLockEnum(override var key: String) : ISharedLockSharedLockEnum {
+    TEST_SHARED_LOCK("test_lock")
 }

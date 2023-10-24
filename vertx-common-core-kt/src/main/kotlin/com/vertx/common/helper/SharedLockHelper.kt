@@ -15,7 +15,7 @@ object SharedLockHelper {
      * @param sharedLockEnum 锁枚举
      */
     suspend fun getLock(sharedLockEnum: ISharedLockSharedLockEnum): Lock? {
-        return sharedData.getLock(sharedLockEnum.key()).await()
+        return sharedData.getLock(sharedLockEnum.key).await()
     }
 
     /**
@@ -24,7 +24,7 @@ object SharedLockHelper {
      * @param timeout 超时时间
      */
     suspend fun getLockWithTimeout(sharedLockEnum: ISharedLockSharedLockEnum, timeout: Long): Lock? {
-        return sharedData.getLockWithTimeout(sharedLockEnum.key(), timeout).await()
+        return sharedData.getLockWithTimeout(sharedLockEnum.key, timeout).await()
     }
 
     /**
@@ -32,7 +32,7 @@ object SharedLockHelper {
      * @param sharedLockEnum 锁枚举
      */
     suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum): Lock? {
-        return sharedData.getLocalLock(sharedLockEnum.key()).await()
+        return sharedData.getLocalLock(sharedLockEnum.key).await()
     }
 
     /**
@@ -41,6 +41,6 @@ object SharedLockHelper {
      * @param timeout 超时时间
      */
     suspend fun getLocalLockWithTimeout(sharedLockEnum: ISharedLockSharedLockEnum, timeout: Long): Lock? {
-        return sharedData.getLocalLockWithTimeout(sharedLockEnum.key(), timeout).await()
+        return sharedData.getLocalLockWithTimeout(sharedLockEnum.key, timeout).await()
     }
 }

@@ -21,8 +21,8 @@
 package com.vertx.rabbitmq.handler
 
 import com.vertx.common.entity.mq.MqMessageData
-import com.vertx.common.enums.ModelEnum
-import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
+import com.vertx.common.enums.IModelEnum
+import com.vertx.rabbitmq.enums.IRabbitMqExChangeEnum
 
 /**
  * rabbit队列处理器接口
@@ -39,10 +39,10 @@ interface RabbitMqHandler<Request> {
 
 
     // mq队列交换机枚举,见RabbitMqExChangeEnum
-    val exchange: RabbitMqExChangeEnum
+    val exchange: IRabbitMqExChangeEnum
 
     // 模块名称,见ModelEnum
-    val moduleName: ModelEnum
+    val moduleName: IModelEnum
 
     // 队列名称 命名方式:以业务操作命名,见名知意,如:(注册用户)register.user
     // 全小写,单词之间用.分割

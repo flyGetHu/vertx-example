@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0.15</version>
+        <version>1.0.16</version>
     </parent>
 
-    <version>1.0.15</version>
+    <version>1.0.16</version>
     <artifactId>vertx-common-webserver-kt</artifactId>
 
     <properties>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.vertx</groupId>
             <artifactId>vertx-common-core-kt</artifactId>
-            <version>1.0.15</version>
+            <version>1.0.16</version>
         </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
