@@ -10,6 +10,9 @@ import cn.hutool.log.LogFactory
 import cn.hutool.log.StaticLog
 import cn.hutool.log.dialect.log4j2.Log4j2LogFactory
 import com.vertx.common.entity.app.AppConfig
+import com.vertx.common.exception.UniqueAddressException
+import io.github.classgraph.ClassGraph
+import io.github.classgraph.ScanResult
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
 import io.vertx.config.ConfigStoreOptions
@@ -56,6 +59,8 @@ object VertxLoadConfig {
      * @see appConfig
      */
     suspend fun init(active: String = "dev") {
+        // 防止接口定义地址重复
+        checkUniqueAddress()
         vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
@@ -92,5 +97,55 @@ object VertxLoadConfig {
         val config = params.mapTo(AppConfig::class.java)
         appConfig = config
         isInit = true
+    }
+
+    /**
+     * 检查对应的消息总线,mq队列等接口实现上是否有地址重复问题
+     */
+    private fun checkUniqueAddress() {
+        //打印警告信息:接口定义类命名不带impl,最终实现消费或者服务提供方命名必须添加impl
+        StaticLog.warn("注意EventBus接口和RabbitMq接口:")
+        StaticLog.warn("接口定义类命名不带impl,并且类上必须添加UniqueAddress注解,标明地址路径")
+        StaticLog.warn("项目启动会检查是否有重复的地址或者地址缺失")
+        StaticLog.warn("最终实现消费或者服务提供方命名必须添加impl,检查会过滤末尾Impl文件")
+        val scanResult = ClassGraph().enableAllInfo()
+            .enableStaticFinalFieldConstantInitializerValues()
+            .scan()
+        scanAndValidateHandlers(scanResult, "com.vertx.eventbus.handler.BusHandler")
+        scanAndValidateHandlers(scanResult, "com.vertx.rabbitmq.handler.RabbitMqHandler")
+    }
+
+    /**
+     * 扫描并验证指定包中的事件总线处理程序类。
+     *
+     * @param scanResult 扫描操作的结果。
+     * @param packageName 要扫描的包的名称。
+     * @throws Exception 如果存在验证错误，例如事件总线地址重复或丢失。
+     */
+    private fun scanAndValidateHandlers(scanResult: ScanResult, packageName: String) {
+        val busHandlerClasses = scanResult.getClassesImplementing(packageName)
+        val eventBusUniqueAddress = mutableSetOf<String>()
+        for (classInfo in busHandlerClasses) {
+            val className = classInfo.name
+            if (className.endsWith("Impl")) {
+                continue
+            }
+            // 获取类address属性注释
+            val annotationInfos = classInfo.annotationInfo
+            var hasUniqueAddress = false
+            for (annotationInfo in annotationInfos) {
+                if (annotationInfo.name == "com.vertx.common.annotations.UniqueAddress") {
+                    val uniqueAddress = annotationInfo.parameterValues[0].value as String
+                    if (eventBusUniqueAddress.contains(uniqueAddress)) {
+                        throw UniqueAddressException("$className\n地址重复:$uniqueAddress")
+                    }
+                    eventBusUniqueAddress.add(uniqueAddress)
+                    hasUniqueAddress = true
+                }
+            }
+            if (!hasUniqueAddress) {
+                throw UniqueAddressException("$className\n事件总线地址未设置")
+            }
+        }
     }
 }

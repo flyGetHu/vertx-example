@@ -1,11 +1,13 @@
 package com.vertx.rabbitmq.handler
 
 import cn.hutool.log.StaticLog
+import com.vertx.common.annotations.UniqueAddress
 import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.enums.ModelEnum
 import com.vertx.common.model.User
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 
+@UniqueAddress("dev.test.test.2023-08-03.test.fanout")
 open class TestCustomerHandler : RabbitMqHandler<User> {
     override val requestClass: Class<User> = User::class.java
     override val exchange: RabbitMqExChangeEnum = RabbitMqExChangeEnum.TESTRabbitMqExChangeEnum

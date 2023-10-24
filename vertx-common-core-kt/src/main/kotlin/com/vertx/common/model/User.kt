@@ -2,7 +2,7 @@ package com.vertx.common.model
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.vertx.common.config.TableName
+import com.vertx.common.annotations.TableName
 
 /**
  * -- auto-generated definition

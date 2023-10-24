@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0.16</version>
+        <version>1.0.17</version>
     </parent>
 
-    <version>1.0.16</version>
+    <version>1.0.17</version>
     <artifactId>vertx-common-core-kt</artifactId>
 
     <properties>
@@ -60,6 +60,12 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-log</artifactId>
             <version>${huTool.version}</version>
+        </dependency>
+        <!--   类路径扫描器和模块扫描器     -->
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>${classgraph.version}</version>
         </dependency>
     </dependencies>
 

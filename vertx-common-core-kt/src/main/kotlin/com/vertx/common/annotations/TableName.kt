@@ -1,4 +1,4 @@
-package com.vertx.common.config
+package com.vertx.common.annotations
 
 /**
  * 表名注解

@@ -8,6 +8,7 @@
  */
 package com.vertx.eventbus.bus
 
+import com.vertx.common.annotations.UniqueAddress
 import com.vertx.common.model.User
 import com.vertx.eventbus.handler.BusHandler
 import io.vertx.core.Future
@@ -16,6 +17,7 @@ import io.vertx.core.Future
  * 事件总线处理器 测试demo
  * 实现EventBusHandler接口,只需要实现address,确定服务地址,文件命名以BusHandler结尾
  */
+@UniqueAddress("demo://eventbus")
 open class DemoBusHandler : BusHandler<String, List<User>> {
     override val requestClass: Class<String> = String::class.java
     override val responseClass: Class<List<User>> = List::class.java as Class<List<User>>

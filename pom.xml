@@ -6,7 +6,7 @@
 
     <groupId>org.vertx</groupId>
     <artifactId>starter</artifactId>
-    <version>1.0.16</version>
+    <version>1.0.17</version>
     <packaging>pom</packaging>
     <modules>
         <module>vertx-common-core-kt</module>
@@ -37,6 +37,7 @@
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
         <huTool.version>5.8.20</huTool.version>
         <jooq.version>3.18.5</jooq.version>
+        <classgraph.version>4.8.163</classgraph.version>
         <kotlin.version>1.9.0</kotlin.version>
         <launcher.class>com.vertx.common.MainLaunch</launcher.class>
     </properties>

@@ -1,6 +1,6 @@
 package com.vertx.mysql.utils
 
-import com.vertx.common.config.TableName
+import com.vertx.common.annotations.TableName
 import com.vertx.common.utils.underlineName
 
 /**
