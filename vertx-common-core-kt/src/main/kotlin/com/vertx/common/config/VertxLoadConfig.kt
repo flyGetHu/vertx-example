@@ -69,9 +69,9 @@ object VertxLoadConfig {
         val logFactory = Log4j2LogFactory.create()
         LogFactory.setCurrentLogFactory(logFactory)
         StaticLog.info("初始化日志对象成功:" + logFactory.name)
-        val retriever = ConfigRetriever.create(vertx)
-        val jsonObject = retriever.config.await()
-        StaticLog.info("获取环境变量成功:\n${jsonObject.encodePrettily()}")
+//        val retriever = ConfigRetriever.create(vertx)
+//        val jsonObject = retriever.config.await()
+//        StaticLog.info("获取环境变量成功:\n${jsonObject.encodePrettily()}")
         var activeConfigName = "conf/config."
         var env = active
         // 如果com.vertx.common.config.active不是空则按照此值来初始化
