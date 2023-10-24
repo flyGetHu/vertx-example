@@ -1,5 +1,6 @@
 package com.vertx.rabbitmq.helper
 
+import cn.hutool.core.exceptions.ExceptionUtil
 import cn.hutool.log.StaticLog
 import com.rabbitmq.client.MessageProperties
 import com.vertx.common.config.active
@@ -91,14 +92,14 @@ object RabbitMqHelper {
         if (exchanger.isBlank()) {
             throw RabbitMQSendException("发送交换机不能为空")
         }
+        // 检查交换机消息类型是否匹配
+        if (rabbitMqExChangeEnum.messageType != message!!::class.java) {
+            throw RabbitMQSendException("消息类型不匹配")
+        }
         // 持久化消息
         val persistence = rabbitMqHandler.persistence(mqMessageData)
         if (!persistence.isNullOrBlank()) {
             StaticLog.warn("消息持久化失败:交换机名称:$exchanger,消息:$mqMessageData")
-        }
-        // 检查交换机消息类型是否匹配
-        if (rabbitMqExChangeEnum.messageType != message!!::class.java) {
-            throw RabbitMQSendException("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(
@@ -137,14 +138,14 @@ object RabbitMqHelper {
         }
         // 组装消息
         val mqMessageData = MqMessageData(message)
+        // 检查交换机消息类型是否匹配
+        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
+            throw RabbitMQSendException("消息类型不匹配")
+        }
         // 持久化消息
         val persistence = rabbitMqHandler.persistence(mqMessageData)
         if (!persistence.isNullOrBlank()) {
             StaticLog.warn("消息持久化失败:队列名称:$queueName,消息:$mqMessageData")
-        }
-        // 检查交换机消息类型是否匹配
-        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
-            throw RabbitMQSendException("消息类型不匹配")
         }
         // 发送消息
         rabbitMqClient.basicPublish(
@@ -260,7 +261,7 @@ object RabbitMqHelper {
                 } catch (e: Throwable) {
                     // 回调
                     if (msgId.isNotBlank()) {
-                        rabbitMqHandler.callback(e.message ?: "", msgId)
+                        rabbitMqHandler.callback(ExceptionUtil.getSimpleMessage(e), msgId)
                     }
                     StaticLog.error(e, "消息处理失败:队列名称:$queueName,消息:${rabbitMQMessage.body()}")
                     // 如果异常是解析异常 则直接ack,因为解析异常重新入列也是解析异常

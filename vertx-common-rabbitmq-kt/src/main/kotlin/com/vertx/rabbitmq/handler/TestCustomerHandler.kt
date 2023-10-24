@@ -19,11 +19,11 @@ open class TestCustomerHandler : RabbitMqHandler<User> {
     override var autoAck: Boolean = false
     override var maxRetry: Int = 3
     override var retryInterval: Long = 1000
-    override var handler: suspend (User) -> String? = { message: User ->
+    override var handler: suspend (User) -> String? = {
         null
     }
 
-    override var persistence: suspend (MqMessageData<User>) -> String? = { message: MqMessageData<User> ->
+    override var persistence: suspend (MqMessageData<User>) -> String? = {
         StaticLog.info("持久化函数执行成功")
         null
     }
