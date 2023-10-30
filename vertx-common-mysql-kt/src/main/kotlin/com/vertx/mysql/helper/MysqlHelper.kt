@@ -16,6 +16,7 @@ import org.jooq.SQLDialect
 import org.jooq.conf.ParamType
 import org.jooq.conf.Settings
 import org.jooq.impl.DSL
+import java.time.LocalDateTime
 
 /**
  * mysql帮助类
@@ -23,6 +24,10 @@ import org.jooq.impl.DSL
  * 所有建表都应存在id字段，且为自增主键
  */
 object MysqlHelper {
+
+    // 最后一次警告无id主键的时间
+    private var lastWarnNoIdLogTimeMap = mutableMapOf<String, LocalDateTime>()
+
     /**
      * 插入数据
      * 如果对象不包含id主键,则默认返回0
@@ -30,6 +35,7 @@ object MysqlHelper {
      * @return 获取最新的id
      */
     suspend fun insert(data: Any, connection: SqlConnection? = null): Long {
+
         val sql = buildInsertSql(listOf(data))
         val query = if (connection != null) {
             connection.query(sql)
@@ -37,12 +43,18 @@ object MysqlHelper {
             mysqlPoolClient.query(sql)
         }
         val rowRowSet = query.execute().await()
-        // 检查对象是否存在id主键
-        return try {
-            data.javaClass.getDeclaredField("id")
+        val className = data::class.java.name
+        val now = LocalDateTime.now()
+        return runCatching {
+            // 检查对象是否存在id主键
             rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
-        } catch (_: NoSuchFieldException) {
-            StaticLog.warn("对象${data::class.java.name}不存在id主键")
+        }.getOrElse {
+            //检查最后一次警告时间和现在事件是否相差超过一小时,一小时内只会报警一次
+            val lastWarnNoIdLogTime = lastWarnNoIdLogTimeMap[className]
+            if (lastWarnNoIdLogTime == null || now.minusHours(1) > lastWarnNoIdLogTime) {
+                StaticLog.warn("对象${className}不存在id主键")
+                lastWarnNoIdLogTimeMap[className] = now
+            }
             0
         }
     }
