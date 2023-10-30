@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="更新版本">
-      <change afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/src/main/kotlin/com/vertx/rabbitmq/exception/RabbitMQSendException.kt" afterDir="false" />
+    <list default="true" id="acfc2753-56c1-441c-9794-cad2c92d5d1e" name="更改" comment="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 时出现问题时获得更好的见解，从而替换通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈中进行更具体的错误处理。 Workspace.xml 文件和新异常类文件中的更改反映了项目结构中的此更新。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-rabbitmq-kt/src/main/kotlin/com/vertx/rabbitmq/helper/RabbitMqHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/src/main/kotlin/com/vertx/mysql/helper/MysqlHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertx-common-mysql-kt/src/test/java/com/vertx/mysql/helper/MysqlHelperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vertx-common-mysql-kt/src/test/java/com/vertx/mysql/helper/MysqlHelperTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +25,10 @@
         <option value="Class" />
         <option value="Kotlin Annotation" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -139,6 +140,8 @@
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;,
       &quot;redis&quot;
+    ],
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: [
     ]
   }
 }</component>
@@ -214,18 +217,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoadConfigTest.testLoadConfig">
-    <configuration name="release" type="BatchConfigurationType" factoryName="Batch" temporary="true">
-      <module name="starter" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="release.bat" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MysqlHelperTest.testInsert">
     <configuration name="LoadConfigTest.testLoadConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vertx-common-core-kt" />
       <extension name="coverage">
@@ -237,6 +229,22 @@
       <option name="PACKAGE_NAME" value="com.vertx.common.config" />
       <option name="MAIN_CLASS_NAME" value="com.vertx.common.config.LoadConfigTest" />
       <option name="METHOD_NAME" value="testLoadConfig" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlHelperTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vertx-common-mysql-kt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertx.mysql.helper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertx.mysql.helper" />
+      <option name="MAIN_CLASS_NAME" value="com.vertx.mysql.helper.MysqlHelperTest" />
+      <option name="METHOD_NAME" value="testInsert" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -282,6 +290,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.MysqlHelperTest.testInsert" />
       <item itemvalue="JUnit.LoadConfigTest.testLoadConfig" />
       <item itemvalue="Kotlin.ExampleBusMainApp" />
       <item itemvalue="Kotlin.ExampleTaskMainApp" />
@@ -289,6 +298,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MysqlHelperTest.testInsert" />
         <item itemvalue="Kotlin.ExampleBusMainApp" />
         <item itemvalue="Kotlin.ExampleWebMainApp" />
         <item itemvalue="Kotlin.ExampleTaskMainApp" />
@@ -360,6 +370,9 @@
       <workItem from="1697100434051" duration="2606000" />
       <workItem from="1697523303941" duration="4328000" />
       <workItem from="1697694205995" duration="1190000" />
+      <workItem from="1697797566338" duration="172000" />
+      <workItem from="1698649660244" duration="804000" />
+      <workItem from="1698650479704" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687854941003</created>
@@ -606,22 +619,6 @@
       <option name="project" value="LOCAL" />
       <updated>1689143462136</updated>
     </task>
-    <task id="LOCAL-00146" summary="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。">
-      <option name="closed" value="true" />
-      <created>1696571511202</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1696571511202</updated>
-    </task>
-    <task id="LOCAL-00147" summary="将状态字段添加到 ApiResponse 并更新版本&#10;&#10;向 ApiResponse 数据类添加了新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，更新了 pom.xml 文件中 vertx-common-core-kt 和 vertx-common-webserver-kt 的版本，以标记代码库中引入的新更改。">
-      <option name="closed" value="true" />
-      <created>1696571562792</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1696571562792</updated>
-    </task>
     <task id="LOCAL-00148" summary="重构 ApiResponse 并添加状态字段&#10;&#10;重构了 ApiResponse 数据类以包含新的“状态”字段，并更新了其在 VertxWebHelper 中的响应函数中的用法。进行此更改是为了通过包含状态信息来增强响应详细信息。此外，还更新了 pom.xml 文件中的 vertx-common-core-kt 和 vertx-common-webserver-kt 版本，以表示代码库中引入的新更改。">
       <option name="closed" value="true" />
       <created>1696572305141</created>
@@ -718,7 +715,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697532518435</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 遇到问题时提供更好的见解。这取代了通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈上进行更具体的错误处理。 Workspace.xml 文件和新的异常类文件更改反映了项目结构中的此更新。">
+      <option name="closed" value="true" />
+      <created>1697780487294</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1697780487294</updated>
+    </task>
+    <task id="LOCAL-00161" summary="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 时出现问题时获得更好的见解，从而替换通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈中进行更具体的错误处理。 Workspace.xml 文件和新异常类文件中的更改反映了项目结构中的此更新。">
+      <option name="closed" value="true" />
+      <created>1697783155428</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1697783155428</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -753,8 +766,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="为用户映射和查询添加分页&#10;&#10;实现了一个新的 PageResult 数据类，它将包含带有相关信息（当前页、总页数等）的分页数据。然后，这用于更改 UserMapper 和 UserService，以返回用户查询的 PageResult，而不是简单的用户列表。通过添加针对零或负页面或页面大小输入的保护措施以及更详细的查询，MysqlHelper 中的页面功能得到了进一步改进。这不仅通过仅从数据库查询必要的用户来提高性能，而且还为前端提供了对数据处理的更多控制。" />
-    <MESSAGE value="向数据库操作添加可选的 SqlConnection 参数&#10;&#10;为MysqlHelper类中的所有数据库操作函数引入了可选的SqlConnection参数。这提供了灵活性，可以使用提供的 SqlConnection，也可以在没有传递连接的情况下回退到默认客户端池。此更改允许在单个数据库事务中执行多个操作，从而在必要时确保原子性。它还提高了在可以重用相同连接的情况下资源和性能优化的潜力。插入、更新和删除功能都已更新以支持此功能。" />
     <MESSAGE value="更新 vertx-common-mysql-kt 版本号&#10;&#10;vertx-common-mysql-kt 的 pom.xml 中的版本号已更新为 1.0.2-SNAPSHOT。此更改是必要的，以反映在 MysqlHelper 类的所有数据库操作函数中添加了可选的 SqlConnection 参数，从而提供了使用提供的 SqlConnection 的灵活性，或者在没有传递连接时回退到默认客户端池。此更新可确保需要时的原子性，并在可以重用同一连接的情况下增强资源和性能优化的潜力。" />
     <MESSAGE value="重构请求拦截器使其更加灵活&#10;&#10;将`RequestInterceptorHandler`类重构为一个接口，并创建了实现该接口的`RequestInterceptorHandlerImpl`类，以具有实际的请求拦截逻辑。此更改提供了更大的灵活性 - 其他类现在也可以实现此接口，以促进不同的拦截策略。这些更改被重构并应用于整个应用程序以保持功能一致性。" />
     <MESSAGE value="重构请求拦截器以获得更大的灵活性&#10;&#10;删除了旧的、严格的 RequestInterceptorHandler 并将其替换为接口。创建了一个新类RequestInterceptorHandlerImpl，它用实际的请求拦截逻辑来实现该接口。这一变化提供了增强的灵活性。现在，其他类可以实现此接口，从而推动不同的拦截策略。这些更改已在整个应用程序中进行了重构，以保持功能的一致性。" />
@@ -778,7 +789,9 @@
     <MESSAGE value="增强日期解析以支持多种格式&#10;&#10;DateUtil 中的日期解析方法已得到增强，可以支持多种日期格式。此更改旨在提供与各种日期格式的兼容性。现在，它将尝试使用预定义日期格式列表来解析输入日期，如果没有格式匹配，则返回 null。针对由于非法参数或日期异常导致解析失败的情况添加了异常处理。这确保了该函数可以继续尝试解析其他格式。" />
     <MESSAGE value="在 MainLaunch 中更新 CP 成员节点计数&#10;&#10;将 MainLaunch 类中的 CP 子系统成员节点计数配置从 3 更改为 0，以防止节点不足时出现集群初始化的潜在问题。如果没有至少 3 个可用节点，则先前的设置可能会导致集群挂起，这可能会对应用程序启动产生负面影响。通过将其设置为 0，它允许应用程序以任意数量的节点启动，从而增强其可扩展性和可靠性。" />
     <MESSAGE value="更新版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新版本" />
+    <MESSAGE value="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 遇到问题时提供更好的见解。这取代了通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈上进行更具体的错误处理。 Workspace.xml 文件和新的异常类文件更改反映了项目结构中的此更新。" />
+    <MESSAGE value="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 时出现问题时获得更好的见解，从而替换通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈中进行更具体的错误处理。 Workspace.xml 文件和新异常类文件中的更改反映了项目结构中的此更新。" />
+    <option name="LAST_COMMIT_MESSAGE" value="改进 RabbitMqHelper 中的错误处理&#10;&#10;引入了更具体的异常 RabbitMQSendException，以便在发送到 RabbitMQ 时出现问题时获得更好的见解，从而替换通用异常。此更改提供了有关消息发送期间错误的更多信息，并允许在堆栈中进行更具体的错误处理。 Workspace.xml 文件和新异常类文件中的更改反映了项目结构中的此更新。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

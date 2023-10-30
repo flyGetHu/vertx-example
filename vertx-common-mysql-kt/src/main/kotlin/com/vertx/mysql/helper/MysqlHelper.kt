@@ -25,6 +25,7 @@ import org.jooq.impl.DSL
 object MysqlHelper {
     /**
      * 插入数据
+     * 如果对象不包含id主键,则默认返回0
      * @param data 数据对象
      * @return 获取最新的id
      */
@@ -36,7 +37,14 @@ object MysqlHelper {
             mysqlPoolClient.query(sql)
         }
         val rowRowSet = query.execute().await()
-        return rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
+        // 检查对象是否存在id主键
+        return try {
+            data.javaClass.getDeclaredField("id")
+            rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
+        } catch (_: NoSuchFieldException) {
+            StaticLog.warn("对象${data::class.java.name}不存在id主键")
+            0
+        }
     }
 
     /**
