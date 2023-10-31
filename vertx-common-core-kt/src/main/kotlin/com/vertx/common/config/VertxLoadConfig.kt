@@ -106,8 +106,11 @@ object VertxLoadConfig {
         val scanResult = ClassGraph().enableAllInfo()
             .enableStaticFinalFieldConstantInitializerValues()
             .scan()
+        // 检查事件总线接口是否有地址重复
         scanAndValidateHandlers(scanResult, "com.vertx.eventbus.handler.BusHandler")
+        // 检查rabbitmq接口是否有地址重复
         scanAndValidateHandlers(scanResult, "com.vertx.rabbitmq.handler.RabbitMqHandler")
+        // 检查数据库模型类是否有id字段
         scanResult.getClassesWithAnnotation("com.vertx.common.annotations.TableName").forEach {
             val idField = "id"
             if (it.getFieldInfo().stream().noneMatch { fieldInfo -> fieldInfo.name.equals(idField) }) {
