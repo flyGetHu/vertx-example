@@ -14,7 +14,7 @@ class TaskDemoHandlerImpl : CronSchedulerHandler {
     override var description: String = "测试定时任务"
 
     // 每5秒执行一次
-    override var scheduler: CronScheduler = CronScheduler("0 0/5 * * * ?")
+    override var scheduler: CronScheduler = CronScheduler("0/5 * * * * ?")
 
     // 任务执行体
     override suspend fun task(): String? {

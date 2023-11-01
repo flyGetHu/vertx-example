@@ -67,28 +67,25 @@ interface CronSchedulerHandler {
             return
         }
         //如果不是初始化启动,则计算下次执行时间,防止初始化执行的同时,也执行了定时任务
-        //If it is not an initialization start, calculate the next execution time to prevent the task from being executed while initializing.
-        if (!taskOptions.initStart) {
-            val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
-            StaticLog.info(
-                "定时任务:${description} 下次执行时间:${
-                    DateUtil.offsetMillisecond(
-                        DateUtil.date(), timeUntilNextExecution.toInt()
-                    )
-                }"
-            )
-            vertx.setTimer(timeUntilNextExecution) {
-                CoroutineScope(vertx.dispatcher()).launch {
-                    try {
-                        val msg = task()
-                        taskOptions.taskCallback?.let { it(msg, description) }
-                    } catch (e: Throwable) {
-                        StaticLog.error(e, "定时任务执行异常:${description}")
-                        taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
-                    }
-                    taskOptions.initStart = false
-                    start(taskOptions)
+        val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
+        StaticLog.info(
+            "定时任务:${description} 下次执行时间:${
+                DateUtil.offsetMillisecond(
+                    DateUtil.date(), timeUntilNextExecution.toInt()
+                )
+            }"
+        )
+        vertx.setTimer(timeUntilNextExecution) {
+            CoroutineScope(vertx.dispatcher()).launch {
+                try {
+                    val msg = task()
+                    taskOptions.taskCallback?.let { it(msg, description) }
+                } catch (e: Throwable) {
+                    StaticLog.error(e, "定时任务执行异常:${description}")
+                    taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
+                taskOptions.initStart = false
+                start(taskOptions)
             }
         }
     }
@@ -119,27 +116,25 @@ interface CronSchedulerHandler {
             }
             return
         }
-        if (!taskOptions.initStart) {
-            val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
-            StaticLog.info(
-                "定时任务:${description} 下次执行时间:${
-                    DateUtil.offsetMillisecond(
-                        DateUtil.date(), timeUntilNextExecution.toInt()
-                    )
-                }"
-            )
-            vertx.setTimer(timeUntilNextExecution) {
-                CoroutineScope(vertx.dispatcher()).launch {
-                    try {
-                        val msg = task()
-                        taskOptions.taskCallback?.let { it(msg, description) }
-                    } catch (e: Throwable) {
-                        StaticLog.error(e, "定时任务执行异常:${description}")
-                        taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
-                    }
-                    taskOptions.initStart = false
-                    start(taskOptions, vertx = vertx)
+        val timeUntilNextExecution = scheduler.getTimeUntilNextExecution()
+        StaticLog.info(
+            "定时任务:${description} 下次执行时间:${
+                DateUtil.offsetMillisecond(
+                    DateUtil.date(), timeUntilNextExecution.toInt()
+                )
+            }"
+        )
+        vertx.setTimer(timeUntilNextExecution) {
+            CoroutineScope(vertx.dispatcher()).launch {
+                try {
+                    val msg = task()
+                    taskOptions.taskCallback?.let { it(msg, description) }
+                } catch (e: Throwable) {
+                    StaticLog.error(e, "定时任务执行异常:${description}")
+                    taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
+                taskOptions.initStart = false
+                start(taskOptions, vertx = vertx)
             }
         }
     }

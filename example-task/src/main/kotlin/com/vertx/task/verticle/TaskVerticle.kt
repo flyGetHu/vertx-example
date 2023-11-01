@@ -1,5 +1,6 @@
 package com.vertx.task.verticle
 
+import cn.hutool.log.StaticLog
 import com.vertx.common.entity.task.TaskOptions
 import com.vertx.task.handler.TaskDemoHandlerImpl
 import io.vertx.kotlin.coroutines.CoroutineVerticle
@@ -14,7 +15,7 @@ class TaskVerticle : CoroutineVerticle() {
             taskOptions.startEnv = null
             TaskDemoHandlerImpl().start(taskOptions = taskOptions)
         } catch (e: Throwable) {
-            e.printStackTrace()
+            StaticLog.error(e, "启动定时任务失败")
         }
     }
 }
