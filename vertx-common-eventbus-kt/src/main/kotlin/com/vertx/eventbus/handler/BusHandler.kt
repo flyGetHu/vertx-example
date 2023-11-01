@@ -18,6 +18,7 @@ import com.vertx.common.config.active
 import com.vertx.common.config.eventBus
 import com.vertx.common.config.vertx
 import com.vertx.common.enums.EnvEnum
+import com.vertx.common.exception.UniqueAddressException
 import io.vertx.core.AsyncResult
 import io.vertx.core.Future
 import io.vertx.core.Promise
@@ -123,7 +124,7 @@ interface BusHandler<Request, Response> {
             val address = service.address
             //校验服务地址是否重复
             if (addressMap.containsKey(address)) {
-                throw RuntimeException("服务地址重复注册:$address")
+                throw UniqueAddressException("服务地址重复注册:$address")
             }
             addressMap[address] = address
             StaticLog.info("注册服务: $address")
