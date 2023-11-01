@@ -84,7 +84,6 @@ interface CronSchedulerHandler {
                     StaticLog.error(e, "定时任务执行异常:${description}")
                     taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
-                taskOptions.initStart = false
                 start(taskOptions)
             }
         }
@@ -133,7 +132,6 @@ interface CronSchedulerHandler {
                     StaticLog.error(e, "定时任务执行异常:${description}")
                     taskOptions.taskCallback?.let { it(ExceptionUtil.stacktraceToString(e), description) }
                 }
-                taskOptions.initStart = false
                 start(taskOptions, vertx = vertx)
             }
         }
