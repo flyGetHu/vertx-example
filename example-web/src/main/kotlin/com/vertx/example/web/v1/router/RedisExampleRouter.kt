@@ -1,8 +1,11 @@
 package com.vertx.example.web.v1.router
 
+import cn.hutool.log.StaticLog
 import com.vertx.common.config.vertx
-import com.vertx.redis.enums.RedisLockKeyEnum
+import com.vertx.common.enums.SharedLockSharedLockEnum
+import com.vertx.common.helper.SharedLockHelper
 import com.vertx.redis.helper.RedisHelper
+import com.vertx.webserver.helper.errorResponse
 import com.vertx.webserver.helper.launchCoroutine
 import com.vertx.webserver.helper.successResponse
 import io.vertx.ext.web.Router
@@ -35,16 +38,17 @@ object RedisExampleRouter {
 
         //测试分布式锁
         routerSub.get("/lock/test").launchCoroutine { ctx ->
-            val redisLockKeyEnum = RedisLockKeyEnum.LOCK_TEST
-            val res = RedisHelper.DistributedLock.lock(redisLockKeyEnum, 10)
             try {
-                if (res) {
+                val lock =
+                    SharedLockHelper.getLocalLockWithTimeout(SharedLockSharedLockEnum.TEST_SHARED_LOCK, 10 * 1000)
+                try {
                     ctx.successResponse("lock success")
-                } else {
-                    ctx.successResponse("lock fail")
+                } finally {
+                    lock.release()
                 }
-            } finally {
-                RedisHelper.DistributedLock.unlock(redisLockKeyEnum)
+            } catch (e: Exception) {
+                StaticLog.error(e, "lock fail")
+                ctx.errorResponse(message = "lock fail")
             }
         }
 
