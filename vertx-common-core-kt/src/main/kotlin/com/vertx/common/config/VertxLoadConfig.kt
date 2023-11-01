@@ -161,5 +161,6 @@ object VertxLoadConfig {
                 throw UniqueAddressException("$className\n事件总线地址未设置")
             }
         }
+        eventBusUniqueAddress.clear()
     }
 }
