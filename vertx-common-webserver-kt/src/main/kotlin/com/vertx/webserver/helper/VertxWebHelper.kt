@@ -13,6 +13,7 @@ import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.web.ApiResponse
 import com.vertx.common.enums.ApiResponseStatusEnum
+import com.vertx.rabbitmq.exception.WebServerStartException
 import com.vertx.webserver.entity.WebServiceOptions
 import io.vertx.core.Vertx
 import io.vertx.core.json.Json
@@ -78,10 +79,10 @@ object VertxWebConfig {
     fun startHttpServer(webServiceOptions: WebServiceOptions) {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
-            throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+            throw WebServerStartException("全局初始化未完成,请先调用:VertxLoadConfig.init()")
         }
         val httpServerOptions = io.vertx.core.http.HttpServerOptions()
-        val serverConfig = appConfig.webServer ?: throw Exception("未配置webserver")
+        val serverConfig = appConfig.webServer ?: throw WebServerStartException("未配置webserver")
         httpServerOptions.port = serverConfig.port
         httpServerOptions.host = serverConfig.host
         httpServerOptions.idleTimeout = serverConfig.timeout

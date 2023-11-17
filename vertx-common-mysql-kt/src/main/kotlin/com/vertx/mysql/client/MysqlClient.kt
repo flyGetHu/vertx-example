@@ -13,6 +13,7 @@ import com.vertx.common.config.appConfig
 import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.app.Mysql
+import com.vertx.rabbitmq.exception.MysqlClientInitException
 import io.vertx.kotlin.coroutines.await
 import io.vertx.mysqlclient.MySQLPool
 import io.vertx.sqlclient.PoolOptions
@@ -37,32 +38,32 @@ object MysqlClient {
     suspend fun init(config: Mysql, isDef: Boolean = true): MySQLPool? {
         if (!isInit) {
             StaticLog.error("全局初始化未完成,请先调用:VertxLoadConfig.init()")
-            throw Exception("全局初始化未完成,请先调用:VertxLoadConfig.init()")
+            throw MysqlClientInitException("全局初始化未完成,请先调用:VertxLoadConfig.init()")
         }
         val mySQLConnectOptions = io.vertx.mysqlclient.MySQLConnectOptions()
         val host = config.host
         if (host.isBlank()) {
             StaticLog.error("mysql host is blank:{}", config)
-            throw Exception("mysql host is blank")
+            throw MysqlClientInitException("mysql host is blank")
         }
         mySQLConnectOptions.host = host
         mySQLConnectOptions.port = config.port
         val username = config.username
         if (username.isBlank()) {
             StaticLog.error("mysql username is blank:{}", config)
-            throw Exception("mysql username is blank")
+            throw MysqlClientInitException("mysql username is blank")
         }
         mySQLConnectOptions.user = username
         val password = config.password
         if (password.isBlank()) {
             StaticLog.error("mysql password is blank:{}", config)
-            throw Exception("mysql password is blank")
+            throw MysqlClientInitException("mysql password is blank")
         }
         mySQLConnectOptions.password = password
         val database = config.database
         if (database.isBlank()) {
             StaticLog.error("mysql database is blank:{}", config)
-            throw Exception("mysql database is blank")
+            throw MysqlClientInitException("mysql database is blank")
         }
         mySQLConnectOptions.database = database
         mySQLConnectOptions.charset = config.charset
@@ -76,7 +77,7 @@ object MysqlClient {
         // 连接池
         val poolOptions = PoolOptions()
         // 连接池名称 用于日志
-        val app = appConfig.app ?: throw Exception("app is null")
+        val app = appConfig.app ?: throw MysqlClientInitException("app is null")
         poolOptions.name = "mysql-pool-${app.name}-${app.version}"
         // 最大连接数
         poolOptions.maxSize = config.maxPoolSize

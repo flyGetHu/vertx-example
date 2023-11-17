@@ -3,7 +3,7 @@ package com.vertx.redis.client
 import cn.hutool.log.StaticLog
 import com.vertx.common.config.isInit
 import com.vertx.common.config.vertx
-import com.vertx.redis.RedisInitException
+import com.vertx.redis.exception.RedisInitException
 import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
 import io.vertx.redis.client.Redis

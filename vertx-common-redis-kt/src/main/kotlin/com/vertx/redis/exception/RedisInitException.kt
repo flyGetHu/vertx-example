@@ -1,4 +1,4 @@
-package com.vertx.redis
+package com.vertx.redis.exception
 
 /**
  * 针对Redis初始化错误的自定义异常类。
