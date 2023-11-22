@@ -33,13 +33,14 @@ object RabbitMqHelper {
 
     // 组装队列名称:当前启动环境+模块名称+队列名称+业务开始日期+交换机名称+交换机类型
     private fun assembleQueueName(rabbitMqHandler: RabbitMqHandler<*>): String {
-        return "${active}.${
+        val exchangeType = rabbitMqHandler.exchange.type
+        var queueName = "${active}.${
             rabbitMqHandler.moduleName.modelName.lowercase().underlineName()
-        }.${rabbitMqHandler.queueName}.${
-            rabbitMqHandler.date
-        }.${
-            rabbitMqHandler.exchange.exchanger.lowercase().underlineName()
-        }.${rabbitMqHandler.exchange.type.name.lowercase()}"
+        }.${rabbitMqHandler.queueName}.${exchangeType.name.lowercase()}.${rabbitMqHandler.date}"
+        if (exchangeType != RabbitMqExChangeTypeEnum.DEFAULT) {
+            queueName += ".${rabbitMqHandler.exchange.exchanger}"
+        }
+        return queueName
     }
 
     // 注册队列
