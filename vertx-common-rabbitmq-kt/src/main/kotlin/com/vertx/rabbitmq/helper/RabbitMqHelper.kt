@@ -8,7 +8,6 @@ import com.vertx.common.config.appConfig
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.enums.EnvEnum
-import com.vertx.common.utils.underlineName
 import com.vertx.rabbitmq.client.rabbitMqClient
 import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 import com.vertx.rabbitmq.enums.RabbitMqExChangeTypeEnum
@@ -35,7 +34,7 @@ object RabbitMqHelper {
     private fun assembleQueueName(rabbitMqHandler: RabbitMqHandler<*>): String {
         val exchangeType = rabbitMqHandler.exchange.type
         var queueName = "${active}.${
-            rabbitMqHandler.moduleName.modelName.lowercase().underlineName()
+            rabbitMqHandler.moduleName.modelName.lowercase()
         }.${rabbitMqHandler.queueName}.${exchangeType.name.lowercase()}.${rabbitMqHandler.date}"
         if (exchangeType != RabbitMqExChangeTypeEnum.DEFAULT) {
             queueName += ".${rabbitMqHandler.exchange.exchanger}"
