@@ -37,7 +37,7 @@ object RabbitMqHelper {
             rabbitMqHandler.moduleName.modelName.lowercase()
         }.${rabbitMqHandler.queueName}.${exchangeType.name.lowercase()}.${rabbitMqHandler.date}"
         if (exchangeType != RabbitMqExChangeTypeEnum.DEFAULT) {
-            queueName += ".${rabbitMqHandler.exchange.exchanger}"
+            queueName += ".${rabbitMqHandler.exchange.exchanger.lowercase()}"
         }
         return queueName
     }
