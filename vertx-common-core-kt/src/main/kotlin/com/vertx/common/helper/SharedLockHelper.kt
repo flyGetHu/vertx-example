@@ -1,5 +1,6 @@
 package com.vertx.common.helper
 
+import cn.hutool.core.util.StrUtil
 import com.vertx.common.config.sharedData
 import com.vertx.common.enums.ISharedLockSharedLockEnum
 import io.vertx.core.shareddata.Lock
@@ -13,9 +14,11 @@ object SharedLockHelper {
     /**
      * 获取锁
      * @param sharedLockEnum 锁枚举
+     * @param args 参数  如果有参数则使用{}占位符，如：getLock(SharedLockEnum.TEST_LOCK, arrayOf("123"))
+     * @return Lock
      */
-    suspend fun getLock(sharedLockEnum: ISharedLockSharedLockEnum): Lock {
-        return sharedData.getLock(sharedLockEnum.key).await()
+    suspend fun getLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>?): Lock {
+        return sharedData.getLock(StrUtil.format(sharedLockEnum.key, args)).await()
     }
 
     /**
@@ -23,16 +26,20 @@ object SharedLockHelper {
      * @param sharedLockEnum 锁枚举
      * @param timeout 超时时间
      */
-    suspend fun getLockWithTimeout(sharedLockEnum: ISharedLockSharedLockEnum, timeout: Long): Lock {
-        return sharedData.getLockWithTimeout(sharedLockEnum.key, timeout).await()
+    suspend fun getLockWithTimeout(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        timeout: Long,
+        args: Array<String>?
+    ): Lock {
+        return sharedData.getLockWithTimeout(StrUtil.format(sharedLockEnum.key, args), timeout).await()
     }
 
     /**
      * 获取本地锁
      * @param sharedLockEnum 锁枚举
      */
-    suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum): Lock {
-        return sharedData.getLocalLock(sharedLockEnum.key).await()
+    suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>?): Lock {
+        return sharedData.getLocalLock(StrUtil.format(sharedLockEnum.key, args)).await()
     }
 
     /**
@@ -40,7 +47,12 @@ object SharedLockHelper {
      * @param sharedLockEnum 锁枚举
      * @param timeout 超时时间
      */
-    suspend fun getLocalLockWithTimeout(sharedLockEnum: ISharedLockSharedLockEnum, timeout: Long): Lock {
-        return sharedData.getLocalLockWithTimeout(sharedLockEnum.key, timeout).await()
+    suspend fun getLocalLockWithTimeout(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        timeout: Long,
+        args: Array<String>?
+    ): Lock {
+        return sharedData.getLocalLockWithTimeout(StrUtil.format(sharedLockEnum.key, args), timeout)
+            .await()
     }
 }
