@@ -149,7 +149,8 @@ object RabbitMqHelper {
         }
         // 发送消息
         rabbitMqClient.basicPublish(
-            rabbitMqHandler.exchange.exchanger,
+            // 交换机名称,发送到指定队列,不需要指定交换机
+            "",
             queueName,
             MessageProperties.PERSISTENT_TEXT_PLAIN,
             Json.encodeToBuffer(mqMessageData)

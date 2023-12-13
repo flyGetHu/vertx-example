@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0.28</version>
+        <version>1.0.29</version>
     </parent>
 
-    <version>1.0.28</version>
+    <version>1.0.29</version>
     <artifactId>example-bus</artifactId>
 
     <properties>
@@ -23,19 +23,19 @@
         <dependency>
             <groupId>org.vertx</groupId>
             <artifactId>vertx-common-core-kt</artifactId>
-            <version>1.0.28</version>
+            <version>1.0.29</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.vertx</groupId>
             <artifactId>vertx-common-eventbus-kt</artifactId>
-            <version>1.0.28</version>
+            <version>1.0.29</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.vertx</groupId>
             <artifactId>vertx-common-mysql-kt</artifactId>
-            <version>1.0.28</version>
+            <version>1.0.29</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
