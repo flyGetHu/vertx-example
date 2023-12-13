@@ -14,7 +14,7 @@ object UserService {
     suspend fun list(limit: Int): List<User> {
         val users = UserMapper.list(limit)
         for (user in users) {
-            RabbitMqHelper.sendMessageToExchange(testCustomerHandler, user)
+            RabbitMqHelper.sendMessageToQueue(testCustomerHandler, user)
         }
         return users
     }

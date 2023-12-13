@@ -139,9 +139,9 @@ object RabbitMqHelper {
         // 组装消息
         val mqMessageData = MqMessageData(message)
         // 检查交换机消息类型是否匹配
-        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
-            throw RabbitMQSendException("消息类型不匹配")
-        }
+//        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
+//            throw RabbitMQSendException("消息类型不匹配")
+//        }
         // 持久化消息
         val persistence = rabbitMqHandler.persistence(mqMessageData)
         if (!persistence.isNullOrBlank()) {

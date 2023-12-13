@@ -11,5 +11,5 @@ POST http://localhost:3020/api/example/v1/redis/set/name/huan
 Accept: application/json
 
 ###
-GET http://localhost:3020/api/example/v1/user/list/2
+GET http://localhost:3020/api/example/customer/v1/user/list/1
 Accept: application/json
