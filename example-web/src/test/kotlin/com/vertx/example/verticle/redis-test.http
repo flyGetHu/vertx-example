@@ -9,3 +9,7 @@ Accept: application/json
 #测试新增
 POST http://localhost:3020/api/example/v1/redis/set/name/huan
 Accept: application/json
+
+###
+GET http://localhost:3020/api/example/v1/user/list/2
+Accept: application/json

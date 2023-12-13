@@ -18,7 +18,7 @@ class MainVerticle : CoroutineVerticle() {
             vertx.deployVerticle(RabbitMqConsumerVerticle::class.java.name).await()
             StaticLog.info("启动示例BUS项目成功:${Instant.now().toEpochMilli() - timer.toEpochMilli()}ms")
         } catch (e: Exception) {
-            e.printStackTrace()
+            StaticLog.error(e, "启动示例Rabbitmq项目失败:")
         }
     }
 }

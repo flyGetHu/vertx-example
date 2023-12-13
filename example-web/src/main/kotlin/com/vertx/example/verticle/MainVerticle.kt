@@ -18,7 +18,7 @@ class MainVerticle : CoroutineVerticle() {
         try {
             val timer = Instant.now()
             // 加载配置
-            VertxLoadConfig.init()
+            VertxLoadConfig.init("huan")
             // 初始化web客户端
             WebClient.init(appConfig.webClient!!)
             // 初始化mysql

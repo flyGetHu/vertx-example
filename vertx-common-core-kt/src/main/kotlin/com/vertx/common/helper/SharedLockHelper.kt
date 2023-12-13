@@ -17,7 +17,7 @@ object SharedLockHelper {
      * @param args 参数  如果有参数则使用{}占位符，如：getLock(SharedLockEnum.TEST_LOCK, arrayOf("123"))
      * @return Lock
      */
-    suspend fun getLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>?): Lock {
+    suspend fun getLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>? = null): Lock {
         return sharedData.getLock(StrUtil.format(sharedLockEnum.key, args)).await()
     }
 
@@ -38,7 +38,7 @@ object SharedLockHelper {
      * 获取本地锁
      * @param sharedLockEnum 锁枚举
      */
-    suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>?): Lock {
+    suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>? = null): Lock {
         return sharedData.getLocalLock(StrUtil.format(sharedLockEnum.key, args)).await()
     }
 
@@ -50,7 +50,7 @@ object SharedLockHelper {
     suspend fun getLocalLockWithTimeout(
         sharedLockEnum: ISharedLockSharedLockEnum,
         timeout: Long,
-        args: Array<String>?
+        args: Array<String>? = null
     ): Lock {
         return sharedData.getLocalLockWithTimeout(StrUtil.format(sharedLockEnum.key, args), timeout)
             .await()
