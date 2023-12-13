@@ -126,7 +126,12 @@ object RabbitMqHelper {
     }
 
 
-    // 发送消息到队列
+    /**
+     * 发送消息到队列
+     * 注意:此函数会直接发送消息到队列,配置交换机为空
+     * @param rabbitMqHandler rabbitmq处理器
+     * @param message 消息 与交换机类型匹配
+     */
     suspend fun <T> sendMessageToQueue(
         rabbitMqHandler: RabbitMqHandler<T>,
         message: T,
@@ -138,10 +143,6 @@ object RabbitMqHelper {
         }
         // 组装消息
         val mqMessageData = MqMessageData(message)
-        // 检查交换机消息类型是否匹配
-//        if (rabbitMqHandler.exchange.messageType != message!!::class.java) {
-//            throw RabbitMQSendException("消息类型不匹配")
-//        }
         // 持久化消息
         val persistence = rabbitMqHandler.persistence(mqMessageData)
         if (!persistence.isNullOrBlank()) {
