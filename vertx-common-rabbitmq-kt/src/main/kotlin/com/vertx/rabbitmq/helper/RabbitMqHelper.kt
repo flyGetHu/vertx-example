@@ -149,7 +149,10 @@ object RabbitMqHelper {
         }
         // 发送消息
         rabbitMqClient.basicPublish(
-            rabbitMqHandler.exchange.exchanger, queueName, Json.encodeToBuffer(mqMessageData)
+            rabbitMqHandler.exchange.exchanger,
+            queueName,
+            MessageProperties.PERSISTENT_TEXT_PLAIN,
+            Json.encodeToBuffer(mqMessageData)
         ).compose {
             val promise = Promise.promise<Void>()
             if (appConfig.mq?.rabbitmq?.sendConfirm == true) {
