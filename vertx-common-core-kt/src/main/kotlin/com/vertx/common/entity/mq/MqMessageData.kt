@@ -14,5 +14,5 @@ class MqMessageData<T>(// 消息
 ) {
     // 消息id
     @JsonProperty("id")
-    var id = UUID.fastUUID().toString()
+    val id = UUID.fastUUID().toString()
 }
