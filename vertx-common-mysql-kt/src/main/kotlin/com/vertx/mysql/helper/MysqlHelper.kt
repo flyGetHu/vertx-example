@@ -11,6 +11,7 @@ import com.vertx.mysql.utils.getTableName
 import io.vertx.kotlin.coroutines.await
 import io.vertx.mysqlclient.MySQLClient
 import io.vertx.sqlclient.SqlConnection
+import io.vertx.sqlclient.Transaction
 import org.jooq.Condition
 import org.jooq.SQLDialect
 import org.jooq.conf.ParamType
@@ -27,6 +28,30 @@ object MysqlHelper {
 
     // 最后一次警告无id主键的时间
     private var lastWarnNoIdLogTimeMap = mutableMapOf<String, LocalDateTime>()
+
+    /**
+     * 在事务中执行
+     * @param func 事务执行函数,参数为数据库连接,返回值表示事务执行结果
+     * @return 事务执行结果
+     * @throws Throwable 事务执行失败
+     */
+    suspend fun <T> withTransaction(func: suspend (SqlConnection) -> T): T? {
+        var connection: SqlConnection? = null
+        var transaction: Transaction? = null
+        var result: T? = null
+        try {
+            connection = mysqlPoolClient.connection.await()
+            transaction = connection.begin().await()
+            result = func(connection)
+            transaction.commit().await()
+        } catch (e: Throwable) {
+            StaticLog.error(e, "事务执行失败")
+            transaction?.rollback()?.await()
+        } finally {
+            connection?.close()?.await()
+        }
+        return result
+    }
 
     /**
      * 插入数据
@@ -121,16 +146,14 @@ object MysqlHelper {
      * 批量更新数据
      * 会根据batchSize分批次更新,每次一个事务,如果更新失败会回滚
      * 如何数据量大于batchSize,则会分批次更新
-     * @param data 数据对象
-     * @param where 条件
+     * @param data 数据对象 key作为需要修改的数据,value为修改条件
      * @param isNll 是否更新空值
      * @param batchSize 批量大小
      * @param connection 数据库连接
      * @return 受影响的行数
      */
     suspend fun updateBatch(
-        data: List<Any>,
-        where: Condition,
+        data: Map<List<Any>, Condition>,
         isNll: Boolean = false,
         batchSize: Int = 100,
         connection: SqlConnection? = null
@@ -141,9 +164,12 @@ object MysqlHelper {
         }
         // 影响行数
         var count = 0
-        //批量更新数据
-        val sqlList = data.map { buildUpdateSql(it, where, isNll) }
-        val lists = CollUtil.split(sqlList, batchSize)
+        val batchSqlList = mutableListOf<String>()
+        for (map in data) {
+            val querySql = buildUpdateSql(map.key, map.value, isNll)
+            batchSqlList.add(querySql)
+        }
+        val lists = CollUtil.split(batchSqlList, batchSize)
         val connect = connection ?: mysqlPoolClient.connection.await()
         //开启事务
         val transaction = connect.begin().await()
