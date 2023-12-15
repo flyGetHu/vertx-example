@@ -15,6 +15,7 @@ import io.vertx.kotlin.coroutines.await
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.jooq.Condition
 import org.jooq.impl.DSL
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -58,6 +59,22 @@ class MysqlHelperTest {
                 }
             }
             println(result)
+            testContext.completeNow()
+        }
+    }
+
+    @Test
+    fun testUpdateBatch(testContext: VertxTestContext) {
+        CoroutineScope(vertx.dispatcher()).launch {
+            MysqlHelper.withTransaction {
+                val dataList = mutableListOf<Map<Any, Condition>>()
+                for (i in 0..100) {
+                    val user = User(null, "2", 12, null, null)
+                    val condition = DSL.field(User::id.name.underlineName()).eq(i)
+                    dataList.add(mutableMapOf(Pair(user, condition)))
+                }
+                MysqlHelper.updateBatch(dataList)
+            }
             testContext.completeNow()
         }
     }

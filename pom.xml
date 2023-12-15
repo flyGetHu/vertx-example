@@ -6,7 +6,7 @@
 
     <groupId>org.vertx</groupId>
     <artifactId>starter</artifactId>
-    <version>1.0.32</version>
+    <version>1.0.33</version>
     <packaging>pom</packaging>
     <modules>
         <module>vertx-common-core-kt</module>

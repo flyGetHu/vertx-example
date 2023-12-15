@@ -146,28 +146,30 @@ object MysqlHelper {
      * 批量更新数据
      * 会根据batchSize分批次更新,每次一个事务,如果更新失败会回滚
      * 如何数据量大于batchSize,则会分批次更新
-     * @param data 数据对象 key作为需要修改的数据,value为修改条件
+     * @param dataList 数据对象 key作为需要修改的数据,value为修改条件
      * @param isNll 是否更新空值
      * @param batchSize 批量大小
      * @param connection 数据库连接
      * @return 受影响的行数
      */
     suspend fun updateBatch(
-        data: Map<Any, Condition>,
+        dataList: List<Map<Any, Condition>>,
         isNll: Boolean = false,
         batchSize: Int = 100,
         connection: SqlConnection? = null
     ): Int {
-        if (data.isEmpty()) {
+        if (dataList.isEmpty()) {
             StaticLog.warn("批量更新数据为空")
             return 0
         }
         // 影响行数
         var count = 0
         val batchSqlList = mutableListOf<String>()
-        for (map in data) {
-            val querySql = buildUpdateSql(map.key, map.value, isNll)
-            batchSqlList.add(querySql)
+        for (map in dataList) {
+            for (item in map) {
+                val querySql = buildUpdateSql(item.key, item.value, isNll)
+                batchSqlList.add(querySql)
+            }
         }
         val lists = CollUtil.split(batchSqlList, batchSize)
         val connect = connection ?: mysqlPoolClient.connection.await()
