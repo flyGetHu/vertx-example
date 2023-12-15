@@ -47,6 +47,7 @@ object MysqlHelper {
         } catch (e: Throwable) {
             StaticLog.error(e, "事务执行失败")
             transaction?.rollback()?.await()
+            throw e
         } finally {
             connection?.close()?.await()
         }
@@ -74,14 +75,14 @@ object MysqlHelper {
         return try {
             data.javaClass.getDeclaredField("id")
             rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
-        } catch (_: Exception) {
+        } catch (e: Exception) {
             //检查最后一次警告时间和现在事件是否相差超过一小时,一小时内只会报警一次
             val lastWarnNoIdLogTime = lastWarnNoIdLogTimeMap[className]
             if (lastWarnNoIdLogTime == null || now.minusHours(1) > lastWarnNoIdLogTime) {
                 StaticLog.warn("对象${className}不存在id主键")
                 lastWarnNoIdLogTimeMap[className] = now
             }
-            0
+            throw e
         }
     }
 
@@ -118,6 +119,7 @@ object MysqlHelper {
             //回滚事务
             transaction.rollback().await()
             StaticLog.error(e, "批量插入数据失败")
+            throw e
         } finally {
             connect.close().await()
         }
@@ -188,6 +190,7 @@ object MysqlHelper {
             //回滚事务
             transaction.rollback().await()
             StaticLog.error(e, "批量更新数据失败", lists)
+            throw e
         } finally {
             connect.close().await()
         }
