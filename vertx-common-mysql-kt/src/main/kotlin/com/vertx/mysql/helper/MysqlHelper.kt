@@ -153,7 +153,7 @@ object MysqlHelper {
      * @return 受影响的行数
      */
     suspend fun updateBatch(
-        data: Map<List<Any>, Condition>,
+        data: Map<Any, Condition>,
         isNll: Boolean = false,
         batchSize: Int = 100,
         connection: SqlConnection? = null
