@@ -82,7 +82,7 @@ object MysqlHelper {
                 StaticLog.warn("对象${className}不存在id主键")
                 lastWarnNoIdLogTimeMap[className] = now
             }
-            throw e
+            return 0
         }
     }
 
