@@ -95,13 +95,14 @@ object VertxWebConfig {
         httpServerOptions.compressionLevel = serverConfig.compressionLevel
         val httpServer = vertx.createHttpServer(httpServerOptions)
         val mainRouter = io.vertx.ext.web.Router.router(vertx)
+        val loggerHandler = loggerHandler()
         mainRouter.route("/*")
             // 添加跨域处理
             .handler(io.vertx.ext.web.handler.CorsHandler.create())
             // 添加日志记录
             .handler {
                 if (serverConfig.logEnabled) {
-                    loggerHandler().handle(it)
+                    loggerHandler.handle(it)
                 } else {
                     it.next()
                 }
