@@ -78,4 +78,17 @@ class MysqlHelperTest {
             testContext.completeNow()
         }
     }
+
+    @Test
+    suspend fun testTransaction(testContext: VertxTestContext) {
+        val str = "select * from user";
+        val withTransaction = MysqlHelper.withTransaction {
+            it.query(str).execute().await()
+            it.query(str).execute().await()
+            it.query(str).execute().await()
+            it.query(str).execute().await()
+            it.query(str).execute().await()
+        }
+        testContext.completeNow()
+    }
 }
