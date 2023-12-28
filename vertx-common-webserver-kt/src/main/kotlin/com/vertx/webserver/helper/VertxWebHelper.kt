@@ -96,9 +96,10 @@ object VertxWebConfig {
         val httpServer = vertx.createHttpServer(httpServerOptions)
         val mainRouter = io.vertx.ext.web.Router.router(vertx)
         val loggerHandler = loggerHandler()
+        val corsHandler = io.vertx.ext.web.handler.CorsHandler.create()
         mainRouter.route("/*")
             // 添加跨域处理
-            .handler(io.vertx.ext.web.handler.CorsHandler.create())
+            .handler(corsHandler)
             // 添加日志记录
             .handler {
                 if (serverConfig.logEnabled) {
