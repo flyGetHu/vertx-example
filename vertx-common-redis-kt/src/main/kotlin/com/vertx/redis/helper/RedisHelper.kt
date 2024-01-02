@@ -389,6 +389,10 @@ object RedisHelper {
          */
         suspend fun lrange(key: String, start: Int, stop: Int): kotlin.collections.List<String>? {
             if (start < 0 || stop < 0) return null
+            if (start > stop) {
+                StaticLog.error("start > stop");
+                return null
+            }
             val res = try {
                 redisClient.lrange(key, start.toString(), stop.toString()).await().map { it.toString() }
             } catch (e: Throwable) {
