@@ -1,6 +1,7 @@
 package com.vertx.example.verticle
 
 import cn.hutool.core.codec.Base64
+import cn.hutool.core.util.HashUtil
 import cn.hutool.log.StaticLog
 import org.junit.jupiter.api.Test
 import java.io.FileOutputStream
@@ -40,5 +41,11 @@ class ImageUtilsTest {
             return false
         }
         return true
+    }
+
+    @Test
+    fun hashTest() {
+        val address = "Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100巴西 "
+        println(HashUtil.mixHash(address))
     }
 }

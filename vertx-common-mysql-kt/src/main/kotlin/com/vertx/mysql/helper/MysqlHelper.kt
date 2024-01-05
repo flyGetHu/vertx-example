@@ -69,13 +69,13 @@ object MysqlHelper {
             mysqlPoolClient.query(sql)
         }
         val rowRowSet = query.execute().await()
-        val className = data::class.java.name
-        val now = LocalDateTime.now()
         // 检查对象是否存在id主键
         return try {
             data.javaClass.getDeclaredField("id")
             rowRowSet.property(MySQLClient.LAST_INSERTED_ID)
         } catch (e: Exception) {
+            val className = data::class.java.name
+            val now = LocalDateTime.now()
             //检查最后一次警告时间和现在事件是否相差超过一小时,一小时内只会报警一次
             val lastWarnNoIdLogTime = lastWarnNoIdLogTimeMap[className]
             if (lastWarnNoIdLogTime == null || now.minusHours(1) > lastWarnNoIdLogTime) {

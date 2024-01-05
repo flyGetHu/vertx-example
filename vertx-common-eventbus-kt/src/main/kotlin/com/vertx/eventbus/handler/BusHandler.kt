@@ -128,7 +128,7 @@ interface BusHandler<Request, Response> {
             }
             addressMap[address] = address
             StaticLog.info("注册服务: $address")
-            eventBus.consumer(address) { message: Message<String> ->
+            val consumer = eventBus.consumer(address) { message: Message<String> ->
                 CoroutineScope(vertx.dispatcher()).launch {
                     try {
                         val request = Json.decodeValue(message.body(), service.requestClass)
@@ -151,6 +151,24 @@ interface BusHandler<Request, Response> {
                         StaticLog.error(e, "RPC服务处理请求失败: $address")
                     }
                 }
+            }
+            consumer.completionHandler { ar: AsyncResult<Void?> ->
+                if (ar.succeeded()) {
+                    StaticLog.info("服务注册成功: $address")
+                } else {
+                    StaticLog.error(ar.cause(), "服务注册失败: $address")
+                }
+            }
+
+            // 注册服务失败后,取消注册
+            consumer.exceptionHandler { e: Throwable ->
+                StaticLog.error(e, "服务注册失败: $address")
+                consumer.unregister()
+                addressMap.remove(address)
+            }
+
+            consumer.endHandler {
+                StaticLog.info("服务注册结束: $address")
             }
         }
     }

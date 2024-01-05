@@ -94,7 +94,6 @@ public class GeoDistanceCalculator {
 
         double distanceMiles = calculateDistanceInMiles(new GeoPoint(39.9042, 116.4074), new GeoPoint(31.2304, 121.4737));
         System.out.println("北京和上海之间的距离（英里）: " + distanceMiles);
-
         // 示例：中心点坐标和半径（单位：米）
         double centerLat = 39.9042; // 北京的纬度（示例）
         double centerLon = 116.4074; // 北京的经度（示例）
