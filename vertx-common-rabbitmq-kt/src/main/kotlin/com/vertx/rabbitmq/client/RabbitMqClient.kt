@@ -10,6 +10,7 @@ package com.vertx.rabbitmq.client
 
 import com.vertx.common.config.vertx
 import com.vertx.common.entity.app.Rabbitmq
+import com.vertx.rabbitmq.exception.RabbitMQInitException
 import io.vertx.kotlin.coroutines.await
 import io.vertx.rabbitmq.RabbitMQClient
 import io.vertx.rabbitmq.RabbitMQOptions
@@ -32,18 +33,18 @@ object RabbitMqClient {
         val rabbitMQOptions = RabbitMQOptions()
         val host = config.host
         if (host.isBlank()) {
-            throw Exception("rabbitmq host is blank")
+            throw RabbitMQInitException("rabbitmq host is blank")
         }
         rabbitMQOptions.host = host
         rabbitMQOptions.port = config.port
         val username = config.username
         if (username.isBlank()) {
-            throw Exception("rabbitmq username is blank")
+            throw RabbitMQInitException("rabbitmq username is blank")
         }
         rabbitMQOptions.user = username
         val password = config.password
         if (password.isBlank()) {
-            throw Exception("rabbitmq password is blank")
+            throw RabbitMQInitException("rabbitmq password is blank")
         }
         rabbitMQOptions.password = password
         //连接超时时间
