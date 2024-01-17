@@ -38,7 +38,7 @@ object MysqlHelper {
     suspend fun <T> withTransaction(func: suspend (SqlConnection) -> T): T? {
         var connection: SqlConnection? = null
         var transaction: Transaction? = null
-        var result: T? = null
+        val result: T
         try {
             connection = mysqlPoolClient.connection.await()
             transaction = connection.begin().await()
@@ -104,9 +104,18 @@ object MysqlHelper {
         var count = 0
         //批量插入数据
         val lists = CollUtil.split(data, batchSize)
+        // 判断是否从外部传递连接
+        val isHaveConnection = connection != null
         val connect = connection ?: mysqlPoolClient.connection.await()
+        // 查看上级是否已经开启了事务
+        val parentTransaction = connect.transaction()
+        // 判断是否需要开启事务
+        val isBeginTransaction = parentTransaction != null
+        var transaction: Transaction? = null
         //开启事务
-        val transaction = connect.begin().await()
+        if (!isBeginTransaction) {
+            transaction = connect.begin().await()
+        }
         try {
             for (list in lists) {
                 val querySql = buildInsertSql(list)
@@ -114,14 +123,21 @@ object MysqlHelper {
                 count += rows.rowCount()
             }
             //提交事务
-            transaction.commit().await()
+            if (!isBeginTransaction && transaction != null) {
+                transaction.commit().await()
+            }
         } catch (e: Throwable) {
             //回滚事务
-            transaction.rollback().await()
+            if (!isBeginTransaction && transaction != null) {
+                transaction.rollback().await()
+            }
             StaticLog.error(e, "批量插入数据失败")
             throw e
         } finally {
-            connect.close().await()
+            //如果不是从外部传递过来的连接,则关闭连接
+            if (!isHaveConnection) {
+                connect.close().await()
+            }
         }
         return count
     }
@@ -174,9 +190,18 @@ object MysqlHelper {
             }
         }
         val lists = CollUtil.split(batchSqlList, batchSize)
+        // 判断是否从外部传递连接
+        val isHaveConnection = connection != null
         val connect = connection ?: mysqlPoolClient.connection.await()
+        // 查看上级是否已经开启了事务
+        val parentTransaction = connect.transaction()
+        // 判断是否需要开启事务
+        val isBeginTransaction = parentTransaction != null
+        var transaction: Transaction? = null
         //开启事务
-        val transaction = connect.begin().await()
+        if (!isBeginTransaction) {
+            transaction = connect.begin().await()
+        }
         try {
             for (list in lists) {
                 for (querySql in list) {
@@ -185,14 +210,21 @@ object MysqlHelper {
                 }
             }
             //提交事务
-            transaction.commit().await()
+            if (!isBeginTransaction && transaction != null) {
+                transaction.commit().await()
+            }
         } catch (e: Throwable) {
             //回滚事务
-            transaction.rollback().await()
+            if (!isBeginTransaction && transaction != null) {
+                transaction.rollback().await()
+            }
             StaticLog.error(e, "批量更新数据失败", lists)
             throw e
         } finally {
-            connect.close().await()
+            //如果不是从外部传递过来的连接,则关闭连接
+            if (!isHaveConnection) {
+                connect.close().await()
+            }
         }
         return count
     }

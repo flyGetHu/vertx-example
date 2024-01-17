@@ -73,22 +73,9 @@ class MysqlHelperTest {
                     val condition = DSL.field(User::id.name.underlineName()).eq(i)
                     dataList.add(mutableMapOf(Pair(user, condition)))
                 }
-                MysqlHelper.updateBatch(dataList)
+                MysqlHelper.updateBatch(dataList, connection = it)
             }
             testContext.completeNow()
         }
-    }
-
-    @Test
-    suspend fun testTransaction(testContext: VertxTestContext) {
-        val str = "select * from user";
-        val withTransaction = MysqlHelper.withTransaction {
-            it.query(str).execute().await()
-            it.query(str).execute().await()
-            it.query(str).execute().await()
-            it.query(str).execute().await()
-            it.query(str).execute().await()
-        }
-        testContext.completeNow()
     }
 }
