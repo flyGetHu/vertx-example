@@ -1,6 +1,7 @@
 package com.vertx.rabbitmq.helper
 
 import cn.hutool.core.exceptions.ExceptionUtil
+import cn.hutool.core.util.StrUtil
 import cn.hutool.log.StaticLog
 import com.rabbitmq.client.MessageProperties
 import com.vertx.common.config.active
@@ -9,7 +10,6 @@ import com.vertx.common.config.vertx
 import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.enums.EnvEnum
 import com.vertx.rabbitmq.client.rabbitMqClient
-import com.vertx.rabbitmq.enums.RabbitMqExChangeEnum
 import com.vertx.rabbitmq.enums.RabbitMqExChangeTypeEnum
 import com.vertx.rabbitmq.exception.RabbitMQSendException
 import com.vertx.rabbitmq.handler.RabbitMqHandler
@@ -49,7 +49,7 @@ object RabbitMqHelper {
         // 注册队列
         val exchange = rabbitMqHandler.exchange
         // 检查交换机是否为默认交换机,如果不是则注册交换机
-        if (exchange != RabbitMqExChangeEnum.DEFAULT) {
+        if (StrUtil.isBlank(exchange.exchanger) && exchange.type != RabbitMqExChangeTypeEnum.DEFAULT) {
             //注册交换机
             rabbitMqClient.exchangeDeclare(
                 exchange.exchanger, exchange.type.name.lowercase(), exchange.durable, exchange.autoDelete
@@ -253,6 +253,8 @@ object RabbitMqHelper {
                             ackMessage(autoAck, deliveryTag, msgId)
                             return@launch
                         }
+                        // 重试次数+1
+                        retryCountMap[msgId] = retryCountMap.getOrDefault(msgId, 0) + 1
                         // 重回队列
                         nackMessage(deliveryTag, rabbitMqHandler.retryInterval)
                         return@launch
