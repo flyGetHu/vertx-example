@@ -6,13 +6,14 @@
  */
 package com.vertx.common.config
 
+import cn.hutool.core.util.ClassUtil
 import cn.hutool.log.LogFactory
 import cn.hutool.log.StaticLog
 import cn.hutool.log.dialect.log4j2.Log4j2LogFactory
+import com.vertx.common.annotations.TableName
+import com.vertx.common.annotations.UniqueAddress
 import com.vertx.common.entity.app.AppConfig
 import com.vertx.common.exception.UniqueAddressException
-import io.github.classgraph.ClassGraph
-import io.github.classgraph.ScanResult
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
 import io.vertx.config.ConfigStoreOptions
@@ -60,7 +61,7 @@ object VertxLoadConfig {
      */
     suspend fun init(active: String = "dev") {
         // 防止接口定义地址重复
-        checkUniqueAddress()
+        localClassFilter()
         vertx = Vertx.currentContext().owner()
         eventBus = vertx.eventBus()
         sharedData = vertx.sharedData()
@@ -99,68 +100,38 @@ object VertxLoadConfig {
         isInit = true
     }
 
-    /**
-     * 检查对应的消息总线,mq队列等接口实现上是否有地址重复问题
-     */
-    private fun checkUniqueAddress() {
-        val scanResult = ClassGraph().enableAllInfo()
-            .enableStaticFinalFieldConstantInitializerValues()
-            .scan()
-        // 检查事件总线接口是否有地址重复
-        scanAndValidateHandlers(scanResult, "com.vertx.eventbus.handler.BusHandler")
-        // 检查rabbitmq接口是否有地址重复
-        scanAndValidateHandlers(scanResult, "com.vertx.rabbitmq.handler.RabbitMqHandler")
-        // 检查数据库模型类是否有id字段
-        scanResult.getClassesWithAnnotation("com.vertx.common.annotations.TableName").forEach {
-            val idField = "id"
-            if (it.getFieldInfo().stream().noneMatch { fieldInfo -> fieldInfo.name.equals(idField) }) {
-                StaticLog.warn("数据库模型类${it.name}没有名为\"$idField\"的字段,请检查是否有误")
+    private fun localClassFilter() {
+        val classes: Set<Class<*>> = ClassUtil.scanPackage()
+        // 用于存储事件总线的唯一地址
+        val eventBusUniqueAddress: MutableSet<String> = HashSet()
+        for (aClass in classes) {
+            //判断类是否有指定注解
+            if (aClass.isAnnotationPresent(UniqueAddress::class.java)) {
+                //获取注解对象
+                val uniqueAddress = aClass.getAnnotation(UniqueAddress::class.java)
+                //获取注解的值
+                val uniqueAddressVal = uniqueAddress.value
+                if (eventBusUniqueAddress.contains(uniqueAddressVal)) {
+                    // 打印警告信息
+                    StaticLog.warn("注意EventBus接口和RabbitMq接口:")
+                    StaticLog.warn("接口定义类命名不带impl,并且类上必须添加UniqueAddress注解,标明地址路径")
+                    StaticLog.warn("项目启动会检查是否有重复的地址或者地址缺失")
+                    StaticLog.warn("最终实现消费或者服务提供方命名必须添加impl,检查会过滤末尾Impl文件")
+                    // 抛出唯一地址异常，提示类名和重复的地址
+                    StaticLog.error("${aClass.name}\n地址重复:$uniqueAddress")
+                    throw UniqueAddressException("${aClass.name}\n地址重复:$uniqueAddress")
+                }
+                // 将唯一地址添加到事件总书唯一地址集合中
+                eventBusUniqueAddress.add(uniqueAddressVal)
             }
-        }
-    }
-
-    /**
-     * 扫描并验证指定包中的事件总线处理程序类。
-     *
-     * @param scanResult 扫描操作的结果。
-     * @param packageName 要扫描的包的名称。
-     * @throws Exception 如果存在验证错误，例如事件总线地址重复或丢失。
-     */
-    private fun scanAndValidateHandlers(scanResult: ScanResult, packageName: String) {
-        val busHandlerClasses = scanResult.getClassesImplementing(packageName)
-        val eventBusUniqueAddress = mutableSetOf<String>()
-        for (classInfo in busHandlerClasses) {
-            val className = classInfo.name
-            if (className.endsWith("Impl")) {
-                continue
-            }
-            // 获取类address属性注释
-            val annotationInfos = classInfo.annotationInfo
-            var hasUniqueAddress = false
-            for (annotationInfo in annotationInfos) {
-                if (annotationInfo.name == "com.vertx.common.annotations.UniqueAddress") {
-                    val uniqueAddress = annotationInfo.parameterValues[0].value as String
-                    if (eventBusUniqueAddress.contains(uniqueAddress)) {
-                        //打印警告信息:接口定义类命名不带impl,最终实现消费或者服务提供方命名必须添加impl
-                        StaticLog.warn("注意EventBus接口和RabbitMq接口:")
-                        StaticLog.warn("接口定义类命名不带impl,并且类上必须添加UniqueAddress注解,标明地址路径")
-                        StaticLog.warn("项目启动会检查是否有重复的地址或者地址缺失")
-                        StaticLog.warn("最终实现消费或者服务提供方命名必须添加impl,检查会过滤末尾Impl文件")
-                        throw UniqueAddressException("$className\n地址重复:$uniqueAddress")
-                    }
-                    eventBusUniqueAddress.add(uniqueAddress)
-                    hasUniqueAddress = true
+            if (aClass.isAnnotationPresent(TableName::class.java)) {
+                // 检查数据库模型类是否有id字段
+                val idField = "id"
+                val field = ClassUtil.getDeclaredField(aClass, idField)
+                if (field == null) {
+                    StaticLog.warn("警告: 数据库模型类${aClass.name}没有名为\"$idField\"的字段,请检查是否有误")
                 }
             }
-            if (!hasUniqueAddress) {
-                //打印警告信息:接口定义类命名不带impl,最终实现消费或者服务提供方命名必须添加impl
-                StaticLog.warn("注意EventBus接口和RabbitMq接口:")
-                StaticLog.warn("接口定义类命名不带impl,并且类上必须添加UniqueAddress注解,标明地址路径")
-                StaticLog.warn("项目启动会检查是否有重复的地址或者地址缺失")
-                StaticLog.warn("最终实现消费或者服务提供方命名必须添加impl,检查会过滤末尾Impl文件")
-                throw UniqueAddressException("$className\n事件总线地址未设置")
-            }
         }
-        eventBusUniqueAddress.clear()
     }
 }
