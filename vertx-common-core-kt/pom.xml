@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0.38</version>
+        <version>${common.version}</version>
     </parent>
 
-    <version>1.0.38</version>
+    <version>${common.version}</version>
     <artifactId>vertx-common-core-kt</artifactId>
 
     <properties>

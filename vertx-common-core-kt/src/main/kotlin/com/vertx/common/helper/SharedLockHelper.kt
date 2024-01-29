@@ -21,6 +21,19 @@ object SharedLockHelper {
         return sharedData.getLock(StrUtil.format(sharedLockEnum.key, args)).await()
     }
 
+    suspend fun withLock(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        args: Array<String>? = null,
+        block: suspend () -> Unit
+    ) {
+        val lock = getLock(sharedLockEnum, args)
+        try {
+            block()
+        } finally {
+            lock.release()
+        }
+    }
+
     /**
      * 获取锁
      * @param sharedLockEnum 锁枚举
@@ -34,12 +47,39 @@ object SharedLockHelper {
         return sharedData.getLockWithTimeout(StrUtil.format(sharedLockEnum.key, args), timeout).await()
     }
 
+    suspend fun withLockWithTimeout(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        timeout: Long,
+        args: Array<String>? = null,
+        block: suspend () -> Unit
+    ) {
+        val lock = getLockWithTimeout(sharedLockEnum, timeout, args)
+        try {
+            block()
+        } finally {
+            lock.release()
+        }
+    }
+
     /**
      * 获取本地锁
      * @param sharedLockEnum 锁枚举
      */
     suspend fun getLocalLock(sharedLockEnum: ISharedLockSharedLockEnum, args: Array<String>? = null): Lock {
         return sharedData.getLocalLock(StrUtil.format(sharedLockEnum.key, args)).await()
+    }
+
+    suspend fun withLocalLock(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        args: Array<String>? = null,
+        block: suspend () -> Unit
+    ) {
+        val lock = getLocalLock(sharedLockEnum, args)
+        try {
+            block()
+        } finally {
+            lock.release()
+        }
     }
 
     /**
@@ -54,5 +94,20 @@ object SharedLockHelper {
     ): Lock {
         return sharedData.getLocalLockWithTimeout(StrUtil.format(sharedLockEnum.key, args), timeout)
             .await()
+    }
+
+
+    suspend fun withLocalLockWithTimeout(
+        sharedLockEnum: ISharedLockSharedLockEnum,
+        timeout: Long,
+        args: Array<String>? = null,
+        block: suspend () -> Unit
+    ) {
+        val lock = getLocalLockWithTimeout(sharedLockEnum, timeout, args)
+        try {
+            block()
+        } finally {
+            lock.release()
+        }
     }
 }

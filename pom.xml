@@ -6,7 +6,7 @@
 
     <groupId>org.vertx</groupId>
     <artifactId>starter</artifactId>
-    <version>1.0.38</version>
+    <version>${common.version}</version>
     <packaging>pom</packaging>
     <modules>
         <module>vertx-common-core-kt</module>
@@ -33,6 +33,7 @@
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
+        <common.version>1.0.39</common.version>
         <vertx.version>4.4.6</vertx.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
         <huTool.version>5.8.20</huTool.version>
