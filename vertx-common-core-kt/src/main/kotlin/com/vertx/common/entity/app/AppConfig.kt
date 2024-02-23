@@ -114,6 +114,8 @@ class App {
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 class WebServer {
+
+
     // 服务端口
     @JsonProperty("port")
     val port: Int = Random.nextInt(10000)
@@ -151,6 +153,22 @@ class WebServer {
     // 压缩等级
     @JsonProperty("compressionLevel")
     val compressionLevel: Int = 6
+
+    // 最大分片大小
+    @JsonProperty("maxChunkSize")
+    val maxChunkSize: Int = 4096
+
+    // 最大初始行长度
+    @JsonProperty("maxInitialLineLength")
+    val maxInitialLineLength: Int = 8192
+
+    // 最大头大小
+    @JsonProperty("maxHeaderSize")
+    val maxHeaderSize: Int = 8192
+
+    // 最大表单属性大小
+    @JsonProperty("maxFormAttributeSize")
+    val maxFormAttributeSize: Int = 8192
 }
 
 /**

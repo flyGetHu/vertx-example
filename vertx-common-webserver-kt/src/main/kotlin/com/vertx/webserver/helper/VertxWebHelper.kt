@@ -93,6 +93,14 @@ object VertxWebConfig {
         httpServerOptions.isCompressionSupported = serverConfig.compressionSupported
         // 压缩等级
         httpServerOptions.compressionLevel = serverConfig.compressionLevel
+        // 设置最大分片大小
+        httpServerOptions.setMaxChunkSize(serverConfig.maxChunkSize)
+        // 设置最大头大小
+        httpServerOptions.setMaxInitialLineLength(serverConfig.maxInitialLineLength)
+        // 设置最大表单属性大小
+        httpServerOptions.setMaxHeaderSize(serverConfig.maxHeaderSize)
+        // 设置最大表单属性大小
+        httpServerOptions.setMaxFormAttributeSize(serverConfig.maxFormAttributeSize)
         val httpServer = vertx.createHttpServer(httpServerOptions)
         val mainRouter = io.vertx.ext.web.Router.router(vertx)
         val loggerHandler = loggerHandler()
