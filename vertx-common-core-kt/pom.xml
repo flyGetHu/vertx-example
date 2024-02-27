@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.vertx</groupId>
         <artifactId>starter</artifactId>
-        <version>${common.version}</version>
+        <version>1.0.0</version>
     </parent>
 
     <version>${common.version}</version>
