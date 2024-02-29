@@ -224,7 +224,7 @@ object RabbitMqHelper {
                         ackMessage(autoAck, deliveryTag, "")
                         return@launch
                     }
-                    if (rabbitMqMsg.containsKey("body")) {
+                    if (!rabbitMqMsg.containsKey("body")) {
                         StaticLog.error("消息解析失败,缺少body:队列名称:$queueName,消息:$rabbitMqMsg")
                         ackMessage(autoAck, deliveryTag, msgId)
                         return@launch
