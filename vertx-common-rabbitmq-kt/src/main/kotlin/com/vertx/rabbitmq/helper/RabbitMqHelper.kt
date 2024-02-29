@@ -224,14 +224,14 @@ object RabbitMqHelper {
                         ackMessage(autoAck, deliveryTag, "")
                         return@launch
                     }
-                    if (!rabbitMqMsg.containsKey("msg")) {
-                        StaticLog.error("消息解析失败,缺少msg:队列名称:$queueName,消息:$rabbitMqMsg")
+                    if (rabbitMqMsg.containsKey("body")) {
+                        StaticLog.error("消息解析失败,缺少body:队列名称:$queueName,消息:$rabbitMqMsg")
                         ackMessage(autoAck, deliveryTag, msgId)
                         return@launch
                     }
-                    val msgJson = rabbitMqMsg.getJsonObject("msg")
+                    val msgJson = rabbitMqMsg.getJsonObject("body")
                     if (msgJson == null) {
-                        StaticLog.error("消息解析失败,msg为null:队列名称:$queueName,消息:$rabbitMqMsg")
+                        StaticLog.error("消息解析失败,body为null:队列名称:$queueName,消息:$rabbitMqMsg")
                         ackMessage(autoAck, deliveryTag, msgId)
                         return@launch
                     }
