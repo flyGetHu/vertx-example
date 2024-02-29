@@ -22,6 +22,7 @@ import io.vertx.core.eventbus.EventBus
 import io.vertx.core.json.JsonObject
 import io.vertx.core.shareddata.SharedData
 import io.vertx.kotlin.coroutines.await
+import java.io.File
 
 
 // 是否已经初始化
@@ -70,20 +71,30 @@ object VertxLoadConfig {
         val logFactory = Log4j2LogFactory.create()
         LogFactory.setCurrentLogFactory(logFactory)
         StaticLog.info("初始化日志对象成功:" + logFactory.name)
-//        val retriever = ConfigRetriever.create(vertx)
-//        val jsonObject = retriever.config.await()
-//        StaticLog.info("获取环境变量成功:\n${jsonObject.encodePrettily()}")
-        var activeConfigName = "conf/config."
+        // 获取当前项目的绝对路径
+        val path = System.getProperty("user.dir")
+        // 构建配置文件名
+        var activeConfigName = path + File.separator + "config."
         var env = active
         // 如果com.vertx.common.config.active不是空则按照此值来初始化
         if (com.vertx.common.config.active.isNotBlank()) {
             env = com.vertx.common.config.active
         }
+        // 如果环境变量为空则默认为dev
+        if (env.isBlank()) {
+            env = "dev"
+        }
         activeConfigName += "$env.yaml"
-        val devExists = vertx.fileSystem().exists(activeConfigName).await()
-        if (!devExists) {
-            StaticLog.warn("当前项目激活配置环境文件:$activeConfigName 不存在,请检查配置文件是否需要加载配置文件!")
-            return
+
+        // 判断项目外部根目录是否存在
+        if (!vertx.fileSystem().exists(activeConfigName).await()) {
+            StaticLog.warn("项目外部配置文件不存在:{},尝试读取内部配置文件", activeConfigName)
+            // 判断项目内部配置文件是否存在
+            activeConfigName = "conf/config.$env.yaml"
+            if (!vertx.fileSystem().exists(activeConfigName).await()) {
+                StaticLog.error("项目内部配置文件不存在:{}", activeConfigName)
+                throw Exception("项目配置文件不存在$activeConfigName")
+            }
         }
         com.vertx.common.config.active = env
         StaticLog.info("当前项目激活配置环境文件:$activeConfigName")
