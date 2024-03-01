@@ -38,7 +38,7 @@
 
         <vertx.version>4.4.6</vertx.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
-        <huTool.version>5.8.20</huTool.version>
+        <huTool.version>5.8.26</huTool.version>
         <jooq.version>3.18.5</jooq.version>
         <kotlin.version>1.9.0</kotlin.version>
         <launcher.class>com.vertx.common.MainLaunch</launcher.class>
