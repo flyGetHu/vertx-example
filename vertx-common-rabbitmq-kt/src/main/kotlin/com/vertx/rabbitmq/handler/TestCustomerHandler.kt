@@ -21,15 +21,21 @@ open class TestCustomerHandler : RabbitMqHandler<User> {
     override var autoAck: Boolean = false
     override var maxRetry: Int = 3
     override var retryInterval: Long = 1000
-    override var handler: suspend (User) -> String? = {
-        null
+    override suspend fun callback(msg: String, msgId: String) {
+        StaticLog.info("回调成功:${msg},msgId:${msgId}")
     }
 
-    override var persistence: suspend (MqMessageData<User>) -> String? = {
+    override suspend fun persistence(message: MqMessageData<User>): String? {
         StaticLog.info("持久化函数执行成功")
-        null
+        return null
     }
 
-    override var callback: suspend (String, String) -> Unit = { msg, msgId ->
+    override suspend fun handler(message: User): String? {
+        if (message.name == "test") {
+            StaticLog.info("处理函数执行成功")
+            return "处理函数执行成功"
+        }
+        StaticLog.info("处理函数执行成功")
+        return null
     }
 }

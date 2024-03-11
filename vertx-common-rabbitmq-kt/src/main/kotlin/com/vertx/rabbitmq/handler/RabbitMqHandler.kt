@@ -90,7 +90,7 @@ interface RabbitMqHandler<Request> {
      * @param message 消息
      * @return String 空字符串表示消费成功,否则消费失败
      */
-    var handler: suspend (Request) -> String?
+    suspend fun handler(message: Request): String?
 
     /**
      * 发送方
@@ -99,7 +99,7 @@ interface RabbitMqHandler<Request> {
      * @param message 消息
      * @return String 空字符串表示消费成功,否则消费失败
      */
-    var persistence: suspend (MqMessageData<Request>) -> String?
+    suspend fun persistence(message: MqMessageData<Request>): String?
 
     /**
      * 消费方
@@ -109,5 +109,5 @@ interface RabbitMqHandler<Request> {
      * @param  msgId 消息id
      * @return String 空字符串表示消费成功,否则消费失败
      */
-    var callback: suspend (msg: String, msgId: String) -> Unit
+    suspend fun callback(msg: String, msgId: String)
 }

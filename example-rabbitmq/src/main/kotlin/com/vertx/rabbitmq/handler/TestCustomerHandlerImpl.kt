@@ -1,6 +1,6 @@
 package com.vertx.rabbitmq.handler
 
-import cn.hutool.log.StaticLog
+import com.vertx.common.entity.mq.MqMessageData
 import com.vertx.common.model.User
 
 /**
@@ -8,12 +8,15 @@ import com.vertx.common.model.User
  */
 object TestCustomerHandlerImpl : TestCustomerHandler() {
 
-    override var handler: suspend (User) -> String? = { message: User ->
-        StaticLog.info("消费成功:${message}")
-        null
+    override suspend fun handler(message: User): String? {
+        return super.handler(message)
     }
 
-    override var callback: suspend (String, String) -> Unit = { msg, msgId ->
-        StaticLog.info("回调成功:${msg},msgId:${msgId}")
+    override suspend fun persistence(message: MqMessageData<User>): String? {
+        return super.persistence(message)
+    }
+
+    override suspend fun callback(msg: String, msgId: String) {
+        super.callback(msg, msgId)
     }
 }
